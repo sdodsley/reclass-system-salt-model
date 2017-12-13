@@ -29,11 +29,6 @@ parameters:
       ram_allocation_ratio: ${_param:nova_ram_allocation_ratio}
       disk_allocation_ratio: ${_param:nova_disk_allocation_ratio}
       workers: 8
-      logging:
-      - engine: syslog
-        facility: local0
-        heka:
-          enabled: true
       bind:
         private_address: ${_param:cluster_local_address}
         public_address: ${_param:cluster_vip_address}
