@@ -38,6 +38,11 @@ parameters:
         hash: sha256=45786a920a929c6258de6461bcf03ddec8925577bd485905f102ceb6e5e1e47c
 #        address: https://gerrit-ci.gerritforge.com/job/Gerrit-stable-2.13/20/artifact/buck-out/gen/gerrit.war
 #        hash: md5=2e17064b8742c4622815593ec496c571
+      receive_timeout: 5min
+      sshd:
+        threads: 64
+        batch_threads: 16
+        max_connections_per_user: 64
       database:
         engine: postgresql
         host: localhost
@@ -45,6 +50,8 @@ parameters:
         name: gerrit
         user: gerrit
         password: ${_param:postgresql_gerrit_password}
+        pool_limit: 250
+        pool_max_idle: 16
   postgresql:
     server:
       version: "9.5"
