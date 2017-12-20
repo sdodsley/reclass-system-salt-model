@@ -7,7 +7,7 @@ parameters:
       index:
         cis-openstack:
           enabled: true
-          force_operation: true
+          force_operation: false
           definition:
             template: cis-openstack
             settings:

@@ -7,7 +7,7 @@ parameters:
       index:
         notifications:
           enabled: true
-          force_operation: true
+          force_operation: false
           definition:
             template: notifications
             settings:
