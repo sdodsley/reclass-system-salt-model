@@ -173,7 +173,7 @@ parameters:
           name: test-salt-formulas-env
           discard:
             build:
-              keep_num: 500
+              keep_num: 1000
             artifact:
               keep_num: 10
           type: workflow-scm
