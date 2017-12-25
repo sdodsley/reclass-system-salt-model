@@ -3,7 +3,7 @@ parameters:
     client:
       job:
         docker-build-images-security-monkey-codebase-openstack:
-          name: docker-build-images-security-monkey-codebase-openstack 
+          name: docker-build-images-security-monkey-codebase-openstack
           discard:
             build:
               keep_num: 25
@@ -22,11 +22,6 @@ parameters:
                 "oss/security-monkey-openstack":
                   branches:
                     - master
-              skip_vote:
-                - successful
-                - failed
-                - unstable
-                - not_built
               event:
                 patchset:
                   - created:
