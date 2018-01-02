@@ -79,6 +79,7 @@ parameters:
               container_name: ${_param:opencontrail_analytics_container_name}
               network_mode: "host"
               privileged: true
+              restart: always
               volumes:
                 - /etc/contrail:/etc/contrail
                 - /etc/redis/redis.conf:/etc/redis/redis.conf
@@ -101,3 +102,4 @@ parameters:
                 - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
               network_mode: "host"
               privileged: true
+              restart: always
