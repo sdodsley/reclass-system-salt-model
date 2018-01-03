@@ -107,3 +107,4 @@ parameters:
                 - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
               network_mode: "host"
               privileged: true
+              restart: always
