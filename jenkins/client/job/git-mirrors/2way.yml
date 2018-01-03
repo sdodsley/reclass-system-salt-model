@@ -36,6 +36,9 @@ parameters:
                   "{{source}}":
                     branches:
                       - master
+                event:
+                  ref:
+                    - updated
             param:
               SOURCE_URL:
                 type: string

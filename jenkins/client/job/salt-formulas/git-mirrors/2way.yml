@@ -256,6 +256,9 @@ parameters:
                   salt-formulas/{{name}}:
                     branches:
                       - master
+                event:
+                  ref:
+                    - updated
             param:
               SOURCE_URL:
                 type: string
