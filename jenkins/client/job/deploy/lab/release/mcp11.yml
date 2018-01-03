@@ -3,8 +3,8 @@ classes:
 parameters:
   _param:
     jenkins_deploy_jobs:
-      - stack_name: virtual_mcp11_contrail
-        stack_env: devcloud_virtual_mcp11_contrail
+      - stack_name: virtual_mcp_contrail
+        stack_env: devcloud_mcp11_contrail
         stack_install: core,openstack,contrail
         stack_type: heat
         stack_test: ""
