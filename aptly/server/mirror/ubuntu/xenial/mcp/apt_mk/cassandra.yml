@@ -20,4 +20,4 @@ parameters:
           publisher:
             component: ${_param:mirror_mirantis_openstack_xenial_cassandra_components}
             distributions:
-              - ubuntu-xenial/cassandra/${_param:apt_mk_version}/
+              - ubuntu-xenial/cassandra/${_param:apt_mk_version}
