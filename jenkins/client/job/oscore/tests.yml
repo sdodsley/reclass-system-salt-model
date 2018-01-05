@@ -2,6 +2,129 @@ parameters:
   jenkins:
     client:
       job_template:
+        test-openstack-component-formula:
+          name: "{{job_prefix}}-formula-systest-{{model}}-{{openstack_version}}"
+          template:
+            discard:
+              build:
+                keep_num: 30
+              artifact:
+                keep_num: 30
+            type: workflow-scm
+            concurrent: true
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
+              credentials: "gerrit"
+              branch: 'master'
+              script: test-openstack-component-pipeline.groovy
+            param:
+              # general
+              HEAT_STACK_ZONE:
+                type: string
+                description: AZ
+                default: "mcp-oscore-ci"
+              OPENSTACK_VERSION:
+                type: string
+                description: Version of openstack to test
+                default: "{{openstack_version}}"
+              PROJECT:
+                type: string
+                description: Project to test
+                default: "all"
+              STACK_TEST_JOB:
+                type: string
+                description: Job for environment deployment
+                default: "{{stack_test_job}}"
+              STACK_TYPE:
+                type: string
+                default: "{{stack_type}}"
+              STACK_INSTALL:
+                type: string
+                description: components to install
+                default: 'core,openstack,ovs'
+              STACK_DELETE:
+                type: boolean
+                default: 'true'
+                description: Don't enable it if you need to use the lab after
+              STACK_CLEANUP_JOB:
+                type: string
+                default: "{{stack_cleanup_job}}"
+              STACK_RECLASS_ADDRESS:
+                type: string
+                default: '{{stack_reclass_address}}'
+                description: 'Url to repository with stack salt models'
+              STACK_RECLASS_BRANCH:
+                type: string
+                default: '{{stack_reclass_branch}}'
+                description: 'Branch of repository with stack salt models'
+              # salt
+              SALT_OVERRIDES:
+                type: text
+                default: ""
+                description: YAML with overrides for Salt deployment
+              FORMULA_PKG_REVISION:
+                type: string
+                description: Version of formulas for salt-master bootstrap
+                default: "{{formula_pkg_revision}}"
+              # openstack api
+              OPENSTACK_API_URL:
+                type: string
+                default: "https://cloud-cz.bud.mirantis.net:5000"
+              OPENSTACK_API_CREDENTIALS:
+                type: string
+                default: "openstack-devcloud-credentials"
+              OPENSTACK_API_PROJECT:
+                type: string
+                default: "mcp-oscore-ci"
+              OPENSTACK_API_PROJECT_DOMAIN:
+                type: string
+                default: "default"
+              OPENSTACK_API_PROJECT_ID:
+                type: string
+                default: ""
+              OPENSTACK_API_USER_DOMAIN:
+                type: string
+                default: "default"
+              OPENSTACK_API_CLIENT:
+                type: string
+                default: ""
+              OPENSTACK_API_VERSION:
+                type: string
+                default: "3"
+              # test
+              TEST_TEMPEST_CONF:
+                type: string
+                description: Tempest configuration file path inside container
+                default: "{{tempest_conf}}"
+              TEST_TEMPEST_TARGET:
+                type: string
+                description: Node to run tests
+                default: "{{tempest_target}}"
+              TEST_TEMPEST_PATTERN:
+                type: string
+                description: Run tests matched to pattern only
+                default: "tempest"
+              TEST_MODEL:
+                type: string
+                description: Environment salt model
+                default: "{{model}}"
+              TEST_PASS_THRESHOLD:
+                type: string
+                description: Tests pass rate to consider build successful
+                default: "{{test_threshold}}"
+              TESTRAIL:
+                type: boolean
+                default: 'false'
+                description: Whether to upload results to testrail
+              FAIL_ON_TESTS:
+                type: boolean
+                default: 'true'
+                description: Whether to fail build on test results
+              BOOTSTRAP_EXTRA_REPO_PARAMS:
+                type: string
+                default: ""
+                description: "Defines a list of extra repos with parameters, format: repo 1, repo priority 1, repo pin 1; repo 2, repo priority 2, repo pin 2"
         test-openstack-component-periodic:
           name: "{{job_prefix}}-{{milestone}}-{{model}}-{{openstack_version}}-{{formula_pkg_revision}}"
           template:
