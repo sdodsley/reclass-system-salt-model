@@ -395,6 +395,9 @@ parameters:
             - name: fluentbit
               upload_source_package: true
               dist: xenial
+            - name: fluentd
+              upload_source_package: true
+              dist: xenial
             - name: foreman
               upload_source_package: true
               dist: xenial
