@@ -314,8 +314,12 @@ parameters:
                 description: Salt target to run tests
               TEST_TEMPEST_IMAGE:
                 type: string
-                description: Node to run tests
+                description: Url to tempest docker image
                 default: 'docker-prod-local.artifactory.mirantis.com/mirantis/oscore/rally-tempest'
+              LOCAL_TEMPEST_IMAGE:
+                type: string
+                description: Path to local docker image
+                default: ''
               TEST_TEMPEST_PATTERN:
                 type: string
                 description: Run tests matched to pattern only
