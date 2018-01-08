@@ -12,7 +12,7 @@ parameters:
           underscores_in_headers: true
           check: false
           proxy:
-            host: ${_param:nginx_proxy_openstack_api_proxy_host}
+            host: ${_param:glance_service_host}
             port: 9494
             protocol: http
             size: 30000m
