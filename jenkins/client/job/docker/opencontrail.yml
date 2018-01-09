@@ -6,6 +6,7 @@ parameters:
           name: "docker-build-images-opencontrail-{{version}}"
           jobs:
             - version: oc40
+            - version: oc41
           template:
             discard:
               build:
@@ -30,6 +31,9 @@ parameters:
                   comment:
                     - addedContains:
                         commentAddedCommentContains: '(buildcontainer|test|recheck|verify|)'
+              reverse:
+                projects:
+                  - build-opencontrail-{{version}}-ubuntu-xenial
             param:
               IMAGE_GIT_URL:
                 type: string
