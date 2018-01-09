@@ -553,3 +553,165 @@ parameters:
                 type: boolean
                 default: "{{stack_delete}}"
                 description: Do not enable it if you need to use the lab after
+        build-salt-formula-refspec-template:
+          name: "{{job_prefix}}-build-salt-formula-refspec"
+          template:
+            discard:
+              build:
+                keep_num: 30
+              artifact:
+                keep_num: 30
+            type: workflow-scm
+            concurrent: true
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines.git"
+              credentials: "gerrit"
+              branch: 'master'
+              script: build-debian-packages-pipeline.groovy
+            param:
+              SOURCE_URL:
+                type: string
+                default: ""
+                description: Project Git repo URL
+              SOURCE_REFSPEC:
+                type: string
+                default: ""
+                description: Refspec to checkout
+              SOURCE_BRANCH:
+                type: string
+                default: "master"
+                description: Name of local branch name for checked out refspec
+              SOURCE_CREDENTIALS:
+                type: string
+                default: "gerrit"
+                description: Credentials to Git repo
+              DEBIAN_SNAPSHOT:
+                type: boolean
+                default: 'true'
+                description: Whether to make a snapshot build
+              EXTRA_REPO_URL:
+                type: string
+                default: "deb ${_param:jenkins_aptly_url}/{{dist}}/ testing salt salt-latest"
+                description: Extra repo for building process
+              EXTRA_REPO_KEY_URL:
+                type: string
+                default: "${_param:jenkins_aptly_url}/public.gpg"
+                description: Extra repo GPG public key URL
+              OS:
+                type: string
+                default: "ubuntu"
+                description: OS name
+              DIST:
+                type: string
+                default: "{{dist}}"
+                description: OS distributive name
+              UPLOAD_PPA:
+                type: boolean
+                default: 'false'
+                description: Whether to upload to PPA
+              UPLOAD_APTLY:
+                type: boolean
+                default: 'false'
+                description: Whether to upload to Aptly
+              DEBIAN_BRANCH:
+                type: string
+                default: "debian/{{dist}}"
+                description: Source repo branch name with build spec
+              LINTIAN_CHECK:
+                type: boolean
+                default: 'false'
+                description: Whether to perform lintian check
+        test-salt-formula-refspec-template:
+          name: "{{job_prefix}}-test-salt-formula-refspec"
+          template:
+            discard:
+              build:
+                keep_num: 30
+              artifact:
+                keep_num: 30
+            type: workflow-scm
+            concurrent: false
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
+              credentials: "gerrit"
+              branch: 'master'
+              script: deploy-formula-change-pipeline.groovy
+            trigger:
+              gerrit:
+                project:
+                  "^salt-formulas/(nova|cinder|glance|keystone|horizon|neutron|designate|heat|ironic|barbican)$":
+                    compare_type: 'REG_EXP'
+                    branches:
+                      - master
+                skip_vote:
+                  - successful
+                  - failed
+                  - unstable
+                  - not_built
+                message:
+                  build_successful: "Build successful"
+                  build_unstable: "Build unstable"
+                  build_failure: "Build failed"
+                event:
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: 'deploy'
+                  patchset:
+                    - created:
+                        excludeDrafts: true
+                        excludeTrivialRebase: true
+                        excludeNoCodeChange: true
+            param:
+              SOURCE_CREDENTIALS:
+                type: string
+                default: "gerrit"
+              UPLOAD_APTLY:
+                type: boolean
+                default: 'true'
+                description: Whether to upload to Aptly
+              APTLY_REPO:
+                type: string
+                default: ""
+                description: Aptly repo name
+              BUILD_PACKAGE:
+                type: boolean
+                default: 'true'
+                description: Whether to build package
+              APTLY_REPO_URL:
+                type: string
+                default: "${_param:jenkins_aptly_url}"
+                description: Aptly url
+              APTLY_API_URL:
+                type: string
+                default: "${_param:jenkins_aptly_api_url}"
+                description: Aptly API url
+              OPENSTACK_RELEASES:
+                type: string
+                default: "{{openstack_releases}}"
+                description: Comma separated list of OpenStack releases to perform deploy and tests.
+              SOURCES:
+                type: text
+                default: ""
+                description: Optional parameter to list Git refspecs to be build
+              STACK_RECLASS_ADDRESS:
+                type: string
+                default: "{{stack_reclass_address}}"
+                description: Git repo URL to reclass
+              PKG_BUILD_JOB_NAME:
+                type: string
+                default: "{{pkg_build_job_name}}"
+                description: Jenkins job name to build package
+              STACK_DELETE:
+                type: boolean
+                default: 'true'
+                description: Whether to delete stacks ater tests
+              APTLY_PREFIX:
+                type: string
+                default: "{{aptly_prefix}}"
+                description: Aptly prefix
+              SYSTEST_JOB_PREFIX:
+                type: string
+                default: "{{systestJobPrefix}}"
+                description: "Systest job prefix. I.e. oscore-formula-systest-virtual_mcp11_aio-"
