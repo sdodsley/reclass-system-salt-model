@@ -25,6 +25,7 @@ parameters:
                 - /srv/volumes/rundeck/etc/realm.properties:/etc/rundeck/realm.properties
                 - /srv/volumes/rundeck/etc/rundeck-config.properties:/etc/rundeck/rundeck-config.properties
                 - /srv/volumes/rundeck/rundeck:/var/rundeck
+                - /srv/volumes/rundeck/data:/var/lib/rundeck/data
                 - /srv/volumes/rundeck/log:/var/log/rundeck
                 - /srv/volumes/rundeck/logs:/var/lib/rundeck/logs
                 - /srv/volumes/rundeck/plugins:/opt/rundeck-plugins
