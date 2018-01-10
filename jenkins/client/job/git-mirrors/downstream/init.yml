@@ -38,3 +38,4 @@ parameters:
               BRANCHES:
                 type: string
                 default: "{{branches}}"
+                description: "Comma-separated list of branches to mirror"
