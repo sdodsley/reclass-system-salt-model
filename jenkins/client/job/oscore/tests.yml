@@ -323,6 +323,9 @@ parameters:
               TEST_TEMPEST_PATTERN:
                 type: string
                 description: Run tests matched to pattern only
+              TEST_TEMPEST_SET:
+                type: string
+                description: Run tests matched by tempest set only
               TEST_TEMPEST_CONCURRENCY:
                 type: string
                 description: How much test threads to run
