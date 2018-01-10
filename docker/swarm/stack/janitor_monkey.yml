@@ -32,10 +32,11 @@ parameters:
       auth_url: http://yourcloud.com:5000/v3/auth/tokens
       username: admin
       password: password
-      ssl_verify: False
       endpoint_type: public
-      source_credentials: /srv/volumes/rundeck/storage/content/cis/openstack
-      service_credentials: /opt/os_creds
+      ssl_verify: False
+      source_credentials_dir: /srv/volumes/rundeck/storage
+      destination_credentials_dir: /opt/os_creds
+      cacert_path: ${_param:janitor_monkey_openstack:destination_credentials_dir}/content/keys/cis/openstack/cert.pem
   docker:
     client:
       stack:
@@ -63,7 +64,7 @@ parameters:
             simianarmy.client.cloudfire.domain: ${_param:janitor_monkey_openstack:project_domain_name}
             simianarmy.client.cloudfire.project: ${_param:janitor_monkey_openstack:project_name}
             simianarmy.client.cloudfire.SSLVerify: ${_param:janitor_monkey_openstack:ssl_verify}
-            simianarmy.client.cloudfire.cafile: ${_param:janitor_monkey_openstack:service_credentials}/cert.pem
+            simianarmy.client.cloudfire.cafile: ${_param:janitor_monkey_openstack:cacert_path}
             simianarmy.janitor.rule.stoppedInstanceRule.instanceAgeThreshold: ${_param:janitor_monkey_instance_age_threshold}
             simianarmy.janitor.notification.oss.url: ${_param:janitor_monkey_notification_oss_url}
             simianarmy.janitor.notification.oss.login_id: ${_param:janitor_monkey_notification_oss_login_id}
@@ -88,7 +89,7 @@ parameters:
               ports:
                 - ${_param:haproxy_janitor_monkey_exposed_port}:${_param:janitor_monkey_bind_port}
               volumes:
-                - ${_param:janitor_monkey_openstack:source_credentials}:${_param:janitor_monkey_openstack:service_credentials}:ro
+                - ${_param:janitor_monkey_openstack:source_credentials_dir}:${_param:janitor_monkey_openstack:destination_credentials_dir}:ro
           network:
             default:
               external:
