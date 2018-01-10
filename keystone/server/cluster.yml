@@ -12,6 +12,9 @@ parameters:
         python-pymysql:
           fromrepo: ${_param:openstack_version}
           version: latest
+        python-cryptography:
+          fromrepo: ${_param:openstack_version}
+          version: latest
   keystone:
     server:
       enabled: true
