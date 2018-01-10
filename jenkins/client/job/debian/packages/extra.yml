@@ -189,6 +189,18 @@ parameters:
               dist: xenial
               build: pipeline
               branch: debian/xenial
+            - package: gerritlib
+              dist: xenial
+              build: pipeline
+              branch: debian/xenial
+            - package: jeepyb
+              dist: xenial
+              build: pipeline
+              branch: debian/xenial
+            - package: salt-pepper
+              dist: xenial
+              build: pipeline
+              branch: debian/xenial
           template:
             type: workflow-scm
             concurrent: false
