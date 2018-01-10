@@ -7,11 +7,8 @@ parameters:
     system:
       repo:
         mcp_ceph:
-          source: "deb [arch=amd64] http://apt.mirantis.com/${_param:linux_system_codename}/ceph/ ${_param:linux_system_repo_mcp_ceph_version} ${_param:linux_system_repo_mcp_ceph_codename}"
+          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_ceph_version}/ceph-${_param:linux_system_repo_mcp_ceph_codename}/ ${_param:linux_system_codename} main"
           architectures: amd64
-          key_url: "http://apt.mirantis.com/public.gpg"
+          key_id: E84AC2C0460F3994
+          key_server: keyserver.ubuntu.com
           clean_file: true
-          pin:
-          - pin: 'release a=${_param:linux_system_repo_mcp_ceph_version}'
-            priority: 1100
-            package: '*'
