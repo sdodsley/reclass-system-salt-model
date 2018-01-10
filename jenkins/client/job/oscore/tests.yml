@@ -548,11 +548,15 @@ parameters:
               APTLY_API_URL:
                 type: string
                 description: URL for the aptly API
-                default: "${_param:jenkins_aptly_url}"
+                default: "${_param:jenkins_aptly_api_url}"
               STACK_DELETE:
                 type: boolean
                 default: "{{stack_delete}}"
                 description: Do not enable it if you need to use the lab after
+              OPENSTACK_COMPONENTS_LIST:
+                type: string
+                description: "OpenStack related components list"
+                default: "{{openstack_components_list}}"
         build-salt-formula-refspec-template:
           name: "{{job_prefix}}-build-salt-formula-refspec"
           template:
