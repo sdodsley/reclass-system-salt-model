@@ -14,19 +14,6 @@ parameters:
           enabled: true
           name: root
           home: /root
-      package:
-        cloud-init:
-          version: purged
-        unattended-upgrades:
-          version: purged
-        mcelog:
-          version: latest
-      apt:
-        config:
-          compression-workaround:
-            "Acquire::CompressionTypes::Order": "gz"
-          aws-s3-mirrors-workaround:
-            "Acquire::http::Pipeline-Depth": "0"
       kernel:
         modules:
           - nf_conntrack
