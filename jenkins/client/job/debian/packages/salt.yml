@@ -266,6 +266,9 @@ parameters:
             - name: rundeck
               upload_source_package: false
               dist: trusty
+            - name: runtest
+              upload_source_package: false
+              dist: trusty
             - name: sahara
               upload_source_package: false
               dist: trusty
@@ -582,6 +585,9 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: rsyslog
+              upload_source_package: true
+              dist: xenial
+            - name: runtest
               upload_source_package: true
               dist: xenial
             - name: sahara

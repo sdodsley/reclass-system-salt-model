@@ -106,6 +106,7 @@ parameters:
             - name: rsync
             - name: rsyslog
             - name: rundeck
+            - name: runtest
             - name: sahara
             - name: salt
             - name: sensu
