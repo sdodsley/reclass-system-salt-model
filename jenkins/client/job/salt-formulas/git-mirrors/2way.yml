@@ -201,6 +201,8 @@ parameters:
               branches: ${_param:salt_formulas_branches}
             - name: rundeck
               branches: ${_param:salt_formulas_branches}
+            - name: runtest
+              branches: ${_param:salt_formulas_branches}
             - name: sahara
               branches: ${_param:salt_formulas_branches}
             - name: salt
