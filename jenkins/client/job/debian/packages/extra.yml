@@ -193,6 +193,10 @@ parameters:
               dist: xenial
               build: pipeline
               branch: debian/xenial
+            - package: python-pygerrit2
+              dist: xenial
+              build: pipeline
+              branch: debian/xenial
             - package: jeepyb
               dist: xenial
               build: pipeline
