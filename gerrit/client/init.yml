@@ -7,8 +7,6 @@ parameters:
     client:
       enabled: True
       try_login: ${_param:gerrit_try_login}
-      source:
-        engine: pip
       dir:
         git: /srv/volumes/gerrit/git
         gerrit_config: /srv/volumes/gerrit/etc/gerrit.config
