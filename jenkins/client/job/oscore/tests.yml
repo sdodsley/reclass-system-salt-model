@@ -657,19 +657,10 @@ parameters:
                   - failed
                   - unstable
                   - not_built
-                message:
-                  build_successful: "Build successful"
-                  build_unstable: "Build unstable"
-                  build_failure: "Build failed"
                 event:
                   comment:
                     - addedContains:
-                        commentAddedCommentContains: 'deploy'
-                  patchset:
-                    - created:
-                        excludeDrafts: true
-                        excludeTrivialRebase: true
-                        excludeNoCodeChange: true
+                        commentAddedCommentContains: '^(?s:Patch Set \d+:.*(test|recheck|reverify)\s*)$'
             param:
               SOURCE_CREDENTIALS:
                 type: string
