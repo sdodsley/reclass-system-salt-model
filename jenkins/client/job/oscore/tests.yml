@@ -12,6 +12,12 @@ parameters:
                 keep_num: 30
             type: workflow-scm
             concurrent: true
+            plugin_properties:
+              throttleconcurrents:
+                enabled: true
+                throttle_option: category
+                categories:
+                  - oscore-ci-builds
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
@@ -638,7 +644,7 @@ parameters:
               artifact:
                 keep_num: 30
             type: workflow-scm
-            concurrent: false
+            concurrent: true
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
