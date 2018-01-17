@@ -62,7 +62,7 @@ parameters:
               SEVERITY:
                 type: string
                 description: Bandit args
-                default: "3"
+                default: "1"
               CONFIDENCE:
                 type: string
                 description: confidence
