@@ -54,6 +54,7 @@ parameters:
         - method java.util.Collection stream
         - method java.util.Date getTime
         - method java.util.LinkedHashMap$LinkedHashIterator hasNext
+        - method java.util.List add int java.lang.Object
         - method java.util.List subList int int
         - method java.util.Map remove java.lang.Object
         - method java.util.Map size
