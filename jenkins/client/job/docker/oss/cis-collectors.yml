@@ -22,11 +22,6 @@ parameters:
                 "oss/cis-collectors":
                   branches:
                     - master
-              skip_vote:
-                - successful
-                - failed
-                - unstable
-                - not_built
               event:
                 patchset:
                   - created:

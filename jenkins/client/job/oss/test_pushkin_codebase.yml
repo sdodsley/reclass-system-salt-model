@@ -23,11 +23,6 @@ parameters:
                   branches:
                     - devel
                     - master
-              skip_vote:
-                - successful
-                - failed
-                - unstable
-                - not_built
               event:
                 patchset:
                   - created:
