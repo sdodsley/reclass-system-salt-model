@@ -1,6 +1,7 @@
 parameters:
   _param:
     cluster_public_protocol: https
+    swift_service_protocol: http
   keystone:
     client:
       server:
@@ -25,6 +26,8 @@ parameters:
                   internal_address: ${_param:swift_service_host}
                   internal_port: 8080
                   internal_path: '/v1/AUTH_%(project_id)s'
+                  internal_protocol: ${_param:swift_service_protocol}
+                  admin_protocol: ${_param:swift_service_protocol}
                   admin_address: ${_param:swift_service_host}
                   admin_port: 8080
                   admin_path: '/'

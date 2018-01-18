@@ -1,6 +1,7 @@
 parameters:
   _param:
     cluster_public_protocol: https
+    barbican_service_protocol: http
   keystone:
     client:
       server:
@@ -31,6 +32,8 @@ parameters:
                 internal_address: ${_param:barbican_service_host}
                 internal_port: 9311
                 internal_path: '/'
+                internal_protocol: ${_param:barbican_service_protocol}
                 admin_address: ${_param:barbican_service_host}
                 admin_port: 9311
                 admin_path: '/'
+                admin_protocol: ${_param:barbican_service_protocol}

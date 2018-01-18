@@ -1,6 +1,7 @@
 parameters:
   _param:
     cluster_public_protocol: https
+    billometer_service_protocol: http
   keystone:
     client:
       server:
@@ -25,6 +26,8 @@ parameters:
                 internal_address: ${_param:billometer_service_host}
                 internal_port: 9753
                 internal_path: '/v1'
+                internal_protocol: ${_param:billometer_service_protocol}
+                admin_protocol: ${_param:billometer_service_protocol}
                 admin_address: ${_param:billometer_service_host}
                 admin_port: 9753
                 admin_path: '/v1'

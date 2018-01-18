@@ -1,6 +1,8 @@
 parameters:
   _param:
     cluster_public_protocol: https
+    keystone_service_protocol: http
+    ironic_service_protocol: http
   keystone:
     client:
       server:
@@ -25,6 +27,8 @@ parameters:
                 internal_address: ${_param:ironic_service_host}
                 internal_port: 6385
                 internal_path: ''
+                internal_protocol: ${_param:ironic_service_protocol}
+                admin_protocol: ${_param:ironic_service_protocol}
                 admin_address: ${_param:ironic_service_host}
                 admin_port: 6385
                 admin_path: ''
@@ -36,3 +40,4 @@ parameters:
             host: ${_param:keystone_service_host}
             port: 5000
             region_name: ${_param:openstack_region}
+            protocol: ${_param:keystone_service_protocol}
