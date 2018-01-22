@@ -4,8 +4,6 @@ parameters:
       listen:
         k8s_secure:
           type: kubernetes
-          options:
-            - ssl-hello-chk
           binds:
           - address: ${_param:cluster_vip_address}
             port: 443
@@ -13,15 +11,15 @@ parameters:
           - name: ${_param:cluster_node01_hostname}
             host: ${_param:cluster_node01_address}
             port: 6443
-            params: check
+            params: check check-ssl verify none
           - name: ${_param:cluster_node02_hostname}
             host: ${_param:cluster_node02_address}
             port: 6443
-            params: check
+            params: check check-ssl verify none
           - name: ${_param:cluster_node03_hostname}
             host: ${_param:cluster_node03_address}
             port: 6443
-            params: check
+            params: check check-ssl verify none
           timeout:
             server: 10m
             client: 10m
