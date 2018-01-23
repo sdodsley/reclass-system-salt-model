@@ -8,7 +8,7 @@ parameters:
           display_name: "Kubernetes tests pipeline"
           discard:
             build:
-              keep_num: 20
+              keep_num: 50
           concurrent: false
           scm:
             type: git
