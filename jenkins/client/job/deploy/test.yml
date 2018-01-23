@@ -7,7 +7,7 @@ parameters:
           type: workflow-scm
           discard:
             build:
-              keep_num: 20
+              keep_num: 50
           concurrent: true
           display_name: "Deploy - Test services in environment"
           scm:

@@ -11,7 +11,7 @@ parameters:
             type: workflow-scm
             discard:
               build:
-                keep_num: 20
+                keep_num: 100
             concurrent: true
             display_name: "Deploy - {{stack_name}} {{stack_type}}"
             scm:
