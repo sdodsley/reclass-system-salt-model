@@ -1,6 +1,10 @@
 classes:
 - system.apache.server.single
 parameters:
+  _param:
+    apache_keystone_ssl:
+      enabled: false
+    apache_keystone_api_host: ${linux:network:fqdn}
   keystone:
     server:
       service_name: apache2
@@ -14,7 +18,8 @@ parameters:
           type: keystone
           name: wsgi
           host:
-            name: ${linux:network:fqdn}
+            name: ${_param:apache_keystone_api_host}
+          ssl: ${_param:apache_keystone_ssl}
           log:
             custom:
               format: >-
