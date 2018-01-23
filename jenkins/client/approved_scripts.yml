@@ -140,3 +140,4 @@ parameters:
         - method hudson.model.Actionable getAction java.lang.Class
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods toSorted java.lang.Iterable
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods intersect java.util.List java.lang.Iterable
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods reverse java.util.List
