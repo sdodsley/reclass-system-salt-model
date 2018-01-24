@@ -4,7 +4,7 @@ classes:
 - system.haproxy.proxy.listen.opencontrail.control
 parameters:
   _param:
-    multi_tenancy: false
+    multi_tenancy: true
     opencontrail_message_queue_node01_address: ${_param:openstack_message_queue_node01_address}
     opencontrail_message_queue_node02_address: ${_param:openstack_message_queue_node02_address}
     opencontrail_message_queue_node03_address: ${_param:openstack_message_queue_node03_address}
