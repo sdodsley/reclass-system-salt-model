@@ -9,7 +9,7 @@ parameters:
         stack_type: heat
         stack_test: ""
         job_timer: ""
-      - stack_name: virtual_mcp11_ovs_dvr
+      - stack_name: virtual_mcp11_dvr
         stack_env: devcloud_virtual_mcp11_dvr
         stack_install: core,openstack,dvr
         stack_type: heat
