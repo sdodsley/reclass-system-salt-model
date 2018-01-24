@@ -7,6 +7,8 @@ classes:
 - system.keystone.client.service.keystone
 - system.keystone.client.service.neutron
 parameters:
+  _param:
+    keystone_service_protocol: http
   linux:
     system:
       job:
@@ -24,6 +26,7 @@ parameters:
             host: ${_param:keystone_service_host}
             port: 35357
             token: ${_param:keystone_service_token}
+            protocol: ${_param:keystone_service_protocol}
           roles:
           - admin
           - Member
@@ -46,3 +49,4 @@ parameters:
             port: 5000
             region_name: ${_param:openstack_region}
             use_keystoneauth: true
+            protocol: ${_param:keystone_service_protocol}

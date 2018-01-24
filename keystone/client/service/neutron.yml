@@ -1,6 +1,7 @@
 parameters:
   _param:
     cluster_public_protocol: https
+    neutron_service_protocol: http
   keystone:
     client:
       server:
@@ -25,6 +26,8 @@ parameters:
                 internal_address: ${_param:neutron_service_host}
                 internal_port: 9696
                 internal_path: '/'
+                internal_protocol: ${_param:neutron_service_protocol}
+                admin_protocol: ${_param:neutron_service_protocol}
                 admin_address: ${_param:neutron_service_host}
                 admin_port: 9696
                 admin_path: '/'

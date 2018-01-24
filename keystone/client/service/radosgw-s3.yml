@@ -2,6 +2,7 @@ parameters:
   _param:
     cluster_public_protocol: https
     radosgw_s3_cluster_port: 8081
+    radosgw_service_protocol: http
   keystone:
     client:
       server:
@@ -26,6 +27,8 @@ parameters:
                   internal_address: ${_param:radosgw_service_host}
                   internal_port: ${_param:radosgw_s3_cluster_port}
                   internal_path: '/'
+                  internal_protocol: ${_param:radosgw_service_protocol}
+                  admin_protocol: ${_param:radosgw_service_protocol}
                   admin_address: ${_param:radosgw_service_host}
                   admin_port: ${_param:radosgw_s3_cluster_port}
                   admin_path: '/'

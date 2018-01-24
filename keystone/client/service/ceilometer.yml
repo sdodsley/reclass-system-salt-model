@@ -1,6 +1,7 @@
 parameters:
   _param:
     cluster_public_protocol: https
+    ceilometer_service_protocol: http
   keystone:
     client:
       server:
@@ -25,6 +26,8 @@ parameters:
                 internal_address: ${_param:ceilometer_service_host}
                 internal_port: 8777
                 internal_path: '/'
+                internal_protocol: ${_param:ceilometer_service_protocol}
+                admin_protocol: ${_param:ceilometer_service_protocol}
                 admin_address: ${_param:ceilometer_service_host}
                 admin_port: 8777
                 admin_path: '/'

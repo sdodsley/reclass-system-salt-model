@@ -1,6 +1,7 @@
 parameters:
   _param:
     cluster_public_protocol: https
+    murano_service_protocol: http
   keystone:
     client:
       server:
@@ -25,6 +26,8 @@ parameters:
                   internal_address: ${_param:murano_service_host}
                   internal_port: 8082
                   internal_path: ''
+                  internal_protocol: ${_param:murano_service_protocol}
+                  admin_protocol: ${_param:murano_service_protocol}
                   admin_address: ${_param:murano_service_host}
                   admin_port: 8082
                   admin_path: ''

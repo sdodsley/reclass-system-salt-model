@@ -1,6 +1,7 @@
 parameters:
   _param:
     cluster_public_protocol: https
+    glare_service_protocol: http
   keystone:
     client:
       server:
@@ -25,6 +26,8 @@ parameters:
                 internal_address: ${_param:glance_service_host}
                 internal_port: 9494
                 internal_path: ''
+                internal_protocol: ${_param:glare_service_protocol}
+                admin_protocol: ${_param:glare_service_protocol}
                 admin_address: ${_param:glance_service_host}
                 admin_port: 9494
                 admin_path: ''

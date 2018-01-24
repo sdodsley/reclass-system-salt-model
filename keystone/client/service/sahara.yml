@@ -1,6 +1,7 @@
 parameters:
   _param:
     cluster_public_protocol: https
+    sahara_internal_protocol: http
   keystone:
     client:
       server:
@@ -25,6 +26,8 @@ parameters:
                   internal_address: ${_param:sahara_service_host}
                   internal_port: 8386
                   internal_path: '/v1.1/%(project_id)s'
+                  internal_protocol: ${_param:sahara_internal_protocol}
+                  admin_protocol: ${_param:sahara_internal_protocol}
                   admin_address: ${_param:sahara_service_host}
                   admin_port: 8386
                   admin_path: '/v1.1/%(project_id)s'
