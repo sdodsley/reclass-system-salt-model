@@ -49,6 +49,8 @@ parameters:
               branches: ${_param:salt_formulas_branches}
             - name: dekapod
               branches: ${_param:salt_formulas_branches}
+            - name: debmirror
+              branches: ${_param:salt_formulas_branches}
             - name: devops-portal
               branches: ${_param:salt_formulas_branches}
             - name: docker
