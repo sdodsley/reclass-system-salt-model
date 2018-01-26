@@ -70,6 +70,7 @@ parameters:
             - name: logrotate
             - name: maas
             - name: magnum
+            - name: manila
             - name: memcached
             - name: midonet
             - name: mirascan

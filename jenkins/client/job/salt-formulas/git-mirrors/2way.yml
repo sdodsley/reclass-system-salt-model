@@ -133,6 +133,8 @@ parameters:
               branches: ${_param:salt_formulas_branches}
             - name: magnum
               branches: ${_param:salt_formulas_branches}
+            - name: manila
+              branches: ${_param:salt_formulas_branches}
             - name: memcached
               branches: ${_param:salt_formulas_branches}
             - name: midonet

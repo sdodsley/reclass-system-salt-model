@@ -170,6 +170,9 @@ parameters:
             - name: magnum
               upload_source_package: false
               dist: trusty
+            - name: manila
+              upload_source_package: false
+              dist: trusty
             - name: memcached
               upload_source_package: false
               dist: trusty
@@ -486,6 +489,9 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: magnum
+              upload_source_package: true
+              dist: xenial
+            - name: manila
               upload_source_package: true
               dist: xenial
             - name: memcached
