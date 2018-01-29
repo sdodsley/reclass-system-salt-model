@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    mysql_aodh_ssl_option: []
   mysql:
     server:
       database:
@@ -9,7 +11,9 @@ parameters:
             password: ${_param:mysql_aodh_password}
             host: '%'
             rights: all
+            ssl_option: ${_param:mysql_aodh_ssl_option}
           - name: aodh
             password: ${_param:mysql_aodh_password}
             host: ${_param:cluster_vip_address}
             rights: all
+            ssl_option: ${_param:mysql_aodh_ssl_option}

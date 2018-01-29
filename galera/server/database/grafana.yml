@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    mysql_grafana_ssl_option: []
   mysql:
     server:
       database:
@@ -9,8 +11,10 @@ parameters:
             password: ${_param:mysql_grafana_password}
             host: '%'
             rights: all
+            ssl_option: ${_param:mysql_grafana_ssl_option}
           - name: grafana
             password: ${_param:mysql_grafana_password}
             host: ${_param:cluster_local_address}
             rights: all
+            ssl_option: ${_param:mysql_grafana_ssl_option}
 
