@@ -14,6 +14,6 @@ parameters:
             storage: hdfs
             hdfs:
               deployChart: false
-              externalAddress: ${_param:analytics_hdfs_address}
               path: /
-              externalPort: 8020
+              addresses:
+                namenode: ${_param:analytics_hdfs_address}

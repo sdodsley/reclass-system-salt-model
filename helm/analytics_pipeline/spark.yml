@@ -17,4 +17,5 @@ parameters:
                 replicas: 3
             zookeeper:
               deployChart: false
-              externalAddress: ${_param:analytics_zookeeper_address}
+              addresses:
+                zookeeper: ${_param:analytics_zookeeper_address}

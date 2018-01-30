@@ -12,16 +12,20 @@ parameters:
             minHashtagCounts: 0
             zookeeper:
               deployChart: false
-              externalAddress: ${_param:analytics_zookeeper_address}
+              addresses:
+                zookeeper: ${_param:analytics_zookeeper_address}
             kafka:
               deployChart: false
-              externalAddress: ${_param:analytics_kafka_address}
               topic: twitter-stream
+              addresses:
+                kafka: ${_param:analytics_kafka_address}
             spark:
               deployChart: false
-              externalAddress: ${_param:analytics_spark_address}
+              addresses:
+                spark: ${_param:analytics_spark_address}
             storage: hdfs
             hdfs:
               deployChart: false
-              externalAddress: ${_param:analytics_hdfs_address}
               path: /twitter
+              addresses:
+                namenode: ${_param:analytics_hdfs_address}
