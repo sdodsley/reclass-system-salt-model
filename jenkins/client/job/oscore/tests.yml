@@ -654,7 +654,7 @@ parameters:
             trigger:
               gerrit:
                 project:
-                  "^salt-formulas/(nova|cinder|glance|keystone|horizon|neutron|designate|heat|ironic|barbican)$":
+                  "^salt-formulas/(nova|cinder|glance|keystone|horizon|neutron|designate|heat|ironic|barbican|salt|linux|reclass|galera)$":
                     compare_type: 'REG_EXP'
                     branches:
                       - master
