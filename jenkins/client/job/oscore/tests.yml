@@ -131,6 +131,14 @@ parameters:
                 type: string
                 default: ""
                 description: "Defines a list of extra repos with parameters, format: repo 1, repo priority 1, repo pin 1; repo 2, repo priority 2, repo pin 2"
+              ARTIFACTORY_CREDENTIALS:
+                type: string
+                default: "artifactory"
+                description: Jenkins credential ID for Artifactory
+              SALT_MASTER_CREDENTIALS:
+                type: string
+                default: "salt-qa-credentials"
+                description: Jenkins credential ID for Salt master
         test-openstack-component-periodic:
           name: "{{job_prefix}}-{{milestone}}-{{model}}-{{openstack_version}}-{{formula_pkg_revision}}"
           template:
