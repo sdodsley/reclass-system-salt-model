@@ -252,7 +252,7 @@ parameters:
               TEST_TEMPEST_PATTERN:
                 type: string
                 description: Run tests matched to pattern only
-                default: "tempest"
+                default: "tempest --concurrency 2"
               TEST_MODEL:
                 type: string
                 description: Environment salt model
