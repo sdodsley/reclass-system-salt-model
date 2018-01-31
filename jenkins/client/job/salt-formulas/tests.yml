@@ -121,6 +121,7 @@ parameters:
             - name: tinyproxy
             - name: tftpd-hpa
             - name: varnish
+            - name: watchdog
             - name: xtrabackup
             - name: zookeeper
           template:

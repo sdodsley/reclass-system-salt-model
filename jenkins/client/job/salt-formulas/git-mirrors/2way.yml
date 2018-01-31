@@ -229,6 +229,8 @@ parameters:
               branches: ${_param:salt_formulas_branches}
             - name: varnish
               branches: ${_param:salt_formulas_branches}
+            - name: watchdog
+              branches: ${_param:salt_formulas_branches}
             - name: xtrabackup
               branches: ${_param:salt_formulas_branches}
             - name: zookeeper

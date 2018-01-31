@@ -629,6 +629,9 @@ parameters:
             - name: varnish
               upload_source_package: true
               dist: xenial
+            - name: watchdog
+              upload_source_package: true
+              dist: xenial
             - name: xtrabackup
               upload_source_package: true
               dist: xenial
