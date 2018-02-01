@@ -57,3 +57,27 @@ parameters:
         stack_type: heat
         stack_test: ""
         job_timer: "H H(0-6) * * *"
+      - stack_name: virtual_mcp_mitaka_ovs
+        stack_env: devcloud
+        stack_install: core,openstack,ovs
+        stack_type: heat
+        stack_test: ""
+        job_timer: ""
+      - stack_name: virtual_mcp_mitaka_dvr
+        stack_env: devcloud
+        stack_install: core,openstack,dvr
+        stack_type: heat
+        stack_test: ""
+        job_timer: ""
+      - stack_name: virtual_mcp_newton_ovs
+        stack_env: devcloud
+        stack_install: core,openstack,ovs
+        stack_type: heat
+        stack_test: ""
+        job_timer: ""
+      - stack_name: virtual_mcp_newton_dvr
+        stack_env: devcloud
+        stack_install: core,openstack,dvr
+        stack_type: heat
+        stack_test: ""
+        job_timer: ""
