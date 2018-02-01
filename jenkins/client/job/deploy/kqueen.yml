@@ -123,3 +123,5 @@ parameters:
             OPENSTACK_API_PROJECT:
               type: string
               default: "mcp-mk"
+            KQUEEN_BUILD_ID:
+              type: string
