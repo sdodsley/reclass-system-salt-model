@@ -83,7 +83,7 @@ parameters:
 
             STACK_TEMPLATE:
               type: string
-              default: "k8s_ha_calico_sm"
+              default: "k8s_ha_calico"
             STACK_TEMPLATE_URL:
               type: string
               default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
