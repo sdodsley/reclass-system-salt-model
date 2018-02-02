@@ -10,6 +10,7 @@ parameters:
             - name: aptcacher
             - name: aptly
             - name: artifactory
+            - name: auditd
             - name: avinetworks
             - name: backupninja
             - name: barbican

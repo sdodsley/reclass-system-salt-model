@@ -20,6 +20,9 @@ parameters:
             - name: artifactory
               upload_source_package: false
               dist: trusty
+            - name: auditd
+              upload_source_package: false
+              dist: trusty
             - name: avinetworks
               upload_source_package: false
               dist: trusty
@@ -330,6 +333,9 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: artifactory
+              upload_source_package: true
+              dist: xenial
+            - name: auditd
               upload_source_package: true
               dist: xenial
             - name: avinetworks
