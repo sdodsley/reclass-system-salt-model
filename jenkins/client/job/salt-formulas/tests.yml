@@ -182,6 +182,12 @@ parameters:
               keep_num: 10
           type: workflow-scm
           concurrent: true
+          plugin_properties:
+            throttleconcurrents:
+              enabled: true
+              throttle_option: category
+              categories:
+                - test-formula
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
