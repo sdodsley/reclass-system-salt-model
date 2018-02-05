@@ -5,6 +5,9 @@ parameters:
         build-debian-salt-formula:
           name: build-debian-salt-formula-{{name}}-ubuntu-{{dist}}
           jobs:
+            - name: aide
+              upload_source_package: false
+              dist: trusty
             - name: aodh
               upload_source_package: false
               dist: trusty
@@ -320,6 +323,9 @@ parameters:
             - name: zookeeper
               upload_source_package: false
               dist: trusty
+            - name: aide
+              upload_source_package: true
+              dist: xenial
             - name: aodh
               upload_source_package: true
               dist: xenial
