@@ -142,3 +142,6 @@ parameters:
               UPLOAD_APTLY:
                 type: boolean
                 default: '{{upload_source_package}}'
+              DEBUG:
+                type: boolean
+                default: 'false'
