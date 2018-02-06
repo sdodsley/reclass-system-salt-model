@@ -533,6 +533,9 @@ parameters:
               credentials: "gerrit"
               branch: 'master'
               script: oscc-ci-pipeline.groovy
+            trigger:
+              timer:
+               spec: "0 1 * * *"
             param:
               # general
               DEPLOY_JOB_NAME:
@@ -574,6 +577,10 @@ parameters:
                 type: string
                 description: "OpenStack related components list"
                 default: "{{openstack_components_list}}"
+              AUTO_PROMOTE:
+                type: boolean
+                default: "{{auto_promote}}"
+                description: Enable to autopromote repo
         build-salt-formula-refspec-template:
           name: "{{job_prefix}}-build-salt-formula-refspec"
           template:
