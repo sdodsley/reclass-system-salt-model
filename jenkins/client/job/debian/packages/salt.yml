@@ -723,3 +723,6 @@ parameters:
               UPLOAD_APTLY:
                 type: boolean
                 default: 'true'
+              DEBUG:
+                type: boolean
+                default: 'false'
