@@ -5,6 +5,7 @@ parameters:
         test-salt-formula:
           name: test-salt-formula-{{name}}-latest
           jobs:
+            - name: aide
             - name: aodh
             - name: apache
             - name: aptcacher

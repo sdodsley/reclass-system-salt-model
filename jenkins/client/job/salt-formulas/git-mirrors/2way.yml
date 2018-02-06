@@ -7,6 +7,8 @@ parameters:
         git-mirror-2way-salt-formula:
           name: git-mirror-2way-salt-formula-{{name}}
           jobs:
+            - name: aide
+              branches: ${_param:salt_formulas_branches}
             - name: aodh
               branches: ${_param:salt_formulas_branches}
             - name: apache
