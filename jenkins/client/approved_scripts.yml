@@ -58,6 +58,7 @@ parameters:
         - method java.util.List subList int int
         - method java.util.Map remove java.lang.Object
         - method java.util.Map size
+        - method java.util.Map isEmpty
         - method java.util.regex.MatchResult group int
         - method java.util.regex.MatchResult groupCount
         - method java.util.regex.Matcher find
