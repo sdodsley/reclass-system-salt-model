@@ -154,7 +154,8 @@ parameters:
             param:
               SALT_VERSION:
                 type: string
-                default: "latest"
+                default: ""
+                description: "Version of salt for use in test, empty string means latest (default)"
               SALT_OPTS:
                 type: string
                 default: "--force-color"
