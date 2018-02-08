@@ -290,6 +290,9 @@ parameters:
             - name: sentry
               upload_source_package: false
               dist: trusty
+            - name: shibboleth
+              upload_source_package: false
+              dist: trusty
             - name: sphinx
               upload_source_package: false
               dist: trusty
@@ -618,6 +621,9 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: sentry
+              upload_source_package: true
+              dist: xenial
+            - name: shibboleth
               upload_source_package: true
               dist: xenial
             - name: sphinx
