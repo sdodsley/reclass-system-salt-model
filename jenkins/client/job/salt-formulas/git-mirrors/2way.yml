@@ -461,10 +461,10 @@ parameters:
           param:
             SOURCE_URL:
               type: string
-              default: "${_param:jenkins_gerrit_url}/salt-formulas/salt-formulas-cookiecutter.git"
+              default: "${_param:jenkins_gerrit_url}/salt-formulas/cookiecutter-salt-formula"
             TARGET_URL:
               type: string
-              default: "git@github.com:salt-formulas/salt-formulas-cookiecutter.git"
+              default: "git@github.com:salt-formulas/cookiecutter-salt-formula"
             CREDENTIALS_ID:
               type: string
               default: "gerrit"
