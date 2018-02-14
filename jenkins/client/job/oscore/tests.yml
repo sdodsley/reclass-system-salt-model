@@ -157,7 +157,7 @@ parameters:
               script: test-openstack-component-pipeline.groovy
             trigger:
               timer:
-               spec: "0 21 * * *"
+               spec: "H 03 * * *"
             param:
               # general
               HEAT_STACK_ZONE:
@@ -535,7 +535,7 @@ parameters:
               script: oscc-ci-pipeline.groovy
             trigger:
               timer:
-               spec: "0 1 * * *"
+               spec: "H 01 * * *"
             param:
               # general
               DEPLOY_JOB_NAME:
