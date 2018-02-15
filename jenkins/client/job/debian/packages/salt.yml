@@ -131,6 +131,9 @@ parameters:
             - name: heka
               upload_source_package: false
               dist: trusty
+            - name: heketi
+              upload_source_package: true
+              dist: xenial
             - name: influxdb
               upload_source_package: false
               dist: trusty
@@ -183,6 +186,9 @@ parameters:
               upload_source_package: false
               dist: trusty
             - name: memcached
+              upload_source_package: false
+              dist: trusty
+            - name: mirascan
               upload_source_package: false
               dist: trusty
             - name: midonet
@@ -461,6 +467,9 @@ parameters:
             - name: heka
               upload_source_package: true
               dist: xenial
+            - name: heketi
+              upload_source_package: true
+              dist: xenial
             - name: helm
               upload_source_package: true
               dist: xenial
@@ -516,6 +525,9 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: memcached
+              upload_source_package: true
+              dist: xenial
+            - name: mirascan
               upload_source_package: true
               dist: xenial
             - name: midonet

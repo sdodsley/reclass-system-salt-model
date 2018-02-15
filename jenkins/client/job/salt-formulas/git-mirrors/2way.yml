@@ -141,6 +141,9 @@ parameters:
             - name: heka
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
+            - name: heketi
+              branches: ${_param:salt_formulas_branches}
+              notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: helm
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
@@ -205,6 +208,9 @@ parameters:
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: memcached
+              branches: ${_param:salt_formulas_branches}
+              notification_recipients: ${_param:salt_formulas_notification_recipients}
+            - name: mirascan
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: midonet
