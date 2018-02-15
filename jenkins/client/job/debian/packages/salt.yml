@@ -65,6 +65,9 @@ parameters:
             - name: collectd
               upload_source_package: false
               dist: trusty
+            - name: debmirror
+              upload_source_package: true
+              dist: trusty
             - name: dekapod
               upload_source_package: false
               dist: trusty
@@ -387,6 +390,9 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: collectd
+              upload_source_package: true
+              dist: xenial
+            - name: debmirror
               upload_source_package: true
               dist: xenial
             - name: dekapod

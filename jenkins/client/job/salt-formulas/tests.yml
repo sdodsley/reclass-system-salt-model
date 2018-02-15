@@ -29,6 +29,7 @@ parameters:
             - name: cinder
             - name: collectd
             - name: designate
+            - name: debmirror
             - name: dekapod
             - name: devops-portal
             - name: docker
