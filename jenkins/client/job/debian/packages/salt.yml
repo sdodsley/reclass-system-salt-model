@@ -133,7 +133,7 @@ parameters:
               dist: trusty
             - name: heketi
               upload_source_package: true
-              dist: xenial
+              dist: trusty
             - name: influxdb
               upload_source_package: false
               dist: trusty
