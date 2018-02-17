@@ -364,3 +364,43 @@ parameters:
             PROXY:
               type: string
               default: ""
+        cvp-stacklight:
+          type: workflow-scm
+          name: cvp-stacklight
+          display_name: "CVP - Stacklight tests"
+          discard:
+            build:
+              keep_num: 20
+            artifact:
+              keep_num: 20
+          concurrent: false
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: cvp-runner.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+              description: Full Salt API address [e.g. https://10.10.10.2:6969]
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            TESTS_REPO:
+              type: string
+              default: "https://github.com/legan4ik/stacklight-pytest"
+              description: Url for cvp-stacklight-tests
+            TESTS_SETTINGS:
+              type: string
+              default: "SL_AUTOCONF=True"
+              description: "Additional environment variables to export"
+            TESTS_SET:
+              type: string
+              default: "stacklight-pytest/stacklight_tests/tests/prometheus/"
+              description: "Leave empty for full run or choose a file, e.g. test_dashboards.py"
+            PROXY:
+              type: string
+              default: ""
+              description: Proxy address to clone repo and install python requirements
