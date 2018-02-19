@@ -110,6 +110,10 @@ parameters:
                     - addedContains:
                         commentAddedCommentContains: '^(?s:Patch Set \d+:.*(test|recheck|reverify)\s*)$'
             param:
+              TEST_CLUSTER_NAMES:
+                type: string
+                description: "Comma separated list of cluster names, empty string means all valid clusters"
+                default: "{{test_cluster_names}}"
               SALT_OPTS:
                 type: string
                 default: "--force-color"
