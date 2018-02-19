@@ -242,6 +242,9 @@ parameters:
             - name: openvstorage
               upload_source_package: false
               dist: trusty
+            - name: oslo-templates
+              upload_source_package: false
+              dist: trusty
             - name: owncloud
               upload_source_package: false
               dist: trusty
@@ -579,6 +582,9 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: openvstorage
+              upload_source_package: true
+              dist: xenial
+            - name: oslo-templates
               upload_source_package: true
               dist: xenial
             - name: owncloud

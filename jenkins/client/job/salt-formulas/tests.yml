@@ -96,6 +96,7 @@ parameters:
             - name: openssh
             - name: openvpn
             - name: openvstorage
+            - name: oslo-templates
             - name: owncloud
             - name: panko
             - name: postfix
