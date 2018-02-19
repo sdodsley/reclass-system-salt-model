@@ -81,3 +81,9 @@ parameters:
         stack_type: heat
         stack_test: ""
         job_timer: ""
+      - stack_name: virtual_mcp_pike_dvr
+        stack_env: devcloud
+        stack_install: core,openstack,dvr
+        stack_type: heat
+        stack_test: ""
+        job_timer: ""
