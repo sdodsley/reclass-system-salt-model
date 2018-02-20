@@ -50,6 +50,14 @@ parameters:
               branch: "master"
               tags: "latest"
               dockerfile: "Dockerfile"
+            - name: docker-ci-rally
+              branch: "master"
+              tags: "latest"
+              dockerfile: "Dockerfile"
+            - name: docker-ci-tempest
+              branch: "master"
+              tags: "latest"
+              dockerfile: "Dockerfile"
           template:
             discard:
               build:
