@@ -53,6 +53,7 @@ parameters:
             - name: haproxy
             - name: heat
             - name: heka
+            - name: heketi
             - name: helm
             - name: horizon
             - name: influxdb
@@ -102,6 +103,7 @@ parameters:
             - name: powerdns
             - name: pritunl
             - name: prometheus
+            - name: pv
             - name: python
             - name: rabbitmq
             - name: reclass

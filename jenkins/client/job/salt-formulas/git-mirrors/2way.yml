@@ -36,6 +36,9 @@ parameters:
             - name: barbican
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
+            - name: baremetal-simulator
+              branches: ${_param:salt_formulas_branches}
+              notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: billometer
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
@@ -82,6 +85,9 @@ parameters:
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: docker
+              branches: ${_param:salt_formulas_branches}
+              notification_recipients: ${_param:salt_formulas_notification_recipients}
+            - name: dogtag
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: dovecot
@@ -289,6 +295,9 @@ parameters:
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: prometheus
+              branches: ${_param:salt_formulas_branches}
+              notification_recipients: ${_param:salt_formulas_notification_recipients}
+            - name: pv
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: python
