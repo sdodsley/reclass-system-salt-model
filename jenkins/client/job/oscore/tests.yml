@@ -734,3 +734,11 @@ parameters:
                 type: string
                 default: "{{systestJobPrefix}}"
                 description: "Systest job prefix. I.e. oscore-formula-systest-virtual_mcp11_aio-"
+              OPENSTACK_COMPONENTS_LIST:
+                type: string
+                description: "OpenStack related components list"
+                default: "{{openstack_components_list}}"
+              SOURCE_REPO_NAME:
+                type: string
+                description: "Name of the repo where packages are stored"
+                default: "{{source_repo_name}}"
