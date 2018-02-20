@@ -3,17 +3,11 @@ parameters:
     proxy:
       listen:
         nova_placement_api:
-          mode: http
+          type: openstack-service
+          service_name: nova_placement
           binds:
           - address: ${_param:cluster_vip_address}
             port: 8778
-          options:
-          - httpclose
-          - httplog
-          health-check:
-            http:
-              options:
-              - expect status 401
           servers:
           - name: ${_param:cluster_node01_hostname}
             host: ${_param:cluster_node01_address}
