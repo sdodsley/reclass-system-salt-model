@@ -1,0 +1,32 @@
+parameters:
+  _param:
+    apt_mk_version: 'stable'
+    mirror_mirantis_com_ubuntu_xenial_force: False
+  debmirror:
+    client:
+      enabled: true
+      mirrors:
+        mirror_mirantis_com_ubuntu_xenial:
+          force: ${_param:mirror_mirantis_com_ubuntu_xenial_force}
+          lock_target: True
+          extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none' ]
+          method: "rsync"
+          arch: [ 'amd64' ]
+          mirror_host: "mirror.mirantis.com"
+          mirror_root: ":mirror/${_param:apt_mk_version}/ubuntu/"
+          target_dir: "/srv/aptly/public/ubuntu/"
+          log_file: "/var/log/debmirror/mirror_mirantis_com_ubuntu_xenial.log"
+          dist: [ xenial , xenial-security, xenial-updates ]
+          section: [ main , multiverse, restricted, universe ]
+          exclude_deb_section: [ games, gnome, Xfce, sound, electronics, graphics, hamradio , doc, localization, kde, video ]
+          filter:
+            01: "--exclude='/android*'"
+            02: "--exclude='/firefox*'"
+            03: "--exclude='/chromium-browser*'"
+            04: "--exclude='/ceph*'"
+            05: "--exclude='/*-wallpapers*'"
+            06: "--exclude='/language-pack-(?!en)'"
+            07: "--include='/main(.*)manpages'"
+            08: "--include='/main(.*)python-(.*)doc'"
+            09: "--include='/main(.*)python-(.*)network'"
+
