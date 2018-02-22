@@ -260,9 +260,6 @@ parameters:
             - name: prometheus
               upload_source_package: false
               dist: trusty
-            - name: pv
-              upload_source_package: false
-              dist: trusty
             - name: python
               upload_source_package: false
               dist: trusty
@@ -603,9 +600,6 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: powerdns
-              upload_source_package: true
-              dist: xenial
-            - name: pv
               upload_source_package: true
               dist: xenial
             - name: python

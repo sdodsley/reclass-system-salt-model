@@ -9,6 +9,7 @@ parameters:
           jobs:
             - name: aide
               branches: ${_param:salt_formulas_branches}
+              notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: aodh
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
@@ -295,9 +296,6 @@ parameters:
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: prometheus
-              branches: ${_param:salt_formulas_branches}
-              notification_recipients: ${_param:salt_formulas_notification_recipients}
-            - name: pv
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: python
