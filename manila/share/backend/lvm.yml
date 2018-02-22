@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    storage:
+      lvm:
+        manila-vg:
+          enabled: true
+          name: manila-volume
+          devices: ${_param:manila_lvm_devices}
+  manila:
+    share:
+      enabled_share_backends:
+        lvm:
+          name: lvm
+          type: lvm
+          enabled: true
+          lvm_share_export_ips:
+            - "${_param:single_address}"
+          dhss: false
+          share_driver: manila.share.drivers.lvm.LVMShareDriver
+          lvm_share_volume_group: manila-volume

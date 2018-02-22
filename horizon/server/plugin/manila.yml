@@ -1,0 +1,8 @@
+parameters:
+  horizon:
+    server:
+      plugin:
+        manila:
+          source:
+            engine: pkg
+            name: python-manila-ui
