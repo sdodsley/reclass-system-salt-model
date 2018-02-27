@@ -14,6 +14,7 @@ parameters:
           available: true
           type: wsgi
           name: gnocchi
+          ssl: ${_param:apache_gnocchi_ssl}
           host:
             name: ${_param:apache_gnocchi_api_host}
             address: ${_param:apache_gnocchi_api_address}
