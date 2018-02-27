@@ -17,6 +17,7 @@ parameters:
           available: true
           type: wsgi
           name: manila
+          ssl: ${_param:apache_manila_ssl}
           wsgi:
             daemon_process: manila-api
             threads: 2
