@@ -103,11 +103,23 @@ parameters:
                 type: string
                 description: Tempest configuration file path inside container
                 default: "{{tempest_conf}}"
+              TEST_CONF:
+                type: string
+                description: Tempest configuration file path inside container
+                default: "{{test_conf}}"
               TEST_TEMPEST_TARGET:
                 type: string
                 description: Node to run tests
                 default: "{{tempest_target}}"
+              TEST_TARGET:
+                type: string
+                description: Node to run tests
+                default: "{{test_target}}"
               TEST_TEMPEST_PATTERN:
+                type: string
+                description: Run tests matched to pattern only
+                default: "tempest"
+              TEST_PATTERN:
                 type: string
                 description: Run tests matched to pattern only
                 default: "tempest"
@@ -253,11 +265,23 @@ parameters:
                 type: string
                 description: Tempest configuration file path inside container
                 default: "{{tempest_conf}}"
+              TEST_CONF:
+                type: string
+                description: Tempest configuration file path inside container
+                default: "{{test_conf}}"
               TEST_TEMPEST_TARGET:
                 type: string
                 description: Node to run tests
                 default: "{{tempest_target}}"
+              TEST_TARGET:
+                type: string
+                description: Node to run tests
+                default: "{{test_target}}"
               TEST_TEMPEST_PATTERN:
+                type: string
+                description: Run tests matched to pattern only
+                default: "tempest --concurrency 2"
+              TEST_PATTERN:
                 type: string
                 description: Run tests matched to pattern only
                 default: "tempest --concurrency 2"
@@ -326,7 +350,14 @@ parameters:
               TEST_TEMPEST_TARGET:
                 type: string
                 description: Salt target to run tests
+              TEST_TARGET:
+                type: string
+                description: Salt target to run tests
               TEST_TEMPEST_IMAGE:
+                type: string
+                description: Url to tempest docker image
+                default: 'docker-prod-local.artifactory.mirantis.com/mirantis/oscore/rally-tempest'
+              TEST_IMAGE:
                 type: string
                 description: Url to tempest docker image
                 default: 'docker-prod-local.artifactory.mirantis.com/mirantis/oscore/rally-tempest'
@@ -337,14 +368,28 @@ parameters:
               TEST_TEMPEST_PATTERN:
                 type: string
                 description: Run tests matched to pattern only
+              TEST_PATTERN:
+                type: string
+                description: Run tests matched to pattern only
               TEST_TEMPEST_SET:
+                type: string
+                description: Run tests matched by tempest set only
+              TEST_SET:
                 type: string
                 description: Run tests matched by tempest set only
               TEST_TEMPEST_CONCURRENCY:
                 type: string
                 description: How much test threads to run
                 default: "2"
+              TEST_CONCURRENCY:
+                type: string
+                description: How much test threads to run
+                default: "2"
               TEST_TEMPEST_CONF:
+                type: string
+                description: Tempest configuration file path inside container
+                default: "mcp.conf"
+              TEST_CONF:
                 type: string
                 description: Tempest configuration file path inside container
                 default: "mcp.conf"
@@ -404,6 +449,9 @@ parameters:
                 default: "{{testrail_credentials}}"
                 description: Credentials for results upload to testrail
               TEST_TEMPEST_TARGET:
+                type: string
+                description: Node to run tests
+              TEST_TARGET:
                 type: string
                 description: Node to run tests
               TEST_MILESTONE:
