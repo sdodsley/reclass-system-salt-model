@@ -1,0 +1,2 @@
+classes:
+  - system.jenkins.client.job.saas.test_saas_ui
