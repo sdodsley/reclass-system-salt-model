@@ -1,59 +1,27 @@
 parameters:
   jenkins:
     client:
-      job_template:
-        deploy_heat_test_cicd:
-          name: deploy-heat-{{name}}
-          jobs:
-            - name: test-cicd-lab-dev
-              lab: cicd_lab_dev
+      job:
+        test-oss-devops-portal-backend:
+          name: test-oss-devops-portal-backend
+          discard:
+            build:
+              keep_num: 15
+            artifact:
+              keep_num: 15
           template:
             type: workflow-scm
             concurrent: true
-            display_name: "Deploy {{name}} heat stack"
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/oss/jenkins/pipelines"
               credentials: "gerrit"
-              script: test-func-devops-portal-pipeline.groovy
+              script: test-devops-portal-backend-pipeline.groovy
             param:
               # heat
-              HEAT_STACK_DELETE:
-                type: boolean
-                default: 'true'
-                description: "Delete heat stack at the end of job"
-              HEAT_STACK_REUSE:
-                type: boolean
-                default: 'false'
-                description: "Reuse existing stack and only orchestrate deployment"
-              HEAT_STACK_KEEP_INTACT:
-                type: boolean
-                default: 'false'
-                description: "Save current deployment status without re-orchestrating"
-              HEAT_TEMPLATE_URL:
-                type: string
-                default: "${_param:jenkins_gerrit_url}/mk/heat-templates"
-              HEAT_TEMPLATE_CREDENTIALS:
-                type: string
-                default: "gerrit"
-              HEAT_TEMPLATE_BRANCH:
-                type: string
-                default: "master"
               HEAT_STACK_NAME:
                 type: string
                 description: Heat stack name. Will be generated if missing.
-              HEAT_STACK_TEMPLATE:
-                type: string
-                default: "{{lab}}"
-              HEAT_STACK_ENVIRONMENT:
-                type: string
-                default: "devcloud"
-              HEAT_STACK_ZONE:
-                type: string
-                default: "mcp-oss"
-              HEAT_STACK_PUBLIC_NET:
-                type: string
-                default: "public"
 
               # salt master
               SALT_MASTER_CREDENTIALS:
@@ -102,14 +70,9 @@ parameters:
               DEVOPS_PORTAL_TESTS_BRANCH:
                 type: string
                 default: "master"
-              DEVOPS_PORTAL_TESTS_RUN_LOCAL:
-                type: boolean
-                default: 'true'
-                description: "Run on swarm master node"
-              DEVOPS_PORTAL_TESTS_CONFIG:
+              DEVOPS_PORTAL_BIND_IP:
                 type: string
-                description: "Path to the service-configuration file in json-format"
-              DEVOPS_PORTAL_TESTS_MARK:
+                default: "0.0.0.0"
+              DEVOPS_PORTAL_BIND_PORT:
                 type: string
-                default: "ALL"
-                description: "Mark specific tests to run: healthcheck, functional (default = all)"
+                default: "8012"
