@@ -2,22 +2,22 @@ parameters:
   _param:
     nginx_proxy_openstack_api_host: ${_param:cluster_public_host}
     nginx_proxy_openstack_api_address: 0.0.0.0
-    nginx_proxy_openstack_ceilometer_host: ${_param:ceilometer_service_host}
+    nginx_proxy_openstack_panko_host: ${_param:panko_service_host}
   nginx:
     server:
       enabled: true
       site:
-        nginx_proxy_openstack_api_ceilometer:
+        nginx_proxy_openstack_api_panko:
           enabled: true
           type: nginx_proxy
-          name: openstack_api_ceilometer
+          name: openstack_api_panko
           check: false
           proxy:
-            host: ${_param:nginx_proxy_openstack_ceilometer_host}
-            port: 8777
+            host: ${_param:nginx_proxy_openstack_panko_host}
+            port: 8977
             protocol: http
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
-            port: 8777
+            port: 8977
             address: ${_param:nginx_proxy_openstack_api_address}
           ssl: ${_param:nginx_proxy_ssl}
