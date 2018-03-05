@@ -280,11 +280,11 @@ parameters:
               TEST_TEMPEST_PATTERN:
                 type: string
                 description: Run tests matched to pattern only
-                default: "tempest --concurrency 2"
+                default: "{{test_pattern}}"
               TEST_PATTERN:
                 type: string
                 description: Run tests matched to pattern only
-                default: "tempest --concurrency 2"
+                default: "{{test_pattern}}"
               TEST_MODEL:
                 type: string
                 description: Environment salt model
@@ -297,6 +297,10 @@ parameters:
                 type: boolean
                 default: 'true'
                 description: Whether to fail build on test results
+              RUN_SMOKE:
+                type: boolean
+                default: "{{run_smoke}}"
+                description: Enabling of running smoke tests
         test-runner-template:
           name: "{{job_prefix}}-{{test_type}}-runner"
           template:
@@ -332,6 +336,10 @@ parameters:
                 type: string
                 description: Job for results processing
                 default: "{{proc_results_job}}"
+              TEST_TYPE:
+                type: string
+                description: Name of test type
+                default: "{{test_type}}"
               SLAVE_NODE:
                 type: string
                 default: 'python'
