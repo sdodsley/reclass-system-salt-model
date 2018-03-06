@@ -7,7 +7,7 @@ parameters:
     system:
       repo:
         mcp_glusterfs:
-          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_glusterfs_version}/glusterfs-${_param:linux_system_repo_mcp_glusterfs_version_number}/ ${_param:linux_system_codename} main"
+          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_glusterfs_version}/glusterfs-${_param:linux_system_repo_mcp_glusterfs_version_number}/${_param:linux_system_codename}/ ${_param:linux_system_codename} main"
           architectures: amd64
           key_id: 3FE869A9
           key_server: keyserver.ubuntu.com

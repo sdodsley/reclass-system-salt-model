@@ -6,7 +6,7 @@ parameters:
     system:
       repo:
         mcp_sensu:
-          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_sensu_version}/sensu/ sensu main"
+          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_sensu_version}/sensu/${_param:linux_system_codename}/ sensu main"
           architectures: amd64
           key_id: A20F259AEB9C94BB
           key_server: keyserver.ubuntu.com

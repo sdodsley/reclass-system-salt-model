@@ -6,7 +6,7 @@ parameters:
     system:
       repo:
         mcp_maas:
-          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_maas_version}/maas/ ${_param:linux_system_codename} main"
+          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_maas_version}/maas/${_param:linux_system_codename}/ ${_param:linux_system_codename} main"
           architectures: amd64
           key_id: 684D4A1C
           key_server: keyserver.ubuntu.com

@@ -7,7 +7,7 @@ parameters:
     system:
       repo:
         mcp_cassandra:
-          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_cassandra_version}/cassandra/ ${_param:linux_system_repo_mcp_cassandra_version_number} main"
+          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_cassandra_version}/cassandra/${_param:linux_system_codename}/ ${_param:linux_system_repo_mcp_cassandra_version_number} main"
           architectures: amd64
           key_id: F8358FA2F2833C93
           key_server: keyserver.ubuntu.com

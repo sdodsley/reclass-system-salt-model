@@ -6,7 +6,7 @@ parameters:
     system:
       repo:
         mcp_aptly:
-          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_aptly_version}/aptly/ squeeze main"
+          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_aptly_version}/aptly/${_param:linux_system_codename}/ squeeze main"
           architectures: amd64
           key_id: 9E3E53F19C7DE460
           key_server: keys.gnupg.net
