@@ -55,6 +55,10 @@ parameters:
               STACK_COMPUTE_COUNT:
                 type: string
                 default: '2'
+              STACK_CLUSTER_NAME:
+                type: string
+                default: ""
+                description: "Cluster name to use from reclass"
 
               STACK_TEMPLATE:
                 type: string
