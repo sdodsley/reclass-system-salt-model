@@ -731,10 +731,10 @@ parameters:
                 default: '~{{dist}}1'
               EXTRA_REPO_URL:
                 type: string
-                default: "deb ${_param:jenkins_aptly_url}/{{dist}}/ testing salt salt-latest"
+                default: "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/2016.3 xenial main; deb ${_param:jenkins_aptly_url}/{{dist}}/ testing salt"
               EXTRA_REPO_KEY_URL:
                 type: string
-                default: "${_param:jenkins_aptly_url}/public.gpg"
+                default: "https://repo.saltstack.com/apt/ubuntu/16.04/amd64/2016.3/SALTSTACK-GPG-KEY.pub; ${_param:jenkins_aptly_url}/public.gpg"
               APTLY_URL:
                 type: string
                 default: "${_param:jenkins_aptly_api_url}"
