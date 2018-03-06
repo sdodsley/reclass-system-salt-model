@@ -14,8 +14,6 @@ parameters:
   kubernetes:
     pool:
       container: false
-      network:
-        engine: calico
   docker:
     host:
       options:

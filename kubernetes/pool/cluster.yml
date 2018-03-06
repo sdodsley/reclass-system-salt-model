@@ -15,7 +15,6 @@ parameters:
     pool:
       container: false
       network:
-        engine: calico
         calico:
           prometheus:
             enabled: true
