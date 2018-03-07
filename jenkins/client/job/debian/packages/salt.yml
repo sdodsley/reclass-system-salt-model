@@ -62,9 +62,6 @@ parameters:
             - name: chrony
               upload_source_package: false
               dist: trusty
-            - name: cinder
-              upload_source_package: false
-              dist: trusty
             - name: collectd
               upload_source_package: false
               dist: trusty
@@ -399,9 +396,6 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: chrony
-              upload_source_package: true
-              dist: xenial
-            - name: cinder
               upload_source_package: true
               dist: xenial
             - name: collectd
