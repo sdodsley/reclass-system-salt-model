@@ -64,6 +64,10 @@ parameters:
                 type: string
                 default: '{{stack_reclass_branch}}'
                 description: 'Branch of repository with stack salt models'
+              STACK_CLUSTER_NAME:
+                type: string
+                default: ""
+                description: "Cluster name to use from reclass"
               # salt
               SALT_OVERRIDES:
                 type: text
