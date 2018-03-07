@@ -798,3 +798,52 @@ parameters:
                 type: string
                 description: "Name of the repo where packages are stored"
                 default: "{{source_repo_name}}"
+        test-deploy-virtual-model-change-template:
+          name: "{{job_prefix}}-deploy-virtual-model-change-{{job_suffix}}"
+          template:
+            discard:
+              build:
+                keep_num: 30
+              artifact:
+                keep_num: 30
+            type: workflow-scm
+            concurrent: true
+            scm:
+              type: git
+              url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines.git"
+              credentials: "gerrit"
+              branch: 'master'
+              script: deploy-virtual-model-change-pipeline.groovy
+            trigger:
+              gerrit:
+                project:
+                  "^salt-models/mcp-virtual-aio$":
+                    compare_type: 'REG_EXP'
+                    branches:
+                      - master
+                      - stable/pike
+                      - stable/ocata
+                      - stable/newton
+                      - stable/mitaka
+                skip_vote:
+                  - successful
+                  - failed
+                  - unstable
+                  - not_built
+                event:
+                  comment:
+                    - addedContains:
+                        commentAddedCommentContains: '^(?s:Patch Set \d+:.*(test|recheck|reverify)\s*)$'
+            param:
+              CREDENTIALS_ID:
+                type: string
+                default: "{{credentials_id}}"
+              STACK_RECLASS_ADDRESS:
+                type: string
+                default: "{{stack_reclass_address}}"
+              STACK_RECLASS_BRANCH:
+                type: string
+                default: "{{stack_reclass_branch}}"
+              TEST_CLUSTER_NAMES:
+                type: string
+                default: "{{test_cluster_names}}"
