@@ -5,13 +5,11 @@ parameters:
         test-salt-formula:
           name: test-salt-formula-{{name}}-latest
           jobs:
-            - name: aide
             - name: aodh
             - name: apache
             - name: aptcacher
             - name: aptly
             - name: artifactory
-            - name: auditd
             - name: avinetworks
             - name: backupninja
             - name: barbican
