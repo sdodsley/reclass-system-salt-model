@@ -368,11 +368,11 @@ parameters:
               TEST_TEMPEST_IMAGE:
                 type: string
                 description: Url to tempest docker image
-                default: 'docker-prod-local.artifactory.mirantis.com/mirantis/oscore/rally-tempest'
+                default: "{{test_image}}"
               TEST_IMAGE:
                 type: string
                 description: Url to tempest docker image
-                default: 'docker-prod-local.artifactory.mirantis.com/mirantis/oscore/rally-tempest'
+                default: "{{test_image}}"
               LOCAL_TEMPEST_IMAGE:
                 type: string
                 description: Path to local docker image
@@ -472,8 +472,7 @@ parameters:
               TEST_SUITE:
                 type: string
                 description: Testrail test suite
-                default: >-
-                  'Tempest 16.0.0 with designate tests'
+                default: "{{test_suite}}"
               TEST_PLAN:
                 type: string
                 description: Testrail test plan
