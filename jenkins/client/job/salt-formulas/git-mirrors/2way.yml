@@ -7,9 +7,6 @@ parameters:
         git-mirror-2way-salt-formula:
           name: git-mirror-2way-salt-formula-{{name}}
           jobs:
-            - name: aide
-              branches: ${_param:salt_formulas_branches}
-              notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: aodh
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
@@ -23,9 +20,6 @@ parameters:
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: artifactory
-              branches: ${_param:salt_formulas_branches}
-              notification_recipients: ${_param:salt_formulas_notification_recipients}
-            - name: auditd
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: avinetworks
