@@ -4,3 +4,7 @@ classes:
 - system.apache.server.site.gnocchi
 - system.haproxy.proxy.listen.openstack.gnocchi
 - system.keepalived.cluster.instance.openstack_telemetry_vip
+parameters:
+  gnocchi:
+    server:
+      enable_proxy_headers_parsing: true
