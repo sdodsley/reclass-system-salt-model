@@ -98,6 +98,9 @@ parameters:
               credentials: "gerrit"
               script: test-customers-salt-models.groovy
             concurrent: false
+            trigger:
+               timer:
+                 spec: "{{job_timer}}"
             param:
               CUSTOMERS:
                 type: string
