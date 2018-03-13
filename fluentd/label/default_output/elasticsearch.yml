@@ -27,6 +27,14 @@ parameters:
                 type: record_transformer
                 enable_ruby: true
                 remove_keys: '["hostname"]'
+              change_pid_field_value:
+                tag: "haproxy.**"
+                type: record_transformer
+                enable_ruby: true
+                record:
+                  - name: Pid
+                    value: ${fluentd:dollar}{record["pid"]}
+                remove_keys: '["pid"]'
             match:
               elasticsearch_output:
                 host: ${_param:fluentd_elasticsearch_host}
