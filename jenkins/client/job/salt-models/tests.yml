@@ -273,6 +273,9 @@ parameters:
               RECLASS_MODEL_BRANCH:
                 type: string
                 default: master
+              DISTRIB_REVISION:
+                type: string
+                default: 'nightly'
               SYSTEM_GIT_URL:
                 type: string
                 default: ""
