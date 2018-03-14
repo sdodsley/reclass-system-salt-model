@@ -1,13 +1,17 @@
 parameters:
   _param:
-    salt_control_size_cpu_stacklight_log: 8
-    salt_control_size_ram_stacklight_log: 16384
-    salt_control_size_disk_profile_stacklight_log: large
-    salt_control_size_net_profile_cpu_stacklight_log: default
-    salt_control_size_cpu_stacklight_server: 8
-    salt_control_size_ram_stacklight_server: 16384
-    salt_control_size_disk_profile_stacklight_server: large
-    salt_control_size_net_profile_cpu_stacklight_server: default
+    salt_control_size_cpu_stacklight_log: 16
+    salt_control_size_ram_stacklight_log: 49152
+    salt_control_size_disk_profile_stacklight_log: xxhuge
+    salt_control_size_net_profile_stacklight_log: default
+    salt_control_size_cpu_stacklight_server: 12
+    salt_control_size_ram_stacklight_server: 65536
+    salt_control_size_disk_profile_stacklight_server: xxlarge
+    salt_control_size_net_profile_stacklight_server: default
+    salt_control_size_cpu_stacklight_telemetry: 12
+    salt_control_size_ram_stacklight_telemetry: 98304
+    salt_control_size_disk_profile_stacklight_telemetryr: huge
+    salt_control_size_net_profile_stacklight_telemetry: default
   salt:
     control:
       size:
@@ -21,3 +25,8 @@ parameters:
           ram: ${_param:salt_control_size_ram_stacklight_server}
           disk_profile: ${_param:salt_control_size_disk_profile_stacklight_server}
           net_profile: ${_param:salt_control_size_net_profile_stacklight_server}
+        stacklight.telemetry:
+          cpu: ${_param:salt_control_size_cpu_stacklight_telemetry}
+          ram: ${_param:salt_control_size_ram_stacklight_telemetry}
+          disk_profile: ${_param:salt_control_size_disk_profile_stacklight_telemetry}
+          net_profile: ${_param:salt_control_size_net_profile_stacklight_telemetry}
