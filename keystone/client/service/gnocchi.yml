@@ -2,6 +2,7 @@ parameters:
   _param:
     cluster_public_protocol: https
     gnocchi_service_protocol: http
+    gnocchi_public_host: ${_param:cluster_public_host}
   keystone:
     client:
       server:
@@ -19,7 +20,7 @@ parameters:
               description: OpenStack Metric Service
               endpoints:
               - region: ${_param:openstack_region}
-                public_address: ${_param:cluster_public_host}
+                public_address: ${_param:gnocchi_public_host}
                 public_protocol: ${_param:cluster_public_protocol}
                 public_port: 8041
                 public_path: '/'
