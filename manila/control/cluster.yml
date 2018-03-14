@@ -9,5 +9,7 @@ parameters:
       version: ${_param:openstack_version}
     api:
       enabled: true
+      version: ${_param:openstack_version}
     scheduler:
       enabled: true
+      version: ${_param:openstack_version}
