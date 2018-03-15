@@ -18,7 +18,7 @@ parameters:
         job_timer: ""
       - stack_name: mcp10_dvr
         stack_env: devcloud
-        stack_install: core,kvm,openstack,dvr
+        stack_install: core,kvm,openstack,ovs
         stack_type: physical
         stack_test: openstack
         job_timer: ""
@@ -38,7 +38,7 @@ parameters:
         job_timer: "H H(0-6) * * *"
       - stack_name: virtual_mcp10_ovs_dvr
         stack_env: devcloud
-        stack_install: core,openstack,dvr
+        stack_install: core,openstack,ovs
         stack_type: heat
         stack_test: ""
         job_timer: "H H(0-6) * * *"

@@ -11,7 +11,7 @@ parameters:
         job_timer: ""
       - stack_name: virtual_mcp11_dvr
         stack_env: devcloud
-        stack_install: core,openstack,dvr
+        stack_install: core,openstack,ovs
         stack_type: heat
         stack_test: ""
         job_timer: ""
@@ -83,7 +83,7 @@ parameters:
         job_timer: ""
       - stack_name: virtual_mcp_mitaka_dvr
         stack_env: devcloud
-        stack_install: core,openstack,dvr
+        stack_install: core,openstack,ovs
         stack_type: heat
         stack_test: ""
         job_timer: ""
@@ -95,19 +95,19 @@ parameters:
         job_timer: ""
       - stack_name: virtual_mcp_newton_dvr
         stack_env: devcloud
-        stack_install: core,openstack,dvr
+        stack_install: core,openstack,ovs
         stack_type: heat
         stack_test: ""
         job_timer: ""
       - stack_name: virtual_mcp_pike_dvr
         stack_env: devcloud
-        stack_install: core,openstack,dvr
+        stack_install: core,openstack,ovs
         stack_type: heat
         stack_test: ""
         job_timer: ""
       - stack_name: virtual_mcp_pike_dvr_ssl
         stack_env: devcloud
-        stack_install: core,openstack,dvr
+        stack_install: core,openstack,ovs
         stack_type: heat
         stack_test: ""
         job_timer: ""
