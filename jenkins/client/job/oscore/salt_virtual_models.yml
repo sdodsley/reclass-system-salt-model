@@ -2,7 +2,7 @@ parameters:
   jenkins:
     client:
       job:
-        test_virtual_model:
+        oscore-test_virtual_model:
           concurrent: true
           discard:
             build:
@@ -94,4 +94,75 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines"
             credentials: "gerrit"
           type: workflow-scm
-
+        oscore-test_virtual_models:
+          concurrent: true
+          discard:
+            build:
+              keep_num: 30
+            artifact:
+              keep_num: 30
+          trigger:
+              timer:
+               spec: "H 05 * * *"
+          display_name: oscore-test-virtual-models
+          name: oscore-test-virtual-models
+          param:
+            CREDENTIALS_ID:
+              default: gerrit
+              type: string
+              description: "Name of creadentials to use when connecting to gerrit"
+            HEAT_STACK_ZONE:
+              type: string
+              description: "Heat stack zone where build stack"
+              default: "mcp-oscore-ci"
+            STACK_RECLASS_ADDRESS:
+              type: string
+              default: 'https://gerrit.mcp.mirantis.net/salt-models/mcp-virtual-lab'
+              description: 'Url to repository with stack salt models'
+            STACK_RECLASS_BRANCH:
+              type: string
+              default: 'master'
+              description: 'Branch of repository with stack salt models'
+            STACK_CLUSTER_NAMES:
+              type: string
+              default: "virtual-mcp-pike-ovs,virtual-mcp-pike-dvr,virtual-mcp-pike-dvr-ssl"
+              description: "Comma separated list of cluster names to test."
+            STACK_DELETE:
+              type: boolean
+              default: 'true'
+              description: "Enable it when stack have to be deleted."
+            FORMULA_PKG_REVISION:
+              type: string
+              description: Version of formulas for salt-master bootstrap
+              default: "nightly"
+            # openstack api
+            OPENSTACK_API_URL:
+              type: string
+              default: "https://cloud-cz.bud.mirantis.net:5000"
+            OPENSTACK_API_CREDENTIALS:
+              type: string
+              default: "openstack-devcloud-credentials"
+            OPENSTACK_API_PROJECT:
+              type: string
+              default: "mcp-oscore-ci"
+            OPENSTACK_API_PROJECT_DOMAIN:
+              type: string
+              default: "default"
+            OPENSTACK_API_PROJECT_ID:
+              type: string
+              default: ""
+            OPENSTACK_API_USER_DOMAIN:
+              type: string
+              default: "default"
+            OPENSTACK_API_CLIENT:
+              type: string
+              default: ""
+            OPENSTACK_API_VERSION:
+              type: string
+              default: "3"
+          scm:
+            script: test-virtual-models-pipeline.groovy
+            type: git
+            url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines"
+            credentials: "gerrit"
+          type: workflow-scm
