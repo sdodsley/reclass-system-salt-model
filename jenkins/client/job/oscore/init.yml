@@ -2,6 +2,7 @@ classes:
   - system.jenkins.client.job.oscore.security_tests
   - system.jenkins.client.job.oscore.tests
   - system.jenkins.client.job.oscore.qa
+  - system.jenkins.client.job.oscore.salt_virtual_models
 parameters:
   jenkins:
     client:
