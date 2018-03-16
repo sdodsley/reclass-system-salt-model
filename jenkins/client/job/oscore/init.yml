@@ -9,5 +9,8 @@ parameters:
       view:
         "OSCORE":
           enabled: true
-          type: ListView
+          type: CategorizedJobsView
           include_regex: "^oscore-.*"
+          categories:
+            - group_regex: "oscore-bandit-*"
+              naming_rule: "Bandit"
