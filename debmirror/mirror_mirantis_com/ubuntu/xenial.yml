@@ -18,13 +18,17 @@ parameters:
           log_file: "/var/log/debmirror/mirror_mirantis_com_ubuntu_xenial.log"
           dist: [ xenial , xenial-security, xenial-updates ]
           section: [ main , multiverse, restricted, universe ]
-          exclude_deb_section: [ games, gnome, Xfce, sound, electronics, graphics, hamradio , doc, localization, kde, video,  translations, news, x11,
-                                 multiverse/games, multiverse/gnome, multiverse/Xfce, multiverse/sound, multiverse/electronics, multiverse/graphics,
-                                 multiverse/hamradio , multiverse/doc, multiverse/localization, multiverse/kde, multiverse/video,  multiverse/translations, multiverse/news, multiverse/x11,
-                                 universe/games, universe/gnome, universe/Xfce, universe/sound, universe/electronics, universe/hamradio , universe/doc, universe/localization, universe/kde,
-                                 universe/video,  universe/translations, universe/news, universe/x11, universe/graphics,
-                                 restricted/games, restricted/gnome, restricted/Xfce, restricted/sound, restricted/electronics, restricted/graphics, restricted/hamradio , restricted/doc,
-                                 restricted/localization, restricted/kde, restricted/video,  restricted/translations, restricted/news, restricted/x11 ]
+          exclude_deb_section: [games, gnome, Xfce, sound, electronics, graphics, hamradio,
+            doc, localization, kde, video, translations, news, x11, multiverse/games, multiverse/gnome,
+            multiverse/Xfce, multiverse/sound, multiverse/electronics, multiverse/graphics,
+            multiverse/hamradio, multiverse/doc, multiverse/localization, multiverse/kde, multiverse/video,
+            multiverse/translations, multiverse/news, multiverse/x11, universe/games, universe/gnome,
+            universe/Xfce, universe/sound, universe/electronics, universe/hamradio, universe/doc,
+            universe/localization, universe/kde, universe/video, universe/translations, universe/news,
+            universe/x11, universe/graphics, restricted/games, restricted/gnome, restricted/Xfce,
+            restricted/sound, restricted/electronics, restricted/graphics, restricted/hamradio,
+            restricted/doc, restricted/localization, restricted/kde, restricted/video, restricted/translations,
+            restricted/news, restricted/x11]
           filter:
             1: "--exclude='android*'"
             2: "--exclude='/firefox*'"
@@ -62,6 +66,8 @@ parameters:
             97: "--exclude='linux-*-(.*azure|.*aws|gke|.*azure-edge|.*linux-oem)'"
             98: "--exclude='/.*(arm64|powerpc|s390x|armel|armhf|sparc64|mips64|ppc64el|mipsn32)(?!.*amd64)'"
             99: "--exclude='/*universe.*(-armel-|-arm-)(?!.*amd64)'"
+            # List of extra includes, founded after tests.
             100: "--include='/main(.*)manpages'"
             101: "--include='/main(.*)python-(.*)doc'"
             102: "--include='/main(.*)python-(.*)network'"
+            103: "--include='/main(.*)unittest2'"
