@@ -5,6 +5,7 @@ parameters:
         oscore-build-docker-image:
           name: "{{job_prefix}}-{{oscore-qa-project}}-build-docker-image"
           template:
+            description: ${_param:job_description}
             discard:
               build:
                 keep_num: 25
@@ -49,6 +50,7 @@ parameters:
         oscore-docker-image-systest-template:
           name: "{{job_prefix}}-{{oscore-qa-project}}-image-systest-{{model}}"
           template:
+            description: ${_param:job_description}
             discard:
               build:
                 keep_num: 30
