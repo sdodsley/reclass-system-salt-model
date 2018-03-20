@@ -15,7 +15,6 @@ parameters:
         password: admin
         ovsdb_connection: tcp:127.0.0.1:6639
         router: ${_param:opendaylight_router}
-        enable_websocket: true
         mechanism:
           ovs:
             driver: ${_param:opendaylight_driver}
