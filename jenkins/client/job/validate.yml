@@ -234,7 +234,7 @@ parameters:
             TEMPEST_TEST_PATTERN:
               type: string
               default: "set=smoke"
-              description: Use set=smoke (or identity,full...] or just test name
+              description: Use set=smoke (or identity,full...) or just test name
             TEMPEST_ENDPOINT_TYPE:
               type: choice
               choices:
@@ -276,11 +276,11 @@ parameters:
               description: Credentials to the Salt API
             TEMPEST_TARGET_NODE:
               type: string
-              default: ""
+              default: "${_param:cicd_control_node03_hostname}.${_param:cluster_domain}"
               description: Node where container with tempest will be run
             TEST_IMAGE:
               type: string
-              default: "rallyforge/rally"
+              default: "xrally/xrally-openstack:0.9.1"
               description: Docker image to use for running Rally/Tempest
             TARGET_NODES:
               type: string
@@ -296,7 +296,7 @@ parameters:
               description: If you have any problems with timeouts (e.g. while waiting for node to be up/down), please increase this value
             SKIP_LIST_PATH:
               type: string
-              default: "/home/rally/cvp-configuration/tempest/skip-list.yaml"
+              default: "cvp-configuration/tempest/skip-list.yaml"
               description: path to skip-list file inside container
             PROXY:
               type: string
@@ -305,7 +305,7 @@ parameters:
             TEMPEST_TEST_PATTERN:
               type: string
               default: "set=smoke"
-              description: Use set=smoke (or identity,full...] or just test name
+              description: Use set=smoke (or identity,full...) or just test name
             MANUAL_CONFIRMATION:
               type: boolean
               default: 'false'
@@ -316,7 +316,7 @@ parameters:
               description: Can be repo url (local or remote) or path to folder (inside container) with Tempest
             TOOLS_REPO:
               type: string
-              default: "${_param:gerrit_public_host}/cvp-configuration"
+              default: "https://github.com/Mirantis/cvp-configuration"
               description: URL of repo where testing tools, scenarios, configs are located.
         cvp-perf:
           type: workflow-scm
