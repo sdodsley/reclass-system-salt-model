@@ -18,8 +18,9 @@ parameters:
           log_file: "/var/log/debmirror/mirror_mirantis_com_ubuntu_xenial.log"
           dist: [ xenial , xenial-security, xenial-updates ]
           section: [ main , multiverse, restricted, universe ]
+          # Don't exclude main/x11 - its required for many pkgs.
           exclude_deb_section: [games, gnome, Xfce, sound, electronics, graphics, hamradio,
-            doc, localization, kde, video, translations, news, x11, multiverse/games, multiverse/gnome,
+            doc, localization, kde, video, translations, news, multiverse/games, multiverse/gnome,
             multiverse/Xfce, multiverse/sound, multiverse/electronics, multiverse/graphics,
             multiverse/hamradio, multiverse/doc, multiverse/localization, multiverse/kde, multiverse/video,
             multiverse/translations, multiverse/news, multiverse/x11, universe/games, universe/gnome,
@@ -58,9 +59,26 @@ parameters:
             27: "--exclude='/*(.xorg)*joystick'"
             28: "--exclude='/xserver-xorg-video(.*vivid|.*wily|.*utopic)'"
             30: "--exclude='/*universe.*bluez.*'"
+            31: "--exclude='/main/m/maas/'" # ppa should be always used
+            32: "--exclude='/main/a/a11y-profile-manager/'"
+            33: "--exclude='/universe/.*(alsa|ubuntuone|telepathy|debian-multimedia|kodi|mediaplayer|nagios|getfem|gammaray|geotranz)'"
+            34: "--exclude='/universe/.*(pyqt|usb-creator|gcc-mingw-w64|gcc-snapshot)'"
+            35: "--exclude='/universe/q/qt'"
+            36: "--exclude='/universe/g/glusterfs/'" # ppa should be always used
+            37: "--exclude='/universe/d/docker.io/'" # ppa should be always used
+            38: "--exclude='/universe/a/aptly'" # ppa should be always used
+            39: "--exclude='/universe/e/elasticsearch'" # ppa should be always used
+            40: "--exclude='/universe/g/grafana/'" # ppa should be always used
+            41: "--exclude='/universe/i/influxdb(?!.*python)'" # ppa should be always used
+            42: "--exclude='/universe/s/salt'" # ppa should be always used
+            43: "--exclude='/universe/z/zabbix'" # ppa should be always used
+            44: "--exclude='/universe/.*(brasero|mediascanner2|mediatomb|mediawiki|qtmultimedia|pidgin|skype|eclipse|esys-particle|fusion)'"
+            89: "--exclude='/universe/k/(kde)'"
+            90: "--exclude='/universe/p/(psi-plus|puppet-module|plasma|pcl/)'"
+            91: "--exclude='golang-github-*'"
             92: "--exclude='/(llvm-toolchain|address-book|amule|openclipart|rhythmbox|gimp|sonic-visualiser|games|bsdgame|gazebo|arduino|webkitgtk|widelands|wxwidget|warzone|wings3d).*'"
             93: "--exclude='/(asterisk|abiword|webbrowser-app|imagemagick|.*clamav|wireshar|vlc|.*transmission|tryton-modules|trilinos|tomboy|wine1|wine-dev|compiz|mythtv|ubuntustudio).*'"
-            94: "--exclude='/(ceilometer|nova).*'"
+            94: "--exclude='/(ceilometer|nova|openstack-debian-images).*'"
             95: "--exclude='/gcc-.*-cross.*'"
             96: "--exclude='/(nvidia).*'"
             97: "--exclude='linux-*-(.*azure|.*aws|gke|.*azure-edge|.*linux-oem)'"
@@ -70,4 +88,6 @@ parameters:
             100: "--include='/main(.*)manpages'"
             101: "--include='/main(.*)python-(.*)doc'"
             102: "--include='/main(.*)python-(.*)network'"
-            103: "--include='/main(.*)unittest2'"
+            103: "--include='/main(.*)unittest2'" # openstack* pkgs
+            104: "--include='/main(.*)libbluetooth3'" # python-guestfs
+
