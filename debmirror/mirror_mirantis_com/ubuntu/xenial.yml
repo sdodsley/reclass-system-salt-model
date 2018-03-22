@@ -83,9 +83,8 @@ parameters:
           # Updating filter, please always start from section, aka main|universe|multiverse
           filter:
             1: "--exclude='android*'"
-            2: "--exclude='/firefox*'"
+            2: "--exclude='/(main|universe)/f/firefox'"
             3: "--exclude='/chromium-browser*'"
-            4: "--exclude='/ceph*'"
             5: "--exclude='/*-wallpapers*'"
             6: "--exclude='/language-pack-(?!en)'"
             7: "--exclude='thunderbird*'"
@@ -110,22 +109,12 @@ parameters:
             27: "--exclude='/*(.xorg)*joystick'"
             28: "--exclude='/xserver-xorg-video(.*vivid|.*wily|.*utopic)'"
             30: "--exclude='/*universe.*bluez.*'"
-            31: "--exclude='/main/m/maas/'" # ppa should be always used
             32: "--exclude='/main/a/a11y-profile-manager/'"
             33: "--exclude='/universe/.*(alsa|ubuntuone|telepathy|debian-multimedia|kodi|mediaplayer|nagios|getfem|gammaray|geotranz)'"
             34: "--exclude='/universe/.*(pyqt|usb-creator|gcc-mingw-w64|gcc-snapshot)'"
             35: "--exclude='/universe/q/qt'"
-            36: "--exclude='/universe/g/glusterfs/'" # ppa should be always used
-            37: "--exclude='/universe/d/docker.io/'" # ppa should be always used
-            38: "--exclude='/universe/a/aptly'" # ppa should be always used
-            39: "--exclude='/universe/e/elasticsearch'" # ppa should be always used
-            40: "--exclude='/universe/g/grafana/'" # ppa should be always used
-            41: "--exclude='/universe/i/influxdb(?!.*python)'" # ppa should be always used
-            42: "--exclude='/universe/s/salt'" # ppa should be always used
-            43: "--exclude='/universe/z/zabbix'" # ppa should be always used
-            44: "--exclude='/universe/.*(brasero|mediascanner2|mediatomb|mediawiki|qtmultimedia|pidgin|skype|eclipse|esys-particle|fusion|0/0ad|e/emboss|e/empathy|g/globus)'"
+            36: "--exclude='/universe/.*(brasero|mediascanner2|mediatomb|mediawiki|qtmultimedia|pidgin|skype|eclipse|esys-particle|fusion|0/0ad|e/emboss|e/empathy|g/globus)'"
             84: "--exclude='/multiverse/(v/virtualbox|w/wine|playonlinux)'"
-            85: "--exclude='/main/l/linux(.*)/linux-source-*'"
             86: "--exclude='/main/(m/mozc/|n/nut/|o/oxide-qt/|o/orbit2/|q/(qtbase-opensource-src|qtdeclarative-opensource-src)/|t/telepathy-glib|w/webkit2gtk|w/webrtc-audio-processing)'"
             87: "--exclude='universe/(s/syncevolution|r/r-bioc-)'"
             88: "--exclude='universe/t/texlive-lang/texlive-lang-(?!.*english)'"
@@ -134,16 +123,54 @@ parameters:
             91: "--exclude='golang-github-*'"
             92: "--exclude='/(llvm-toolchain|address-book|amule|openclipart|rhythmbox|gimp|sonic-visualiser|games|bsdgame|gazebo|arduino|webkitgtk|widelands|wxwidget|warzone|wings3d).*'"
             93: "--exclude='/(asterisk|abiword|webbrowser-app|imagemagick|.*clamav|wireshar|vlc|.*transmission|tryton-modules|trilinos|tomboy|wine1|wine-dev|compiz|mythtv|ubuntustudio).*'"
-            94: "--exclude='/(ceilometer|nova|openstack-debian-images).*'"
+            94: "--exclude='/universe/o/(openstack-debian-images).*'"
             95: "--exclude='/gcc-.*-cross.*'"
             96: "--exclude='/(nvidia).*'"
-            97: "--exclude='linux-*-(.*azure|.*aws|gke|.*azure-edge|.*oem/|.*euclid/)'"
-            98: "--exclude='/.*(arm64|powerpc|s390x|armel|armhf|sparc64|mips64|ppc64el|mipsn32)(?!.*amd64)'"
-            99: "--exclude='/*universe.*(-armel-|-arm-)(?!.*amd64)'"
+            # List of unused linux kernels and unsupported arch
+            300: "--exclude='/.*(arm64|powerpc|s390x|armel|armhf|sparc64|mips64|ppc64el|mipsn32)(?!.*amd64)'"
+            301: "--exclude='(main|universe)/l/linux-*-(.*azure|.*aws|gke|.*azure-edge|.*oem/|.*euclid/)'"
+            302: "--exclude='/*universe.*(-armel-|-arm-)(?!.*amd64)'"
+            303: "--exclude='/main/l/linux(.*)/linux-source-*'"
+            # List of packages, that should be fetched from fresh ppa or other mirror
+            # So,removing them from upstream mirror.
+            500: "--exclude='/main/m/maas/'"
+            501: "--exclude='/universe/g/glusterfs/'"
+            502: "--exclude='/universe/d/(docker-|docker.io)/'"
+            503: "--exclude='/(main|universe)/c/ceph'"
+            504: "--exclude='/universe/a/aptly'"
+            505: "--exclude='/universe/e/elasticsearch'"
+            506: "--exclude='/universe/g/grafana/'"
+            507: "--exclude='/universe/i/influxdb(?!.*python)'"
+            508: "--exclude='/universe/s/salt'"
+            509: "--exclude='/universe/z/zabbix'"
+            510: "--exclude='(universe|main)/(o|d|n)/(openvswitch|dpdk|networking-ovs-dpdk)'"
+            511: "--exclude='/main/libv/.*(libvirt)'"
+            512: "--exclude='/main/s/.*(seabios)'"
+            513: "--exclude='/universe/.*libvirt'"
+            514: "--exclude='/(universe|main)/c/(cinder|ceilometer)'"
+            515: "--exclude='/(universe|main)/p/python-(cinder|ceilometer)client'"
+            516: "--exclude='/(universe|main)/n/(nova|neutron)'"
+            517: "--exclude='/(universe|main)/p/python-(nova|neutron)client'"
+            518: "--exclude='/(universe|main)/g/(glance)'"
+            519: "--exclude='/(universe|main)/p/python-(glance)client'"
+            520: "--exclude='/(universe|main)/b/(barbican)'"
+            521: "--exclude='/(universe|main)/k/(keystone)'"
+            522: "--exclude='/(universe|main)/d/(designate)'"
+            523: "--exclude='/(universe|main)/p/python-(barbican|keystone|designate)client'"
+            524: "--exclude='/(universe|main)/h/(horizon|heat)'"
+            525: "--exclude='/(universe|main)/p/python-(horizon|heat)client'"
+            526: "--exclude='/(universe|main)/m/(murano|mistral|manila)'"
+            527: "--exclude='/(universe|main)/p/python-(murano|mistral|manila)client'"
+            528: "--exclude='/(universe|main)/i/(ironic)'"
+            529: "--exclude='/(universe|main)/a/(aodh)'"
+            530: "--exclude='/(universe|main)/p/python-(ironic|aodh)client'"
             # List of extra includes, founded after tests.
-            100: "--include='/main(.*)manpages'"
-            101: "--include='/main(.*)python-(.*)doc'"
-            102: "--include='/main(.*)python-(.*)network'"
-            103: "--include='/main(.*)unittest2'" # openstack* pkgs
-            104: "--include='/main(.*)libbluetooth3'" # python-guestfs
-            105: "--include='/main(.*)llvm-toolchain-5.0'" # pki-ca: < 389-ds-base < dogtag
+            800: "--include='/main(.*)manpages'"
+            801: "--include='/main(.*)python-(.*)doc'"
+            802: "--include='/main(.*)python-(.*)network'"
+            803: "--include='/main(.*)unittest2'" # openstack* pkgs
+            804: "--include='/main(.*)libbluetooth3'" # python-guestfs
+            805: "--include='/main(.*)llvm-toolchain-5.0'" # pki-ca: < 389-ds-base < dogtag
+
+
+
