@@ -1,7 +1,7 @@
 parameters:
   jenkins:
     client:
-      job:
+      job_template:
         test-oss-devops-portal-backend:
           name: test-oss-devops-portal-backend
           discard:
