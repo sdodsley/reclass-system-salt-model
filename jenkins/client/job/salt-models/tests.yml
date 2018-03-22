@@ -67,6 +67,9 @@ parameters:
               CONFIG_NODE_NAME_PATTERN:
                 type: string
                 default: "{{config_node_name}}"
+              RECLASS_VERSION:
+                type: string
+                default: "master"
               MAX_CPU_PER_JOB:
                 type: string
                 default: "2"
@@ -341,6 +344,9 @@ parameters:
             SYSTEM_GIT_REF:
               type: string
               default: ""
+            RECLASS_VERSION:
+              type: string
+              default: "master"
             MAX_CPU_PER_JOB:
               type: string
               default: "2"
