@@ -30,11 +30,11 @@ parameters:
             port: 9311
           log:
             custom:
-              format: >-
-                %v:%p %{X-Forwarded-For}i %h %l %u %t \"%r\" %>s %D %O \"%{Referer}i\" \"%{User-Agent}i\"
+              format: 'combined'
+              file: '/var/log/barbican/barbican-api.log'
             error:
               enabled: true
-              format: '%M'
+              file: '/var/log/barbican/barbican-api.log'
         barbican_admin:
           enabled: false
           available: true
@@ -48,3 +48,14 @@ parameters:
             user: barbican
             group: barbican
             display_name: '%{GROUP}'
+          host:
+            address: ${_param:apache_barbican_api_address}
+            name: ${_param:apache_barbican_api_host}
+            port: 9312
+          log:
+            custom:
+              format: 'combined'
+              file: '/var/log/barbican/barbican-api.log'
+            error:
+              enabled: true
+              file: '/var/log/barbican/barbican-api.log'
