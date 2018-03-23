@@ -14,3 +14,4 @@ classes:
   - system.jenkins.client.job.deploy.update.restore_cassandra
   - system.jenkins.client.job.deploy.update.restore_zookeeper
   - system.jenkins.client.job.deploy.update.virt_snapshot
+  - system.jenkins.client.job.deploy.update.cloud_update
