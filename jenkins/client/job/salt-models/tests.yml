@@ -183,6 +183,10 @@ parameters:
               RECLASS_IGNORE_CLASS_NOTFOUND:
                 type: boolean
                 default: "{{reclass_ignore_class_notfound}}"
+              RECLASS_VERSION:
+                type: string
+                default: "master"
+                description: "Version (branch) of Reclass we will use"
               LEGACY_TEST_MODE:
                 type: boolean
                 default: "{{legacy_test_mode}}"
@@ -347,6 +351,7 @@ parameters:
             RECLASS_VERSION:
               type: string
               default: "master"
+              description: "Version (branch) of Reclass we will use"
             MAX_CPU_PER_JOB:
               type: string
               default: "2"
