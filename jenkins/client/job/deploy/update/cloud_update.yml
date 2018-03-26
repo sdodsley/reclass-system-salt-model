@@ -55,11 +55,11 @@ parameters:
             TARGET_ROLLBACKS:
               type: string
               default: ""
-              description: "Comma separated list of nodes to update (Valid values are ctl,prx,msg,dbs,log,mon,mtr,ntw,nal,gtw-virtual,cmn,rgw,cmp,kvm,osd,gtw-physical)"
+              description: "Comma separated list of nodes to rollback (Valid values are ctl,prx,msg,dbs,log,mon,mtr,ntw,nal,gtw-virtual,cmn,rgw,cmp,kvm,osd,gtw-physical)"
             TARGET_MERGES:
               type: string
               default: ""
-              description: "Comma separated list of nodes to update (Valid values are cfg,ctl,prx,msg,dbs,log,mon,mtr,ntw,nal,gtw-virtual,cmn,rgw,cid)"
+              description: "Comma separated list of nodes to merge (Valid values are cfg,ctl,prx,msg,dbs,log,mon,mtr,ntw,nal,gtw-virtual,cmn,rgw,cid)"
             CTL_TARGET:
               type: string
               default: "ctl*"
@@ -123,7 +123,7 @@ parameters:
             GTW_TARGET:
               type: string
               default: "gtw01*"
-              description: "Salt targeted physical GTW nodes (ex. gtw01*)"
+              description: "Salt targeted physical or virtual GTW nodes (ex. gtw01*)"
             REBOOT:
               type: boolean
               default: 'false'
@@ -131,15 +131,15 @@ parameters:
             ROLLBACK_PKG_VERSIONS:
               type: string
               default: ""
-              description: "Space separated list of pkgs=versions to rollback to (ex. pkg_name1=pkg_version1 pkg_name2=pkg_version2)"
+              description: "Space separated list of pkgs=versions to rollback to on physical targeted machines (ex. pkg_name1=pkg_version1 pkg_name2=pkg_version2)"
             PURGE_PKGS:
               type: string
               default: ""
-              description: "Space separated list of pkgs=versions to be purged (ex. pkg_name1=pkg_version1 pkg_name2=pkg_version2)"
+              description: "Space separated list of pkgs=versions to be purged on physical targeted machines (ex. pkg_name1=pkg_version1 pkg_name2=pkg_version2)"
             REMOVE_PKGS:
               type: string
               default: ""
-              description: "Space separated list of pkgs=versions to be removed (ex. pkg_name1=pkg_version1 pkg_name2=pkg_version2)"
+              description: "Space separated list of pkgs=versions to be removed on physical targeted machines (ex. pkg_name1=pkg_version1 pkg_name2=pkg_version2)"
             RESTORE_GALERA:
               type: boolean
               default: 'false'
