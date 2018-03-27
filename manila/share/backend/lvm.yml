@@ -8,6 +8,12 @@ parameters:
           enabled: true
           name: manila-volume
           devices: ${_param:manila_lvm_devices}
+    system:
+      package:
+        samba:
+          - name: samba
+        nfs-kernel-server:
+          - name: nfs-kernel-server
   manila:
     share:
       enabled_share_backends:
