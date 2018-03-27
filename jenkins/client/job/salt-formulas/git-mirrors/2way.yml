@@ -1,6 +1,7 @@
 parameters:
   _param:
     jenkins_pollscm_spec: "H/60 * * * *"
+    job_description: <br>Syncronizes code projects with GitHub.<br>
   jenkins:
     client:
       job_template:
@@ -368,6 +369,7 @@ parameters:
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
           template:
+            description: ${_param:job_description}
             discard:
               build:
                 keep_num: 10
@@ -413,6 +415,7 @@ parameters:
                 default: "{{notification_recipients}}"
       job:
         git-mirror-2way-salt-formulas-scripts:
+          description: ${_param:job_description}
           discard:
             build:
               keep_num: 10
@@ -446,6 +449,7 @@ parameters:
               type: string
               default: "master"
         git-mirror-2way-salt-formulas-cookiecutter:
+          description: ${_param:job_description}
           discard:
             build:
               keep_num: 10

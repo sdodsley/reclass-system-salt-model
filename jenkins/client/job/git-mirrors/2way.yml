@@ -1,6 +1,7 @@
 parameters:
   _param:
     jenkins_pollscm_spec: "H/60 * * * *"
+    job_description: <br>Syncronizes code projects with GitHub.<br>
   jenkins:
     client:
       job_template:
@@ -20,6 +21,7 @@ parameters:
               target: Mirantis/mcp-offline-model
               branches: "master"
           template:
+            description: ${_param:job_description}
             discard:
               build:
                 keep_num: 10
