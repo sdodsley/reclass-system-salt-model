@@ -3,6 +3,7 @@ parameters:
     nginx_proxy_openstack_api_host: ${_param:cluster_public_host}
     nginx_proxy_openstack_api_address: 0.0.0.0
     nginx_proxy_openstack_panko_host: ${_param:panko_service_host}
+    nginx_proxy_openstack_panko_protocol: 'http'
   nginx:
     server:
       enabled: true
@@ -15,7 +16,7 @@ parameters:
           proxy:
             host: ${_param:nginx_proxy_openstack_panko_host}
             port: 8977
-            protocol: http
+            protocol: ${_param:nginx_proxy_openstack_panko_protocol}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 8977

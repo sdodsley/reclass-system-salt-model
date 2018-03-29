@@ -3,6 +3,7 @@ parameters:
     nginx_proxy_openstack_api_host: ${_param:cluster_public_host}
     nginx_proxy_openstack_api_address: 0.0.0.0
     nginx_proxy_openstack_ironic_host: ${_param:ironic_service_host}
+    nginx_proxy_openstack_ironic_protocol: 'http'
   nginx:
     server:
       enabled: true
@@ -14,7 +15,7 @@ parameters:
           proxy:
             host: ${_param:nginx_proxy_openstack_ironic_host}
             port: 6385
-            protocol: http
+            protocol: ${_param:nginx_proxy_openstack_ironic_protocol}
           host:
             name: ${_param:nginx_proxy_openstack_api_host}
             port: 6385
