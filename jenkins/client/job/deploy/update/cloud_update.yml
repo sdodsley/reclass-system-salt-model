@@ -56,10 +56,10 @@ parameters:
               type: string
               default: ""
               description: "Comma separated list of nodes to rollback (Valid values are ctl,prx,msg,dbs,log,mon,mtr,ntw,nal,gtw-virtual,cmn,rgw,cmp,kvm,osd,gtw-physical)"
-            TARGET_MERGES:
+            TARGET_SNAPSHOT_MERGES:
               type: string
               default: ""
-              description: "Comma separated list of nodes to merge (Valid values are cfg,ctl,prx,msg,dbs,log,mon,mtr,ntw,nal,gtw-virtual,cmn,rgw,cid)"
+              description: "Comma separated list of nodes to merge live snapshot for (Valid values are cfg,ctl,prx,msg,dbs,log,mon,mtr,ntw,nal,gtw-virtual,cmn,rgw,cid)"
             CTL_TARGET:
               type: string
               default: "ctl*"
