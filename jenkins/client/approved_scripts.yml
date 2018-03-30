@@ -15,6 +15,7 @@ parameters:
         - method groovy.util.Node attributes
         - method groovy.util.XmlParser parse java.io.File
         - method groovy.util.XmlParser parseText java.lang.String
+        - method hudson.EnvVars get java.lang.String java.lang.String
         - method hudson.PluginManager getPlugins
         - method hudson.PluginWrapper getShortName
         - method hudson.model.Hudson getSlaves
