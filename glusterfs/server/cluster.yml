@@ -2,6 +2,8 @@ classes:
 - service.glusterfs.server
 parameters:
   glusterfs:
+    monitoring:
+      glusterfs_service_host: ${_param:glusterfs_service_host}
     _support:
       iptables:
         enabled: false
