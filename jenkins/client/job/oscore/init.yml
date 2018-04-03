@@ -5,7 +5,7 @@ classes:
   - system.jenkins.client.job.oscore.salt_virtual_models
 parameters:
   _param:
-     job_description: <br>Deploy and test OpenStack.<br>
+     job_description_oscore: <br>Deploy and test OpenStack.<br>
   jenkins:
     client:
       view:

@@ -5,7 +5,7 @@ parameters:
         test-openstack-component-formula:
           name: "{{job_prefix}}-formula-systest-{{model}}-{{openstack_version}}"
           template:
-            description: ${_param:job_description}
+            description: ${_param:job_description_oscore}
             discard:
               build:
                 keep_num: 30
@@ -147,7 +147,7 @@ parameters:
         test-openstack-component-periodic:
           name: "{{job_prefix}}-{{milestone}}-{{model}}-{{openstack_version}}-{{formula_pkg_revision}}"
           template:
-            description: ${_param:job_description}
+            description: ${_param:job_description_oscore}
             discard:
               build:
                 keep_num: 30
@@ -286,7 +286,7 @@ parameters:
         test-runner-template:
           name: "{{job_prefix}}-{{test_type}}-runner"
           template:
-            description: ${_param:job_description}
+            description: ${_param:job_description_oscore}
             discard:
               build:
                 keep_num: 30
@@ -381,7 +381,7 @@ parameters:
         results-checker-template:
           name: "{{job_prefix}}-{{test_type}}-results-checker"
           template:
-            description: ${_param:job_description}
+            description: ${_param:job_description_oscore}
             discard:
               build:
                 keep_num: 30
@@ -454,7 +454,7 @@ parameters:
         deploy-kvm-virtual-template:
           name: "{{job_prefix}}-deploy-kvm-VMs"
           template:
-            description: ${_param:job_description}
+            description: ${_param:job_description_oscore}
             discard:
               build:
                 keep_num: 30
@@ -536,7 +536,7 @@ parameters:
         oscore-oscc-ci-template:
           name: "{{job_prefix}}-oscc-ci"
           template:
-            description: ${_param:job_description}
+            description: ${_param:job_description_oscore}
             discard:
               build:
                 keep_num: 30
@@ -601,7 +601,7 @@ parameters:
         build-salt-formula-refspec-template:
           name: "{{job_prefix}}-build-salt-formula-refspec"
           template:
-            description: ${_param:job_description}
+            description: ${_param:job_description_oscore}
             discard:
               build:
                 keep_num: 30
@@ -671,7 +671,7 @@ parameters:
         test-salt-formula-refspec-template:
           name: "{{job_prefix}}-test-salt-formula-refspec"
           template:
-            description: ${_param:job_description}
+            description: ${_param:job_description_oscore}
             discard:
               build:
                 keep_num: 30
@@ -764,7 +764,7 @@ parameters:
         test-deploy-virtual-model-change-template:
           name: "{{job_prefix}}-deploy-virtual-model-change-{{job_suffix}}"
           template:
-            description: ${_param:job_description}
+            description: ${_param:job_description_oscore}
             discard:
               build:
                 keep_num: 30
