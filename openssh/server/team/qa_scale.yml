@@ -2,6 +2,7 @@ classes:
 - system.openssh.server.team.members.listomin
 - system.openssh.server.team.members.sgalkin
 - system.openssh.server.team.members.obasov
+- system.openssh.server.team.members.mikhailkraynov
 
 parameters:
   _param:
