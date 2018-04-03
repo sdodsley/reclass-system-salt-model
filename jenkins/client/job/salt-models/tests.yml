@@ -294,7 +294,7 @@ parameters:
                 default: "1"
               EXTRA_FORMULAS:
                 type: string
-                default: "aptly artifactory backupninja collectd devops-portal docker elasticsearch freeipa gerrit glusterfs grafana haproxy heka horizon influxdb jenkins keepalived kibana libvirt maas memcached mysql nginx ntp openldap openssh postfix prometheus rsync rsyslog rundeck sensu sphinx telegraf xtrabackup watchdog"
+                default: "aptly artifactory backupninja collectd devops-portal docker elasticsearch fluentd freeipa gerrit glusterfs grafana haproxy heka horizon influxdb jenkins keepalived kibana libvirt maas memcached mysql nginx ntp openldap openssh postfix prometheus rsync rsyslog rundeck sensu sphinx telegraf xtrabackup watchdog"
       job:
         test-salt-model-node:
           name: test-salt-model-node
