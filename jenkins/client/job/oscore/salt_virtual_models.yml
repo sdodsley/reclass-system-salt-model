@@ -4,7 +4,7 @@ parameters:
       job:
         oscore-test_virtual_model:
           concurrent: true
-          description: ${_param:job_description}
+          description: ${_param:job_description_oscore}
           discard:
             build:
               keep_num: 30
@@ -97,7 +97,7 @@ parameters:
           type: workflow-scm
         oscore-test_virtual_models:
           concurrent: true
-          description: ${_param:job_description}
+          description: ${_param:job_description_oscore}
           discard:
             build:
               keep_num: 30
