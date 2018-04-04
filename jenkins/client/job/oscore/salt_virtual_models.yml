@@ -47,6 +47,10 @@ parameters:
               type: string
               description: Version of formulas for salt-master bootstrap
               default: "nightly"
+            BOOTSTRAP_EXTRA_REPO_PARAMS:
+              type: string
+              default: ""
+              description: "Defines a list of extra repos with parameters, format: repo 1, repo priority 1, repo pin 1; repo 2, repo priority 2, repo pin 2"
             # openstack api
             OPENSTACK_API_URL:
               type: string
