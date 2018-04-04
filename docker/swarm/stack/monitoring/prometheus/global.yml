@@ -7,3 +7,5 @@ parameters:
             server:
               deploy:
                 mode: global
+              environment:
+                PROMETHEUS_USE_STATIC_DATADIR: "true"
