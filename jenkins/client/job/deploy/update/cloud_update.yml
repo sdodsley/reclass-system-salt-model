@@ -136,10 +136,6 @@ parameters:
               type: string
               default: "gtw01*"
               description: "Salt targeted physical or virtual GTW nodes (ex. gtw01*)"
-            REBOOT:
-              type: boolean
-              default: 'false'
-              description: "Reboot nodes after update"
             ROLLBACK_PKG_VERSIONS:
               type: string
               default: ""
