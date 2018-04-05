@@ -16,3 +16,6 @@ parameters:
             - ALL
             commands:
             - /usr/bin/docker
+      package:
+        docker-ce:
+          version: latest
