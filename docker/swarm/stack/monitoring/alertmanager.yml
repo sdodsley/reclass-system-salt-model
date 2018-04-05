@@ -1,6 +1,9 @@
 classes:
 - system.prometheus.alertmanager.container
 parameters:
+  _param:
+    alertmanager_external_url: ${_param:cluster_public_host}
+    alertmanager_external_proto: http
   docker:
     client:
       stack:
@@ -34,4 +37,4 @@ parameters:
                 ALERTMANAGER_BIND_PORT: ${prometheus:alertmanager:bind:port}
                 ALERTMANAGER_BIND_ADDRESS: ${prometheus:alertmanager:bind:address}
                 ALERTMANAGER_DISCOVERY_DOMAIN: 'monitoring_alertmanager'
-                ALERTMANAGER_EXTERNAL_URL: "http://${_param:stacklight_monitor_address}:15011"
+                ALERTMANAGER_EXTERNAL_URL: "${_param:alertmanager_external_proto}://${_param:alertmanager_external_url}:15011"
