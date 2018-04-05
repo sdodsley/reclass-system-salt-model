@@ -598,6 +598,14 @@ parameters:
                 type: boolean
                 default: "{{auto_promote}}"
                 description: Enable to autopromote repo
+              TEST_MULTINODE:
+                type: boolean
+                default: "{{test_multinode}}"
+                description: Whether to test nightly snapshot against multi-node virtual models
+              STACK_CLUSTER_NAMES:
+                type: string
+                default: "{{stack_cluster_names}}"
+                description: "Cluster name to use from reclass to deploy multi-node"
         build-salt-formula-refspec-template:
           name: "{{job_prefix}}-build-salt-formula-refspec"
           template:
