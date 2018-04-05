@@ -48,6 +48,18 @@ parameters:
               type: boolean
               default: 'true'
               description: "Stop API services before update"
+            TARGET_KERNEL_UPDATES:
+              type: string
+              default: "cfg,ctl,prx,msg,dbs"
+              description: "Comma separated list of nodes to update kernel if newer version is available (Valid values are cfg,ctl,prx,msg,dbs,log,mon,mtr,ntw,nal,gtw-virtual,cmn,rgw,cid,cmp,kvm,osd,gtw-physical)"
+            TARGET_REBOOT:
+              type: string
+              default: "cfg,ctl,prx,msg,dbs"
+              description: "Comma separated list of nodes to reboot after update or physical machine rollback (Valid values are cfg,ctl,prx,msg,dbs,log,mon,mtr,ntw,nal,gtw-virtual,cmn,rgw,cid,cmp,kvm,osd,gtw-physical)"
+            TARGET_HIGHSTATE:
+              type: string
+              default: "cfg,ctl,prx,msg,dbs"
+              description: "Comma separated list of nodes to run Salt Highstate on after update or physical machine rollback (Valid values are cfg,ctl,prx,msg,dbs,log,mon,mtr,ntw,nal,gtw-virtual,cmn,rgw,cid,cmp,kvm,osd,gtw-physical)"
             TARGET_UPDATES:
               type: string
               default: "cfg,ctl,prx,msg,dbs"
