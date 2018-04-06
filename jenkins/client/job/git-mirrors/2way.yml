@@ -20,6 +20,10 @@ parameters:
               source: mcp/mcp-offline-model
               target: Mirantis/mcp-offline-model
               branches: "master"
+            - name: mcp-drivetrain-model
+              source: mcp/mcp-drivetrain-model
+              target: Mirantis/mcp-drivetrain-model
+              branches: "master"
           template:
             description: ${_param:job_description_2way}
             discard:
