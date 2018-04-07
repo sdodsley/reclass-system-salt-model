@@ -123,7 +123,12 @@ parameters:
             41: "--exclude='/universe/i/influxdb(?!.*python)'" # ppa should be always used
             42: "--exclude='/universe/s/salt'" # ppa should be always used
             43: "--exclude='/universe/z/zabbix'" # ppa should be always used
-            44: "--exclude='/universe/.*(brasero|mediascanner2|mediatomb|mediawiki|qtmultimedia|pidgin|skype|eclipse|esys-particle|fusion)'"
+            44: "--exclude='/universe/.*(brasero|mediascanner2|mediatomb|mediawiki|qtmultimedia|pidgin|skype|eclipse|esys-particle|fusion|0/0ad|e/emboss|e/empathy|g/globus)'"
+            84: "--exclude='/multiverse/(v/virtualbox|w/wine|playonlinux)'"
+            85: "--exclude='/main/l/linux(.*)/linux-source-*'"
+            86: "--exclude='/main/(m/mozc/|n/nut/|o/oxide-qt/|o/orbit2/|q/(qtbase-opensource-src|qtdeclarative-opensource-src)/|t/telepathy-glib|w/webkit2gtk|w/webrtc-audio-processing)'"
+            87: "--exclude='universe/(s/syncevolution|r/r-bioc-)'"
+            88: "--exclude='universe/t/texlive-lang/texlive-lang-(?!.*english)'"
             89: "--exclude='/universe/k/(kde)'"
             90: "--exclude='/universe/p/(psi-plus|puppet-module|plasma|pcl/)'"
             91: "--exclude='golang-github-*'"
@@ -132,7 +137,7 @@ parameters:
             94: "--exclude='/(ceilometer|nova|openstack-debian-images).*'"
             95: "--exclude='/gcc-.*-cross.*'"
             96: "--exclude='/(nvidia).*'"
-            97: "--exclude='linux-*-(.*azure|.*aws|gke|.*azure-edge|.*linux-oem)'"
+            97: "--exclude='linux-*-(.*azure|.*aws|gke|.*azure-edge|.*oem/|.*euclid/)'"
             98: "--exclude='/.*(arm64|powerpc|s390x|armel|armhf|sparc64|mips64|ppc64el|mipsn32)(?!.*amd64)'"
             99: "--exclude='/*universe.*(-armel-|-arm-)(?!.*amd64)'"
             # List of extra includes, founded after tests.
@@ -141,3 +146,4 @@ parameters:
             102: "--include='/main(.*)python-(.*)network'"
             103: "--include='/main(.*)unittest2'" # openstack* pkgs
             104: "--include='/main(.*)libbluetooth3'" # python-guestfs
+            105: "--include='/main(.*)llvm-toolchain-5.0'" # pki-ca: < 389-ds-base < dogtag
