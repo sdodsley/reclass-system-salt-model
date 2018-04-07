@@ -6,6 +6,7 @@ parameters:
     client:
       enabled: true
       mirrors:
+        # This mirror is used to build unmodified(no meta changes) but reduced offline ubuntu-mirror.
         mirror_mirantis_com_ubuntu_xenial:
           force: ${_param:mirror_mirantis_com_ubuntu_xenial_force}
           lock_target: True
@@ -19,17 +20,67 @@ parameters:
           dist: [ xenial , xenial-security, xenial-updates ]
           section: [ main , multiverse, restricted, universe ]
           # Don't exclude main/x11 - its required for many pkgs.
-          exclude_deb_section: [games, gnome, Xfce, sound, electronics, graphics, hamradio,
-            doc, localization, kde, video, translations, news, multiverse/games, multiverse/gnome,
-            multiverse/Xfce, multiverse/sound, multiverse/electronics, multiverse/graphics,
-            multiverse/hamradio, multiverse/doc, multiverse/localization, multiverse/kde, multiverse/video,
-            multiverse/translations, multiverse/news, multiverse/x11, universe/games, universe/gnome,
-            universe/Xfce, universe/sound, universe/electronics, universe/hamradio, universe/doc,
-            universe/localization, universe/kde, universe/video, universe/translations, universe/news,
-            universe/x11, universe/graphics, restricted/games, restricted/gnome, restricted/Xfce,
-            restricted/sound, restricted/electronics, restricted/graphics, restricted/hamradio,
-            restricted/doc, restricted/localization, restricted/kde, restricted/video, restricted/translations,
-            restricted/news, restricted/x11]
+          exclude_deb_section:
+          - games
+          - gnome
+          - Xfce
+          - sound
+          - electronics
+          - graphics
+          - hamradio
+          - doc
+          - localization
+          - kde
+          - video
+          - translations
+          - news
+          - multiverse/games
+          - multiverse/gnome
+          - multiverse/Xfce
+          - multiverse/sound
+          - multiverse/electronics
+          - multiverse/graphics
+          - multiverse/hamradio
+          - multiverse/doc
+          - multiverse/localization
+          - multiverse/kde
+          - multiverse/video
+          - multiverse/translations
+          - multiverse/news
+          - multiverse/x11
+          - universe/games
+          - universe/gnome
+          - universe/Xfce
+          - universe/sound
+          - universe/electronics
+          - universe/hamradio
+          - universe/doc
+          - universe/localization
+          - universe/kde
+          - universe/video
+          - universe/translations
+          - universe/news
+          - universe/x11
+          - universe/graphics
+          - restricted/games
+          - restricted/gnome
+          - restricted/Xfce
+          - restricted/sound
+          - restricted/electronics
+          - restricted/graphics
+          - restricted/hamradio
+          - restricted/doc
+          - restricted/localization
+          - restricted/kde
+          - restricted/video
+          - restricted/translations
+          - restricted/news
+          - restricted/x11
+          - main/debug
+          - multiverse/debug
+          - restricted/debug
+          - universe/debug
+          # Updating filter, please always start from section, aka main|universe|multiverse
           filter:
             1: "--exclude='android*'"
             2: "--exclude='/firefox*'"
@@ -90,4 +141,3 @@ parameters:
             102: "--include='/main(.*)python-(.*)network'"
             103: "--include='/main(.*)unittest2'" # openstack* pkgs
             104: "--include='/main(.*)libbluetooth3'" # python-guestfs
-
