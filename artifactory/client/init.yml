@@ -210,6 +210,23 @@ parameters:
             url: http://builds.quelltextlich.at/gerrit/nightly
             description: "Overlaps with maven-local. We should resolve overlap and remove this repo."
 
+          helm-local:
+            rclass: local
+            packageType: helm
+            description: "Helm Chart Repository (local)"
+            notes: "https://mirantis.jira.com/browse/PROD-18913"
+            propertySets:
+            - artifactory
+
+          helm-virtual:
+            rclass: virtual
+            packageType: helm
+            description: "Helm Chart Repository (virtual one having correct index)"
+            notes: "https://mirantis.jira.com/browse/PROD-19175"
+            repositories:
+            - helm-local
+            defaultDeploymentRepo: helm-local
+
           jcenter:
             rclass: remote
             packageType: maven
