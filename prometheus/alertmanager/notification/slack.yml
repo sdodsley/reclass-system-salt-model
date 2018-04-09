@@ -1,11 +1,13 @@
 parameters:
   prometheus:
     alertmanager:
+      enabled: true
       config:
         route:
           routes:
             slack:
               receiver: HTTP-slack
+              continue: true
         receiver:
           HTTP-slack:
             enabled: true

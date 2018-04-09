@@ -1,6 +1,7 @@
 parameters:
   prometheus:
     alertmanager:
+      enabled: true
       config:
         route:
           routes:
@@ -9,6 +10,7 @@ parameters:
               match_re:
                 - label: route
                   value: email
+              continue: true
         receiver:
           SMTP:
             enabled: true
