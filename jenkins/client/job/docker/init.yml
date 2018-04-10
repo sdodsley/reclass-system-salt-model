@@ -76,7 +76,7 @@ parameters:
             param:
               IMAGE_NAME:
                 type: string
-                default: "tcpcloud/{{name}}"
+                default: "mirantis/{{name}}"
               IMAGE_GIT_URL:
                 type: string
                 default: "${_param:jenkins_gerrit_url}/mk/docker-{{name}}"
@@ -97,7 +97,7 @@ parameters:
                 default: ""
               REGISTRY_CREDENTIALS_ID:
                 type: string
-                default: "dockerhub"
+                default: "mirantis-dockerhub"
               DOCKER_GIT_TAG:
                 type: boolean
                 default: "true"
