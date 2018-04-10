@@ -2,7 +2,7 @@ classes:
 - system.docker
 parameters:
   _param:
-    docker_image_jenkins_slave: tcpcloud/jnlp-slave
+    docker_image_jenkins_slave: mirantis/jnlp-slave
     jenkins_master_host: ${_param:control_vip_address}
     jenkins_master_port: 8081
     jenkins_secret: "7c40abc1a7df2d26dd6b2e4421af17218df75a16fcbd5e3aa6017d9f47eaeabe"

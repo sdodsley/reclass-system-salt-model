@@ -4,8 +4,11 @@ parameters:
   _param:
     docker_stack_aptly_public_replicas: 3
     docker_image_aptly:
-      api: tcpcloud/aptly-api
-      public: tcpcloud/aptly-public
+      # This image is temporary replacement for mirantis/aptly-api because of acquire_by_hash bug
+      # https://github.com/smira/aptly/pull/697. We waiting for new release of aptly
+      api: breton/aptly-api
+      #api: mirantis/aptly-api
+      public: mirantis/aptly-public
   docker:
     client:
       stack:
