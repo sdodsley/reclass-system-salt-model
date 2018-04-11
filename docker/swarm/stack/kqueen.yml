@@ -9,6 +9,8 @@ parameters:
     kqueen_api_debug: True
     kqueen_api_prometheus_whitelist: '172.16.10.0/24' ##REcheck with network
     kqueen_api_ldap_uri: 'ldap://ldap'
+    kqueen_api_ldap_dn: 'cn=admin,dc=example,dc=org'
+    kqueen_api_ldap_password: 'password'
     kqueen_api_auth_modules: 'local'
     docker_kqueen_ui_replicas: 1
     kqueen_ui_bind_port: ${_param:haproxy_kqueen_ui_bind_port}
@@ -38,6 +40,8 @@ parameters:
                 KQUEEN_DEBUG: ${_param:kqueen_api_debug}
                 KQUEEN_CONFIG_FILE: config/prod.py
                 KQUEEN_LDAP_URI: ${_param:kqueen_api_ldap_uri}
+                KQUEEN_LDAP_DN: ${_param:kqueen_api_ldap_dn}
+                KQUEEN_LDAP_PASSWORD: ${_param:kqueen_api_ldap_password}
                 KQUEEN_AUTH_MODULES: ${_param:kqueen_api_auth_modules}
                 KQUEEN_ETCD_HOST: ${_param:kqueen_api_db_host}
                 KQUEEN_PROMETHEUS_WHITELIST: ${_param:kqueen_api_prometheus_whitelist}
