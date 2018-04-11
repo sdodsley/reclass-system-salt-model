@@ -72,3 +72,9 @@ parameters:
             OPENSTACK_API_CLIENT:
               type: string
               default: ""
+            IMAGE_NAME:
+              type: string
+              default: debian-8-x64
+            EXTRA_VARIABLES:
+              type: text
+              default: ""
