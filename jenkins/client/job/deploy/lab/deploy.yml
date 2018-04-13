@@ -1,6 +1,12 @@
 parameters:
   _param:
     jenkins_deploy_jobs: []
+    heat_stack_zone_job_param:
+      type: string
+      default: "mcp-mk"
+    openstack_api_projects_job_param:
+      type: string
+      default: "mcp-mk"
   jenkins:
     client:
       job_template:
@@ -125,9 +131,7 @@ parameters:
               HEAT_STACK_ENVIRONMENT:
                 type: string
                 default: "{{stack_env}}"
-              HEAT_STACK_ZONE:
-                type: string
-                default: "mcp-mk"
+              HEAT_STACK_ZONE: ${_param:heat_stack_zone_job_param}
               HEAT_STACK_PUBLIC_NET:
                 type: string
                 default: "public"
@@ -139,9 +143,7 @@ parameters:
               OPENSTACK_API_CREDENTIALS:
                 type: string
                 default: "openstack-devcloud-credentials"
-              OPENSTACK_API_PROJECT:
-                type: string
-                default: "mcp-mk"
+              OPENSTACK_API_PROJECT: ${_param:openstack_api_projects_job_param}
               OPENSTACK_API_PROJECT_DOMAIN:
                 type: string
                 default: "default"
