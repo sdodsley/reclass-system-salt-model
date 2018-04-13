@@ -1,0 +1,13 @@
+parameters:
+  _param:
+    manila_share_type_default_extra_specs:
+      driver_handles_share_servers: False
+  manila:
+    client:
+      enabled: true
+      server:
+        admin_identity:
+          share_type:
+            default:
+              name: 'default'
+              extra_specs: ${_param:manila_share_type_default_extra_specs}
