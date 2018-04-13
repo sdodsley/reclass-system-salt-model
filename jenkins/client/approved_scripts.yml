@@ -57,6 +57,8 @@ parameters:
         - method java.util.LinkedHashMap$LinkedHashIterator hasNext
         - method java.util.List add int java.lang.Object
         - method java.util.List subList int int
+        - method java.util.Map containsValue java.lang.Object
+        - method java.util.Map get java.lang.Object
         - method java.util.Map remove java.lang.Object
         - method java.util.Map size
         - method java.util.Map isEmpty
