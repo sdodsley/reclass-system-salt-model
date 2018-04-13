@@ -9,7 +9,7 @@ parameters:
               receiver: SMTP
               match_re:
                 - label: route
-                  value: email
+                  value: '(.*email.*)'
               continue: true
         receiver:
           SMTP:
