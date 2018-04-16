@@ -45,6 +45,8 @@ parameters:
             rclass: remote
             packageType: generic
             url: http://dl-cdn.alpinelinux.org/alpine/
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           apk-virtual:
             rclass: virtual
@@ -57,16 +59,22 @@ parameters:
             rclass: remote
             packageType: debian
             url: https://apt.dockerproject.org/repo
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           artifactory-pro-debian:
             rclass: remote
             packageType: debian
             url: https://jfrog.bintray.com/artifactory-pro-debs
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           artifactory-pro-rpm:
             rclass: remote
             packageType: yum
             url: http://jfrog.bintray.com/artifactory-pro-rpms
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           binary-dev-local:
             rclass: local
@@ -98,6 +106,8 @@ parameters:
             rclass: remote
             packageType: generic
             url: https://artifactory.mcp.mirantis.net/artifactory/binary-prod-virtual
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           centos:
             rclass: virtual
@@ -115,6 +125,8 @@ parameters:
             rclass: remote
             packageType: yum
             url: http://mirror.centos.org/centos/
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           centos-virtual:
             rclass: virtual
@@ -132,31 +144,43 @@ parameters:
             rclass: remote
             packageType: debian
             url: http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.1/debian/
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           debian-nginx:
             rclass: remote
             packageType: debian
             url: http://nginx.org/packages/debian/
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           debian-percona-remote:
             rclass: remote
             packageType: debian
             url: http://repo.percona.com/apt
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           debian-rabbitmq-remote:
             rclass: remote
             packageType: debian
             url: http://www.rabbitmq.com/debian/
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           debian-remote:
             rclass: remote
             packageType: debian
             url: http://ftp.us.debian.org/debian
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           debian-security-remote:
             rclass: remote
             packageType: debian
             url: http://security.debian.org/
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           debian-virtual:
             rclass: virtual
@@ -197,18 +221,24 @@ parameters:
             packageType: docker
             url: https://registry-1.docker.io/
             description: "Remote repository for DockerHub"
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           gcs-remote:
             rclass: remote
             packageType: generic
             url: https://storage.googleapis.com
             description: "Has zero downloads. Can be removed."
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           gerrit-plugins:
             rclass: remote
             packageType: generic
             url: http://builds.quelltextlich.at/gerrit/nightly
             description: "Overlaps with maven-local. We should resolve overlap and remove this repo."
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           helm-local:
             rclass: local
@@ -231,26 +261,36 @@ parameters:
             rclass: remote
             packageType: maven
             url: https://jcenter.bintray.com
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           jenkins-deb-pkgs:
             rclass: remote
             packageType: generic
             url: https://pkg.jenkins.io/debian-stable/binary
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           jenkins-plugins:
             rclass: remote
             packageType: generic
             url: http://mirrors.jenkins-ci.org/plugins
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           jenkins-plugins-jars:
             rclass: remote
             packageType: maven
             url: https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           jenkins-updates:
             rclass: remote
             packageType: generic
             url: https://updates.jenkins.io/
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           k8s-tests-images:
             rclass: local
@@ -279,6 +319,8 @@ parameters:
             rclass: remote
             packageType: maven
             url: http://repo.jfrog.org/artifactory/remote-repos/mysql/mysql-connector-java/
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           pypi-local:
             rclass: local
@@ -288,6 +330,8 @@ parameters:
             rclass: remote
             packageType: pypi
             url: https://pypi.python.org
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           pypi-virtual:
             rclass: virtual
@@ -305,6 +349,8 @@ parameters:
             rclass: remote
             packageType: debian
             url: http://us.archive.ubuntu.com/ubuntu/
+            unusedArtifactsCleanupEnabled: true
+            unusedArtifactsCleanupPeriodHours: 720
 
           ubuntu-virtual:
             rclass: virtual
