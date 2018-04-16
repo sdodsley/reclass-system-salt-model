@@ -13,6 +13,9 @@ parameters:
             bind:
               source: pkg
               name: salt-formula-bind
+            debmirror:
+              source: pkg
+              name: salt-formula-debmirror
             gerrit:
               source: pkg
               name: salt-formula-gerrit
