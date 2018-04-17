@@ -11,5 +11,7 @@ parameters:
           share_type:
             default:
               name: 'default'
-              microversion: '2.40'
+              # Extra quotes are required to make sure automatic conversion to float
+              # not happening.
+              microversion: '"2.40"'
               extra_specs: ${_param:manila_share_type_default_extra_specs}
