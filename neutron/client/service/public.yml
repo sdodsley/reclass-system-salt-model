@@ -21,5 +21,5 @@ parameters:
                   allocation_pools:
                     - start: ${_param:openstack_public_neutron_subnet_allocation_start}
                       end: ${_param:openstack_public_neutron_subnet_allocation_end}
-                  gateway: ${_param:openstack_public_neutron_subnet_gateway}
+                  gateway_ip: ${_param:openstack_public_neutron_subnet_gateway}
                   enable_dhcp: False
