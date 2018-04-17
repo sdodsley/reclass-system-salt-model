@@ -574,10 +574,6 @@ parameters:
               STACK_RECLASS_ADDRESS:
                 type: string
                 default: "{{stack_reclass_address}}"
-              OPENSTACK_RELEASES:
-                type: string
-                default: "{{openstack_releases}}"
-                description: "OpenStack releases with comma delimeter which have to be testes. For example: pike,ocata"
               SOURCE_REPO_NAME:
                 type: string
                 description: "Name of the repo where packages are stored"
@@ -598,14 +594,10 @@ parameters:
                 type: boolean
                 default: "{{auto_promote}}"
                 description: Enable to autopromote repo
-              TEST_MULTINODE:
-                type: boolean
-                default: "{{test_multinode}}"
-                description: Whether to test nightly snapshot against multi-node virtual models
-              STACK_CLUSTER_NAMES:
+              TEST_SCHEMAS:
                 type: string
-                default: "{{stack_cluster_names}}"
-                description: "Cluster name to use from reclass to deploy multi-node"
+                default: "{{test_schemas}}"
+                description: "Defines structure to pass aio:cluster-name1:branch1,branch2|multinode:cluster-name2:branch1,branch2"
         build-salt-formula-refspec-template:
           name: "{{job_prefix}}-build-salt-formula-refspec"
           template:
