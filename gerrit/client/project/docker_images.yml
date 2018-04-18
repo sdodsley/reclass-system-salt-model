@@ -5,7 +5,7 @@ parameters:
         mk/docker-aptly:
           enabled: true
           description: Aptly docker images
-          upstream: https://github.com/tcpcloud/docker-aptly
+          upstream: https://github.com/Mirantis/docker-aptly
           access: ${gerrit:client:default_access}
           require_change_id: true
           require_agreement: false
@@ -13,7 +13,7 @@ parameters:
         mk/python-flask-hello:
           enabled: true
           description: Flask hello demo application
-          upstream: https://github.com/tcpcloud/python-flask-hello
+          upstream: https://github.com/Mirantis/python-flask-hello
           access: ${gerrit:client:default_access}
           require_change_id: true
           require_agreement: false
