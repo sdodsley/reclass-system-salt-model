@@ -9,7 +9,7 @@ parameters:
     aptly_server_mirror_sources: false
     aptly_server_mirror_ubuntu_sources: ${_param:aptly_server_mirror_sources}
     docker_image_aptly:
-      base: tcpcloud/aptly
+      base: mirantis/aptly
   aptly:
     server:
       enabled: true

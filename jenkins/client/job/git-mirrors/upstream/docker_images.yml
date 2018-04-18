@@ -5,7 +5,7 @@ parameters:
     jenkins_git_mirror_upstream_jobs:
       - name: docker-aptly
         downstream: mk/docker-aptly
-        upstream: "git@github.com:tcpcloud/docker-aptly"
+        upstream: "git@github.com:Mirantis/docker-aptly"
         branches: master
       - name: docker-gerrit
         downstream: mk/docker-gerrit

@@ -6,4 +6,4 @@ parameters:
       enabled: true
       source:
         engine: docker
-        image: tcpcloud/aptly-publisher
+        image: mirantis/aptly-publisher

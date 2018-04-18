@@ -55,7 +55,7 @@ parameters:
                 default: ""
               REGISTRY_CREDENTIALS_ID:
                 type: string
-                default: "dockerhub"
+                default: "mirantis-dockerhub"
               DOCKER_GIT_TAG:
                 type: boolean
                 default: "true"

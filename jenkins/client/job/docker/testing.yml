@@ -1,7 +1,7 @@
 parameters:
   _param:
     jenkins_docker_registry_url: ""
-    jenkins_docker_registry_credentials: "dockerhub"
+    jenkins_docker_registry_credentials: "mirantis-dockerhub"
   jenkins:
     client:
       job_template:
@@ -34,7 +34,7 @@ parameters:
             param:
               IMAGE_NAME:
                 type: string
-                default: "tcpcloud/{{name}}"
+                default: "mirantis/{{name}}"
               IMAGE_GIT_URL:
                 type: string
                 default: "${_param:jenkins_gerrit_url}/mk/python-flask-hello"

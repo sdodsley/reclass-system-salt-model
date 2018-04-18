@@ -19,7 +19,7 @@ parameters:
               name: flask-hello
           container:
             flask-hello:
-              image: ${_param:cicd_control_address}:5000/tcpcloud/python-flask-hello
+              image: ${_param:cicd_control_address}:5000/Mirantis/python-flask-hello
               image_pull_policy: Always
               ports:
               - port: 5000
