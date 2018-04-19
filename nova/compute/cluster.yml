@@ -97,4 +97,9 @@ parameters:
       user:
         public_key: ${_param:nova_compute_ssh_public}
         private_key: ${_param:nova_compute_ssh_private}
+      # Due to bug in qemu, migration will not work when fqdn is higher than 64 chars.
+      # https://bugzilla.redhat.com/show_bug.cgi?id=1568939
+      # Set migration address explicitly to avoid such problems.
+      libvirt:
+        migration_inbound_addr: ${_param:single_address}
       my_ip: ${_param:single_address}
