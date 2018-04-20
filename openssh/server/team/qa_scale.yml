@@ -3,6 +3,7 @@ classes:
 - system.openssh.server.team.members.sgalkin
 - system.openssh.server.team.members.obasov
 - system.openssh.server.team.members.mikhailkraynov
+- system.openssh.server.team.members.mcp-scale
 
 parameters:
   _param:
