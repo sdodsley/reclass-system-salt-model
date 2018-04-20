@@ -147,3 +147,4 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods reverse java.util.List
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getAt java.util.Collection java.lang.String
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods init java.util.List
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods asBoolean java.lang.CharSequence
