@@ -4,8 +4,7 @@ parameters:
     docker_image_hce: docker-prod-local.artifactory.mirantis.com/mirantis/oss/hce
     hce_bind_host: hce-api
     hce_bind_port: ${_param:haproxy_hce_bind_port}
-    hce_elasticsearch_host: elastic-endpoint-ip
-    hce_elasticsearch_port: elastic-endpoint-port
+    hce_prometheus_protocol: http
     hce_prometheus_host: prometheus-endpoint-ip
     hce_prometheus_port: prometheus-endpoint-port
     hce_ssl:
@@ -15,8 +14,7 @@ parameters:
       stack:
         hce:
           environment:
-            HCEELASTICHOST: ${_param:hce_elasticsearch_host}
-            HCEELASTICPORT: ${_param:hce_elasticsearch_port}
+            HCEPROMETHEUSPROTOCOL: ${_param:hce_prometheus_protocol}
             HCEPROMETHEUSHOST: ${_param:hce_prometheus_host}
             HCEPROMETHEUSPORT: ${_param:hce_prometheus_port}
           service:
