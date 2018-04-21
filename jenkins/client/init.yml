@@ -37,6 +37,7 @@ parameters:
         ldap: {}
         matrix-auth: {}
         monitoring: {}
+        performance: {}
         pipeline-utility-steps: {}
         rebuild: {}
         simple-theme-plugin: {}
