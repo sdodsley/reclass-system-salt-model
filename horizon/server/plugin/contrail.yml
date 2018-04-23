@@ -9,3 +9,5 @@ parameters:
         horizon_overrides:
           overrides:
           - contrail_openstack_dashboard
+      openstack_neutron_network:
+        enable_fip_topology_check: False
