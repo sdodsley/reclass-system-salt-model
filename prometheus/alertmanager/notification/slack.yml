@@ -7,6 +7,9 @@ parameters:
           routes:
             slack:
               receiver: HTTP-slack
+              match_re:
+                - label: route
+                  value: '(.*slack.*)'
               continue: true
         receiver:
           HTTP-slack:
