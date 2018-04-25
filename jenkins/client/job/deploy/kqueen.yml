@@ -45,6 +45,10 @@ parameters:
             SALT_MASTER_URL:
               type: string
               default: ""
+            SALT_OVERRIDES:
+              type: text
+              default: ""
+              description: YAML with overrides for Salt deployment
 
             # aws api
             AWS_STACK_REGION:
