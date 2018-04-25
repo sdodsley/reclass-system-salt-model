@@ -12,16 +12,7 @@ parameters:
       server:
         server01:
           database:
-            alertmanager:
-              enabled: true
-              encoding: 'UTF8'
-              locale: 'en_US'
-              users:
-              - name: ${_param:alertmanager_db_user}
-                password: ${_param:alertmanager_db_user_password}
-                host: ${_param:alertmanager_db_host}
-                createdb: true
-                rights: all privileges
+            pushkin:
               init:
                 maintenance_db: pushkin
                 force: true
