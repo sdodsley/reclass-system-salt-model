@@ -23,6 +23,10 @@ parameters:
               default: gerrit
               type: string
               description: "Name of creadentials to use when connecting to gerrit"
+            ARTIFACTORY_CREDENTIALS:
+              type: string
+              default: "artifactory"
+              description: Jenkins credential ID for Artifactory
             HEAT_STACK_ZONE:
               type: string
               description: "Heat stack zone where build stack"
