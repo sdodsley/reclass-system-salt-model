@@ -80,6 +80,10 @@ parameters:
           - multiverse/debug
           - restricted/debug
           - universe/debug
+          - comm
+          - multiverse/comm
+          - universe/comm
+          - restricted/comm
           # Updating filter, please always start from section, aka main|universe|multiverse
           filter:
             1: "--exclude='android*'"
@@ -171,6 +175,4 @@ parameters:
             803: "--include='/main(.*)unittest2'" # openstack* pkgs
             804: "--include='/main(.*)libbluetooth3'" # python-guestfs
             805: "--include='/main(.*)llvm-toolchain-5.0'" # pki-ca: < 389-ds-base < dogtag
-
-
-
+            806: "--include='/main(.*)man-db'" # include man tool
