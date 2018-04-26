@@ -3,3 +3,5 @@ parameters:
     controller:
       notification:
         driver: messagingv2
+        notify_on:
+          state_change: vm_and_task_state
