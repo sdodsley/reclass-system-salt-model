@@ -19,6 +19,10 @@ parameters:
           display_name: oscore-test-virtual-model
           name: oscore-test-virtual-model
           param:
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt-qa-credentials"
+              description: Jenkins credential ID for Salt master
             CREDENTIALS_ID:
               default: gerrit
               type: string
