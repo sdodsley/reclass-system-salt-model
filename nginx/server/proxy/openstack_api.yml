@@ -8,4 +8,3 @@ classes:
 - system.nginx.server.proxy.openstack.keystone_private
 - system.nginx.server.proxy.openstack.neutron
 - system.nginx.server.proxy.openstack.nova
-- system.nginx.server.proxy.openstack.nova_ec2
