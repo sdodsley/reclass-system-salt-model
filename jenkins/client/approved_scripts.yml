@@ -12,6 +12,7 @@ parameters:
         - method groovy.json.JsonSlurperClassic parseText java.lang.String
         - method groovy.lang.GString getBytes
         - method groovy.lang.GroovyObject getProperty java.lang.String
+        - method groovy.util.Node get java.lang.String
         - method groovy.util.Node attributes
         - method groovy.util.XmlParser parse java.io.File
         - method groovy.util.XmlParser parseText java.lang.String
