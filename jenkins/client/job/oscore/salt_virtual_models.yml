@@ -92,7 +92,7 @@ parameters:
             TEST_TARGET:
               type: string
               description: Node to run tests
-              default: "cfg01*"
+              default: "gtw01*"
             TEST_CONCURRENCY:
               type: string
               description: How much test threads to run
