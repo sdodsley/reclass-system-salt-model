@@ -283,6 +283,10 @@ parameters:
                 type: boolean
                 default: "{{run_smoke}}"
                 description: Enabling of running smoke tests
+              SALT_MASTER_CREDENTIALS:
+                type: string
+                default: "salt-qa-credentials"
+                description: Jenkins credential ID for Salt master
         test-runner-template:
           name: "{{job_prefix}}-{{test_type}}-runner"
           template:
