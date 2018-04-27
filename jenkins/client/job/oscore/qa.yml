@@ -71,11 +71,6 @@ parameters:
                     branches:
                       - compare_type: "PLAIN"
                         name: "master"
-                skip_vote:
-                  - successful
-                  - failed
-                  - unstable
-                  - not_built
                 event:
                   patchset:
                     - created
