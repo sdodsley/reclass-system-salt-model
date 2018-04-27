@@ -11,3 +11,10 @@ parameters:
           key_id: D88E42B4
           key_server: keyserver.ubuntu.com
           clean_file: true
+        mcp_elastic_curator_5x:
+          source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_elastic_5x_version}/elasticsearch-curator-5/${_param:linux_system_codename}/ stable main"
+          architectures: amd64
+          key_id: D88E42B4
+          key_server: keyserver.ubuntu.com
+          clean_file: true
+
