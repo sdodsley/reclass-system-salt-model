@@ -59,6 +59,14 @@ parameters:
               DOCKER_GIT_TAG:
                 type: boolean
                 default: "true"
+              ARTIFACTORY_URL:
+                type: string
+                default: "docker-dev-virtual.docker.mirantis.net"
+                description: "URL to artifactory"
+              ARTIFACTORY_NAMESPACE:
+                type: string
+                default: cicd
+                description: "Artifactory namespace (oss, cicd,...)"
               EXTRA_REPO_URL:
                 type: string
                 default: "${_param:jenkins_aptly_url}"

@@ -98,6 +98,14 @@ parameters:
               REGISTRY_CREDENTIALS_ID:
                 type: string
                 default: "mirantis-dockerhub"
+              ARTIFACTORY_URL:
+                type: string
+                default: "docker-dev-virtual.docker.mirantis.net"
+                description: "URL to artifactory"
+              ARTIFACTORY_NAMESPACE:
+                type: string
+                default: cicd
+                description: "Artifactory namespace (oss, cicd,...)"
               DOCKER_GIT_TAG:
                 type: boolean
                 default: "true"
