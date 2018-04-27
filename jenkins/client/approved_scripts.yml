@@ -72,6 +72,7 @@ parameters:
         - method java.util.Calendar add int int
         - method java.util.Calendar getTime
         - method java.util.Date before java.util.Date
+        - method java.text.DateFormat parse java.lang.String
         - method jenkins.model.Jenkins getItemByFullName java.lang.String
         - method jenkins.model.Jenkins getPluginManager
         - method org.jenkinsci.plugins.workflow.job.WorkflowRun doStop
@@ -94,6 +95,7 @@ parameters:
         - new java.util.ArrayList
         - new java.util.Date
         - new java.util.HashMap
+        - new java.text.SimpleDateFormat java.lang.String java.util.Locale
         - staticField groovy.io.FileType FILES
         - staticMethod com.cloudbees.plugins.credentials.CredentialsProvider lookupCredentials java.lang.Class hudson.model.ItemGroup
         - staticMethod java.lang.Double parseDouble java.lang.String
