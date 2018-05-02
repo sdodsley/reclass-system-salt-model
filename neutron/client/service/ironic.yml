@@ -1,6 +1,11 @@
 classes:
 - service.neutron.client
 parameters:
+  _param:
+     # TODO Remove below variables with typo in next release
+     openstack_baremetal_neutron_subnet_cidr: ${_param:openstack_baremeta_neutron_subnet_cidr}
+     openstack_baremetal_neutron_subnet_allocation_start: ${_param:openstack_baremeta_neutron_subnet_allocation_start}
+     openstack_baremetal_neutron_subnet_allocation_end: ${_param:openstack_baremeta_neutron_subnet_allocation_end}
   neutron:
     client:
       server:
@@ -16,8 +21,8 @@ parameters:
               port_security_enabled: false
               subnet:
                 baremetal-subnet:
-                  cidr: ${_param:openstack_baremeta_neutron_subnet_cidr}
+                  cidr: ${_param:openstack_baremetal_neutron_subnet_cidr}
                   allocation_pools:
-                    - start: ${_param:openstack_baremeta_neutron_subnet_allocation_start}
-                      end: ${_param:openstack_baremeta_neutron_subnet_allocation_end}
+                    - start: ${_param:openstack_baremetal_neutron_subnet_allocation_start}
+                      end: ${_param:openstack_baremetal_neutron_subnet_allocation_end}
                   enable_dhcp: true
