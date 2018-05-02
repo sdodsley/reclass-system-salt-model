@@ -144,6 +144,10 @@ parameters:
                 type: string
                 default: "salt-qa-credentials"
                 description: Jenkins credential ID for Salt master
+              USE_RALLY:
+                type: boolean
+                description: Whether to use container with rally
+                default: "{{use_rally}}"
         test-openstack-component-periodic:
           name: "{{job_prefix}}-{{milestone}}-{{model}}-{{openstack_version}}-{{formula_pkg_revision}}"
           template:
@@ -287,6 +291,10 @@ parameters:
                 type: string
                 default: "salt-qa-credentials"
                 description: Jenkins credential ID for Salt master
+              USE_RALLY:
+                type: boolean
+                description: Whether to use container with rally
+                default: "{{use_rally}}"
         test-runner-template:
           name: "{{job_prefix}}-{{test_type}}-runner"
           template:
