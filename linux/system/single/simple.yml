@@ -1,6 +1,7 @@
 classes:
 - service.linux.system
 - system.linux.system.banner
+- service.logrotate.server
 parameters:
   _param:
     local_package_repos: false
