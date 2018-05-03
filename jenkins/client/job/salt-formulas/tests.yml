@@ -115,6 +115,7 @@ parameters:
             - name: salt
             - name: sensu
             - name: sentry
+            - name: shibboleth
             - name: sphinx
             - name: spinnaker
             - name: statsd
