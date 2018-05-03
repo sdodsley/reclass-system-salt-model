@@ -2,8 +2,17 @@ classes:
 - service.octavia.api.cluster
 - system.haproxy.proxy.listen.openstack.octavia
 parameters:
+  _param:
+    cluster_internal_protocol: 'http'
   octavia:
     api:
       enabled: true
       bind:
         address: ${_param:cluster_local_address}
+      database:
+        host: ${_param:openstack_database_address}
+      identity:
+        region: ${_param:openstack_region}
+        protocol: ${_param:cluster_internal_protocol}
+      message_queue:
+        host: ${_param:openstack_message_queue_address}

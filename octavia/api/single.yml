@@ -1,8 +1,17 @@
 classes:
 - service.octavia.api.single
 parameters:
+  _param:
+    internal_protocol: 'http'
   octavia:
     api:
       enabled: true
       bind:
         address: ${_param:single_address}
+      database:
+        host: ${_param:openstack_database_address}
+      identity:
+        region: ${_param:openstack_region}
+        protocol: ${_param:internal_protocol}
+      message_queue:
+        host: ${_param:openstack_message_queue_address}

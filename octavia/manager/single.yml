@@ -1,6 +1,8 @@
 classes:
 - service.octavia.manager.single
 parameters:
+  _param:
+    internal_protocol: 'http'
   octavia:
     manager:
       enabled: true
@@ -9,3 +11,10 @@ parameters:
         private_key: ${_param:octavia_private_key}
         user: octavia
         group: octavia
+      database:
+        host: ${_param:openstack_database_address}
+      identity:
+        region: ${_param:openstack_region}
+        protocol: ${_param:internal_protocol}
+      message_queue:
+        host: ${_param:openstack_message_queue_address}
