@@ -18,13 +18,6 @@ parameters:
           full_name: Michail Zhnichkov
           home: /home/mzhnichkov
           email: mzhnichkov@mirantis.com
-        prazumovsky:
-          enabled: true
-          name: prazumovsky
-          sudo: true
-          full_name: Peter Razumovsky
-          home: /home/prazumovsky
-          email: prazumovsky@mirantis.com
         slukjanov:
           enabled: true
           name: slukjanov
