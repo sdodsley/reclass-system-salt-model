@@ -801,6 +801,7 @@ parameters:
                     compare_type: 'REG_EXP'
                     branches:
                       - master
+                      - stable/queens
                       - stable/pike
                       - stable/ocata
                       - stable/newton
