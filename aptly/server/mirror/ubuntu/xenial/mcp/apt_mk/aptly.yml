@@ -6,6 +6,7 @@ parameters:
     mirror_mirantis_openstack_xenial_aptly_components: main
     mirror_mirantis_openstack_xenial_aptly_gpgkeys:
       - 9C7DE460
+      - ED75B5A4483DA07C
   aptly:
     server:
       mirror:
