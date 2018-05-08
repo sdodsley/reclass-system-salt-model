@@ -10,6 +10,7 @@ parameters:
                 admin_identity:
                   region_name: ${_param:openstack_region}
                   identity_api_version: '3'
+                  interface: 'internal'
                   auth:
                     username: 'admin'
                     password: ${_param:keystone_admin_password}

@@ -1,3 +1,5 @@
+classes:
+- system.keystone.client.v3.service.heat
 parameters:
   _param:
     cluster_public_protocol: https

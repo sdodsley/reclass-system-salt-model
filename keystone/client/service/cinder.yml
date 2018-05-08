@@ -1,3 +1,5 @@
+classes:
+- system.keystone.client.v3.service.cinder
 parameters:
   _param:
     cluster_public_protocol: https
