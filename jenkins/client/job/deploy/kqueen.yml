@@ -52,7 +52,7 @@ parameters:
               default: "eu-central-1"
             AWS_API_CREDENTIALS:
               type: string
-              default: "aws-credentials"
+              default: "kqueen-aws"
             AWS_SSH_KEY:
               type: string
               default: "jenkins-mk"
