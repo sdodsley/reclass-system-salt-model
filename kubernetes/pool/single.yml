@@ -4,12 +4,20 @@ classes:
 parameters:
   _param:
     # component docker images
-    kubernetes_calico_calicoctl_image: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico/ctl:latest
-    kubernetes_calico_image: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico/node:latest
-    kubernetes_calico_cni_image: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico/cni:latest
-    kubernetes_hyperkube_image: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/hyperkube-amd64:v1.6.2-2
-    kubernetes_contrail_cni_image: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/contrail-integration/contrail-cni:v1.0.0
-    kubernetes_contrail_network_controller_image: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/contrail-integration/contrail-network-controller:v1.0.0
+    kubernetes_calico_calicoctl_image: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico/ctl:v1.6.1-38-20171010022253
+    kubernetes_calico_image: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico/node:v2.6.1
+    kubernetes_calico_cni_image: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico/cni:v1.11.0-31-20171010012204
+    kubernetes_hyperkube_image: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/hyperkube-amd64:v1.8.11
+    kubernetes_contrail_cni_image: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/contrail-integration/contrail-cni:v1.2.0
+    kubernetes_contrail_network_controller_image: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/contrail-integration/contrail-network-controller:v1.2.0
+    #Local versions of images
+    aptly_server_hostname: apt
+    kubernetes_calico_calicoctl_image_local: ${_param:aptly_server_hostname}:5000/ctl:v1.6.1-38-20171010022253
+    kubernetes_calico_image_local: ${_param:aptly_server_hostname}:5000/node:v2.6.1
+    kubernetes_calico_cni_image_local: ${_param:aptly_server_hostname}:5000/cni:v1.11.0-31-20171010012204
+    kubernetes_hyperkube_image_local: ${_param:aptly_server_hostname}:5000/hyperkube-amd64:v1.8.11
+    kubernetes_contrail_cni_image_local: ${_param:aptly_server_hostname}:5000/contrail-cni:v1.2.0
+    kubernetes_contrail_network_controller_image_local: ${_param:aptly_server_hostname}:5000/contrail-network-controller:v1.2.0
 
   kubernetes:
     pool:

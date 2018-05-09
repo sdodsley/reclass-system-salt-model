@@ -2,8 +2,11 @@ classes:
 - service.kubernetes.master.single
 parameters:
   _param:
-    kubernetes_netchecker_agent_image: quay.io/l23network/k8s-netchecker-agent:v1.0
-    kubernetes_netchecker_server_image: quay.io/l23network/k8s-netchecker-server:v1.0
+    kubernetes_netchecker_agent_image: mirantis/k8s-netchecker-agent:v1.2.2
+    kubernetes_netchecker_server_image: mirantis/k8s-netchecker-server:v1.2.2
+    aptly_server_hostname: apt
+    kubernetes_netchecker_agent_image_local: ${_param:aptly_server_hostname}:5000/mirantis/k8s-netchecker-agent:v1.2.2
+    kubernetes_netchecker_server_image_local: ${_param:aptly_server_hostname}:5000/mirantis/k8s-netchecker-server:v1.2.2
   kubernetes:
     master:
       container: false
