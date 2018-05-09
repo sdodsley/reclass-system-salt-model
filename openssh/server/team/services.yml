@@ -14,6 +14,7 @@ classes:
 - system.openssh.server.team.members.alugovoi
 - system.openssh.server.team.members.tjaroszyk
 - system.openssh.server.team.members.sburns
+- system.openssh.server.team.members.yisakov
 parameters:
   _param:
     linux_system_user_sudo: true
