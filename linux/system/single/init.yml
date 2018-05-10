@@ -1,6 +1,7 @@
 classes:
 - service.linux.system
 - service.salt.minion.master
+- system.linux.system.banner
 - system.openssh.server.single
 - system.ntp.client.single
 parameters:
