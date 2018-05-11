@@ -217,18 +217,6 @@ parameters:
                 type: string
                 description: Version of formulas for salt-master bootstrap
                 default: "{{formula_pkg_revision}}"
-              EXTRA_REPO:
-                type: string
-                description: Optional extra repository to run tests with
-                default: ''
-              EXTRA_REPO_PIN:
-                type: string
-                description: Optional extra repository pin definition
-                default: ''
-              EXTRA_REPO_PRIORITY:
-                type: string
-                description: Optional extra repository pin priority
-                default: ''
               # openstack api
               OPENSTACK_API_URL:
                 type: string
