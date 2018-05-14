@@ -5,11 +5,10 @@ classes:
 - system.haproxy.proxy.listen.kubernetes.apiserver
 parameters:
   _param:
-    kubernetes_netchecker_agent_image: mirantis/k8s-netchecker-agent:v1.2.2
-    kubernetes_netchecker_server_image: mirantis/k8s-netchecker-server:v1.2.2
-    aptly_server_hostname: apt
-    kubernetes_netchecker_agent_image_local: ${_param:aptly_server_hostname}:5000/mirantis/k8s-netchecker-agent:v1.2.2
-    kubernetes_netchecker_server_image_local: ${_param:aptly_server_hostname}:5000/mirantis/k8s-netchecker-server:v1.2.2
+    kubernetes_netchecker_agent_repo: mirantis
+    kubernetes_netchecker_server_repo: mirantis
+    kubernetes_netchecker_agent_image: ${_param:kubernetes_netchecker_agent_repo}/k8s-netchecker-agent:v1.2.2
+    kubernetes_netchecker_server_image: ${_param:kubernetes_netchecker_server_repo}/k8s-netchecker-server:v1.2.2
   kubernetes:
     master:
       container: false
@@ -17,3 +16,4 @@ parameters:
         calico:
           prometheus:
             enabled: true
+
