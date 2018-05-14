@@ -11,9 +11,9 @@ parameters:
     kubernetes_contrail_network_controller_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/contrail-integration
 
     # component docker images
-    kubernetes_calico_calicoctl_image: ${_param:kubernetes_calico_calicoctl_repo}/ctl:v1.6.1-38-20171010022253
-    kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v2.6.1
-    kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v1.11.0-31-20171010012204
+    kubernetes_calico_calicoctl_image: ${_param:kubernetes_calico_calicoctl_repo}/ctl:v1.6.4
+    kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v2.6.9
+    kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v1.11.5
     kubernetes_hyperkube_image: ${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.8.11-9
     kubernetes_contrail_cni_image: ${_param:kubernetes_contrail_cni_repo}/contrail-cni:v1.2.0
     kubernetes_contrail_network_controller_image: ${_param:kubernetes_contrail_network_controller_repo}/contrail-network-controller:v1.2.0
