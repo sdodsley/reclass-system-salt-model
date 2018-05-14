@@ -42,4 +42,5 @@ parameters:
         ntp_external_only: true
         upstream_dns: ${_param:dns_server01}
         enable_http_proxy: false
-        default_min_hwe_kernel: ''
+        # linux-signed-image-generic-hwe-16.04
+        default_min_hwe_kernel: 'hwe-16.04'
