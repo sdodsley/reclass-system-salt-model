@@ -6,7 +6,7 @@ parameters:
       - name: kubernetes-aws-model
         downstream: mk/kubernetes-aws-model
         upstream: "git@github.com:Mirantis/kubernetes-aws-model"
-        branches: master
+        branches: allinone,master
       - name: ceph-ha-model
         downstream: ceph/ceph-ha-model
         upstream: "git@github.com:Mirantis/ceph-ha-model"
