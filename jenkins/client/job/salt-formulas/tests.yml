@@ -176,6 +176,12 @@ parameters:
               PARALLEL_GROUP_SIZE:
                 type: string
                 default: "8"
+              RUN_TEST_IN_DOCKER:
+                type: boolean
+                description: "Run test stage in docker environment"
+              SMOKE_TEST_DOCKER_IMG:
+                type: string
+                default: "ubuntu:16.04"
       job:
         test-salt-formulas-env:
           name: test-salt-formulas-env
