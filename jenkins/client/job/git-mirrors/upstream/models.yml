@@ -4,7 +4,7 @@ parameters:
   _param:
     jenkins_git_mirror_upstream_jobs:
       - name: kubernetes-aws-model
-        downstream: mk/kubernetes-aws-model
+        downstream: kubernetes/kubernetes-aws-model
         upstream: "git@github.com:Mirantis/kubernetes-aws-model"
         branches: allinone,master
       - name: ceph-ha-model
