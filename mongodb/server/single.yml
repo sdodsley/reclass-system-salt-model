@@ -2,4 +2,4 @@ classes:
 - service.mongodb.server.single
 parameters:
   _param:
-    mongodb_server_replica_set: ceilometer
+    mongodb_server_replica_set: stacklight
