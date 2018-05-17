@@ -114,6 +114,18 @@ parameters:
               os_version: ocata
               branch: stable/ocata
             # Trusty
+            - name: horizon-contrail-panels
+              os: ubuntu
+              dist: trusty
+              os_version: pike
+              branch: stable/pike
+            # Xenial
+            - name: horizon-contrail-panels
+              os: ubuntu
+              dist: xenial
+              os_version: pike
+              branch: stable/pike
+            # Trusty
             - name: horizon-jenkins-dashboard
               os: ubuntu
               dist: trusty
