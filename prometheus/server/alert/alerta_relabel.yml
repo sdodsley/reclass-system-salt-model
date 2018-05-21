@@ -1,0 +1,19 @@
+parameters:
+  _param:
+    alerta_environment_label: Development
+  prometheus:
+    server:
+      config:
+        alert:
+          labels_add:
+            environment: ${_param:alerta_environment_label}
+        alert_relabel_configs:
+          - replacement: "aggregated"
+            source_labels: "instance"
+            target_label: "instance"
+          - source_labels: ["host", "job"]
+            target_label: "instance"
+            regex: "([a-zA-Z0-9]+;[a-zA-Z0-9_]+)"
+          - source_labels: ["hostname", "job"]
+            target_label: "instance"
+            regex: "([a-zA-Z0-9]+;[a-zA-Z0-9_]+)"
