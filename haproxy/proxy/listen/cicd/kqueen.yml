@@ -2,7 +2,7 @@ parameters:
   _param:
     haproxy_kqueen_api_bind_host: ${_param:haproxy_bind_address}
     haproxy_kqueen_api_bind_port: 5000
-    haproxy_kqueen_api_exposed_port: 15000
+    haproxy_kqueen_api_exposed_port: 15001
     haproxy_kqueen_ui_bind_host: ${_param:haproxy_bind_address}
     haproxy_kqueen_ui_bind_port: 5080
     haproxy_kqueen_ui_exposed_port: 15080

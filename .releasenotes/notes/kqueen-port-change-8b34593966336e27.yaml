@@ -1,0 +1,14 @@
+---
+
+summary: >
+  Changed default port for KQueen API service.
+
+upgrades:
+
+  .. code-block:: yaml
+
+     -    haproxy_kqueen_api_exposed_port: 15000
+     +    haproxy_kqueen_api_exposed_port: 15001
+
+fixes:
+  - https://mirantis.jira.com/browse/PROD-19571
