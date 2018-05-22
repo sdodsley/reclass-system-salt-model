@@ -3,7 +3,7 @@ classes:
 parameters:
   _param:
     alertmanager_external_url: ${_param:cluster_public_host}
-    alertmanager_external_proto: http
+    alertmanager_external_proto: https
   docker:
     client:
       stack:

@@ -38,7 +38,7 @@ parameters:
                 PROMETHEUS_BIND_PORT: ${prometheus:server:bind:port}
                 PROMETHEUS_BIND_ADDRESS: ${prometheus:server:bind:address}
                 PROMETHEUS_STORAGE_LOCAL_RETENTION: ${prometheus:server:storage:local:retention}
-                PROMETHEUS_EXTERNAL_URL: "http://${_param:stacklight_monitor_address}:15010"
+                PROMETHEUS_EXTERNAL_URL: "https://${_param:stacklight_monitor_address}:15010"
                 # Backward compatibility for Prometheus 1.7
                 PROMETHEUS_STORAGE_LOCAL_ENGINE: ${_param:prometheus_storage_local_engine}
                 PROMETHEUS_STORAGE_LOCAL_TARGET_HEAP_SIZE: ${_param:prometheus_storage_heap_size}
