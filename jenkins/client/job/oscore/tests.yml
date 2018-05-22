@@ -275,6 +275,10 @@ parameters:
                 type: boolean
                 default: "{{run_smoke}}"
                 description: Enabling of running smoke tests
+              ARTIFACTORY_CREDENTIALS:
+                type: string
+                default: "artifactory"
+                description: Jenkins credential ID for Artifactory
               SALT_MASTER_CREDENTIALS:
                 type: string
                 default: "salt-qa-credentials"
