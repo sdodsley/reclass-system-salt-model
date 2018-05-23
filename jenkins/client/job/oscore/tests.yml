@@ -602,6 +602,14 @@ parameters:
                 type: string
                 default: "{{test_schemas}}"
                 description: "Defines structure to pass aio:cluster-name1:branch1,branch2|multinode:cluster-name2:branch1,branch2"
+              TESTRAIL:
+                type: boolean
+                default: "{{testrail}}"
+                description: Whether to upload results to testrail
+              TEST_MILESTONE:
+                type: string
+                description: Product milestone
+                default: "{{milestone}}"
         build-salt-formula-refspec-template:
           name: "{{job_prefix}}-build-salt-formula-refspec"
           template:
