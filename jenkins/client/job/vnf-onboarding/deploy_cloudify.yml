@@ -39,7 +39,7 @@ parameters:
               default: "cloudify-enterprise"
             CFM_FLAVOR:
               type: string
-              default: "large"
+              default: "cfy.mngr"
             CFM_DISK_SIZE:
               type: string
               default: "80"
@@ -57,7 +57,16 @@ parameters:
               default: "${_param:dns_server01}"
             CFM_SSH_KEY_ID:
               type: string
-              default: "openstack_key"
+              default: "openstack-key"
             EXTERNAL_NET:
               type: string
               default: "public"
+            VNF_DOCKER_REGISTRY_PATH:
+              type: string
+              default: "${_param:vnf_docker_registry_path}"
+            VNF_DOCKER_CLI_TAG:
+              type: string
+              default: "latest"
+            VNF_DOCKER_CLI_PLATFORM:
+              type: string
+              default: "ubuntu"

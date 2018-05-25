@@ -85,20 +85,18 @@ parameters:
                 type: string
                 description: "IP address of extrenal Cloudify. \"auto\" refers to address of deploy_cloudify job Cloudify instance"
                 default: "auto"
+              CLOUDIFY_MANAGER_OPTIONS:
+                type: string
+                description: "Parameters for cloudify manager VM. Can be skipped if cloudify predeployed."
+                default: "CFM_IMAGE=cloudify-manager-4.3.1ga CFM_FLAVOR=cfy.mngr CFM_DISK_SIZE=80 CFM_SUBNET_CIDR=10.10.1.1/24 CFM_SUBNET_DNS=172.19.0.6 EXTERNAL_NET=public "
               CFM_SSH_KEY_ID:
                 type: string
                 description: "Credentials ID of ssh key for connection to Cloudify"
                 default: "${_param:vnf_openstack_ssh_key_credentials}"
-              CFY_AGENT_NET:
+              CLOUDIFY_AGENT_OPTIONS:
                 type: string
-                description: "Network for Cloudify agents that has access to Cloudify Manager"
-                default: "cfm-net-shared"
-              CFY_AGENT_FLAVOR:
-                type: string
-                default: "cfy.agent"
-              CFY_AGENT_IMAGE:
-                type: string
-                default: "ubuntu-xenial"
+                description: "Parameters for cloudify agent VMs."
+                default: "CFY_AGENT_NET=cfm-net-shared CFY_AGENT_FLAVOR=cfy.agent CFY_AGENT_BACKEND_FLAVOR=backend.metaswitch CFY_AGENT_IMAGE=agent_vm CFY_AGENT_BASE_IMAGE=base_agent_vm CFY_AGENT_BACKEND_IMAGE=base_backend_vm"
               VNF_ARTIFACTORY_URL:
                 type: string
                 default: "${_param:vnf_artifactory_url}"
