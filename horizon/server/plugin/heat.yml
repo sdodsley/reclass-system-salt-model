@@ -5,7 +5,9 @@ parameters:
         heat:
           source:
             engine: pkg
-            name: openstack-dashboard-heat-server-templates
-        horizon_overrides:
-          overrides:
-          - heat_server_templates
+            name: python-heat-dashboard
+      policy:
+        orchestration:
+          enabled: true
+          name: heat_policy.json
+          source: file
