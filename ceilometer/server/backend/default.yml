@@ -6,7 +6,9 @@ parameters:
   # they are incompatible with any legacy database publisher backends
   ceilometer:
     server:
-      database: ~
+      database:
+        engine: none
+        password: none
       publisher:
         default:
           enabled: false
