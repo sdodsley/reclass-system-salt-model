@@ -1,3 +1,11 @@
+classes:
+- system.openssh.server.team.members.samstoelinga
+- system.openssh.server.team.members.sachintripathi
+- system.openssh.server.team.members.ryanday
+- system.openssh.server.team.members.pmichalec
+- system.openssh.server.team.members.brucemathews
+- system.openssh.server.team.members.andreidanin
+
 parameters:
   _param:
     linux_system_user_sudo: true
