@@ -148,6 +148,10 @@ parameters:
                 type: boolean
                 description: Whether to use container with rally
                 default: "{{use_rally}}"
+              TEST_MILESTONE:
+                type: string
+                description: Product milestone
+                default: ""
         test-openstack-component-periodic:
           name: "{{job_prefix}}-{{milestone}}-{{model}}-{{openstack_version}}-{{formula_pkg_revision}}"
           template:
