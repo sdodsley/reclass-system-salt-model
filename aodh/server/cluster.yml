@@ -4,6 +4,8 @@ classes:
 - system.haproxy.proxy.listen.openstack.aodh
 - system.keepalived.cluster.instance.openstack_telemetry_vip
 parameters:
+  _param:
+    openstack_event_alarm_topic: alarm.all
   aodh:
     server:
       enabled: true
@@ -13,6 +15,7 @@ parameters:
       debug: false
       verbose: true
       region: ${_param:openstack_region}
+      event_alarm_topic: ${_param:openstack_event_alarm_topic}
       database:
         engine: "mysql"
         host: ${_param:openstack_database_address}
