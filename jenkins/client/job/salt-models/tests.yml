@@ -350,7 +350,11 @@ parameters:
               default: ""
             RECLASS_VERSION:
               type: string
-              default: "master"
+              # In our repos the latest reclass we using is 1.4.1. The new version 1.5.2 is not compatible
+              # by syntax with 1.4.1 more details may be found here PROD-20425.
+              # Run rendering tests against version we using on customer side, until new version of reclass is
+              # packaged and placed to our repos, so we can do smooth transition to new syntax.
+              default: "reclass-1.4.1"
               description: "Version (branch) of Reclass we will use"
             MAX_CPU_PER_JOB:
               type: string
