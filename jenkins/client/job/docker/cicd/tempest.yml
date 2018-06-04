@@ -22,6 +22,7 @@ parameters:
                 "mcp/docker-ci-tempest":
                   branches:
                     - master
+                    - pike
               event:
                 patchset:
                   - created:
