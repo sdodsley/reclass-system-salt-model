@@ -3,12 +3,6 @@ parameters:
     haproxy_params_check: 'check'
   haproxy:
     proxy:
-      timeout:
-        queue: '10s'
-        connect: '10s'
-        client: '10s'
-        server: '10s'
-        check: '10s'
       listen:
         mysql_cluster:
           type: mysql
