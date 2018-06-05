@@ -15,7 +15,7 @@ parameters:
                 service_admin:
                   name: admin
                   project_id: service
-          service:
+          services:
             panko:
               type: event
               description: OpenStack Event Service
