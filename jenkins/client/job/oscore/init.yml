@@ -3,6 +3,7 @@ classes:
   - system.jenkins.client.job.oscore.tests
   - system.jenkins.client.job.oscore.qa
   - system.jenkins.client.job.oscore.salt_virtual_models
+  - system.jenkins.client.job.oscore.cookiecutter
 parameters:
   _param:
      job_description_oscore: <br>Deploy and test OpenStack.<br>
