@@ -1,15 +1,11 @@
 parameters:
   _param:
     apt_mk_version: stable
-    maas_region_boot_sources_maas_ephemeral_v3_version: ${_param:apt_mk_version}
-    maas_region_boot_sources_maas_ephemeral_v3_host_url: "http://mirror.mirantis.com/"
-    # http://mirror.mirantis.com/nightly/maas-ephemeral-v3/
-    maas_region_boot_sources_maas_ephemeral_v3_url: "${_param:linux_system_repo_maas_ephemeral_v3_host_url}/${_param:apt_mk_version}/maas-ephemeral-v3/"
   maas:
     region:
       boot_sources_selections:
-        xenial:
-          url: "${_param:maas_region_boot_sources_maas_ephemeral_v3_url}"
+        mcp_xenial:
+          url: ${maas:region:boot_sources:mcp_resources_mirror:url}
           os: "ubuntu"
           release: "xenial"
           arches: "amd64"

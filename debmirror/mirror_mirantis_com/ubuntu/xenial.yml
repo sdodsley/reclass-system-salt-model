@@ -2,6 +2,7 @@ parameters:
   _param:
     apt_mk_version: 'stable'
     mirror_mirantis_com_ubuntu_xenial_force: False
+    debmirror_mirrors_base_target_dir: "/srv/volumes/aptly/public/${_param:apt_mk_version}/"
   debmirror:
     client:
       enabled: true
@@ -15,10 +16,10 @@ parameters:
           arch: [ 'amd64' ]
           mirror_host: "mirror.mirantis.com"
           mirror_root: ":mirror/${_param:apt_mk_version}/ubuntu/"
-          target_dir: "/srv/volumes/aptly/public/ubuntu/"
+          target_dir: "${_param:debmirror_mirrors_base_target_dir}/ubuntu/"
           log_file: "/var/log/debmirror/mirror_mirantis_com_ubuntu_xenial.log"
           dist: [ xenial , xenial-security, xenial-updates ]
-          section: [ main , multiverse, restricted, universe ]
+          section: [ main , restricted, universe ]
           # Don't exclude main/x11 - its required for many pkgs.
           exclude_deb_section:
           - games
