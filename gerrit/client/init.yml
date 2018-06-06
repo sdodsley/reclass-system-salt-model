@@ -3,6 +3,7 @@ classes:
 parameters:
   _param:
     gerrit_try_login: true
+    gerrit_server_host: ${_param:cluster_vip_address}
   gerrit:
     client:
       enabled: True
@@ -12,7 +13,7 @@ parameters:
         gerrit_config: /srv/volumes/gerrit/etc/gerrit.config
         gerrit_secure_config: /srv/volumes/gerrit/etc/secure.config
       server:
-        host: ${_param:cluster_vip_address}
+        host: ${_param:gerrit_server_host}
         user: admin
         email: ${_param:gerrit_admin_email}
         auth_method: basic
