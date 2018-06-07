@@ -54,6 +54,7 @@ parameters:
             - name: heketi
             - name: helm
             - name: horizon
+            - name: hubble
             - name: influxdb
             - name: iptables
             - name: ironic
