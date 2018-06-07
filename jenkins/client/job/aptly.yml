@@ -97,7 +97,6 @@ parameters:
                 type: string
                 default: "${_param:jenkins_aptly_storages}"
                 description: "Comma separated list of storage"
-      job_template:
         aptly-all:
           name: aptly-{{operation}}-all-{{source}}-{{target}}
           jobs:
