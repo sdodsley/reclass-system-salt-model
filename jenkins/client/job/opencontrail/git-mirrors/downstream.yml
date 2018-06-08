@@ -16,7 +16,7 @@ parameters:
             - name: contrail-third-party
               branches: ${_param:contrail_branches}
             - name: contrail-generateDS
-              branches: ${_param:contrail_branches}
+              branches: ${_param:contrail_branches_generateDS}
             - name: contrail-sandesh
               branches: ${_param:contrail_branches}
             - name: contrail-packages
