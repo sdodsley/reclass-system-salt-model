@@ -1,4 +1,5 @@
 classes:
+- service.docker.host
 - service.opencontrail.control.single
 - service.haproxy.proxy.single
 parameters:
