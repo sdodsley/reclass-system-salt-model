@@ -126,6 +126,18 @@ parameters:
               os_version: pike
               branch: stable/pike
             # Trusty
+            - name: horizon-contrail-panels
+              os: ubuntu
+              dist: trusty
+              os_version: queens
+              branch: stable/queens
+            # Xenial
+            - name: horizon-contrail-panels
+              os: ubuntu
+              dist: xenial
+              os_version: queens
+              branch: stable/queens
+            # Trusty
             - name: horizon-jenkins-dashboard
               os: ubuntu
               dist: trusty
