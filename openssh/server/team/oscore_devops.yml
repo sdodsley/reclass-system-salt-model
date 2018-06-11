@@ -8,6 +8,7 @@ classes:
 - system.openssh.server.team.members.ikolodyazhny
 - system.openssh.server.team.members.ohryhorov
 - system.openssh.server.team.members.ogrudev
+- system.openssh.server.team.members.kkushaev
 parameters:
   _param:
     linux_system_user_sudo: true
