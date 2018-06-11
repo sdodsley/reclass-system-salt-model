@@ -1,8 +1,9 @@
 classes:
-- system.repo.keystorage.ubuntu
+- system.linux.system.repo.keystorage.ubuntu
 parameters:
   _param:
     apt_mk_version: 'stable'
+    linux_repo_refresh_db: true
     linux_system_repo_url: http://mirror.mirantis.com/${_param:apt_mk_version}/
     linux_system_repo_ubuntu_url: ${_param:linux_system_repo_url}/ubuntu/
   linux:
