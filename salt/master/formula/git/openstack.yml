@@ -104,6 +104,10 @@ parameters:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-opencontrail.git'
               revision: ${_param:salt_master_environment_revision}
+            oslo_templates:
+              source: git
+              address: '${_param:salt_master_environment_repository}/salt-formula-oslo-templates.git'
+              revision: ${_param:salt_master_environment_revision}
             python:
               source: git
               address: '${_param:salt_master_environment_repository}/salt-formula-python.git'

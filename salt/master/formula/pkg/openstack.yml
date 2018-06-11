@@ -76,6 +76,9 @@ parameters:
             octavia:
               source: pkg
               name: salt-formula-octavia
+            oslo_templates:
+              source: pkg
+              name: salt-formula-oslo-templates
             opencontrail:
               source: pkg
               name: salt-formula-opencontrail
