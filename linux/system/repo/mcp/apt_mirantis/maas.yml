@@ -1,5 +1,5 @@
 classes:
-- system.repo.keystorage.maas
+- system.linux.system.repo.keystorage.maas
 parameters:
   _param:
     apt_mk_version: stable
