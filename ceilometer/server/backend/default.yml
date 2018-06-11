@@ -2,6 +2,8 @@ classes:
 - service.ceilometer.server.publisher.gnocchi
 - service.ceilometer.server.publisher.panko
 parameters:
+  _param:
+    openstack_event_alarm_topic: alarm.all
   # gnocchi and panko are default backends for Ceilometer since Pike
   # they are incompatible with any legacy database publisher backends
   ceilometer:
@@ -12,3 +14,7 @@ parameters:
       publisher:
         default:
           enabled: false
+        event_alarm_notifier:
+          enabled: true
+          url: "notifier://?topic=${_param:openstack_event_alarm_topic}"
+          publish_event: true

@@ -1,2 +1,8 @@
 classes:
 - service.aodh.server.single
+parameters:
+  _param:
+    openstack_event_alarm_topic: alarm.all
+  aodh:
+    server:
+      event_alarm_topic: ${_param:openstack_event_alarm_topic}
