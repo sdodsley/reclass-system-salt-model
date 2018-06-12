@@ -749,6 +749,10 @@ parameters:
               upload_source_package: true
               upload_to_aptly: true
               dist: xenial
+            - name: openscap
+              upload_source_package: true
+              upload_to_aptly: true
+              dist: xenial
             - name: openssh
               upload_source_package: true
               upload_to_aptly: true
