@@ -3,7 +3,7 @@ parameters:
     proxy:
       listen:
         horizon_web:
-          type: general-service
+          type: horizon
           check: false
           binds:
           - address: ${_param:cluster_vip_address}
