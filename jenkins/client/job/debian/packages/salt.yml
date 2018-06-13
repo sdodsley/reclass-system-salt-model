@@ -617,6 +617,10 @@ parameters:
               upload_source_package: true
               upload_to_aptly: true
               dist: xenial
+            - name: hubble
+              upload_source_package: true
+              upload_to_aptly: true
+              dist: xenial
             - name: influxdb
               upload_source_package: true
               upload_to_aptly: true
