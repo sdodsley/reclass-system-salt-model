@@ -51,6 +51,7 @@ parameters:
         performance: {}
         permissive-script-security: {}
         pipeline-utility-steps: {}
+        plot: {}
         prometheus: {}
         rebuild: {}
         simple-theme-plugin: {}
