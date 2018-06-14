@@ -25,6 +25,7 @@ parameters:
                   mcp/{{oscore-qa-project}}:
                     branches:
                       - master
+                      - pike
                 event:
                   change:
                     - merged
@@ -43,7 +44,7 @@ parameters:
                 default: "mirantis/oscore/{{oscore-qa-project}}"
               IMAGE_TAG:
                 type: string
-                default: "latest"
+                default: ""
               DOCKER_REGISTRY:
                 type: string
                 default: "docker-prod-local.docker.mirantis.net"
