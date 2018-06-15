@@ -16,6 +16,7 @@ parameters:
         host: ${_param:openstack_database_address}
       glance:
         host: ${_param:openstack_control_address}
+        protocol: ${_param:cluster_internal_protocol}
       message_queue:
         members:
           - host: ${_param:openstack_message_queue_node01_address}
