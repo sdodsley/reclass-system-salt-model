@@ -28,6 +28,7 @@ parameters:
               type: choice
               description: "Context for coockiecutter template specified as filename."
               choices:
+                - openstack-ovs-core-ocata
                 - openstack-ovs-core-pike
                 - openstack-ovs-core-ssl-pike
                 - openstack-ovs-core-barbican-pike
