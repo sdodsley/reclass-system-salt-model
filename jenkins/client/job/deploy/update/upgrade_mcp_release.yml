@@ -10,7 +10,7 @@ parameters:
         upgrade-mcp-release:
           type: workflow-scm
           concurrent: true
-          display_name: "Deploy - upgrade MCP Release"
+          display_name: "Deploy - upgrade MCP Drivetrain"
           scm:
             type: git
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
@@ -27,7 +27,15 @@ parameters:
             MCP_VERSION:
               type: string
               default: ""
+            UPDATE_CLUSTER_MODEL:
+              type: boolean
+              default: 'false'
+              description: "Replace `apt_mk_version` parameter in cluster level Reclass model."
+            UPDATE_PIPELINES:
+              type: boolean
+              default: 'false'
+              description: "Mirror pipelines from upstream/local mirror to Gerrit."
             UPDATE_LOCAL_REPOS:
               type: boolean
               default: 'false'
-              description: "Use only when local repositories are present"
+              description: "Use only when local repositories are present."
