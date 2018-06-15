@@ -18,8 +18,15 @@ parameters:
     kubernetes_pause_image: ${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.8.13-11
     kubernetes_contrail_cni_image: ${_param:kubernetes_contrail_cni_repo}/contrail-cni:v1.2.0
     kubernetes_contrail_network_controller_image: ${_param:kubernetes_contrail_network_controller_repo}/contrail-network-controller:v1.2.0
+    kubernetes_virtlet_image: mirantis/virtlet:v1.0.3
+    kubernetes_criproxy_version: v0.11.0
+    kubernetes_criproxy_checksum: md5=115bbb0c27518db6b0b3bc8cdc5fc897
 
   kubernetes:
+    common:
+      hyperkube:
+        image: ${_param:kubernetes_hyperkube_image}
+        pause_image: ${_param:kubernetes_pause_image}
     pool:
       container: false
       network:
