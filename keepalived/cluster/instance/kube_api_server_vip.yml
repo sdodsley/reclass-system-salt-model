@@ -6,6 +6,9 @@ parameters:
   _param:
     keepalived_vip_priority: 101
     keepalived_kube_apiserver_vrrp_script_content: "pidof haproxy && systemctl status kube-apiserver.service --quiet --no-pager"
+    keepalived_k8s_apiserver_vip_interface: ens3
+    keepalived_k8s_apiserver_vip_address: ${_param:kubernetes_control_address}
+    keepalived_k8s_apiserver_vip_password: password
   keepalived:
     cluster:
       vrrp_scripts:
