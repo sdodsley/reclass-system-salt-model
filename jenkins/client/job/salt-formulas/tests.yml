@@ -92,6 +92,7 @@ parameters:
             - name: octavia
             - name: opencontrail
             - name: openldap
+            - name: openscap
             - name: openssh
             - name: openvpn
             - name: openvstorage
