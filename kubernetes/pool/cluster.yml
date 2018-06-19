@@ -22,12 +22,16 @@ parameters:
     kubernetes_criproxy_version: v0.11.0
     kubernetes_criproxy_checksum: md5=115bbb0c27518db6b0b3bc8cdc5fc897
 
+    kubelet_fail_on_swap: true
+
   kubernetes:
     common:
       hyperkube:
         image: ${_param:kubernetes_hyperkube_image}
         pause_image: ${_param:kubernetes_pause_image}
     pool:
+      kubelet:
+        fail_on_swap: ${_param:kubelet_fail_on_swap}
       container: false
       network:
         calico:
