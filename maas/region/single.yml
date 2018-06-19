@@ -4,6 +4,7 @@ classes:
 parameters:
   _param:
     maas_admin_username: mirantis
+    maas_region_main_archive: http://mirror.mirantis.com/${_param:apt_mk_version}/ubuntu/
   maas:
     cluster:
       enabled: true
@@ -28,6 +29,7 @@ parameters:
         password: ${_param:maas_db_password}
         username: maas
       maas_config:
+        main_archive: ${_param:maas_region_main_archive}
         commissioning_distro_series: xenial
         default_distro_series: xenial
         default_osystem: 'ubuntu'
