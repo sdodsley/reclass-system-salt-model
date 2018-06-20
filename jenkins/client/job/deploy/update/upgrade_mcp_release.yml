@@ -29,11 +29,15 @@ parameters:
               default: ""
             UPDATE_CLUSTER_MODEL:
               type: boolean
-              default: 'false'
+              default: 'true'
               description: "Replace `apt_mk_version` parameter in cluster level Reclass model."
+            UPGRADE_SALTSTACK:
+              type: boolean
+              default: 'true'
+              description: "Upgrade SaltStack packages."
             UPDATE_PIPELINES:
               type: boolean
-              default: 'false'
+              default: 'true'
               description: "Mirror pipelines from upstream/local mirror to Gerrit."
             UPDATE_LOCAL_REPOS:
               type: boolean
