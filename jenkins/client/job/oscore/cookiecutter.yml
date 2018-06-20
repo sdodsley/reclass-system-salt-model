@@ -66,7 +66,6 @@ parameters:
                   cookiecutter_template_branch: 'master'
                   shared_reclass_url: https://gerrit.mcp.mirantis.net/salt-models/reclass-system.git
                   shared_reclass_branch: 'master'
-                  openstack_version: pike
             STACK_INSTALL:
               type: string
               default: 'core,openstack,ovs'
