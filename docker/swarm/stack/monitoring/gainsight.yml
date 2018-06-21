@@ -9,7 +9,7 @@ parameters:
     gainsight_access_key: 'default'
     gainsight_job_id: 'default'
     gainsight_login: 'default'
-    gainsight_prometheus_url: "http://${_param:stacklight_monitor_address}:${prometheus:server:bind:port}"
+    gainsight_prometheus_url: "http://${_param:stacklight_monitor_address}:15010"
     gainsight_config_directory: '/srv/gainsight'
     gainsight_config_path: "${_param:gainsight_config_directory}/config.ini"
     docker_image_prometheus_gainsight: 'docker-prod-local.artifactory.mirantis.com/openstack-docker/gainsight:nightly'
