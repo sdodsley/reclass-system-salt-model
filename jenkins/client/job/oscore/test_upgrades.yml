@@ -59,7 +59,7 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               description: "ID of salt API credentials."
-              default: "salt"
+              default: "salt-qa-credentials"
             SALT_MASTER_URL:
               type: string
               description: 'Url for salt API.'
