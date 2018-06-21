@@ -7,10 +7,11 @@ parameters:
   _param:
     opencontrail_version: 4.0
     linux_repo_contrail_component: oc40
+    opencontrail_image_tag: latest
     opencontrail_message_queue_node01_address: ${_param:openstack_message_queue_node01_address}
     opencontrail_message_queue_node02_address: ${_param:openstack_message_queue_node02_address}
     opencontrail_message_queue_node03_address: ${_param:openstack_message_queue_node03_address}
-    opencontrail_controller_image: docker-prod-local.artifactory.mirantis.com/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-controller
+    opencontrail_controller_image: docker-prod-local.artifactory.mirantis.com/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-controller::${_param:opencontrail_image_tag}
     opencontrail_controller_container_name: opencontrail_controller_1
     analytics_vip_address: ${_param:opencontrail_analytics_address}
   opencontrail:
