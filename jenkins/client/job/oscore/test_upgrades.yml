@@ -15,7 +15,7 @@ parameters:
             type: workflow-scm
             scm:
               type: git
-              url: "https://github.com/jumpojoy/openstack-pipelines"
+              url: "${_param:jenkins_gerrit_url}/openstack-ci/openstack-pipelines"
               credentials: "gerrit"
               branch: 'master'
               script: test-openstack-upgrade-pipeline.groovy
