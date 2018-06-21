@@ -136,6 +136,12 @@ parameters:
             301: "--exclude='(main|universe)/l/linux-*-(.*azure|.*aws|gke|.*azure-edge|.*oem/|.*euclid/)'"
             302: "--exclude='/*universe.*(-armel-|-arm-)(?!.*amd64)'"
             303: "--exclude='/main/l/linux(.*)/linux-source-*'"
+            # Generic: Old minor version of kernels. Old - if minor less then 3 digits.
+            304: '--exclude="main/l/(linux|linux-signed)/linux-.*.4\.4\.0-[0-9]{1,2}\."'
+            # Hwe 4.8: Old minor version of kernels. Old - if minor in 30-40.
+            305: '--exclude="main/l/.*hwe.*/linux-.*.4\.8\.0-((3|4)[0-9])"'
+            # Hwe 4.10: Old minor version of kernels. Old - if minor in 20-30.
+            306: '--exclude="main/l/.*hwe.*/linux-.*.4\.10\.0-((2|3)[0-9])"'
             # List of packages, that should be fetched from fresh ppa or other mirror
             # So,removing them from upstream mirror.
             500: "--exclude='/main/m/maas/'"
