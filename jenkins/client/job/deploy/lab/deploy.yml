@@ -100,6 +100,10 @@ parameters:
                 type: text
                 default: ""
                 description: "YAML with overrides for Salt deployment"
+              SALT_VERSION:
+                type: text
+                default: ""
+                description: "Version of Salt which is going to be installed i.e. 'stable 2016.3' or 'stable 2017.7' etc."
               BOOTSTRAP_EXTRA_REPO_PARAMS:
                 type: string
                 default: ""
