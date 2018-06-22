@@ -36,7 +36,7 @@ parameters:
               TEST_SCHEME:
                 type: string
                 description: "Yaml based scheme to be applied in testing"
-                default: '{"old": {"context_file_name": "openstack-ovs-core-{{openstack_version_old}}","extra_context": {"default_context": {"openstack_version": "{{openstack_version_old}}"}}, "new": {"extra_context": {"default_context": {"openstack_version": "{{openstack_version_new}}"}}}}}'
+                default: '{"old": {"context_file_name": "openstack-ovs-core-{{openstack_version_old}}","extra_context": {"default_context": {"openstack_version": "{{openstack_version_old}}"}}}, "new": {"extra_context": {"default_context": {"openstack_version": "{{openstack_version_new}}"}}}}'
       job:
         oscore-test-adjust-cluster-model:
           display_name: oscore-test-adjust-cluster-model
