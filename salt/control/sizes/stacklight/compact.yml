@@ -1,0 +1,14 @@
+parameters:
+  _param:
+    salt_control_size_cpu_stacklight_log: 4
+    salt_control_size_ram_stacklight_log: 8192
+    salt_control_size_disk_profile_stacklight_log: xxlarge
+    salt_control_size_net_profile_stacklight_log: default
+    salt_control_size_cpu_stacklight_server: 4
+    salt_control_size_ram_stacklight_server: 8192
+    salt_control_size_disk_profile_stacklight_server: small
+    salt_control_size_net_profile_stacklight_server: default
+    salt_control_size_cpu_stacklight_telemetry: 4
+    salt_control_size_ram_stacklight_telemetry: 8192
+    salt_control_size_disk_profile_stacklight_telemetry: xxlarge
+    salt_control_size_net_profile_stacklight_telemetry: default
