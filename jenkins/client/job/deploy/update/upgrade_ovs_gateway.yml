@@ -35,3 +35,7 @@ parameters:
               type: string
               default: '1'
               description: Number of selected nodes to live apply upgrade.
+            INTERACTIVE:
+              type: boolean
+              default: 'true'
+              description: "Ask interactive questions during pipeline run (bool)"
