@@ -1,16 +1,3 @@
 classes:
 - service.kubernetes.master.single
-parameters:
-  _param:
-    kubernetes_netchecker_agent_repo: mirantis
-    kubernetes_netchecker_server_repo: mirantis
-    kubernetes_netchecker_agent_image: ${_param:kubernetes_netchecker_agent_repo}/k8s-netchecker-agent:v1.2.2
-    kubernetes_netchecker_server_image: ${_param:kubernetes_netchecker_server_repo}/k8s-netchecker-server:v1.2.2
-
-    kubelet_fail_on_swap: true
-
-  kubernetes:
-    master:
-      kubelet:
-        fail_on_swap: ${_param:kubelet_fail_on_swap}
-      container: false
+- system.kubernetes.common

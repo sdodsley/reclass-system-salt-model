@@ -1,0 +1,119 @@
+parameters:
+  _param:
+    kubernetes_calico_calicoctl_repo: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico
+    kubernetes_calico_repo: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico
+    kubernetes_calico_cni_repo: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico
+    kubernetes_hyperkube_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes
+    kubernetes_contrail_cni_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes
+    kubernetes_contrail_network_controller_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/contrail-integration
+    kubernetes_netchecker_agent_repo: mirantis
+    kubernetes_netchecker_server_repo: mirantis
+    kubernetes_virtlet_repo: mirantis
+    kubernetes_kubedns_repo: gcr.io/google_containers
+    kubernetes_externaldns_repo: mirantis
+    kubernetes_genie_repo: mirantis
+    kubernetes_flannel_repo: quay.io/coreos
+    kubernetes_metallb_repo: metallb
+
+    # component docker images
+    kubernetes_calico_calicoctl_image: ${_param:kubernetes_calico_calicoctl_repo}/ctl:v1.6.4
+    kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v2.6.9
+    kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v1.11.5
+    kubernetes_hyperkube_image: ${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.10.4-4
+    kubernetes_pause_image: ${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.10.4-4
+    kubernetes_contrail_cni_image: ${_param:kubernetes_contrail_cni_repo}/contrail-cni:v1.2.0
+    kubernetes_contrail_network_controller_image: ${_param:kubernetes_contrail_network_controller_repo}/contrail-network-controller:v1.2.0
+    kubernetes_virtlet_image: ${_param:kubernetes_virtlet_repo}/virtlet:v1.1.0
+    kubernetes_criproxy_version: v0.11.0
+    kubernetes_criproxy_checksum: md5=115bbb0c27518db6b0b3bc8cdc5fc897
+    kubernetes_netchecker_agent_image: ${_param:kubernetes_netchecker_agent_repo}/k8s-netchecker-agent:v1.2.2
+    kubernetes_netchecker_server_image: ${_param:kubernetes_netchecker_server_repo}/k8s-netchecker-server:v1.2.2
+    kubernetes_kubedns_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-kube-dns-amd64:1.14.5
+    kubernetes_dnsmasq_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-dnsmasq-amd64:1.14.5
+    kubernetes_sidecar_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-sidecar-amd64:1.14.5
+    kubernetes_dns_autoscaler_image: ${_param:kubernetes_kubedns_repo}/cluster-proportional-autoscaler-amd64:1.0.0
+    kubernetes_externaldns_image: ${_param:kubernetes_externaldns_repo}/external-dns:v0.5.3
+    kubernetes_genie_image: ${_param:kubernetes_genie_repo}/cnigenie:v1.0-124-ge4298f1
+    kubernetes_flannel_image: ${_param:kubernetes_flannel_repo}/flannel:v0.10.0-amd64
+    kubernetes_metallb_controller_image: ${_param:kubernetes_metallb_repo}/controller:v0.6.2
+    kubernetes_metallb_speaker_image: ${_param:kubernetes_metallb_repo}/speaker:v0.6.2
+
+    kubelet_fail_on_swap: true
+    kubernetes_kubedns_enabled: true
+    kubernetes_externaldns_enabled: false
+    kubernetes_coredns_enabled: false
+    kubernetes_externaldns_provider: coredns
+    kubernetes_virtlet_enabled: false
+    kubernetes_flannel_enabled: false
+    kubernetes_genie_enabled: false
+    kubernetes_calico_enabled: false
+    kubernetes_opencontrail_enabled: false
+    kubernetes_contrail_network_controller_enabled: false
+    kubernetes_metallb_enabled: false
+
+  kubernetes:
+    common:
+      hyperkube:
+        image: ${_param:kubernetes_hyperkube_image}
+        pause_image: ${_param:kubernetes_pause_image}
+      addons:
+        dns:
+          enabled: ${_param:kubernetes_kubedns_enabled}
+          kubedns_image: ${_param:kubernetes_kubedns_image}
+          dnsmasq_image: ${_param:kubernetes_dnsmasq_image}
+          sidecar_image: ${_param:kubernetes_sidecar_image}
+          autoscaler:
+            image: ${_param:kubernetes_dns_autoscaler_image}
+        externaldns:
+          enabled: ${_param:kubernetes_externaldns_enabled}
+          namespace: kube-system
+          image: ${_param:kubernetes_externaldns_image}
+          provider: ${_param:kubernetes_externaldns_provider}
+        coredns:
+          enabled: ${_param:kubernetes_coredns_enabled}
+        contrail_network_controller:
+          enabled: ${_param:kubernetes_contrail_network_controller_enabled}
+          image: ${_param:kubernetes_contrail_network_controller_image}
+        flannel:
+          enabled: ${_param:kubernetes_flannel_enabled}
+          image: ${_param:kubernetes_flannel_image}
+        virtlet:
+          enabled: ${_param:kubernetes_virtlet_enabled}
+          namespace: kube-system
+          image: ${_param:kubernetes_virtlet_image}
+          criproxy_version: ${_param:kubernetes_criproxy_version}
+          criproxy_source: ${_param:kubernetes_criproxy_checksum}
+        metallb:
+          enabled: ${_param:kubernetes_metallb_enabled}
+    master:
+      kubelet:
+        fail_on_swap: ${_param:kubelet_fail_on_swap}
+      container: false
+      network:
+        genie:
+          enabled: ${_param:kubernetes_genie_enabled}
+          image: ${_param:kubernetes_genie_image}
+        calico:
+          enabled: ${_param:kubernetes_calico_enabled}
+          image: ${_param:kubernetes_calico_image}
+          calicoctl_image: ${_param:kubernetes_calico_calicoctl_image}
+          cni_image: ${_param:kubernetes_calico_cni_image}
+        opencontrail:
+          enabled: ${_param:kubernetes_opencontrail_enabled}
+          cni_image: ${_param:kubernetes_contrail_cni_image}
+    pool:
+      kubelet:
+        fail_on_swap: ${_param:kubelet_fail_on_swap}
+      container: false
+      network:
+        genie:
+          enabled: ${_param:kubernetes_genie_enabled}
+          image: ${_param:kubernetes_genie_image}
+        calico:
+          enabled: ${_param:kubernetes_calico_enabled}
+          image: ${_param:kubernetes_calico_image}
+          calicoctl_image: ${_param:kubernetes_calico_calicoctl_image}
+          cni_image: ${_param:kubernetes_calico_cni_image}
+        opencontrail:
+          enabled: ${_param:kubernetes_opencontrail_enabled}
+          cni_image: ${_param:kubernetes_contrail_cni_image}

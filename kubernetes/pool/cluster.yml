@@ -1,38 +1,10 @@
 classes:
 - service.kubernetes.pool.cluster
 - service.docker.host
+- system.kubernetes.common
 parameters:
-  _param:
-    kubernetes_calico_calicoctl_repo: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico
-    kubernetes_calico_repo: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico
-    kubernetes_calico_cni_repo: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico
-    kubernetes_hyperkube_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes
-    kubernetes_contrail_cni_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes
-    kubernetes_contrail_network_controller_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/contrail-integration
-
-    # component docker images
-    kubernetes_calico_calicoctl_image: ${_param:kubernetes_calico_calicoctl_repo}/ctl:v1.6.4
-    kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v2.6.9
-    kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v1.11.5
-    kubernetes_hyperkube_image: ${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.10.4-4
-    kubernetes_pause_image: ${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.10.4-4
-    kubernetes_contrail_cni_image: ${_param:kubernetes_contrail_cni_repo}/contrail-cni:v1.2.0
-    kubernetes_contrail_network_controller_image: ${_param:kubernetes_contrail_network_controller_repo}/contrail-network-controller:v1.2.0
-    kubernetes_virtlet_image: mirantis/virtlet:v1.1.0
-    kubernetes_criproxy_version: v0.11.0
-    kubernetes_criproxy_checksum: md5=115bbb0c27518db6b0b3bc8cdc5fc897
-
-    kubelet_fail_on_swap: true
-
   kubernetes:
-    common:
-      hyperkube:
-        image: ${_param:kubernetes_hyperkube_image}
-        pause_image: ${_param:kubernetes_pause_image}
     pool:
-      kubelet:
-        fail_on_swap: ${_param:kubelet_fail_on_swap}
-      container: false
       network:
         calico:
           prometheus:
