@@ -14,6 +14,7 @@ parameters:
     kubernetes_genie_repo: mirantis
     kubernetes_flannel_repo: quay.io/coreos
     kubernetes_metallb_repo: metallb
+    kubernetes_sriov_repo: https://artifactory.mcp.mirantis.net/artifactory/binary-prod-local/mirantis/kubernetes/sriov-cni
 
     # component docker images
     kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
@@ -38,6 +39,8 @@ parameters:
     kubernetes_flannel_image: ${_param:kubernetes_flannel_repo}/flannel:v0.10.0-amd64
     kubernetes_metallb_controller_image: ${_param:kubernetes_metallb_repo}/controller:v0.6.2
     kubernetes_metallb_speaker_image: ${_param:kubernetes_metallb_repo}/speaker:v0.6.2
+    kubernetes_sriov_source: ${_param:kubernetes_sriov_repo}/sriov_v0.3-8-g8b7ed98
+    kubernetes_sriov_source_hash: md5=c0cc33202afd02e4cc44b977a8faf6e7
 
     kubelet_fail_on_swap: true
     kubernetes_kubedns_enabled: true
@@ -51,6 +54,7 @@ parameters:
     kubernetes_opencontrail_enabled: false
     kubernetes_contrail_network_controller_enabled: false
     kubernetes_metallb_enabled: false
+    kubernetes_sriov_enabled: false
 
   docker:
     host:
@@ -111,6 +115,10 @@ parameters:
         opencontrail:
           enabled: ${_param:kubernetes_opencontrail_enabled}
           cni_image: ${_param:kubernetes_contrail_cni_image}
+        sriov:
+          enabled: ${_param:kubernetes_sriov_enabled}
+          source: ${_param:kubernetes_sriov_source}
+          source_hash: ${_param:kubernetes_sriov_source_hash}
     pool:
       kubelet:
         fail_on_swap: ${_param:kubelet_fail_on_swap}
@@ -127,3 +135,7 @@ parameters:
         opencontrail:
           enabled: ${_param:kubernetes_opencontrail_enabled}
           cni_image: ${_param:kubernetes_contrail_cni_image}
+        sriov:
+          enabled: ${_param:kubernetes_sriov_enabled}
+          source: ${_param:kubernetes_sriov_source}
+          source_hash: ${_param:kubernetes_sriov_source_hash}
