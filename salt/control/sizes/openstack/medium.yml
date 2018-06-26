@@ -1,20 +1,20 @@
 parameters:
   _param:
-    salt_control_size_cpu_openstack_control: 24
-    salt_control_size_ram_openstack_control: 131072
+    salt_control_size_cpu_openstack_control: 16
+    salt_control_size_ram_openstack_control: 65536
     salt_control_size_disk_profile_openstack_control: large
     salt_control_size_net_profile_openstack_control: default
-    salt_control_size_cpu_openstack_database: 24
-    salt_control_size_ram_openstack_database: 65536
-    salt_control_size_disk_profile_openstack_database: huge
+    salt_control_size_cpu_openstack_database: 8
+    salt_control_size_ram_openstack_database: 32786
+    salt_control_size_disk_profile_openstack_database: large
     salt_control_size_net_profile_openstack_database: default
-    salt_control_size_cpu_openstack_message_queue: 32
-    salt_control_size_ram_openstack_message_queue: 200704
+    salt_control_size_cpu_openstack_message_queue: 16
+    salt_control_size_ram_openstack_message_queue: 66553
     salt_control_size_disk_profile_openstack_message_queue: large
     salt_control_size_net_profile_openstack_message_queue: default
-    salt_control_size_cpu_openstack_proxy: 8
-    salt_control_size_ram_openstack_proxy: 32768
-    salt_control_size_disk_profile_openstack_proxy: large
+    salt_control_size_cpu_openstack_proxy: 4
+    salt_control_size_ram_openstack_proxy: 16384
+    salt_control_size_disk_profile_openstack_proxy: small
     salt_control_size_net_profile_openstack_proxy: default
     salt_control_size_cpu_openstack_upgrade: 8
     salt_control_size_ram_openstack_upgrade: 16384

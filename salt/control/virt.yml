@@ -57,3 +57,9 @@ parameters:
       xxhuge:
         - system:
             size: 3000000
+      xxxhuge:
+        - system:
+            size: 4000000
+      xxxxhuge:
+        - system:
+            size: 5000000

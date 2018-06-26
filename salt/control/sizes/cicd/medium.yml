@@ -2,5 +2,5 @@ parameters:
   _param:
     salt_control_size_cpu_cicd_control: 8
     salt_control_size_ram_cicd_control: 32768
-    salt_control_size_disk_profile_cicd_control: xxxlarge
+    salt_control_size_disk_profile_cicd_control: xxlarge
     salt_control_size_net_profile_cicd_control: default

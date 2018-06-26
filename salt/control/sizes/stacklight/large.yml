@@ -2,7 +2,7 @@ parameters:
   _param:
     salt_control_size_cpu_stacklight_log: 16
     salt_control_size_ram_stacklight_log: 49152
-    salt_control_size_disk_profile_stacklight_log: xxhuge
+    salt_control_size_disk_profile_stacklight_log: xxxxhuge
     salt_control_size_net_profile_stacklight_log: default
     salt_control_size_cpu_stacklight_server: 24
     salt_control_size_ram_stacklight_server: 262144
