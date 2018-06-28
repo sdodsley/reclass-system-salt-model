@@ -2,6 +2,7 @@ classes:
 - system.prometheus.gainsight.container
 parameters:
   _param:
+    gainsight_enabled: 'true'
     gainsight_csv_upload_url: 'http://localhost:9999'
     gainsight_account_id: 'default'
     gainsight_environment_id: 'default'
@@ -49,3 +50,4 @@ parameters:
                 LOGIN: "${_param:gainsight_login}"
                 PROMETHEUS_URL: "${_param:gainsight_prometheus_url}"
                 CONFIG_PATH: "${_param:gainsight_config_path}"
+                ENABLED: "${_param:gainsight_enabled}"
