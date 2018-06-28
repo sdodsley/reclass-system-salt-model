@@ -156,3 +156,4 @@ parameters:
         - method hudson.model.ParametersDefinitionProperty getParameterDefinitions
         - method hudson.model.ParameterDefinition getName
         - method hudson.model.StringParameterDefinition getDefaultValue
+        - method java.util.Collection toArray
