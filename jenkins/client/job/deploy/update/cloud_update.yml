@@ -156,3 +156,7 @@ parameters:
               type: boolean
               default: 'false'
               description: "Restore Cassandra and Zookeeper DBs for OpenContrail"
+            RUN_CVP_TESTS:
+              type: boolean
+              default: 'false'
+              description: "Run cloud validation pipelines before and after update"
