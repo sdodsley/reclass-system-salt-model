@@ -12,4 +12,3 @@ parameters:
           host: ${_param:grafana_prometheus_address}
           port: ${_param:grafana_prometheus_port}
           is_default: ${_param:grafana_prometheus_is_default}
-
