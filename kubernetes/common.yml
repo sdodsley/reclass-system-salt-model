@@ -16,6 +16,7 @@ parameters:
     kubernetes_metallb_repo: metallb
 
     # component docker images
+    kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
     kubernetes_calico_calicoctl_image: ${_param:kubernetes_calico_calicoctl_repo}/ctl:v1.6.4
     kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v2.6.9
     kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v1.11.5
@@ -50,6 +51,15 @@ parameters:
     kubernetes_opencontrail_enabled: false
     kubernetes_contrail_network_controller_enabled: false
     kubernetes_metallb_enabled: false
+
+  docker:
+    host:
+      pkgs:
+        - ${_param:kubernetes_docker_package}
+        - python-docker
+      options:
+        bip: 172.31.255.1/24
+        storage-driver: overlay2
 
   kubernetes:
     common:
