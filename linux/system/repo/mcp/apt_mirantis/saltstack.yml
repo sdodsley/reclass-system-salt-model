@@ -12,3 +12,7 @@ parameters:
           key_id: 0E08A149DE57BFBE
           key_server: keyserver.ubuntu.com
           clean_file: true
+          pin:
+          - pin: 'release o=SaltStack'
+            priority: 1100
+            package: '*'
