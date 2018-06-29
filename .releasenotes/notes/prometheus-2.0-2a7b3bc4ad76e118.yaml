@@ -25,10 +25,10 @@ upgrade:
     .. code-block:: yaml
 
        _param:
-         docker_image_alertmanager: docker-prod-virtual.docker.mirantis.net/openstack-docker/alertmanager:20171222124606
-         docker_image_pushgateway: docker-prod-virtual.docker.mirantis.net/openstack-docker/pushgateway:20171222124606
-         docker_image_prometheus: docker-prod-virtual.docker.mirantis.net/openstack-docker/prometheus:20171222124606
-         docker_image_remote_storage_adapter: docker-prod-virtual.docker.mirantis.net/openstack-docker/remote_storage_adapter:20171222124606
+         docker_image_alertmanager: docker-prod-local.artifactory.mirantis.com/openstack-docker/alertmanager:20171222124606
+         docker_image_pushgateway: docker-prod-local.artifactory.mirantis.com/openstack-docker/pushgateway:20171222124606
+         docker_image_prometheus: docker-prod-local.artifactory.mirantis.com/openstack-docker/prometheus:20171222124606
+         docker_image_remote_storage_adapter: docker-prod-local.artifactory.mirantis.com/openstack-docker/remote_storage_adapter:20171222124606
        docker:
          client:
            stack:
