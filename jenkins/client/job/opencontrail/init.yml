@@ -4,6 +4,8 @@ classes:
 parameters:
   _param:
     contrail_branches: "R3.0.2.x,R3.0.3.x,R3.1,R3.1.1.x,R3.2,R3.2.3.x,R4.0,R4.1,R5.0,master"
+    # from OC50 there are new repos without older branches
+    oc5_new_contrail_branches: "R5.0, master"
     # generateDS does not have 5.0 branch
     contrail_branches_generateDS: "R3.0.2.x,R3.0.3.x,R3.1,R3.1.1.x,R3.2,R3.2.3.x,R4.0,R4.1,master"
     contrail_kubernetes_branches: "master,release-1.2"
