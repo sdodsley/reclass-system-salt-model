@@ -12,3 +12,4 @@ parameters:
         host: ${_param:single_address}
       identity:
         host: ${_param:single_address}
+        region: ${_param:openstack_region}
