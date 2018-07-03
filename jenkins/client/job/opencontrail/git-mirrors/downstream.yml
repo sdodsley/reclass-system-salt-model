@@ -48,11 +48,11 @@ parameters:
             - name: contrail-dpdk
               branches: ${_param:contrail_dpdk_branches}
             - name: contrail-common
-              branches: ${_param:oc5_new_contrail_branches}
+              branches: ${_param:oc5_branches}
             - name: contrail-analytics
-              branches: ${_param:oc5_new_contrail_branches}
+              branches: ${_param:oc5_branches}
             - name: contrail-api-client
-              branches: ${_param:oc5_new_contrail_branches}
+              branches: ${_param:oc5_branches}
           template:
             discard:
               build:
