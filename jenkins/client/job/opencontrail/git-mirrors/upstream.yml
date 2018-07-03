@@ -48,6 +48,12 @@ parameters:
               branches: ${_param:contrail_dpdk_branches}
             - name: contrail-third-party-cache-fixup
               branches: ${_param:contrail_third_party_cache_fixup_branches}
+            - name: contrail-common
+              branches: ${_param:oc5_branches}
+            - name: contrail-analytics
+              branches: ${_param:oc5_branches}
+            - name: contrail-api-client
+              branches: ${_param:oc5_branches}
           template:
             discard:
               build:
