@@ -146,9 +146,13 @@ parameters:
                 - /etc/cassandra/logback.xml:/etc/cassandra/logback.xml
                 - /etc/zookeeper/conf/zoo.cfg:/etc/zookeeper/conf/zoo.cfg
                 - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
+                - /var/log/contrail:/var/log/contrail
+                - /var/log/journal/contrail-controller:/var/log/journal
               network_mode: "host"
               privileged: true
               restart: always
+              env_file:
+                - contrail.env
             analytics:
               image: ${_param:opencontrail_analytics_image}
               container_name: ${_param:opencontrail_analytics_container_name}
@@ -158,6 +162,10 @@ parameters:
               volumes:
                 - /etc/contrail:/etc/contrail
                 - /etc/redis/redis.conf:/etc/redis/redis.conf
+                - /var/log/contrail:/var/log/contrail
+                - /var/log/journal/contrail-analytics:/var/log/journal
+              env_file:
+                - contrail.env
             analyticsdb:
               image: ${_param:opencontrail_analyticsdb_image}
               container_name: ${_param:opencontrail_analyticsdb_container_name}
@@ -175,6 +183,10 @@ parameters:
                 - /usr/share/kafka/logs:/usr/share/kafka/logs
                 - /etc/zookeeper/conf/zoo_analytics.cfg:/etc/zookeeper/conf/zoo.cfg
                 - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
+                - /var/log/contrail:/var/log/contrail
+                - /var/log/journal/contrail-analyticsdb:/var/log/journal
               network_mode: "host"
               privileged: true
               restart: always
+              env_file:
+                - contrail.env
