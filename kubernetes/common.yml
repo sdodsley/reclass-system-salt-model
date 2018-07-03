@@ -11,10 +11,11 @@ parameters:
     kubernetes_virtlet_repo: mirantis
     kubernetes_kubedns_repo: gcr.io/google_containers
     kubernetes_externaldns_repo: mirantis
-    kubernetes_genie_repo: mirantis
+    kubernetes_genie_repo: https://artifactory.mcp.mirantis.net/artifactory/binary-prod-local/mirantis/kubernetes/cni-genie
     kubernetes_flannel_repo: quay.io/coreos
     kubernetes_metallb_repo: metallb
     kubernetes_sriov_repo: https://artifactory.mcp.mirantis.net/artifactory/binary-prod-local/mirantis/kubernetes/sriov-cni
+    kubernetes_cniplugins_repo: https://artifactory.mcp.mirantis.net/artifactory/binary-prod-local/mirantis/kubernetes/containernetworking-plugins
 
     # component docker images
     kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
@@ -35,12 +36,15 @@ parameters:
     kubernetes_sidecar_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-sidecar-amd64:1.14.5
     kubernetes_dns_autoscaler_image: ${_param:kubernetes_kubedns_repo}/cluster-proportional-autoscaler-amd64:1.0.0
     kubernetes_externaldns_image: ${_param:kubernetes_externaldns_repo}/external-dns:v0.5.3
-    kubernetes_genie_image: ${_param:kubernetes_genie_repo}/cnigenie:v1.0-124-ge4298f1
+    kubernetes_genie_source: ${_param:kubernetes_genie_repo}/genie_v1.0-138-gbf5dbaa
+    kubernetes_genie_source_hash: md5=b024052ed4ecb1d5354e0cc8f51afaca
     kubernetes_flannel_image: ${_param:kubernetes_flannel_repo}/flannel:v0.10.0-amd64
     kubernetes_metallb_controller_image: ${_param:kubernetes_metallb_repo}/controller:v0.6.2
     kubernetes_metallb_speaker_image: ${_param:kubernetes_metallb_repo}/speaker:v0.6.2
     kubernetes_sriov_source: ${_param:kubernetes_sriov_repo}/sriov_v0.3-8-g8b7ed98
     kubernetes_sriov_source_hash: md5=c0cc33202afd02e4cc44b977a8faf6e7
+    kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/cni-plugins_v0.7.1-48-g696b1f9.tar.gz
+    kubernetes_cniplugins_source_hash: md5=5ec1cf5e989097c6127ea5365e277b02
 
     kubelet_fail_on_swap: true
     kubernetes_kubedns_enabled: true
@@ -70,6 +74,10 @@ parameters:
       hyperkube:
         image: ${_param:kubernetes_hyperkube_image}
         pause_image: ${_param:kubernetes_pause_image}
+      cni:
+        plugins:
+          source: ${_param:kubernetes_cniplugins_source}
+          hash: ${_param:kubernetes_cniplugins_source_hash}
       addons:
         dns:
           enabled: ${_param:kubernetes_kubedns_enabled}
@@ -106,7 +114,8 @@ parameters:
       network:
         genie:
           enabled: ${_param:kubernetes_genie_enabled}
-          image: ${_param:kubernetes_genie_image}
+          source: ${_param:kubernetes_genie_source}
+          source_hash: ${_param:kubernetes_genie_source_hash}
         calico:
           enabled: ${_param:kubernetes_calico_enabled}
           image: ${_param:kubernetes_calico_image}
@@ -126,7 +135,8 @@ parameters:
       network:
         genie:
           enabled: ${_param:kubernetes_genie_enabled}
-          image: ${_param:kubernetes_genie_image}
+          source: ${_param:kubernetes_genie_source}
+          source_hash: ${_param:kubernetes_genie_source_hash}
         calico:
           enabled: ${_param:kubernetes_calico_enabled}
           image: ${_param:kubernetes_calico_image}
