@@ -26,6 +26,9 @@ parameters:
             - name: avinetworks
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
+            - name: auditd
+              branches: ${_param:salt_formulas_branches}
+              notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: backupninja
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
