@@ -1,6 +1,7 @@
 parameters:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
+    cvp_sanity_default_repo: "https://github.com/Mirantis/cvp-sanity-checks"
   jenkins:
     client:
       view:
@@ -162,7 +163,7 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
-            script: cvp-sanity.groovy
+            script: cvp-runner.groovy
           param:
             SALT_MASTER_URL:
               type: string
@@ -171,17 +172,17 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt"
-            SANITY_TESTS_REPO:
+            TESTS_REPO:
               type: string
-              default: "https://github.com/Mirantis/cvp-sanity-checks"
+              default: "${_param:cvp_sanity_default_repo}"
               description: Url for cvp-sanity-checks
-            SANITY_TESTS_SETTINGS:
+            TESTS_SETTINGS:
               type: string
               default: ""
               description: e.g. skipped_nodes=nal01.local.com,ntw01.local.com
-            SANITY_TESTS_SET:
+            TESTS_SET:
               type: string
-              default: ""
+              default: "cvp-sanity-check/cvp_checks/tests/"
               description: Leave empty for full run or choose a file, e.g. test_mtu.py
             PROXY:
               type: string
