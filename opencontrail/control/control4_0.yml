@@ -107,6 +107,10 @@ parameters:
                 - /etc/cassandra/logback.xml:/etc/cassandra/logback.xml
                 - /etc/zookeeper/conf/zoo.cfg:/etc/zookeeper/conf/zoo.cfg
                 - /etc/zookeeper/conf/log4j.properties:/etc/zookeeper/conf/log4j.properties
+                - /var/log/contrail:/var/log/contrail
+                - /var/log/journal/contrail-controller:/var/log/journal
               network_mode: "host"
               privileged: true
               restart: always
+              env_file:
+                - contrail.env
