@@ -20,3 +20,7 @@ parameters:
                   is_admin: false
                   password: ${_param:vnf_openstack_test_user_password}
                   email: ${_param:vnf_openstack_test_user_email}
+                admin-test:
+                  is_admin: true
+                  password: ${_param:vnf_openstack_admin_user_password}
+                  email: ${_param:vnf_openstack_admin_user_email}
