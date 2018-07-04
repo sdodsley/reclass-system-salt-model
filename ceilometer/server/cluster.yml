@@ -24,6 +24,7 @@ parameters:
         tenant: service
         user: ceilometer
         password: ${_param:keystone_ceilometer_password}
+        region: ${_param:openstack_region}
       message_queue:
         engine: rabbitmq
         members:

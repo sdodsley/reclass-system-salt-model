@@ -15,7 +15,9 @@ parameters:
         host: ${_param:single_address}
       identity:
         protocol: ${_param:cluster_internal_protocol}
+        region: ${_param:openstack_region}
       network:
         protocol: ${_param:cluster_internal_protocol}
+        region: ${_param:openstack_region}
       glance:
         protocol: ${_param:cluster_internal_protocol}
