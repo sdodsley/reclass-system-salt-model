@@ -5,6 +5,7 @@ classes:
 parameters:
   kubernetes:
     pool:
+      enabled: true
       network:
         calico:
           prometheus:

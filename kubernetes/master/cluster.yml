@@ -7,6 +7,7 @@ classes:
 parameters:
   kubernetes:
     master:
+      enabled: true
       network:
         calico:
           prometheus:

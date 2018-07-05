@@ -108,6 +108,7 @@ parameters:
         metallb:
           enabled: ${_param:kubernetes_metallb_enabled}
     master:
+      enabled: false
       kubelet:
         fail_on_swap: ${_param:kubelet_fail_on_swap}
       container: false
@@ -129,6 +130,7 @@ parameters:
           source: ${_param:kubernetes_sriov_source}
           source_hash: ${_param:kubernetes_sriov_source_hash}
     pool:
+      enabled: false
       kubelet:
         fail_on_swap: ${_param:kubelet_fail_on_swap}
       container: false

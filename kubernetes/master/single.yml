@@ -1,3 +1,7 @@
 classes:
 - service.kubernetes.master.single
 - system.kubernetes.common
+parameters:
+  kubernetes:
+    master:
+      enabled: true
