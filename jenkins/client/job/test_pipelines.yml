@@ -46,7 +46,7 @@ parameters:
                 default: "gerrit"
               GRADLE_IMAGE:
                 type: string
-                default: "niaquinto/gradle"
+                default: "docker-dev-local.docker.mirantis.net/mirantis/cicd/niaquinto_gradle"
               GRADLE_CMD:
                 type: string
                 default: "check --info"
