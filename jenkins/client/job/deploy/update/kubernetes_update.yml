@@ -4,7 +4,7 @@
 parameters:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
-    hyperkube_repo:  "${_param:kubernetes_hyperkube_repo}"
+    kubernetes_hyperkube_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes
   jenkins:
     client:
       job:
@@ -21,11 +21,11 @@ parameters:
           param:
             KUBERNETES_HYPERKUBE_IMAGE:
               type: string
-              default: "${_param:hyperkube_repo}/hyperkube-amd64:v1.10.4-4"
+              default: "${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.10.4-4"
               description: "Versioned image to update control plane from. Should be null if update rolling via reclass-system level"
             KUBERNETES_PAUSE_IMAGE:
               type: string
-              default: "${_param:hyperkube_repo}/pause-amd64:v1.10.4-4"
+              default: "${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.10.4-4"
               description: "Versioned pause image to use in deployments. Should be null if update rolling via reclass-system level"
             SALT_MASTER_URL:
               type: string
