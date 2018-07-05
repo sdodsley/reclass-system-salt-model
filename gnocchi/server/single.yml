@@ -1,2 +1,7 @@
 classes:
 - service.gnocchi.server.single
+parameters:
+  gnocchi:
+    server:
+      identity:
+        region: ${_param:openstack_region}
