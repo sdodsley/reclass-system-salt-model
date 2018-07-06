@@ -22,7 +22,7 @@ parameters:
         password: ${_param:mysql_manila_password}
       identity:
         engine: keystone
-        region: RegionOne
+        region: ${_param:openstack_region}
         host: ${_param:cluster_vip_address}
         port: 35357
         user: manila

@@ -9,6 +9,7 @@ parameters:
           version: latest
   heat:
     server:
+      region: ${_param:openstack_region}
       stack_domain_admin:
         name: heat_domain_admin
         password: ${_param:heat_domain_admin_password}
