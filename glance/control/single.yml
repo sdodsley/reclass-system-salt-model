@@ -11,4 +11,6 @@ parameters:
     server:
       database:
         host: ${_param:single_address}
+      identity:
+        region: ${_param:openstack_region}
       show_multiple_locations: True
