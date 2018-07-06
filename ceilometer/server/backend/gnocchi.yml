@@ -17,3 +17,7 @@ parameters:
           # filter_project is deprecated since queens
           filter_project: ${_param:ceilometer_gnocchi_filter_project}
           create_resources: ${_param:ceilometer_create_gnocchi_resources}
+        event_alarm_notifier:
+          enabled: true
+          url: "notifier://?topic=${_param:openstack_event_alarm_topic}"
+          publish_event: true
