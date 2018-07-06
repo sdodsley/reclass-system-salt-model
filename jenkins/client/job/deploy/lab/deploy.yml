@@ -90,6 +90,10 @@ parameters:
                 default: ""
 
               # salt
+              EXTRA_TARGET:
+                type: string
+                default: ""
+                description: "Salt extra target for edge clouds deployment"
               SALT_MASTER_CREDENTIALS:
                 type: string
                 default: "salt-qa-credentials"
