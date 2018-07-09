@@ -3,6 +3,9 @@ classes:
 - service.docker.host
 - system.kubernetes.common
 parameters:
+  kubernetes:
+    pool:
+      enabled: true
   docker:
     host:
       options:
