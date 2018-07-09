@@ -1,5 +1,3 @@
-classes:
-  - system.jenkins.client.job.vnf-onboarding.test_nginx_vnf
 parameters:
   _param:
     vnf_onboarding_nginx_jobs:
