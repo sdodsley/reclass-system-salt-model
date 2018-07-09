@@ -25,7 +25,6 @@ parameters:
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
         ha_queues: true
-        rpc_thread_pool_size: 5
   nova:
     compute:
       notification:

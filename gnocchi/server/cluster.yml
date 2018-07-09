@@ -12,6 +12,9 @@ parameters:
   gnocchi:
     server:
       enable_proxy_headers_parsing: true
+      metricd:
+        metric_processing_delay: 15
+        metric_reporting_delay: 30
       identity:
         host: ${_param:openstack_control_address}
         region: ${_param:openstack_region}
