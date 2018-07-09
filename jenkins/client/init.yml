@@ -22,6 +22,7 @@ parameters:
         username: ${_param:jenkins_client_user}
         password: ${_param:jenkins_client_password}
       plugin:
+        antisamy-markup-formatter: {}
         artifactory: {}
         blueocean: {}
         build-blocker-plugin: {}
