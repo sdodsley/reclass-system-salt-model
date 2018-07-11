@@ -39,6 +39,9 @@ parameters:
             sphinx:
               source: pkg
               name: salt-formula-sphinx
+            watchdog:
+              source: pkg
+              name: salt-formula-watchdog
             xtrabackup:
               source: pkg
               name: salt-formula-xtrabackup
