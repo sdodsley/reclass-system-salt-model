@@ -43,5 +43,5 @@ parameters:
               description: Only if removing OSD host. Set to true if crush map file should be updated. Enforce has to happen manually unless it is specifically set to be enforced in pillar.
             WAIT_FOR_HEALTHY:
               type: boolean
-              default: 'false'
+              default: 'true'
               description: Wait for healthy during pipeline
