@@ -10,7 +10,7 @@ parameters:
     salt_control_size_net_profile_stacklight_server: default
     salt_control_size_cpu_stacklight_telemetry: 12
     salt_control_size_ram_stacklight_telemetry: 98304
-    salt_control_size_disk_profile_stacklight_telemetryr: huge
+    salt_control_size_disk_profile_stacklight_telemetry: huge
     salt_control_size_net_profile_stacklight_telemetry: default
   salt:
     control:
