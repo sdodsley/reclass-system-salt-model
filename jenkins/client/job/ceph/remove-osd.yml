@@ -41,5 +41,5 @@ parameters:
               description: Flags to be aplied before pipeline and after pipeline (comma-separated list)
             WAIT_FOR_HEALTHY:
               type: boolean
-              default: 'false'
+              default: 'true'
               description: Wait for healthy during pipeline
