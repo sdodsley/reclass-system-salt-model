@@ -1,8 +1,6 @@
-# This class is deprecated since Openstack Pike
+# This class intended to be used since Openstack Pike release
 classes:
-- service.ceilometer.server.cluster
-- service.haproxy.proxy.single
-- system.haproxy.proxy.listen.openstack.ceilometer
+- service.ceilometer.server.cluster.common
 - system.keepalived.cluster.instance.openstack_telemetry_vip
 parameters:
   ceilometer:
@@ -16,8 +14,6 @@ parameters:
       notification:
         workload_partitioning: true
         batch_timeout: 30
-      publisher:
-        default: {}
       bind:
         host: ${_param:cluster_local_address}
         port: 8777

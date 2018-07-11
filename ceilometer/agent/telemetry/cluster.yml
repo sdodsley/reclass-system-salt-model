@@ -1,29 +1,15 @@
-# This class is deprecated since Openstack Pike
 classes:
-- service.ceilometer.server.cluster
-- service.haproxy.proxy.single
-- system.haproxy.proxy.listen.openstack.ceilometer
-- system.keepalived.cluster.instance.openstack_telemetry_vip
+- service.ceilometer.agent.cluster.common
 parameters:
   ceilometer:
-    server:
+    agent:
+      region: ${_param:openstack_region}
       enabled: true
       version: ${_param:ceilometer_version}
-      region: ${_param:openstack_region}
-      cluster: true
       secret: ${_param:ceilometer_secret_key}
-      ttl: 86400
-      notification:
-        workload_partitioning: true
-        batch_timeout: 30
-      publisher:
-        default: {}
-      bind:
-        host: ${_param:cluster_local_address}
-        port: 8777
       identity:
         engine: keystone
-        host: ${_param:openstack_control_address}
+        host: ${_param:keystone_service_host}
         port: 35357
         tenant: service
         user: ceilometer
@@ -38,3 +24,8 @@ parameters:
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
+        ha_queues: true
+  nova:
+    compute:
+      notification:
+        driver: messagingv2
