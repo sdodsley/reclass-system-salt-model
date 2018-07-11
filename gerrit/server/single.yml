@@ -61,7 +61,7 @@ parameters:
         gerrit:
           enabled: true
           encoding: 'UTF8'
-          locale: 'cs_CZ'
+          locale: 'en_US'
           users:
           - name: gerrit
             password: ${_param:postgresql_gerrit_password}
