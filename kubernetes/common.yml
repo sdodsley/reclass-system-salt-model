@@ -107,28 +107,6 @@ parameters:
           criproxy_source: ${_param:kubernetes_criproxy_checksum}
         metallb:
           enabled: ${_param:kubernetes_metallb_enabled}
-    master:
-      enabled: false
-      kubelet:
-        fail_on_swap: ${_param:kubelet_fail_on_swap}
-      container: false
-      network:
-        genie:
-          enabled: ${_param:kubernetes_genie_enabled}
-          source: ${_param:kubernetes_genie_source}
-          source_hash: ${_param:kubernetes_genie_source_hash}
-        calico:
-          enabled: ${_param:kubernetes_calico_enabled}
-          image: ${_param:kubernetes_calico_image}
-          calicoctl_image: ${_param:kubernetes_calico_calicoctl_image}
-          cni_image: ${_param:kubernetes_calico_cni_image}
-        opencontrail:
-          enabled: ${_param:kubernetes_opencontrail_enabled}
-          cni_image: ${_param:kubernetes_contrail_cni_image}
-        sriov:
-          enabled: ${_param:kubernetes_sriov_enabled}
-          source: ${_param:kubernetes_sriov_source}
-          source_hash: ${_param:kubernetes_sriov_source_hash}
     pool:
       enabled: false
       kubelet:
