@@ -20,8 +20,8 @@ parameters:
     # component docker images
     kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
     kubernetes_calico_calicoctl_image: ${_param:kubernetes_calico_calicoctl_repo}/ctl:v1.6.4
-    kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v2.6.9
-    kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v1.11.5
+    kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v2.6.10
+    kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v1.11.6
     kubernetes_hyperkube_image: ${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.10.4-4
     kubernetes_pause_image: ${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.10.4-4
     kubernetes_contrail_cni_image: ${_param:kubernetes_contrail_cni_repo}/contrail-cni:v1.2.0
