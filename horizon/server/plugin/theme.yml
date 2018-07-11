@@ -10,3 +10,12 @@ parameters:
           source:
             engine: pkg
             name: openstack-dashboard-${_param:horizon_dashboard_theme}-theme
+      themes:
+        default: "mirantis"
+        available:
+          mirantis:
+            name: "Mirantis"
+            description: "Mirantis theme"
+            enabled: True
+          material:
+            enabled: False
