@@ -36,7 +36,9 @@ parameters:
       user:
         root:
           enabled: true
-          private_key:
-            type: rsa
-            key: ${_param:root_private_key}
           user: ${linux:system:user:root}
+          private_key: ${private_keys:root}
+  private_keys:
+    root:
+      type: rsa
+      key: ${_param:root_private_key}
