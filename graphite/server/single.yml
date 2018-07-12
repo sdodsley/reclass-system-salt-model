@@ -29,7 +29,7 @@ parameters:
       database:
         graphite:
           encoding: UTF8
-          locale: cs_CZ
+          locale: en_US
           users:
           - name: graphite
             password: ${_param:postgresql_graphite_password}
