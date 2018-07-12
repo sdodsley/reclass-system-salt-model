@@ -51,6 +51,13 @@ parameters:
           full_name: Oleg Bondarev
           home: /home/obondarev
           email: obondarev@mirantis.com
+        akuznetsova:
+          enabled: true
+          name: akuznetsova
+          sudo: true
+          full_name: Anastasiia Kuznetcova
+          home: /home/akuznetsova
+          email: akuznetsova@mirantis.com
   openssh:
     server:
       enabled: true
@@ -85,6 +92,11 @@ parameters:
           public_keys:
           - ${public_keys:obondarev}
           user: ${linux:system:user:obondarev}
+        akuznetsova:
+          enabled: true
+          public_keys:
+          - ${public_keys:akuznetsova}
+          user: ${linux:system:user:akuznetsova}
   public_keys:
     aignatov:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJFYznIFlCdxu5UXzThjYZlZfvXKCcDN0QxDEn7U7dNkK17SyzIJswQcxF7pTlvcuZ7XEskEqyXC8E6P5XyvBJO2xLGrFDJ4U3vf7MKsfwSFEj3NPUzV5bGTrKeKIHTL94L7lwMm1INE7lZzciiwvTxcKv//A+FgG8o1MDhefK56cBH4a9TSjEd+5ImcnCc5sf8B+csyWFPnksnv1zwu//T9aYXRITocdVzrfRHmEiZDpL3mNwpGT3O3XUTiMwdVpN2ImAqSF6XlQl0HlUkBT2idCIoXUR9lcGUx2Q+LSd62JgcVmQHCOmbUENj7NIDgWixgSJYLzsi//YNqJ9jccR aignatov@mirantis.com
@@ -98,3 +110,5 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJk2ip+Rn73D4vt47pe/Hv42ylKJv6JIzeF0k3OflH+RyliVelvo05KMcozfsmmvOKhwgDokBj3KjQ10ewDwD7Fz5H3tosa8JFOs36cuHx9aHrsEmj1oIcIyThrIBwSZGFApqJqj27sLtReVLQJPlYR59RJGw61TogkA/QooOABi+KHzuwPFjAcA1SMfFT8LwiaNPkyUdRb5EQeKCOHniRAEPGNIwskA0sxz25qbB1EU2XBFjkxRE1b5GHfUYL+c2YhAwRWTJbD2JbbcHI6HpsmJutzkS6YIkEn1CK4JuA40OQTYFSEutCk2uPPR0G+77Fec2+vD/8H+ncPxPeDqNR ina@ina-ThinkPad-X240
     obondarev:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDca1gqXe14l9uho3t4mZT52lXmSuUxKVOCcSO9Dy+BAmtaVK39+t7la081S5c0H+oTPIXFb32/kO37+qpEgwyOv1zimWIqcR56xrr42gW/QzVLyY64qVnQ9QFiXlvXXBW4YgBuT//SE8upOshLYnznKHOi4IkoKrAE37K34Cz/DGQzFV6sKQSmP6fjJzli0Nzu+YPdBSZW9VH1m7IKxliGoZcjdIkJ+L92+h/mPuN95Bitfe+aoexBQq3u4WjYVVsCE/9TrwLoGlr3zd7VAyVdADJf6phfIMHGDxn8W8125r9UWp4X/36yAIudVC7kHLyr0AHTfYqCVH10nEJvUwRz obondarev@Olegs-MacBook-Pro.local
+    akuznetsova:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD033EOpc2jeEYkKPzmJL4j081hmt3Ml5hlrfJWYY7RRoKBugT1gF9zggI9GaFGn5F29g+92dYfLLH4yfkL91dkNtbsutl7XiHZYW5NIL5n8kHtb8Bahclid8ERMpLYlctqW/4RM5wfMyzh71TxbutN9ZjcbtAQ0bIaCoTyWRrIDiMeW/+Btf7bPpe7zyQMjkQu+F2iYxd6nERiMnVLq080XAqwuSGMy9NFBLvG+VoJV1w49f2Hf19TD1ILev/pttPYem/15/zAnwwR+nye91jBtBBaFI6V4aaYjgsrjEinNy48tfhMpbuELW5Nn3o8c+3Xfi2rRxtkNcfdpc/yvFz/
