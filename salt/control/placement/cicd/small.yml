@@ -11,15 +11,18 @@ parameters:
       cluster:
         internal:
           node:
-            ${_param:cicd_control_node01_hostname}:
+            cid01:
+              name: ${_param:cicd_control_node01_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node01_hostname}.${_param:cluster_domain}
               size: cicd.control
-            ${_param:cicd_control_node02_hostname}:
+            cid02:
+              name: ${_param:cicd_control_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node02_hostname}.${_param:cluster_domain}
               size: cicd.control
-            ${_param:cicd_control_node03_hostname}:
+            cid03:
+              name: ${_param:cicd_control_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node03_hostname}.${_param:cluster_domain}
               size: cicd.control

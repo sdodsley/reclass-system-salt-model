@@ -17,39 +17,48 @@ parameters:
       cluster:
         internal:
           node:
-            ${_param:stacklight_telemetry_node01_hostname}:
+            mtr01:
+              name: ${_param:stacklight_telemetry_node01_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
               size: stacklight.telemetry
-            ${_param:stacklight_telemetry_node02_hostname}:
+            mtr02:
+              name: ${_param:stacklight_telemetry_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
               size: stacklight.telemetry
-            ${_param:stacklight_telemetry_node03_hostname}:
+            mtr03:
+              name: ${_param:stacklight_telemetry_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node06_hostname}.${_param:cluster_domain}
               size: stacklight.telemetry
-            ${_param:stacklight_log_node01_hostname}:
+            log01:
+              name: ${_param:stacklight_log_node01_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
               size: stacklight.log
-            ${_param:stacklight_log_node02_hostname}:
+            log02:
+              name: ${_param:stacklight_log_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
               size: stacklight.log
-            ${_param:stacklight_log_node03_hostname}:
+            log03:
+              name: ${_param:stacklight_log_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node06_hostname}.${_param:cluster_domain}
               size: stacklight.log
-            ${_param:stacklight_monitor_node01_hostname}:
+            mon01:
+              name: ${_param:stacklight_monitor_node01_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node04_hostname}.${_param:cluster_domain}
               size: stacklight.server
-            ${_param:stacklight_monitor_node02_hostname}:
+            mon02:
+              name: ${_param:stacklight_monitor_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node05_hostname}.${_param:cluster_domain}
               size: stacklight.server
-            ${_param:stacklight_monitor_node03_hostname}:
+            mon03:
+              name: ${_param:stacklight_monitor_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node06_hostname}.${_param:cluster_domain}
               size: stacklight.server

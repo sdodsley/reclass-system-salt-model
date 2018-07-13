@@ -14,27 +14,33 @@ parameters:
       cluster:
         internal:
           node:
-            ${_param:opencontrail_control_node01_hostname}:
+            ntw01:
+              name: ${_param:opencontrail_control_node01_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node07_hostname}.${_param:cluster_domain}
               size: opencontrail.control
-            ${_param:opencontrail_control_node02_hostname}:
+            ntw02:
+              name: ${_param:opencontrail_control_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node08_hostname}.${_param:cluster_domain}
               size: opencontrail.control
-            ${_param:opencontrail_control_node03_hostname}:
+            ntw03:
+              name: ${_param:opencontrail_control_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node09_hostname}.${_param:cluster_domain}
               size: opencontrail.control
-            ${_param:opencontrail_analytics_node01_hostname}:
+            nal01:
+              name: ${_param:opencontrail_analytics_node01_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node07_hostname}.${_param:cluster_domain}
               size: opencontrail.analytics
-            ${_param:opencontrail_analytics_node02_hostname}:
+            nal02:
+              name: ${_param:opencontrail_analytics_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node08_hostname}.${_param:cluster_domain}
               size: opencontrail.analytics
-            ${_param:opencontrail_analytics_node03_hostname}:
+            nal03:
+              name: ${_param:opencontrail_analytics_node03_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node09_hostname}.${_param:cluster_domain}
               size: opencontrail.analytics
