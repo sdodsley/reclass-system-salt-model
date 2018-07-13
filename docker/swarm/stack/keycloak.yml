@@ -1,0 +1,38 @@
+parameters:
+  _param:
+    docker_keycloak_server_replicas: 3
+    docker_keycloak_proxy_replicas: 1
+    docker_image_keycloak_server: jboss/keycloak:3.4.2.Final
+    docker_image_keycloak_proxy: jboss/keycloak-proxy:3.4.2.h
+    keycloak_bind_port: ${_param:haproxy_keycloak_bind_port}
+    keycloak_proxy_bind_port: ${_param:haproxy_keycloak_proxy_bind_port}
+  docker:
+    client:
+      stack:
+        keycloak:
+          service:
+            keycloak-server:
+              image: ${_param:docker_image_keycloak_server}
+              deploy:
+                replicas: ${_param:docker_keycloak_server_replicas}
+                restart_policy:
+                  condition: any
+              ports:
+                - ${_param:haproxy_keycloak_exposed_port}:${_param:keycloak_bind_port}
+              volumes:
+                - /srv/volumes/keycloak/server/:/app
+            keycloak-proxy:
+              image: ${_param:docker_image_keycloak_proxy}
+              deploy:
+                replicas: ${_param:docker_keycloak_proxy_replicas}
+                restart_policy:
+                  condition: any
+              ports:
+                - ${_param:haproxy_keycloak_proxy_exposed_port}:${_param:keycloak_proxy_bind_port}
+              volumes:
+                - /srv/volumes/keycloak/proxy/proxy.json:/opt/jboss/conf/proxy.json
+          network:
+            default:
+              external:
+                name: keycloak_backend
+
