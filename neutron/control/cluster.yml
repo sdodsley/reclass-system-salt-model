@@ -37,6 +37,7 @@ parameters:
             params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
   neutron:
     server:
+      role: ${_param:openstack_node_role}
       plugin: contrail
     identity:
       protocol: ${_param:cluster_internal_protocol}

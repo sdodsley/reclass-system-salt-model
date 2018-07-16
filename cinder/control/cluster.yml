@@ -25,6 +25,7 @@ parameters:
       default_volume_type: ""
       backend: {}
       version: ${_param:cinder_version}
+      role: ${_param:openstack_node_role}
       osapi:
         host: ${_param:cluster_local_address}
       database:

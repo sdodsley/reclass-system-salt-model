@@ -15,6 +15,7 @@ parameters:
       enabled: true
       version: ${_param:glance_version}
       workers: 8
+      role: ${_param:openstack_node_role}
       database:
         engine: mysql
         host: ${_param:openstack_database_address}

@@ -12,6 +12,7 @@ parameters:
   gnocchi:
     server:
       enable_proxy_headers_parsing: true
+      role: ${_param:openstack_node_role}
       metricd:
         metric_processing_delay: 15
         metric_reporting_delay: 30

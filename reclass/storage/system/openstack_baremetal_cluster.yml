@@ -21,6 +21,7 @@ parameters:
             single_address: ${_param:openstack_baremetal_node01_address}
             keepalived_vip_priority: 101
             baremetal_address: ${_param:openstack_baremetal_node01_baremetal_address}
+            openstack_node_role: primary
         openstack_baremetal_node02:
           name: ${_param:openstack_baremetal_node02_hostname}
           domain: ${_param:cluster_domain}
@@ -32,6 +33,7 @@ parameters:
             single_address: ${_param:openstack_baremetal_node02_address}
             keepalived_vip_priority: 102
             baremetal_address: ${_param:openstack_baremetal_node02_baremetal_address}
+            openstack_node_role: secondary
         openstack_baremetal_node03:
           name: ${_param:openstack_baremetal_node03_hostname}
           domain: ${_param:cluster_domain}
@@ -43,5 +45,6 @@ parameters:
             single_address: ${_param:openstack_baremetal_node03_address}
             keepalived_vip_priority: 103
             baremetal_address: ${_param:openstack_baremetal_node03_baremetal_address}
+            openstack_node_role: secondary
 
 

@@ -22,6 +22,7 @@ parameters:
       enabled: true
       region: ${_param:openstack_region}
       version: ${_param:heat_version}
+      role: ${_param:openstack_node_role}
       bind:
         api_cfn:
           address: ${_param:cluster_local_address}

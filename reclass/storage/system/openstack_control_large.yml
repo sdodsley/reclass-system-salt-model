@@ -19,6 +19,7 @@ parameters:
             linux_system_codename: ${_param:openstack_control_system_codename}
             single_address: ${_param:openstack_control_node01_address}
             keepalived_vip_priority: 105
+            openstack_node_role: primary
         openstack_control_node02:
           name: ${_param:openstack_control_node02_hostname}
           domain: ${_param:cluster_domain}
@@ -29,6 +30,7 @@ parameters:
             linux_system_codename: ${_param:openstack_control_system_codename}
             single_address: ${_param:openstack_control_node02_address}
             keepalived_vip_priority: 104
+            openstack_node_role: secondary
         openstack_control_node03:
           name: ${_param:openstack_control_node03_hostname}
           domain: ${_param:cluster_domain}
@@ -39,6 +41,7 @@ parameters:
             linux_system_codename: ${_param:openstack_control_system_codename}
             single_address: ${_param:openstack_control_node03_address}
             keepalived_vip_priority: 103
+            openstack_node_role: secondary
         openstack_control_node04:
           name: ${_param:openstack_control_node04_hostname}
           domain: ${_param:cluster_domain}
@@ -49,6 +52,7 @@ parameters:
             linux_system_codename: ${_param:openstack_control_system_codename}
             single_address: ${_param:openstack_control_node04_address}
             keepalived_vip_priority: 102
+            openstack_node_role: secondary
         openstack_control_node05:
           name: ${_param:openstack_control_node05_hostname}
           domain: ${_param:cluster_domain}
@@ -59,3 +63,4 @@ parameters:
             linux_system_codename: ${_param:openstack_control_system_codename}
             single_address: ${_param:openstack_control_node05_address}
             keepalived_vip_priority: 101
+            openstack_node_role: secondary

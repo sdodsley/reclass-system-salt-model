@@ -6,6 +6,7 @@ parameters:
   octavia:
     api:
       enabled: true
+      role: ${_param:openstack_node_role}
       bind:
         address: ${_param:single_address}
       database:

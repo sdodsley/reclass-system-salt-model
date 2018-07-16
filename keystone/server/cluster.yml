@@ -6,6 +6,7 @@ classes:
 parameters:
   _param:
     keystone_tokens_expiration: 3600
+    openstack_node_role: primary
   linux:
     system:
       package:
@@ -25,6 +26,7 @@ parameters:
       admin_name: admin
       admin_password: ${_param:keystone_admin_password}
       admin_email: ${_param:admin_email}
+      role: ${_param:openstack_node_role}
       bind:
         address: ${_param:cluster_local_address}
         private_address: ${_param:cluster_vip_address}

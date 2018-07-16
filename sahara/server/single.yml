@@ -5,6 +5,7 @@ parameters:
     server:
       enabled: true
       version: ${_param:sahara_version}
+      role: ${_param:openstack_node_role}
       bind:
         host: ${_param:single_address}
         port: 8386

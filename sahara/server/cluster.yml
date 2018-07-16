@@ -9,6 +9,7 @@ parameters:
       enabled: true
       version: ${_param:sahara_version}
       notification: false
+      role: ${_param:openstack_node_role}
       bind:
         address: ${_param:single_address}
         port: 8386

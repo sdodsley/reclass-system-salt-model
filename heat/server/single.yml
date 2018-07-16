@@ -9,6 +9,7 @@ parameters:
           version: latest
   heat:
     server:
+      role: ${_param:openstack_node_role}
       region: ${_param:openstack_region}
       stack_domain_admin:
         name: heat_domain_admin
