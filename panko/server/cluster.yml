@@ -11,6 +11,7 @@ parameters:
     panko_memcached_node03_address: ${_param:cluster_node03_address}
   panko:
     server:
+      role: ${_param:openstack_node_role}
       identity:
         host: ${_param:openstack_control_address}
       database:
