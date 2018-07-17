@@ -10,6 +10,7 @@ parameters:
       region: ${_param:openstack_region}
       cluster: true
       secret: ${_param:ceilometer_secret_key}
+      role: ${_param:openstack_node_role}
       ttl: 86400
       notification:
         workload_partitioning: true
