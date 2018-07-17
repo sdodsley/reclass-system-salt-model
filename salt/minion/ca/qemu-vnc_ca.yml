@@ -21,7 +21,7 @@ parameters:
           signing_policy:
             cert_server:
               type: v3_edge_cert_server
-              minions: 'cmp*'
+              minions: '*'
             cert_client:
               type: v3_edge_cert_client
               minions: 'ctl*'
