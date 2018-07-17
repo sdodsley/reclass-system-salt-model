@@ -20,7 +20,7 @@ parameters:
               vcpus: 1
             MetaswitchSSC:
               ram: 4096
-              disk: 40
+              disk: 80
               vcpus: 2
             backend.metaswitch:
               ram: 2048

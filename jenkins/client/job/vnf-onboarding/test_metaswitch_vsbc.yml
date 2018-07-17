@@ -6,8 +6,8 @@ parameters:
       job:
         test_metaswitch_vnf:
             type: workflow-scm
-            name: test_metaswitch_vnf
-            display_name: "Onboarding tests for Metaswitch vSBC VNF"
+            name: test_metaswitch_vnf_ee
+            display_name: "Onboarding tests for Metaswitch vSBC VNF against CFY Enterprise Edition"
             discard:
               build:
                 keep_num: 20
@@ -50,7 +50,7 @@ parameters:
                 default: "${_param:vnf_openstack_api_credentials}"
               OPENSTACK_API_TENANT:
                 type: string
-                default: "test"
+                default: "test-metaswitch"
               GERRIT_CREDENTIALS:
                 type: string
                 default: "${_param:vnf_gerrit_credentials}"
@@ -79,11 +79,11 @@ parameters:
                 default: "${_param:contrail_api_url}"
               SETUP_OWN_CLOUDIFY:
                 type: boolean
-                description: "Use temporary private Cloudify instance"
-                default: false
+                description: "Use temporary private Cloudify instance. Metaswitch vSBC can work only with its own CFY instance"
+                default: true
               CLOUDIFY_MANAGER_IP:
                 type: string
-                description: "IP address of extrenal Cloudify. \"auto\" refers to address of deploy_cloudify job Cloudify instance"
+                description: "IP address of external Cloudify. \"auto\" refers to address of deploy_cloudify_enterprise job Cloudify instance"
                 default: "auto"
               CLOUDIFY_MANAGER_OPTIONS:
                 type: string
@@ -97,6 +97,13 @@ parameters:
                 type: string
                 description: "Parameters for cloudify agent VMs."
                 default: "CFY_AGENT_NET=cfm-net-shared CFY_AGENT_FLAVOR=cfy.agent CFY_AGENT_BACKEND_FLAVOR=backend.metaswitch CFY_AGENT_IMAGE=agent_vm CFY_AGENT_BASE_IMAGE=base_agent_vm CFY_AGENT_BACKEND_IMAGE=base_backend_vm"
+              CLOUDIFY_MANAGER_VERSION:
+                type: choice
+                choices:
+                 - enterprise
+                 - community
+                default: "enterprise"
+                description: "CFY edition version, make sure that it is consistent with CFY Manager image"
               VNF_ARTIFACTORY_URL:
                 type: string
                 default: "${_param:vnf_artifactory_url}"
@@ -116,14 +123,14 @@ parameters:
               VNF_PLUGINS:
                 type: string
                 description: "Plugins to fetch from artifactory and install during build package step"
-                default: "vnf_onboarding_tools-0.1-py27-none-linux_x86_64_Ubuntu_xenial"
+                default: "vnf_onboarding_tools-0.2-py27-none-linux_x86_64_CentOS_Core, cloudify_diamond_plugin-1.3.8-py27-none-linux_x86_64-centos-Core, metaswitch_deployment_plugin-2.1.0-py27-none-linux_x86_64-centos-Core"
               VNF_OPTIONS:
                 type: string
-                default: ""
+                default: "METASWITCH_VSBS_BPS=mirantis-blueprint-insecure-withoutsas-newlicense.tar DCM_IMAGE_NAME=MSwVA-DCM-V3.3 MDM_IMAGE_NAME=MSwVA-MDM-centos PERIMETA_IMAGE_NAME=MSwVA-Perimeta-V4.3.50_SU42_P252"
               VNF_DOCKER_CLI_PLATFORM:
                 type: string
                 default: "ubuntu"
-              CLOUDIFY_DEPLOYMENT_TIMEOUT:
+              VNF_DEPLOYMENT_TIMEOUT:
                 type: string
                 description: "Set up timeout for cloudify deployment (depends on each VNF specific and network throughput)."
                 default: 7200
