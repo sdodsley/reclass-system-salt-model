@@ -11,5 +11,6 @@ parameters:
     api:
       enabled: true
       version: ${_param:ironic_version}
+      role: ${_param:openstack_node_role}
       bind:
         address: ${_param:cluster_baremetal_local_address}

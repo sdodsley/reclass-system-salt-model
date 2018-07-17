@@ -14,3 +14,4 @@ parameters:
             linux_system_codename: ${_param:linux_system_codename}
             single_address: ${_param:openstack_baremetal_node01_address}
             baremetal_address: ${_param:openstack_baremetal_node01_baremetal_address}
+            openstack_node_role: primary

@@ -8,6 +8,7 @@ parameters:
     mysql_admin_password: password
     mysql_keystone_password: password
     keystone_tokens_expiration: 3600
+    openstack_node_role: primary
   linux:
     system:
       package:
@@ -24,6 +25,7 @@ parameters:
       admin_name: admin
       admin_password: ${_param:keystone_admin_password}
       admin_email: ${_param:admin_email}
+      role: ${_param:openstack_node_role}
       bind:
         address: ${_param:single_address}
         private_address: ${_param:single_address}

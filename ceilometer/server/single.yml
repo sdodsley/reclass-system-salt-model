@@ -3,6 +3,7 @@ classes:
 parameters:
   ceilometer:
     server:
+      role: ${_param:openstack_node_role}
       database:
         influxdb:
           host: ${_param:stacklight_monitor_node01_address}

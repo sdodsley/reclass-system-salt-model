@@ -13,6 +13,7 @@ parameters:
       cluster: true
       secret: ${_param:ceilometer_secret_key}
       ttl: 86400
+      role: ${_param:openstack_node_role}
       notification:
         workload_partitioning: true
         batch_timeout: 30

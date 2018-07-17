@@ -10,6 +10,7 @@ parameters:
     api:
       enabled: true
       version: ${_param:openstack_version}
+      role: ${_param:openstack_node_role}
     scheduler:
       enabled: true
       version: ${_param:openstack_version}

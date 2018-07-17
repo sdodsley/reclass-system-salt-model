@@ -6,5 +6,6 @@ parameters:
     cluster_internal_protocol: 'http'
   barbican:
     server:
+      role: ${_param:openstack_node_role}
       identity:
         protocol: ${_param:cluster_internal_protocol}

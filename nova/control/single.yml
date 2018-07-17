@@ -11,6 +11,7 @@ parameters:
           version: latest
   nova:
     controller:
+      role: ${_param:openstack_node_role}
       database:
         host: ${_param:single_address}
       identity:

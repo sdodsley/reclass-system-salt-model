@@ -6,6 +6,7 @@ parameters:
     server:
       enabled: true
       version: ${_param:murano_version}
+      role: ${_param:openstack_node_role}
       bind:
         address: ${_param:single_address}
         port: 8082

@@ -9,5 +9,6 @@ parameters:
           version: latest
   ironic:
     api:
+      role: ${_param:openstack_node_role}
       bind:
         address: ${_param:single_address}
