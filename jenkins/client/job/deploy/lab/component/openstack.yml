@@ -18,7 +18,7 @@ parameters:
         stack_env: devcloud
         stack_type: heat
         stack_install: core,openstack,contrail
-        stack_test: ""
+        stack_test: "opencontrail"
         job_timer: "H H(0-6) * * *"
       - stack_name: os_ha_contrail_ironic
         stack_env: devcloud
