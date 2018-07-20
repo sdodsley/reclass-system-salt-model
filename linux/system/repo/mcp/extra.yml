@@ -12,5 +12,5 @@ parameters:
           clean_file: true
           pin:
           - pin: 'release a=${_param:linux_system_repo_mcp_extra_version}'
-            priority: 1100
+            priority: 1200
             package: '*'
