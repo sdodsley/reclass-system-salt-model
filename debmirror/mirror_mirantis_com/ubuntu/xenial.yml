@@ -183,3 +183,5 @@ parameters:
             804: "--include='/main(.*)libbluetooth3'" # python-guestfs
             805: "--include='/main(.*)llvm-toolchain-5.0'" # pki-ca: < 389-ds-base < dogtag
             806: "--include='/main(.*)man-db'" # include man tool
+            807: "--include='/main(.*)zfs-doc'" # Some extra fs dep's for MAAS provision stage.PROD-21531
+
