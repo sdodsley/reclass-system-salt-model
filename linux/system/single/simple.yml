@@ -1,0 +1,14 @@
+classes:
+- service.linux.system
+- system.linux.system.banner
+parameters:
+  _param:
+    local_package_repos: false
+  linux:
+    system:
+      local_package_repos: ${_param:local_package_repos}
+      timezone: UTC
+      locale:
+        en_US.UTF-8:
+          enabled: true
+          default: true
