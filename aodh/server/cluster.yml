@@ -6,13 +6,15 @@ classes:
 parameters:
   _param:
     openstack_event_alarm_topic: alarm.all
+    # Keep alarm history in database for 30 days
+    aodh_alarm_history_ttl: 2592000
   aodh:
     server:
       enabled: true
       role: ${_param:openstack_node_role}
       version: ${_param:aodh_version}
       cluster: true
-      ttl: 86400
+      ttl: ${_param:aodh_alarm_history_ttl}
       debug: false
       verbose: true
       region: ${_param:openstack_region}
@@ -45,3 +47,8 @@ parameters:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}
           - host: ${_param:openstack_message_queue_node03_address}
+      # Check for expired alarm history every day at 2 AM
+      expirer:
+        cron:
+          minute: 0
+          hour: 2

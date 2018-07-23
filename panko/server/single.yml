@@ -1,0 +1,16 @@
+classes:
+- service.panko.server.single
+- system.apache.server.site.panko
+parameters:
+  _param:
+    # Keep events in database for 30 days
+    panko_event_time_to_live: 2592000
+  panko:
+    server:
+      role: ${_param:openstack_node_role}
+      event_time_to_live: ${_param:panko_event_time_to_live}
+      # Check for expired events every day at 2 AM
+      expirer:
+        cron:
+          minute: 0
+          hour: 2
