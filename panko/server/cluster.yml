@@ -9,9 +9,12 @@ parameters:
     panko_memcached_node01_address: ${_param:cluster_node01_address}
     panko_memcached_node02_address: ${_param:cluster_node02_address}
     panko_memcached_node03_address: ${_param:cluster_node03_address}
+    # Keep events in database for 30 days
+    panko_event_time_to_live: 2592000
   panko:
     server:
       role: ${_param:openstack_node_role}
+      event_time_to_live: ${_param:panko_event_time_to_live}
       identity:
         host: ${_param:openstack_control_address}
       database:
@@ -25,3 +28,8 @@ parameters:
           port: 11211
         - host: ${_param:panko_memcached_node03_address}
           port: 11211
+      # Check for expired events every day at 2 AM
+      expirer:
+        cron:
+          minute: 0
+          hour: 2

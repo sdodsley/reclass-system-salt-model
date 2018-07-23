@@ -3,10 +3,18 @@ classes:
 parameters:
   _param:
     openstack_event_alarm_topic: alarm.all
+    # Keep alarm history in database for 30 days
+    aodh_alarm_history_ttl: 2592000
   aodh:
     server:
+      ttl: ${_param:aodh_alarm_history_ttl}
       role: ${_param:openstack_node_role}
       region: ${_param:openstack_region}
       event_alarm_topic: ${_param:openstack_event_alarm_topic}
       identity:
         region: ${_param:openstack_region}
+      # Check for expired alarm history every day at 2 AM
+      expirer:
+        cron:
+          minute: 0
+          hour: 2
