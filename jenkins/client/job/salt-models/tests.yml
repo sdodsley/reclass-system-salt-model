@@ -295,6 +295,10 @@ parameters:
               EXTRA_FORMULAS:
                 type: string
                 default: "aptly artifactory auditd backupninja collectd devops-portal docker elasticsearch fluentd freeipa gerrit glusterfs grafana haproxy heka horizon influxdb jenkins keepalived kibana libvirt maas memcached mysql nginx ntp openldap openssh postfix prometheus rsync rsyslog rundeck sensu sphinx telegraf xtrabackup watchdog"
+              RECLASS_VERSION:
+                type: string
+                default: 'v1.5.4'
+                description: "Version (branch) of Reclass we will use"
       job:
         test-salt-model-node:
           name: test-salt-model-node
