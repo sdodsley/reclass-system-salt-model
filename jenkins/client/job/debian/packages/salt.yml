@@ -201,6 +201,10 @@ parameters:
               upload_source_package: false
               upload_to_aptly: true
               dist: trusty
+            - name: keycloak
+              upload_source_package: false
+              upload_to_aptly: true
+              dist: trusty
             - name: kibana
               upload_source_package: false
               upload_to_aptly: true
@@ -650,6 +654,10 @@ parameters:
               upload_to_aptly: true
               dist: xenial
             - name: keepalived
+              upload_source_package: true
+              upload_to_aptly: true
+              dist: xenial
+            - name: keycloak
               upload_source_package: true
               upload_to_aptly: true
               dist: xenial
