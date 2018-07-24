@@ -11,6 +11,8 @@ parameters:
               repo: mcp-ci/pipeline-library
             - name: oss-jenkins-pipelines
               repo: oss/jenkins/pipelines
+            - name: map-map-pipelines
+              repo: map/map-pipelines
           template:
             discard:
               build:
