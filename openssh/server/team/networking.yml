@@ -6,6 +6,7 @@ classes:
 - system.openssh.server.team.members.ivasilevskaya
 - system.openssh.server.team.members.jcach
 - system.openssh.server.team.members.psvimbersky
+- system.openssh.server.team.members.gzimin
 parameters:
   _param:
     linux_system_user_sudo: true
