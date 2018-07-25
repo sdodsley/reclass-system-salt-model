@@ -148,6 +148,26 @@ parameters:
               type: boolean
               default: 'true'
               description: If chosen then previous build results will be used in the current build
+            RALLY_PLUGINS_REPO:
+              type: string
+              default: ""
+              description: Git repository with Rally plugins
+            RALLY_PLUGINS_BRANCH:
+              type: string
+              default: ""
+              description: Git branch which will be used during the checkout
+            K8S_RALLY:
+              type: boolean
+              default: 'false'
+              description: If chosen then K8S Rally test will be executed
+            JOB_TIMEOUT:
+              type: string
+              default: "3"
+              description: Job timeout in hours
+            REPORT_DIR:
+              type: string
+              default: ""
+              description: Path for reports outside docker image
         cvp-sanity:
           type: workflow-scm
           name: cvp-sanity
