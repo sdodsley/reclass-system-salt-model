@@ -17,6 +17,9 @@ parameters:
             - httpclose
             - httplog
           balance: source
+          timeout:
+            server: 90m
+            client: 90m
           http_request:
             - action: "add-header X-Forwarded-Proto https"
               condition: "if { ssl_fc }"
