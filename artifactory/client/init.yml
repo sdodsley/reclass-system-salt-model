@@ -341,6 +341,10 @@ parameters:
             - pypi-remote
             defaultDeploymentRepo: pypi-local
 
+          test-images:
+            rclass: local
+            packageType: generic
+
           ubuntu-local:
             rclass: local
             packageType: debian
