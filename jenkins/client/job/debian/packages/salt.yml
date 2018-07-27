@@ -29,6 +29,10 @@ parameters:
               upload_source_package: false
               upload_to_aptly: true
               dist: trusty
+            - name: auditd
+              upload_source_packages: false
+              upload_to_aptly: true
+              dist: trusty
             - name: backupninja
               upload_source_package: false
               upload_to_aptly: true
@@ -467,6 +471,10 @@ parameters:
               dist: xenial
             - name: avinetworks
               upload_source_package: true
+              upload_to_aptly: true
+              dist: xenial
+            - name: auditd
+              upload_source_packages: false
               upload_to_aptly: true
               dist: xenial
             - name: barbican
