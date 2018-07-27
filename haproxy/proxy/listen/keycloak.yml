@@ -1,7 +1,7 @@
 parameters:
   _param:
     haproxy_keycloak_bind_host: ${_param:haproxy_bind_address}
-    haproxy_keycloak_bind_port: 8086
+    haproxy_keycloak_bind_port: 8080
     haproxy_keycloak_exposed_port: 18086
     haproxy_keycloak_ssl:
       enabled: false
