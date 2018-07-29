@@ -10,10 +10,7 @@ parameters:
               attr:
                 description: Mirantis Administrators
                 gidNumber: 20002
-                memberUid:
-                  - akomarek
-                  - fpytloun
-                  - jpavlik
+                memberUid: []
               classes:
                 - posixGroup
                 - top

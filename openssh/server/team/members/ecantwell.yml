@@ -6,7 +6,7 @@ parameters:
           enabled: false
           name: ecantwell
           sudo: ${_param:linux_system_user_sudo}
-          full_name: Erick Cantwell
+          full_name: disabled
           home: /home/ecantwell
           email: ecantwell@mirantis.com
   openssh:

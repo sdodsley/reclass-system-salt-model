@@ -3,10 +3,10 @@ parameters:
     system:
       user:
         rsafonov:
-          enabled: true
+          enabled: false
           name: rsafonov
           sudo: ${_param:linux_system_user_sudo}
-          full_name: Roman Safonov
+          full_name: disabled
           home: /home/rsafonov
           email: rsafonov@mirantis.com
   openssh:
@@ -14,7 +14,7 @@ parameters:
       enabled: true
       user:
         rsafonov:
-          enabled: true
+          enabled: false
           public_keys: ${public_keys:rsafonov}
           user: ${linux:system:user:rsafonov}
   public_keys:

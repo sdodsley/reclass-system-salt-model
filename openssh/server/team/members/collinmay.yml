@@ -3,10 +3,10 @@ parameters:
     system:
       user:
         cmay:
-          enabled: true
+          enabled: false
           name: cmay
           sudo: ${_param:linux_system_user_sudo}
-          full_name: Collin May
+          full_name: disabled
           home: /home/cmay
           email: cmay@mirantis.com
   openssh:
@@ -14,7 +14,7 @@ parameters:
       enabled: true
       user:
         cmay:
-          enabled: true
+          enabled: false
           public_keys: ${public_keys:cmay}
           user: ${linux:system:user:cmay}
   public_keys:
