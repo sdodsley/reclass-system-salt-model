@@ -35,7 +35,6 @@ parameters:
               image: ${_param:docker_image_jenkins_slave}
               volumes:
                 - /etc/ssl/certs/java/cacerts:/etc/ssl/certs/java/cacerts:ro
-                - /etc/aptly:/etc/aptly:ro
                 - /var/run/docker.sock:/var/run/docker.sock
                 - /usr/bin/docker:/usr/bin/docker:ro
                 - /var/lib/jenkins:/var/lib/jenkins
@@ -59,7 +58,6 @@ parameters:
               image: ${_param:docker_image_jenkins_slave}
               volumes:
                 - /etc/ssl/certs/java/cacerts:/etc/ssl/certs/java/cacerts:ro
-                - /etc/aptly:/etc/aptly:ro
                 - /var/run/docker.sock:/var/run/docker.sock
                 - /usr/bin/docker:/usr/bin/docker:ro
                 - /var/lib/jenkins:/var/lib/jenkins
@@ -83,7 +81,6 @@ parameters:
               image: ${_param:docker_image_jenkins_slave}
               volumes:
                 - /etc/ssl/certs/java/cacerts:/etc/ssl/certs/java/cacerts:ro
-                - /etc/aptly:/etc/aptly:ro
                 - /var/run/docker.sock:/var/run/docker.sock
                 - /usr/bin/docker:/usr/bin/docker:ro
                 - /var/lib/jenkins:/var/lib/jenkins
