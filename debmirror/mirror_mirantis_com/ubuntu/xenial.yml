@@ -131,6 +131,7 @@ parameters:
             94: "--exclude='/universe/o/(openstack-debian-images).*'"
             95: "--exclude='/gcc-.*-cross.*'"
             96: "--exclude='/(nvidia).*'"
+            97: "--exclude='/universe/.*(metastudent).*'"
             # List of unused linux kernels and unsupported arch
             300: "--exclude='/.*(arm64|powerpc|s390x|armel|armhf|sparc64|mips64|ppc64el|mipsn32)(?!.*amd64)'"
             301: "--exclude='(main|universe)/l/linux-*-(.*azure|.*aws|gke|.*azure-edge|.*oem/|.*euclid/)'"
@@ -181,7 +182,8 @@ parameters:
             802: "--include='/main(.*)python-(.*)network'"
             803: "--include='/main(.*)unittest2'" # openstack* pkgs
             804: "--include='/main(.*)libbluetooth3'" # python-guestfs
-            805: "--include='/main(.*)llvm-toolchain-5.0'" # pki-ca: < 389-ds-base < dogtag
+            # Get required llvm.But drop old llvm toolset.Old - if major in 1-5.
+            805: '--include="/main(.*)llvm-toolchain-(?![1-5])"' # pki-ca: < 389-ds-base < dogtag
             806: "--include='/main(.*)man-db'" # include man tool
             807: "--include='/main(.*)zfs-doc'" # Some extra fs dep's for MAAS provision stage.PROD-21531
 
