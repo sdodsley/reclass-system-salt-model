@@ -33,6 +33,10 @@ parameters:
               FLAVOR_PREFIX:
                 type: string
                 default: 'dev'
+              STACK_DELETE:
+                type: boolean
+                default: 'true'
+                description: Don't enable it if you need to use the lab after
               TEST_SCHEME:
                 type: string
                 description: "Yaml based scheme to be applied in testing"
