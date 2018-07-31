@@ -13,9 +13,12 @@ parameters:
       kernel:
         sriov: True
         unsafe_interrupts: ${_param:sriov_unsafe_interrupts}
-      rc:
-        local: |
-          #!/bin/sh -e
-          # Enabling ${_param:sriov_nic01_numvfs} VFs on ${_param:sriov_nic01_device_name} PF
-          echo ${_param:sriov_nic01_numvfs} > /sys/class/net/${_param:sriov_nic01_device_name}/device/sriov_numvfs; sleep 2; ip link set ${_param:sriov_nic01_device_name} up
-          exit 0
+    network:
+      interface:
+        sriov_nic01:
+          pre_up_cmds:
+          - echo ${_param:sriov_nic01_numvfs} > /sys/class/net/${_param:sriov_nic01_device_name}/device/sriov_numvfs
+          enabled: true
+          name: ${_param:sriov_nic01_device_name}
+          type: eth
+          proto: manual
