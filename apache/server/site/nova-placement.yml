@@ -1,7 +1,8 @@
 parameters:
   _param:
-    apache_nova_placement_ssl:
+    apache_ssl:
       enabled: false
+    apache_nova_placement_ssl: ${_param:apache_ssl}
     apache_nova_placement_api_address: 0.0.0.0
     apache_nova_placement_api_host: ${linux:network:fqdn}
   nova_placement:

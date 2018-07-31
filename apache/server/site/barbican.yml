@@ -1,7 +1,8 @@
 parameters:
   _param:
-    apache_barbican_ssl:
+    apache_ssl:
       enabled: false
+    apache_barbican_ssl: ${_param:apache_ssl}
     apache_barbican_api_address: 0.0.0.0
     apache_barbican_api_host: ${linux:network:fqdn}
   apache:

@@ -1,7 +1,8 @@
 parameters:
   _param:
-    apache_cinder_ssl:
+    apache_ssl:
       enabled: false
+    apache_cinder_ssl: ${_param:apache_ssl}
     apache_cinder_api_address: 0.0.0.0
     apache_cinder_api_host: ${linux:network:fqdn}
   cinder:

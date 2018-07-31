@@ -1,7 +1,8 @@
 parameters:
   _param:
-    apache_panko_ssl:
+    apache_ssl:
       enabled: false
+    apache_panko_ssl: ${_param:apache_ssl}
     panko_api_workers: 2
     apache_panko_api_host: ${linux:network:fqdn}
     apache_panko_api_address: ${_param:single_address}

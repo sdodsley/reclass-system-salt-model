@@ -1,7 +1,8 @@
 parameters:
   _param:
-    apache_manila_ssl:
+    apache_ssl:
       enabled: false
+    apache_manila_ssl: ${_param:apache_ssl}
     apache_manila_api_address: 0.0.0.0
     apache_manila_api_host: ${linux:network:fqdn}
   manila:

@@ -1,7 +1,8 @@
 parameters:
   _param:
-    apache_proxy_ssl:
+    apache_ssl:
       enabled: false
+    apache_proxy_ssl: ${_param:apache_ssl}
     apache_proxy_openstack_api_host: ${_param:cluster_public_host}
     apache_proxy_openstack_api_address: 0.0.0.0
     apache_proxy_openstack_ironic_host: ${_param:ironic_service_host}

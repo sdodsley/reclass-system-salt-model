@@ -2,8 +2,9 @@ classes:
 - system.apache.server.single
 parameters:
   _param:
-    apache_keystone_ssl:
+    apache_ssl:
       enabled: false
+    apache_keystone_ssl: ${_param:apache_ssl}
     apache_keystone_api_host: ${linux:network:fqdn}
   keystone:
     server:
