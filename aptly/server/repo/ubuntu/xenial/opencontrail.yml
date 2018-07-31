@@ -123,6 +123,17 @@ parameters:
               - xenial-dev/nightly
             architectures:
               - amd64
+        ubuntu-xenial-oc50:
+          distribution: xenial
+          component: main
+          architectures: amd64
+          comment: "Opencontrail 5.0"
+          publisher:
+            component: oc50
+            distributions:
+              - xenial/nightly
+            architectures:
+              - amd64
         ubuntu-xenial-oc666:
           distribution: xenial
           component: main
