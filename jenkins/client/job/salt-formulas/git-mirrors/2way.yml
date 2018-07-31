@@ -275,6 +275,9 @@ parameters:
             - name: openvstorage
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
+            - name: oslo-templates
+              branches: ${_param:salt_formulas_branches}
+              notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: owncloud
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
