@@ -1,8 +1,9 @@
 parameters:
   _param:
     gnocchi_api_workers: 2
-    apache_gnocchi_ssl:
+    apache_ssl:
       enabled: false
+    apache_gnocchi_ssl: ${_param:apache_ssl}
     apache_gnocchi_api_host: ${linux:network:fqdn}
     apache_gnocchi_api_address: ${_param:single_address}
     apache_gnocchi_api_port: 8041
