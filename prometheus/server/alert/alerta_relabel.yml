@@ -1,6 +1,6 @@
 parameters:
   _param:
-    alerta_environment_label: Development
+    alerta_environment_label: ${_param:cluster_name}
   prometheus:
     server:
       config:
