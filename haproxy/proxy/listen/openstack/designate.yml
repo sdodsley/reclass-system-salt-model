@@ -1,4 +1,7 @@
 parameters:
+  _param:
+    haproxy_designate_check_params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
+    haproxy_designate_port: 9001
   haproxy:
     proxy:
       listen:
@@ -7,13 +10,13 @@ parameters:
           service_name: designate
           binds:
           - address: ${_param:cluster_vip_address}
-            port: 9001
+            port: ${_param:haproxy_designate_port}
           servers:
           - name: ${_param:cluster_node01_hostname}
             host: ${_param:cluster_node01_address}
-            port: 9001
-            params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
+            port: ${_param:haproxy_designate_port}
+            params: ${_param:haproxy_designate_check_params}
           - name: ${_param:cluster_node02_hostname}
             host: ${_param:cluster_node02_address}
-            port: 9001
-            params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
+            port: ${_param:haproxy_designate_port}
+            params: ${_param:haproxy_designate_check_params}
