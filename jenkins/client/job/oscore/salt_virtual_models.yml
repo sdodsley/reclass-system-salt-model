@@ -35,6 +35,10 @@ parameters:
               type: string
               description: "Heat stack zone where build stack"
               default: "mcp-oscore-ci"
+            HEAT_STACK_ENVIRONMENT:
+              type: string
+              description: "Heat stack env parameters for deployment"
+              default: "devcloud"
             STACK_RECLASS_ADDRESS:
               type: string
               default: 'https://gerrit.mcp.mirantis.net/salt-models/mcp-virtual-lab'
