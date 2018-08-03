@@ -160,7 +160,7 @@ parameters:
             param:
               SALT_VERSION:
                 type: string
-                default: "2017.7"
+                default: ""
                 description: "Version of salt for use in test, empty string means latest (default)"
               SALT_OPTS:
                 type: string
