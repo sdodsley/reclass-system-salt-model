@@ -10,6 +10,11 @@ parameters:
         manage-virt-snapshot:
           type: workflow-scm
           concurrent: true
+          discard:
+            build:
+              keep_num: 10
+            artifact:
+              keep_num: 10
           display_name: "Deploy - virt snapshot VM"
           scm:
             type: git

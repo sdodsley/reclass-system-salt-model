@@ -19,6 +19,11 @@ parameters:
             display_name: "Deploy - update {{name}} environment"
             type: workflow-scm
             concurrent: false
+            discard:
+              build:
+                keep_num: 10
+              artifact:
+                keep_num: 10
             scm:
               type: git
               url: "${_param:jenkins_gerrit_url}/salt-models/{{name}}"

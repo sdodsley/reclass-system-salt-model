@@ -10,6 +10,11 @@ parameters:
         upgrade-mcp-release:
           type: workflow-scm
           concurrent: true
+          discard:
+            build:
+              keep_num: 10
+            artifact:
+              keep_num: 10
           display_name: "Deploy - upgrade MCP Drivetrain"
           scm:
             type: git

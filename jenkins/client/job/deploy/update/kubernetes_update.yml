@@ -11,6 +11,11 @@ parameters:
         deploy-k8s-upgrade:
           type: workflow-scm
           concurrent: true
+          discard:
+            build:
+              keep_num: 10
+            artifact:
+              keep_num: 10
           display_name: "Deploy - update kubernetes cluster"
           scm:
             type: git
