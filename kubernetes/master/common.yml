@@ -24,3 +24,5 @@ parameters:
           enabled: ${_param:kubernetes_sriov_enabled}
           source: ${_param:kubernetes_sriov_source}
           source_hash: ${_param:kubernetes_sriov_source_hash}
+        flannel:
+          enabled: ${_param:kubernetes_flannel_enabled}
