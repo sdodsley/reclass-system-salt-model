@@ -44,6 +44,9 @@ parameters:
         deploy-openstack-compute:
           type: workflow-scm
           concurrent: true
+          discard:
+            build:
+              keep_num: 50
           display_name: "Deploy - OpenStack Compute node"
           scm:
             type: git

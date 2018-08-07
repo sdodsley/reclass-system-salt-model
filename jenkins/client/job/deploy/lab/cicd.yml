@@ -10,6 +10,9 @@ parameters:
           template:
             type: workflow-scm
             concurrent: true
+            discard:
+              build:
+                keep_num: 10
             display_name: "Deploy {{name}} heat stack"
             scm:
               type: git
