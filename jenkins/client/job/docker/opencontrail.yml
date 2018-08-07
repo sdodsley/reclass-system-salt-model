@@ -6,7 +6,11 @@ parameters:
           name: "docker-build-images-opencontrail-{{version}}"
           jobs:
             - version: oc40
+              branch: master
             - version: oc41
+              branch: master
+            - version: oc50
+              branch: R5.0
           template:
             discard:
               build:
@@ -24,7 +28,7 @@ parameters:
                 project:
                   "mk/docker-opencontrail":
                     branches:
-                      - master
+                      - "{{branch}}"
                 event:
                   ref:
                     - updated: {}
@@ -44,6 +48,9 @@ parameters:
               IMAGE_CREDENTIALS_ID:
                 type: string
                 default: "gerrit"
+              IMAGE_BRANCH:
+                type: string
+                default: "{{branch}}"
               APT_KEY:
                 type: string
                 default: "${_param:jenkins_aptly_url}/public.gpg"
