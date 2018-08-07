@@ -168,6 +168,10 @@ parameters:
               type: string
               default: ""
               description: Path for reports outside docker image
+            SKIP_LIST:
+              type: string
+              description: "Skip list for Rally test"
+              default: ""
         cvp-sanity:
           type: workflow-scm
           name: cvp-sanity
