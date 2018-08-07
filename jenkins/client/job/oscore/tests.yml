@@ -144,10 +144,6 @@ parameters:
                 type: string
                 default: "salt-qa-credentials"
                 description: Jenkins credential ID for Salt master
-              USE_RALLY:
-                type: boolean
-                description: Whether to use container with rally
-                default: "{{use_rally}}"
               TEST_MILESTONE:
                 type: string
                 description: Product milestone
@@ -287,10 +283,6 @@ parameters:
                 type: string
                 default: "salt-qa-credentials"
                 description: Jenkins credential ID for Salt master
-              USE_RALLY:
-                type: boolean
-                description: Whether to use container with rally
-                default: "{{use_rally}}"
         test-runner-template:
           name: "{{job_prefix}}-{{test_type}}-runner"
           template:
@@ -360,9 +352,6 @@ parameters:
               TEST_PATTERN:
                 type: string
                 description: Run tests matched to pattern only
-              TEST_SET:
-                type: string
-                description: Run tests matched by tempest set only
               TEST_CONCURRENCY:
                 type: string
                 description: How much test threads to run
@@ -386,10 +375,6 @@ parameters:
                 type: boolean
                 description: Whether to use pepper to connect to salt master
                 default: 'false'
-              USE_RALLY:
-                type: boolean
-                description: Whether to use container with rally
-                default: 'true'
         results-checker-template:
           name: "{{job_prefix}}-{{test_type}}-results-checker"
           template:
