@@ -140,7 +140,7 @@ parameters:
              build:
                keep_num: 5
              artifact:
-               keep_num: 5
+               keep_num: 2
             type: workflow-scm
             concurrent: true
             quiet_period: 120
