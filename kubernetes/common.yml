@@ -1,21 +1,21 @@
 parameters:
   _param:
-    kubernetes_calico_calicoctl_repo: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico
-    kubernetes_calico_repo: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico
-    kubernetes_calico_cni_repo: docker-prod-virtual.docker.mirantis.net/mirantis/projectcalico/calico
-    kubernetes_hyperkube_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes
-    kubernetes_contrail_cni_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes
-    kubernetes_contrail_network_controller_repo: docker-prod-virtual.docker.mirantis.net/mirantis/kubernetes/contrail-integration
+    kubernetes_calico_calicoctl_repo: docker-prod-local.artifactory.mirantis.com/mirantis/projectcalico/calico
+    kubernetes_calico_repo: docker-prod-local.artifactory.mirantis.com/mirantis/projectcalico/calico
+    kubernetes_calico_cni_repo: docker-prod-local.artifactory.mirantis.com/mirantis/projectcalico/calico
+    kubernetes_hyperkube_repo: docker-prod-local.artifactory.mirantis.com/mirantis/kubernetes
+    kubernetes_contrail_cni_repo: docker-prod-local.artifactory.mirantis.com/mirantis/kubernetes
+    kubernetes_contrail_network_controller_repo: docker-prod-local.artifactory.mirantis.com/mirantis/kubernetes/contrail-integration
     kubernetes_netchecker_agent_repo: mirantis
     kubernetes_netchecker_server_repo: mirantis
     kubernetes_virtlet_repo: mirantis
     kubernetes_kubedns_repo: gcr.io/google_containers
     kubernetes_externaldns_repo: mirantis
-    kubernetes_genie_repo: https://artifactory.mcp.mirantis.net/artifactory/binary-prod-local/mirantis/kubernetes/cni-genie
+    kubernetes_genie_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/cni-genie
     kubernetes_flannel_repo: quay.io/coreos
     kubernetes_metallb_repo: metallb
-    kubernetes_sriov_repo: https://artifactory.mcp.mirantis.net/artifactory/binary-prod-local/mirantis/kubernetes/sriov-cni
-    kubernetes_cniplugins_repo: https://artifactory.mcp.mirantis.net/artifactory/binary-prod-local/mirantis/kubernetes/containernetworking-plugins
+    kubernetes_sriov_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/sriov-cni
+    kubernetes_cniplugins_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/containernetworking-plugins
     kubernetes_dashboard_repo: k8s.gcr.io
 
     # component docker images
