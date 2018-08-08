@@ -35,10 +35,6 @@ parameters:
                 type: string
                 description: Version of openstack to test
                 default: "{{openstack_version}}"
-              PROJECT:
-                type: string
-                description: Project to test
-                default: "all"
               STACK_TEST_JOB:
                 type: string
                 description: Job for environment deployment
@@ -182,10 +178,6 @@ parameters:
                 type: string
                 description: Version of openstack to test
                 default: "{{openstack_version}}"
-              PROJECT:
-                type: string
-                description: Project to test
-                default: "all"
               STACK_TEST_JOB:
                 type: string
                 description: Job for environment deployment
@@ -320,9 +312,6 @@ parameters:
               OPENSTACK_VERSION:
                 type: string
                 description: Version of openstack to test
-              PROJECT:
-                type: string
-                description: Name of project being tested
               PROC_RESULTS_JOB:
                 type: string
                 description: Job for results processing
