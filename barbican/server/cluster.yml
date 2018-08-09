@@ -9,3 +9,5 @@ parameters:
       role: ${_param:openstack_node_role}
       identity:
         protocol: ${_param:cluster_internal_protocol}
+      database:
+        host: ${_param:openstack_database_address}
