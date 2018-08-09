@@ -1,0 +1,32 @@
+---
+fixes:
+  - |
+    When defining interfaces for kvm-quemu VMs use sorted list of interfaces
+    to avoid random NIC assignment/name.
+
+    Fixes https://mirantis.jira.com/browse/PROD-21976
+
+    Required model change on existing deployments with MCP >= 2018.7.0, update
+    `salt:virt:nic` profiles to use list with `- name:` key instead of dict:
+
+    .. code-block:: yaml
+
+       salt:
+         virt:
+           nic:
+             default:
+               eth1:
+                 bridge: br-mgm
+               eth0:
+                 bridge: br-ctl
+             control:
+               - name: eth1
+                 bridge: br_mgm
+                 model: virtio
+               - name: eth2
+                 bridge: br_ctl
+                 model: virtio
+               - name: eth3
+                 bridge: br_proxy
+                 model: virtio
+
