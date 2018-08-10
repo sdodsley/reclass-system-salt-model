@@ -1,2 +1,15 @@
 classes:
 - service.salt.master.pillar.composite.reclass
+
+parameters:
+  salt:
+    master:
+      pillar:
+        reclass:
+          allow_none_override: True
+
+  # NOTE, it's not good practice to combine formula pillars here
+  # exception: in this case is required to sync the same options
+  reclass:
+    storage:
+      allow_none_override: True

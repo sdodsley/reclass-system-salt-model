@@ -8,6 +8,8 @@ parameters:
         engine: git
         address: '${_param:reclass_data_repository}'
         branch: ${_param:reclass_data_revision}
+
+  # TODO, remove this once not required for backward compatibility
   salt:
     master:
       pillar:
