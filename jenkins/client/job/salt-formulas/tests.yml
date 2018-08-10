@@ -183,6 +183,7 @@ parameters:
               RUN_TEST_IN_DOCKER:
                 type: boolean
                 description: "Run test stage in docker environment"
+                default: 'true'
               SMOKE_TEST_DOCKER_IMG:
                 type: string
                 default: "ubuntu:16.04"
