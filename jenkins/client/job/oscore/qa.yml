@@ -70,8 +70,8 @@ parameters:
                 project:
                   mcp/{{oscore-qa-project}}:
                     branches:
-                      - compare_type: "PLAIN"
-                        name: "master"
+                      - master
+                      - pike
                 event:
                   patchset:
                     - created
