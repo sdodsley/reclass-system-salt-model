@@ -1,0 +1,20 @@
+parameters:
+  keystone:
+    server:
+      tokens:
+        fernet_sync_nodes_list:
+          sync_node01:
+            name: ${_param:openstack_control_node02_hostname}
+            enabled: True
+          sync_node02:
+            name: ${_param:openstack_control_node03_hostname}
+            enabled: True
+        fernet_rotation_driver: rsync
+  linux:
+    system:
+      job:
+        keystone_fernet_rotate_rsync:
+          command: '/var/lib/keystone/fernet_keys_rotate.sh -rs >> /var/log/keystone/fernet_rotate.log 2>> /var/log/keystone/fernet_rotate.log'
+          enabled: true
+          user: keystone
+          minute: 0

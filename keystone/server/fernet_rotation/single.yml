@@ -1,0 +1,13 @@
+parameters:
+  keystone:
+    server:
+      tokens:
+        fernet_rotation_driver: rsync
+  linux:
+    system:
+      job:
+        keystone_fernet_rotate_rsync:
+          command: '/var/lib/keystone/fernet_keys_rotate.sh -r >> /var/log/keystone/fernet_rotate.log 2>> /var/log/keystone/fernet_rotate.log'
+          enabled: true
+          user: keystone
+          minute: 0
