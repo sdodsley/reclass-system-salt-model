@@ -156,6 +156,13 @@ parameters:
           full_name: Artem Minasyan
           home: /home/aminasyan
           email: aminasyan@mirantis.com
+        imenkov:
+          enabled: true
+          name: imenkov
+          sudo: true
+          full_name: Ilya Menkov
+          home: /home/imenkov
+          email: imenkov@mirantis.com
       group:
         libvirtd:
           enabled: true
@@ -284,6 +291,11 @@ parameters:
           public_keys:
           - ${public_keys:aminasyan}
           user: ${linux:system:user:aminasyan}
+        imenkov:
+          enable: true
+          public_keys:
+          - ${public_keys:imenkov}
+          user: ${linux:system:user:imenkov}
   public_keys:
     ddmitriev:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuD4wJ8hzkchQ0pfgdwWukQyps1xYRfHOsjosmDu/mmgaXVud5mnpwb2q35E2YYTox2mx+ulJqyS+099gz6MPg4P8D5qdMuRbAsJqbceLaaIGQhdT8qgSo7ESrl5pwvYnfWzKLKF0z5s7nrW0nvArC40zhV9o9XpvzzzSFByepWfkwA8ReldGUYVvTKp8YXaCrqEdMZrU42adPM2nl+fYBbGF+h4/Ka247aVjPeER0blV3znFXbv2Kf38G+i/TEGaktgpBdtGGDi1tX2loMypmTJeqZRJnM0Eoly0BnynB7CSxn11eoIXBUe1mVYNqmQd1hw6uh59iymhK5j939v9J ddmitriev@dis_xcom
@@ -333,4 +345,6 @@ parameters:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYj97WGfiL550eVPyQmFyrgpTw61tfins1CpgrZewWqAWJMgYklRdMYl4OReE5UO2po7ag0f/QsOtGU8aQbnxnWUYPZyS3Qk+Bg8OOSBmewPxmT7WH97KdGKBdC9b3xUNFOUXEUOMmOe3jq9YET+xebUnfsA5qwYU5dL9Cb5UAPzVxYI8z5RiaNTo8dtwZr7lbJJRy8YfSWCtiD59vewc6BE2NTUyDjsfmKd9K/IkyKboGU9AC5mLYDsjvWwiGcNdfigRyaYWKmoo7Xhe1W2Og4dpI5pozOwVg7hISW9NRgLXrZP/9me1rFBH7EQjpjO3+Pto1//R3Nx9QLsB59yuj snovikov@snovikov
     aminasyan:
       key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCo9BHw8WdIFOEuY10XvUqHPl1jCqtA8TYntt5Aee2rR8X8pLG9lWjHPFkNArD5upCRvv6f88Xs4QLoEGWMWcbfMkJE4gMNkOWL4As5iNgagw+DybQrA6nXyassHi8le+quwICfJ1v16IXxPgMBCcrRcSYvHKv+n8KsuBH1csRnJ8aHvIZJTL43Eq0F+aj2S0/9D+m2dyRwcmamn6EqX61NfL5UP3422i4JykTXY6I8iwEHs7Er+jPBD7rtJ/q4Kn/bIyT/Vz0tGHiWyVt7B8GBoPb3PgDuzXKvU7OtOxFb3uhANeecjzIz5G5rAsAQcizf+MGCOoBwFLFJTPAharWN artem@Artem
+    imenkov:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSWoSuHV1FNRuooS3d0nVkTRCwC+Tc585Z1cPcMQns7H1ogLIya//T3gMfxINxCjlF1eek18vI9B5QszZZUL2P7prFxe5EJlt6iM8jD61umkncaTbx6oc8r8xu5ufH9RDxfKHvQX1mhhID5JK+/GoRDIW5Zs7wFSHCrANYV2dtmOfmRSc/qpgh87Z9X10UDymp5MLjpQZzjM+qZCtz6yV14m835j4eiEN7+QZ2XZ/Wtzer7VVdhtjbw8gESSyuPIVf66keuLVUixk0CXosQYrqWDPWpT0Rhh63lnUacgplh74TU+bb+vYRjIHxCgOY2Ex6Pk5jrsroi0YoWtI4SErD imenkov@atopilin-nb-wifi.srt.mirantis.net
 
