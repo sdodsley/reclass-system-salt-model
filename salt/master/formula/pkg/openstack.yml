@@ -34,6 +34,9 @@ parameters:
             glusterfs:
               source: pkg
               name: salt-formula-glusterfs
+            gnocchi:
+              source: pkg
+              name: salt-formula-gnocchi
             designate:
               source: pkg
               name: salt-formula-designate
@@ -82,6 +85,9 @@ parameters:
             opencontrail:
               source: pkg
               name: salt-formula-opencontrail
+            panko:
+              source: pkg
+              name: salt-formula-panko
             python:
               source: pkg
               name: salt-formula-python
