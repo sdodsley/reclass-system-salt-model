@@ -1,5 +1,6 @@
 classes:
 - service.keystone.server.single
+- system.linux.system.users.keystone
 parameters:
   _param:
     keystone_service_token: token
