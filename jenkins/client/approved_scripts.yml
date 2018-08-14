@@ -66,6 +66,7 @@ parameters:
         - method java.util.regex.MatchResult group int
         - method java.util.regex.MatchResult groupCount
         - method java.util.regex.Matcher find
+        - method java.util.regex.Matcher group java.lang.String
         - method java.util.regex.Matcher matches
         - method java.util.regex.Pattern matcher java.lang.CharSequence
         - method java.util.stream.Stream collect java.util.stream.Collector
@@ -84,6 +85,7 @@ parameters:
         - new groovy.json.JsonSlurperClassic
         - new groovy.util.XmlParser
         - new java.io.File java.lang.String
+        - new java.io.File java.lang.String java.lang.String
         - new java.io.IOException java.lang.String
         - new java.io.OutputStreamWriter java.io.OutputStream
         - new java.lang.Exception java.lang.String
