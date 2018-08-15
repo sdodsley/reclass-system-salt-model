@@ -1,5 +1,6 @@
 classes:
 - service.linux.system
+- service.linux.system.cis
 - system.linux.system.banner
 - service.logrotate.server
 parameters:
