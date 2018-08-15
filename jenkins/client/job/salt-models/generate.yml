@@ -32,8 +32,8 @@ parameters:
                 type: string
               TEST_MODEL:
                 type: boolean
-                default: false
+                default: true
               RECLASS_VERSION:
                 type: string
                 default: 'v1.5.4'
-                description: "Version (branch) of Reclass we will use"
+                description: "Version (branch) of Reclass we will use.pip+git package"
