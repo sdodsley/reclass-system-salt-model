@@ -48,3 +48,7 @@ parameters:
               type: boolean
               default: 'false'
               description: "Use only when local repositories are present."
+            PIPELINE_TIMEOUT:
+              type: string
+              default: '12'
+              description: "Sets pipeline timeout in hours. Defaults to '12' if left empty."
