@@ -36,3 +36,7 @@ parameters:
           host:
             name: ${_param:nginx_proxy_openstack_web_host}
             port: 80
+  apache:
+    server:
+      bind:
+        listen_default_ports: false
