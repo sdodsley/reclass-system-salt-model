@@ -63,7 +63,7 @@ parameters:
               upload_source_package: true
               dist: xenial
             - name: swift
-              upload_source_package: true
+              upload_source_package: false
               dist: xenial
           template:
             discard:

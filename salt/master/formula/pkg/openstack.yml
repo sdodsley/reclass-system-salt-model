@@ -97,6 +97,3 @@ parameters:
             supervisor:
               source: pkg
               name: salt-formula-supervisor
-            swift:
-              source: pkg
-              name: salt-formula-swift
