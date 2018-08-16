@@ -109,6 +109,30 @@ parameters:
               type: boolean
               description: Whether to use container with rally
               default: "false"
+            TEST_PASS_THRESHOLD:
+              type: string
+              description: Tests pass rate to consider build successful
+              default: "96"
+            FAIL_ON_TESTS:
+              type: boolean
+              default: 'true'
+              description: Whether to fail build on test results
+            TEST_PATTERN:
+              type: string
+              description: Run tests matched to pattern only
+              default: ''
+            TEST_MILESTONE:
+              type: string
+              description: Product milestone
+              default: 'MCP1.1'
+            TESTRAIL:
+              type: boolean
+              description: Whether to upload results to testrail or not
+              default: "false"
+            OPENSTACK_VERSION:
+             type: string
+             description: Version of openstack to test
+             default: ""
           scm:
             script: test-virtual-model-pipeline.groovy
             type: git
