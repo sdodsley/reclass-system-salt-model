@@ -1,5 +1,6 @@
 classes:
 - service.horizon.server.single
+- system.apache.server.single
 - system.memcached.server.single
 parameters:
   _param:
@@ -13,4 +14,7 @@ parameters:
       plugin: {}
       session:
         engine: "cache"
-
+  apache:
+    server:
+      modules:
+        - wsgi
