@@ -2,6 +2,7 @@ classes:
 - service.keepalived.cluster.single
 - service.horizon.server.cluster
 - service.haproxy.proxy.single
+- system.apache.server.single
 - system.haproxy.proxy.listen.openstack.horizon
 - system.memcached.server.single
 parameters:
@@ -15,4 +16,7 @@ parameters:
       plugin: {}
       session:
         engine: "cache"
-
+  apache:
+    server:
+      modules:
+        - wsgi
