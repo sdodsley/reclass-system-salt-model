@@ -4,6 +4,7 @@ classes:
 - system.haproxy.proxy.listen.openstack.keystone
 - system.haproxy.proxy.listen.openstack.keystone.standalone
 - system.linux.system.users.keystone
+- system.keystone.server.fernet_rotation.cluster
 parameters:
   _param:
     keystone_tokens_expiration: 3600
