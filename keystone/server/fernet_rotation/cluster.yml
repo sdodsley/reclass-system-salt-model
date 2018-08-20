@@ -1,24 +1,27 @@
 parameters:
+  _param:
+    fernet_rotation_driver: 'rsync'
+    credential_rotation_driver: 'rsync'
   keystone:
     server:
       tokens:
         fernet_sync_nodes_list:
           sync_node01:
-            name: ${_param:openstack_control_node02_hostname}
+            name: ${_param:cluster_node02_hostname}
             enabled: True
           sync_node02:
-            name: ${_param:openstack_control_node03_hostname}
+            name: ${_param:cluster_node03_hostname}
             enabled: True
-        fernet_rotation_driver: rsync
+        fernet_rotation_driver: ${_param:fernet_rotation_driver}
       credential:
         credential_sync_nodes_list:
           sync_node01:
-            name: ${_param:openstack_control_node02_hostname}
+            name: ${_param:cluster_node02_hostname}
             enabled: True
           sync_node02:
-            name: ${_param:openstack_control_node03_hostname}
+            name: ${_param:cluster_node03_hostname}
             enabled: True
-        credential_rotation_driver: rsync
+        credential_rotation_driver: ${_param:credential_rotation_driver}
   linux:
     system:
       job:
