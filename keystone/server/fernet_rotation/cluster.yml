@@ -10,11 +10,26 @@ parameters:
             name: ${_param:openstack_control_node03_hostname}
             enabled: True
         fernet_rotation_driver: rsync
+      credential:
+        credential_sync_nodes_list:
+          sync_node01:
+            name: ${_param:openstack_control_node02_hostname}
+            enabled: True
+          sync_node02:
+            name: ${_param:openstack_control_node03_hostname}
+            enabled: True
+        credential_rotation_driver: rsync
   linux:
     system:
       job:
         keystone_fernet_rotate_rsync:
-          command: '/var/lib/keystone/fernet_keys_rotate.sh -rs >> /var/log/keystone/fernet_rotate.log 2>> /var/log/keystone/fernet_rotate.log'
+          command: '/var/lib/keystone/keystone_keys_rotate.sh -r -s -t fernet >> /var/log/keystone/keystone-rotate.log 2>> /var/log/keystone/keystone-rotate.log'
           enabled: true
           user: keystone
+          minute: 0
+        keystone_credential_rotate_rsync:
+          command: '/var/lib/keystone/keystone_keys_rotate.sh -r -s -t credential >> /var/log/keystone/keystone-rotate.log 2>> /var/log/keystone/keystone-rotate.log'
+          enabled: true
+          user: keystone
+          hour: 0
           minute: 0
