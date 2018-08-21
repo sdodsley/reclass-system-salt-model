@@ -1,7 +1,8 @@
 parameters:
   _param:
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     docker_devops_portal_replicas: 1
-    docker_image_devops_portal: docker-prod-local.artifactory.mirantis.com/mirantis/oss/devops-portal:latest
+    docker_image_devops_portal: ${_param:mcp_docker_registry}/mirantis/oss/devops-portal:latest
   docker:
     client:
       stack:

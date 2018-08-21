@@ -1,7 +1,8 @@
 parameters:
   _param:
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     docker_pushkin_replicas: 1
-    docker_image_pushkin: docker-prod-local.artifactory.mirantis.com/mirantis/oss/pushkin
+    docker_image_pushkin: ${_param:mcp_docker_registry}/mirantis/oss/pushkin
     pushkin_bind_host: pushkin-api
     pushkin_bind_port: ${_param:haproxy_pushkin_bind_port}
     pushkin_elasticsearch: ${_param:elasticsearch_bind_host}

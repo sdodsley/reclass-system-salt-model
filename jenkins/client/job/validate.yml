@@ -2,6 +2,7 @@ parameters:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
     cvp_sanity_default_repo: "https://github.com/Mirantis/cvp-sanity-checks"
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
   jenkins:
     client:
       view:
@@ -37,7 +38,7 @@ parameters:
               description: Credentials to the Salt API
             TEST_IMAGE:
               type: string
-              default: "docker-prod-local.artifactory.mirantis.com/mirantis/oss/qa-tools"
+              default: "${_param:mcp_docker_registry}/mirantis/oss/qa-tools"
               description: Docker image to setup testing environment
             TARGET_NODE:
               type: string

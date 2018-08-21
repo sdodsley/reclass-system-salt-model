@@ -1,10 +1,11 @@
 parameters:
   _param:
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     docker_janitor_monkey_replicas: 1
     docker_image_mongodb: library/mongo:3.4
     docker_mongodb_admin_username: admin
     docker_mongodb_admin_password: password
-    docker_image_janitor_monkey: docker-prod-local.artifactory.mirantis.com/mirantis/oss/janitor-monkey
+    docker_image_janitor_monkey: ${_param:mcp_docker_registry}/mirantis/oss/janitor-monkey
     janitor_monkey_bind_host: cleanup-service-api
     janitor_monkey_bind_port: 8080
     janitor_monkey_ssl:

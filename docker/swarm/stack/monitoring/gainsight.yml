@@ -2,6 +2,7 @@ classes:
 - system.prometheus.gainsight.container
 parameters:
   _param:
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     gainsight_enabled: 'true'
     gainsight_csv_upload_url: 'http://localhost:9999'
     gainsight_account_id: 'default'
@@ -14,7 +15,7 @@ parameters:
     gainsight_config_directory: '/srv/gainsight'
     gainsight_crontab_directory: '/etc/cron.d'
     gainsight_config_path: "${_param:gainsight_config_directory}/config.ini"
-    docker_image_prometheus_gainsight: 'docker-prod-local.artifactory.mirantis.com/openstack-docker/gainsight:nightly'
+    docker_image_prometheus_gainsight: '${_param:mcp_docker_registry}/openstack-docker/gainsight:nightly'
   docker:
     client:
       stack:

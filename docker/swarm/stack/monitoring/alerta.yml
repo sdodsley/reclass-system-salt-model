@@ -2,7 +2,8 @@ classes:
 - system.prometheus.alerta
 parameters:
   _param:
-    docker_image_alerta: docker-prod-local.artifactory.mirantis.com/mirantis/external/alerta-web:latest
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
+    docker_image_alerta: ${_param:mcp_docker_registry}/mirantis/external/alerta-web:latest
     alerta_mongodb_uri: "mongodb://${_param:cluster_node01_address}:27017,${_param:cluster_node02_address}:27017,${_param:cluster_node03_address}:27017/alerta?replicaSet=stacklight"
     alerta_admin_username: "admin@alerta.io"
   docker:
