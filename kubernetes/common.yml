@@ -4,6 +4,7 @@ parameters:
     kubernetes_calico_calicoctl_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
     kubernetes_calico_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
     kubernetes_calico_cni_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
+    kubernetes_calico_kube_ctl_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
     kubernetes_hyperkube_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
     kubernetes_contrail_cni_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
     kubernetes_contrail_network_controller_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes/contrail-integration
@@ -21,9 +22,10 @@ parameters:
 
     # component docker images
     kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
-    kubernetes_calico_calicoctl_image: ${_param:kubernetes_calico_calicoctl_repo}/ctl:v1.6.4
-    kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v2.6.10
-    kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v1.11.6
+    kubernetes_calico_calicoctl_image: ${_param:kubernetes_calico_calicoctl_repo}/ctl:v3.1.3
+    kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v3.1.3
+    kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v3.1.3
+    kubernetes_calico_kube_controllers_image: ${_param:kubernetes_calico_kube_ctl_repo}/kube-controllers:v3.1.3
     kubernetes_hyperkube_image: ${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.10.4-4
     kubernetes_pause_image: ${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.10.4-4
     kubernetes_contrail_cni_image: ${_param:kubernetes_contrail_cni_repo}/contrail-cni:v1.2.0
@@ -128,6 +130,7 @@ parameters:
           image: ${_param:kubernetes_calico_image}
           calicoctl_image: ${_param:kubernetes_calico_calicoctl_image}
           cni_image: ${_param:kubernetes_calico_cni_image}
+          kube_controllers_image: ${_param:kubernetes_calico_kube_controllers_image}
         opencontrail:
           enabled: ${_param:kubernetes_opencontrail_enabled}
           cni_image: ${_param:kubernetes_contrail_cni_image}
