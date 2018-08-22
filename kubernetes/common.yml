@@ -41,8 +41,8 @@ parameters:
     kubernetes_genie_source: ${_param:kubernetes_genie_repo}/genie_v1.0-138-gbf5dbaa
     kubernetes_genie_source_hash: md5=b024052ed4ecb1d5354e0cc8f51afaca
     kubernetes_flannel_image: ${_param:kubernetes_flannel_repo}/flannel:v0.10.0-amd64
-    kubernetes_metallb_controller_image: ${_param:kubernetes_metallb_repo}/controller:v0.6.2
-    kubernetes_metallb_speaker_image: ${_param:kubernetes_metallb_repo}/speaker:v0.6.2
+    kubernetes_metallb_controller_image: ${_param:kubernetes_metallb_repo}/controller:v0.7.3
+    kubernetes_metallb_speaker_image: ${_param:kubernetes_metallb_repo}/speaker:v0.7.3
     kubernetes_sriov_source: ${_param:kubernetes_sriov_repo}/sriov_v0.3-8-g8b7ed98
     kubernetes_sriov_source_hash: md5=c0cc33202afd02e4cc44b977a8faf6e7
     kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/cni-plugins_v0.7.1-48-g696b1f9.tar.gz
