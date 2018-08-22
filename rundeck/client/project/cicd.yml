@@ -1,9 +1,10 @@
 parameters:
   _param:
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     rundeck_cis_jobs_repository: https://gerrit.mcp.mirantis.net/oss/rundeck-cis-jobs
     rundeck_cis_jobs_revision: master
     rundeck_cis_elasticsearch_url: yourelastic:9200
-    rundeck_cis_os_docker_image: docker-prod-local.artifactory.mirantis.com/mirantis/oss/cis-openstack:latest
+    rundeck_cis_os_docker_image: ${_param:mcp_docker_registry}/mirantis/oss/cis-openstack:latest
     rundeck_cis_openstack:
       auth_url: http://yourcloud.com:5000/v3/auth/tokens
       endpoint_type: publicURL

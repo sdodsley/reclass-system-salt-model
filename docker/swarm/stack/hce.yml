@@ -1,7 +1,8 @@
 parameters:
   _param:
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     docker_hce_replicas: 1
-    docker_image_hce: docker-prod-local.artifactory.mirantis.com/mirantis/oss/hce
+    docker_image_hce: ${_param:mcp_docker_registry}/mirantis/oss/hce
     hce_bind_host: hce-api
     hce_bind_port: ${_param:haproxy_hce_bind_port}
     hce_prometheus_protocol: http

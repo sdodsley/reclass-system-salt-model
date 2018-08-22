@@ -4,14 +4,15 @@ classes:
 - service.haproxy.proxy.single
 parameters:
   _param:
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     opencontrail_kafka_log_cleanup_mtime: '+7'
     opencontrail_kafka_log_cleanup_dir: '/usr/share/kafka/logs/'
     opencontrail_version: 4.0
     linux_repo_contrail_component: oc40
     opencontrail_image_tag: latest
-    opencontrail_analytics_image: docker-prod-local.artifactory.mirantis.com/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-analytics:${_param:opencontrail_image_tag}
-    opencontrail_analyticsdb_image: docker-prod-local.artifactory.mirantis.com/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-analyticsdb:${_param:opencontrail_image_tag}
-    opencontrail_controller_image: docker-prod-local.artifactory.mirantis.com/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-controller:${_param:opencontrail_image_tag}
+    opencontrail_analytics_image: ${_param:mcp_docker_registry}/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-analytics:${_param:opencontrail_image_tag}
+    opencontrail_analyticsdb_image: ${_param:mcp_docker_registry}/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-analyticsdb:${_param:opencontrail_image_tag}
+    opencontrail_controller_image: ${_param:mcp_docker_registry}/opencontrail-${_param:linux_repo_contrail_component}/opencontrail-controller:${_param:opencontrail_image_tag}
     opencontrail_controller_container_name: opencontrail_controller_1
     opencontrail_analytics_container_name: opencontrail_analytics_1
     opencontrail_analyticsdb_container_name: opencontrail_analyticsdb_1

@@ -1,4 +1,6 @@
 parameters:
+  _param:
+    mcp_docker_registry: 'docker-dev-local.docker.mirantis.net'
   jenkins:
     client:
       job_template:
@@ -48,7 +50,7 @@ parameters:
                 default: "gerrit"
               GRADLE_IMAGE:
                 type: string
-                default: "docker-dev-local.docker.mirantis.net/mirantis/cicd/niaquinto_gradle"
+                default: "${_param:mcp_docker_registry}/mirantis/cicd/niaquinto_gradle"
               GRADLE_CMD:
                 type: string
                 default: "check --info"

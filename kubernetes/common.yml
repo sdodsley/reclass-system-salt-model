@@ -1,11 +1,12 @@
 parameters:
   _param:
-    kubernetes_calico_calicoctl_repo: docker-prod-local.artifactory.mirantis.com/mirantis/projectcalico/calico
-    kubernetes_calico_repo: docker-prod-local.artifactory.mirantis.com/mirantis/projectcalico/calico
-    kubernetes_calico_cni_repo: docker-prod-local.artifactory.mirantis.com/mirantis/projectcalico/calico
-    kubernetes_hyperkube_repo: docker-prod-local.artifactory.mirantis.com/mirantis/kubernetes
-    kubernetes_contrail_cni_repo: docker-prod-local.artifactory.mirantis.com/mirantis/kubernetes
-    kubernetes_contrail_network_controller_repo: docker-prod-local.artifactory.mirantis.com/mirantis/kubernetes/contrail-integration
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
+    kubernetes_calico_calicoctl_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
+    kubernetes_calico_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
+    kubernetes_calico_cni_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
+    kubernetes_hyperkube_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
+    kubernetes_contrail_cni_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
+    kubernetes_contrail_network_controller_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes/contrail-integration
     kubernetes_netchecker_agent_repo: mirantis
     kubernetes_netchecker_server_repo: mirantis
     kubernetes_virtlet_repo: mirantis
