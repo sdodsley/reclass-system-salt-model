@@ -165,3 +165,7 @@ parameters:
               type: boolean
               default: 'false'
               description: "Run cloud validation pipelines before and after update"
+            MINIONS_TEST_TIMEOUT:
+              type: string
+              default: 10
+              description: "Time in seconds for a Salt result to receive a response when calling a minionsReachable method."
