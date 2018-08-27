@@ -133,6 +133,7 @@ parameters:
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods plus java.util.List java.util.Collection
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods println java.lang.Object java.lang.Object
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods putAt java.lang.Object java.lang.String java.lang.Object
+        - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods readLines java.lang.String
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods sort java.util.Collection
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods split java.lang.String
         - staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods takeRight java.util.List int
