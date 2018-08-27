@@ -3,12 +3,13 @@ classes:
 parameters:
   _param:
     keystone_service_protocol: http
+###TODO: the section below should be removed in the future together with same related changes in cookiecutter-templates (control_init.yml)
   linux:
     system:
       job:
         keystone_job_rotate:
           command: '/usr/bin/keystone-manage fernet_rotate --keystone-user keystone --keystone-group keystone >> /var/log/key_rotation_log 2>> /var/log/key_rotation_log'
-          enabled: true
+          enabled: false
           user: root
           minute: 0
   keystone:
