@@ -217,6 +217,8 @@ parameters:
                   salt-models/{{name}}:
                     branches:
                       - master
+                      - compare_type: ANT
+                        name: release/*
                 event:
                   comment:
                     - addedContains:
@@ -260,6 +262,8 @@ parameters:
                   mk/{{cookiecutter_template}}:
                     branches:
                       - master
+                      - compare_type: ANT
+                        name: release/*
                 event:
                   comment:
                     - addedContains:
