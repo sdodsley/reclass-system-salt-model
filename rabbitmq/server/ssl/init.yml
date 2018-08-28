@@ -1,0 +1,11 @@
+classes:
+- system.salt.minion.cert.rabbitmq_server
+- service.rabbitmq.server.ssl
+parameters:
+  _param:
+    rabbitmq_ssl_enabled: true
+    rabbitmq_port: 5671 # for non-ssl use 5672 / for ssl 5671
+  rabbitmq:
+    server:
+      ssl:
+        enabled: ${_param:rabbitmq_ssl_enabled}
