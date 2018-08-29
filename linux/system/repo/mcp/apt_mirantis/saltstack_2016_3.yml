@@ -1,3 +1,6 @@
+# DEPRECATED since 2018.7+ release.
+# Please use system/repo/mcp/apt_mirantis/saltstack
+
 classes:
 - system.linux.system.repo.keystorage.saltstack
 - system.linux.system.repo.mcp.apt_mirantis.saltstack
