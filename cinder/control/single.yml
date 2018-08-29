@@ -1,8 +1,11 @@
 classes:
 - service.cinder.control.single
+- system.salt.minion.cert.mysql.clients.openstack.cinder
 parameters:
   _param:
     internal_protocol: 'http'
+    openstack_mysql_x509_enabled: False
+    galera_ssl_enabled: False
   linux:
     system:
       package:
@@ -18,6 +21,13 @@ parameters:
       role: ${_param:openstack_node_role}
       database:
         host: ${_param:single_address}
+        x509:
+          enabled: ${_param:openstack_mysql_x509_enabled}
+          ca_file: ${_param:mysql_cinder_ssl_ca_file}
+          key_file: ${_param:mysql_cinder_client_ssl_key_file}
+          cert_file: ${_param:mysql_cinder_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:galera_ssl_enabled}
       identity:
         protocol: ${_param:internal_protocol}
         region: ${_param:openstack_region}
