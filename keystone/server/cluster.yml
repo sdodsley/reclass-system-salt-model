@@ -5,10 +5,13 @@ classes:
 - system.haproxy.proxy.listen.openstack.keystone.standalone
 - system.linux.system.users.keystone
 - system.keystone.server.fernet_rotation.cluster
+- system.salt.minion.cert.mysql.clients.openstack.keystone
 parameters:
   _param:
     keystone_tokens_expiration: 3600
     openstack_node_role: primary
+    openstack_mysql_x509_enabled: False
+    galera_ssl_enabled: False
   linux:
     system:
       package:
@@ -42,6 +45,13 @@ parameters:
         name: keystone
         password: ${_param:mysql_keystone_password}
         user: keystone
+        x509:
+          enabled: ${_param:openstack_mysql_x509_enabled}
+          ca_file: ${_param:mysql_keystone_ssl_ca_file}
+          key_file: ${_param:mysql_keystone_client_ssl_key_file}
+          cert_file: ${_param:mysql_keystone_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:galera_ssl_enabled}
       tokens:
         engine: fernet
         expiration: ${_param:keystone_tokens_expiration}
