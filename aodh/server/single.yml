@@ -5,6 +5,12 @@ parameters:
     openstack_event_alarm_topic: alarm.all
     # Keep alarm history in database for 30 days
     aodh_alarm_history_ttl: 2592000
+  linux:
+    system:
+      cron:
+        user:
+          aodh:
+            enabled: true
   aodh:
     server:
       ttl: ${_param:aodh_alarm_history_ttl}

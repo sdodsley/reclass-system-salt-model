@@ -6,6 +6,10 @@ classes:
 parameters:
   linux:
     system:
+      cron:
+        user:
+          glance:
+            enabled: true
       package:
         python-pymysql:
           fromrepo: ${_param:openstack_version}
