@@ -3,6 +3,9 @@ parameters:
     opencontrail_identity_user: admin
     opencontrail_identity_password: contrail123
     opencontrail_identity_tenant: admin
+    opencontrail_public_ip_range: 172.17.47.128/25
+    opencontrail_public_ip_network: default-domain:default-project:Public
+    opencontrail_private_ip_range: 10.150.0.0/16
   kubernetes:
     pool:
       network:
@@ -13,10 +16,10 @@ parameters:
       network:
         engine: none
         opencontrail:
-          version: {{ cookiecutter.opencontrail_version }}
-          public_ip_range: {{ cookiecutter.opencontrail_public_ip_range }}
-          public_network: {{ cookiecutter.get('opencontrail_public_ip_network', 'default-domain:default-project:Public') }}
-          private_ip_range: {{ cookiecutter.opencontrail_private_ip_range }}
+          version: ${_param:opencontrail_version}
+          public_ip_range: ${_param:opencontrail_public_ip_range }
+          public_network: ${_param:opencontrail_public_ip_network }
+          private_ip_range: ${_param:opencontrail_private_ip_range }
           config:
             api:
               host: ${_param:opencontrail_control_address}
