@@ -25,7 +25,7 @@ parameters:
               description: "ID of jenkins credentials for connecting to gerrit"
               default: "gerrit"
             COOKIECUTTER_TEMPLATE_CONTEXT_FILE:
-              type: choice
+              type: string
               description: "Context for cookiecutter template specified as filename"
               default: 'stacklight-openstack-ovs-core-pike'
             OPENSTACK_API_PROJECT:
