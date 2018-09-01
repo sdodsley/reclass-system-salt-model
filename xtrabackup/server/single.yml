@@ -4,3 +4,9 @@ parameters:
   _param:
     xtrabackup_qpress_source: pkg
     xtrabackup_qpress_source_name: qpress
+  linux:
+    system:
+      cron:
+        user:
+          xtrabackup:
+            enabled: true
