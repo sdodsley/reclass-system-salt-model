@@ -26,8 +26,8 @@ parameters:
     kubernetes_calico_image: ${_param:kubernetes_calico_repo}/node:v3.1.3
     kubernetes_calico_cni_image: ${_param:kubernetes_calico_cni_repo}/cni:v3.1.3
     kubernetes_calico_kube_controllers_image: ${_param:kubernetes_calico_kube_ctl_repo}/kube-controllers:v3.1.3
-    kubernetes_hyperkube_image: ${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.10.4-4
-    kubernetes_pause_image: ${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.10.4-4
+    kubernetes_hyperkube_image: ${_param:kubernetes_hyperkube_repo}/hyperkube-amd64:v1.11.2-1
+    kubernetes_pause_image: ${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.11.2-1
     kubernetes_contrail_cni_image: ${_param:kubernetes_contrail_cni_repo}/contrail-cni:v1.2.0
     kubernetes_contrail_network_controller_image: ${_param:kubernetes_contrail_network_controller_repo}/contrail-network-controller:v1.2.0
     kubernetes_virtlet_image: ${_param:kubernetes_virtlet_repo}/virtlet:v1.1.2
