@@ -298,7 +298,7 @@ parameters:
                 default: "1"
               EXTRA_FORMULAS:
                 type: string
-                default: "aptly artifactory auditd backupninja collectd devops-portal docker elasticsearch fluentd freeipa gerrit glusterfs grafana haproxy heka horizon influxdb jenkins keepalived kibana libvirt maas memcached mysql nginx ntp openldap openssh postfix prometheus rsync rsyslog rundeck sensu sphinx telegraf xtrabackup watchdog logrotate"
+                default: "aptly artifactory auditd backupninja collectd devops-portal docker elasticsearch fluentd freeipa gerrit glusterfs grafana haproxy heka horizon influxdb jenkins keepalived kibana libvirt maas memcached mysql nginx ntp openldap openscap openssh postfix prometheus rsync rsyslog rundeck sensu sphinx telegraf xtrabackup watchdog logrotate"
               RECLASS_VERSION:
                 type: string
                 default: 'v1.5.4'
