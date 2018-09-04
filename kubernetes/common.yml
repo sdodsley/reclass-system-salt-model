@@ -53,7 +53,7 @@ parameters:
     kubernetes_dashboard_image: ${_param:kubernetes_dashboard_repo}/kubernetes-dashboard-amd64:v1.8.3
     kubernetes_fluentd_aggregator_image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-elasticsearch
     kubernetes_fluentd_logger_image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-stackdriver
-    kubernetes_telegraf_image: docker.io/telegraf:1.5.3
+    kubernetes_telegraf_image: ${_param:mcp_docker_registry}/openstack-docker/telegraf:2018.8.0
     kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:1.2.0
 
     kubelet_fail_on_swap: true
