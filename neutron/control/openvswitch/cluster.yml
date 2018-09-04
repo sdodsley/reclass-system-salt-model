@@ -17,6 +17,7 @@ parameters:
     cluster_internal_protocol: 'http'
   neutron:
     server:
+      role: ${_param:openstack_node_role}
       global_physnet_mtu: ${_param:neutron_global_physnet_mtu}
       l3_ha: ${_param:neutron_l3_ha}
       dvr: ${_param:neutron_control_dvr}
