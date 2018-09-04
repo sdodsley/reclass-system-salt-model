@@ -1,6 +1,10 @@
 classes:
 - service.glance.control.single
+- system.salt.minion.cert.mysql.clients.openstack.glance
 parameters:
+  _param:
+    openstack_mysql_x509_enabled: False
+    galera_ssl_enabled: False
   linux:
     system:
       cron:
@@ -16,6 +20,13 @@ parameters:
       role: ${_param:openstack_node_role}
       database:
         host: ${_param:single_address}
+        x509:
+          enabled: ${_param:openstack_mysql_x509_enabled}
+          ca_file: ${_param:mysql_glance_ssl_ca_file}
+          key_file: ${_param:mysql_glance_client_ssl_key_file}
+          cert_file: ${_param:mysql_glance_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:galera_ssl_enabled}
       identity:
         region: ${_param:openstack_region}
       show_multiple_locations: True
