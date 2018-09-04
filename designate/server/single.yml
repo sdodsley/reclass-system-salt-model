@@ -1,9 +1,12 @@
 classes:
 - service.designate.server.single
+- system.salt.minion.cert.mysql.clients.openstack.designate
 parameters:
   _param:
     designate_admin_api_enabled: false
     internal_protocol: 'http'
+    openstack_mysql_x509_enabled: False
+    galera_ssl_enabled: False
   linux:
     system:
       package:
@@ -33,6 +36,13 @@ parameters:
           pool_manager: designate_pool_manager
         user: designate
         password: ${_param:mysql_designate_password}
+        x509:
+          enabled: ${_param:openstack_mysql_x509_enabled}
+          ca_file: ${_param:mysql_designate_ssl_ca_file}
+          key_file: ${_param:mysql_designate_client_ssl_key_file}
+          cert_file: ${_param:mysql_designate_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:galera_ssl_enabled}
       identity:
         engine: keystone
         host: ${_param:single_address}
