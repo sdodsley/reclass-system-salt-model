@@ -19,6 +19,7 @@ parameters:
     kubernetes_sriov_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/sriov-cni
     kubernetes_cniplugins_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/containernetworking-plugins
     kubernetes_dashboard_repo: k8s.gcr.io
+    kubernetes_coredns_repo: coredns
 
     # component docker images
     kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
@@ -53,12 +54,13 @@ parameters:
     kubernetes_fluentd_aggregator_image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-elasticsearch
     kubernetes_fluentd_logger_image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-stackdriver
     kubernetes_telegraf_image: docker.io/telegraf:1.5.3
+    kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:1.2.0
 
     kubelet_fail_on_swap: true
     kubernetes_dashboard_enabled: true
-    kubernetes_kubedns_enabled: true
+    kubernetes_kubedns_enabled: false
     kubernetes_externaldns_enabled: false
-    kubernetes_coredns_enabled: false
+    kubernetes_coredns_enabled: true
     kubernetes_externaldns_provider: coredns
     kubernetes_virtlet_enabled: false
     kubernetes_flannel_enabled: false
@@ -163,6 +165,7 @@ parameters:
           provider: ${_param:kubernetes_externaldns_provider}
         coredns:
           enabled: ${_param:kubernetes_coredns_enabled}
+          image: ${_param:kubernetes_coredns_image}
         contrail_network_controller:
           enabled: ${_param:kubernetes_contrail_network_controller_enabled}
           image: ${_param:kubernetes_contrail_network_controller_image}
