@@ -26,7 +26,7 @@ parameters:
           identity:
             auth_user: ${_param:opencontrail_identity_user}
             auth_password: ${_param:opencontrail_identity_password}
-            auth_tenant: ${_param:kubernetes_opencontrail_identity_tenant}
+            auth_tenant: ${_param:opencontrail_identity_tenant}
           message_queue:
             host: ${_param:single_address}
           database:
