@@ -9,12 +9,12 @@ parameters:
   kubernetes:
     pool:
       network:
-        engine: none
+        ~engine: {}
         opencontrail:
           enabled: false
     master:
       network:
-        engine: none
+        ~engine: {}
         opencontrail:
           version: ${_param:opencontrail_version}
           public_ip_range: ${_param:opencontrail_public_ip_range }
