@@ -19,6 +19,9 @@ parameters:
             credentials: "gerrit"
             branch: 'master'
             script: test-cookiecutter-model-pipeline.groovy
+          trigger:
+            timer:
+              spec: "H H(0-3) * * *"
           param:
             CREDENTIALS_ID:
               type: string
@@ -57,5 +60,5 @@ parameters:
               default: 'core,openstack,ovs,stacklight'
             STACK_DELETE:
               type: boolean
-              description: "Delete Heat stack when finished (bool)"
-              default: 'false'
+              description: "Delete Heat stack when finished (bool). Don't enable it if you need to use the lab after"
+              default: 'true'
