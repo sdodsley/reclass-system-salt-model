@@ -2,7 +2,7 @@ parameters:
   linux:
     system:
       user:
-        pshchelo:
+        mshalamov:
           enabled: true
           name: mshalamov
           sudo: ${_param:linux_system_user_sudo}
