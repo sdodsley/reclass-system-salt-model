@@ -4,8 +4,8 @@ classes:
 - system.openssh.server.team.members.omolchanov
 - system.openssh.server.team.members.ibumarskov
 - system.openssh.server.team.members.vkhlyunev
-- system.openssh.server.team.members.vjigulin
 - system.openssh.server.team.members.dtsapikov
+- system.openssh.server.team.members.rlubianyi
 parameters:
   _param:
     linux_system_user_sudo: true
