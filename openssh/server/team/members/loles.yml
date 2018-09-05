@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        loles:
+          enabled: true
+          name: loles
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Lukasz Oles
+          home: /home/loles
+          email: loles@mirantis.com
+  openssh:
+    server:
+      user:
+        loles:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDdbj2Li0TXK+U4jnLlfuQO8eyPdPjuqCHbHSWRokEmXwcjZVdRC/yLvI9W0tGFwNtPrf2Cyc14YJmnnPDUxvHklWX7vaOdLuTVvDRrnMrXK0INTVvFmytgLVzONvbAnFnMsh1HlpbkGwIfc12N+ZxUVtFEiwtVtT1Uf/drzZXENhTM2q7+l2/u9SlKrFWQkX5udw3L+Gi84D2RWqXhFG/0O0x/edZ5DDvKvLvolhyk+yXoo4wv5DJM+fRKI7tZC1whyL3jpDA9pe5TOxbKDsa/sHXx+2XIRQgQ1Z0vcUkde4j1LFZd032ZPMY4s8O1N0nKWOqGi/in1sOCxE6ofM1xtD/HJUYe8tp5qlWD1U2eofBxwtvw/qLUPjh00rUjW3S+Bla40M6rOmOoQdVID8qLsSXH/s/eAMNxoOL+go07EtfxL5uOOZp+3c+1kxFvyMfeu25Pb/xa8CHkTUgIri8eG4D0aGrBf6S24lb0/lRmhg0yZ6Zdk8pdlhIHXIOTvgPCkEY2O1Y8rHoWy4UtJAxxRvw8ssWsPexsvtDlFae1l3k7lh3ls9osebpo7xnfUevk5Lar4vCsoWkz0X2uNXxoiDHsINn1gUI17u2wH2nG7fvf6P/NvISIUKGN3vD0fLgjeQWYsXPX6x3bgO7DhJmibvVzhcAnq5Eb8qb5H3W5gQ== salmon@lmo
+          user: ${linux:system:user:loles}

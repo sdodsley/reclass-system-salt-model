@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        jnowak:
+          enabled: true
+          name: jnowak
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Jedrzej Nowak
+          home: /home/jnowak
+          email: jnowak@mirantis.com
+  openssh:
+    server:
+      user:
+        jnowak:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2W27dcnqDu+wHpxy0c69czDihhDirm3FgQm4CuNKuuYwS0iJtITj5C7TWD1oP3Ym9yKvLqI71kpREH9BNB3qPw1ypfs/BY8Rv7CJTPk4N+lwUGlfIWPJ+PhS3bQMdDjOfpy7lBaVpVl6WpfBXN9RkNvqX0MYU7173Nm2EsBZVZ3Lcz/sYnpZxuRhbe+XMmnnOXmPJIO579Gawfx/yGMemjv/M4KxUpEIfCEdVhsUc5NRhIaWbk80VFxPJ/k8i6WJVootN0wtHgS1pk5Li0G66Y4A+epdmsyCaMJ5REJRzp9IyV70Dev7eBAYLSo0PGG2cG3AnLUnkMvyp6/vaWXBj pigmej@lap
+          user: ${linux:system:user:jnowak}

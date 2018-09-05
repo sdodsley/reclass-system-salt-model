@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        skolekonov:
+          enabled: true
+          name: skolekonov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Sergey Kolekonov
+          home: /home/skolekonov
+          email: skolekonov@mirantis.com
+  openssh:
+    server:
+      user:
+        skolekonov:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOzI36GW/vcXNEadnlGgzU5GEY5oKyqAWq13lEYemvrR1wpB+v3XN8QTFyPsUICjVhtMSj+U34pQG/e1PcuZ/kZLzzz1Ct97iK0q+faOksG1ydbSRq6aJNhfVQhEf8hKyuBT3EB55CHf2zbsROn7SvbxA3zw0IvIbONDYhj6jZaq2i0nkiL4YuOChCAYo4YT9UHEnPRK1o5aE9esxxire7WnxtPi7lTsFSRNpww1/zCtJPPsVIxbrLih+0zMdtdUiqO7DoEoXUKkuhdlsyF2fe81yAsok7thr6nanYSkfZbWa0ZXJf0mVjtdlYVNJDjbKMuh9lVzknNMbjjhx+lbC7 skolekonov@skolekonov.local
+          user: ${linux:system:user:skolekonov}

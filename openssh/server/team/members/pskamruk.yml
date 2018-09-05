@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        pskamruk:
+          enabled: true
+          name: pskamruk
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Piotr Skamruk
+          home: /home/pskamruk
+          email: pskamruk@mirantis.com
+  openssh:
+    server:
+      user:
+        pskamruk:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTsdLa6F59A7ggGr1kXT5Hsg0sKXRA2zw2DApFU/DinDZ95d82hY5r26HRoPvEebslXUtpYei1T1w6XKSV6x9U0y/4+Wmdxnl+SADWqFWH8k7CJv3kONK7GhTT4fMpwt88ZHiVUwoTf5CdzhzNL1vd6NWpjt9qIq0G/4n0Ds/5paUFLJ5OIm7ealekMCmiOCQac/FgZYcQAdXr0nalhZkQzV4OOf9cxxftGTTq4ppLEF0I7aswWadN60qdmM2muRMpiaFZweyIH8f8wlqcYYFgd8N1RQmBqKcP6i6ukJLuvzqGb0aeCcv0h9i6ijZzC8s7DTYATn6TpD2XN4E4Adup jell@Piotrs-MacBook-Pro.local
+          user: ${linux:system:user:pskamruk}
