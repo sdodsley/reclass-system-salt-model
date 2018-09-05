@@ -21,7 +21,7 @@ parameters:
           trigger:
             gerrit:
               project:
-                kubernetes/kubernetes:
+                kubernetes/metallb:
                   branches:
                     - compare_type: "ANT"
                       name: "**mcp**"

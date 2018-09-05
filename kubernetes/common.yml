@@ -18,7 +18,7 @@ parameters:
     kubernetes_metallb_repo: metallb
     kubernetes_sriov_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/sriov-cni
     kubernetes_cniplugins_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/containernetworking-plugins
-    kubernetes_dashboard_repo: k8s.gcr.io
+    kubernetes_dashboard_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
     kubernetes_coredns_repo: coredns
 
     # component docker images
@@ -50,7 +50,7 @@ parameters:
     kubernetes_sriov_source_hash: md5=c0cc33202afd02e4cc44b977a8faf6e7
     kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/cni-plugins_v0.7.1-48-g696b1f9.tar.gz
     kubernetes_cniplugins_source_hash: md5=5ec1cf5e989097c6127ea5365e277b02
-    kubernetes_dashboard_image: ${_param:kubernetes_dashboard_repo}/kubernetes-dashboard-amd64:v1.8.3
+    kubernetes_dashboard_image: ${_param:kubernetes_dashboard_repo}/kubernetes-dashboard-amd64:v1.10.0-4
     kubernetes_fluentd_aggregator_image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-elasticsearch
     kubernetes_fluentd_logger_image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-stackdriver
     kubernetes_telegraf_image: docker.io/telegraf:1.5.3
