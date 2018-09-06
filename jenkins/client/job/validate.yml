@@ -133,6 +133,10 @@ parameters:
               type: string
               default: ""
               description: Rally scenarios directory or file with scenarios
+            RALLY_SL_SCENARIOS:
+              type: string
+              default: ""
+              description: Stacklight Rally scenarios directory or file with scenarios
             RALLY_TASK_ARGS_FILE:
               type: string
               default: ""
@@ -161,6 +165,10 @@ parameters:
               type: boolean
               default: 'false'
               description: If chosen then K8S Rally test will be executed
+            STACKLIGHT_RALLY:
+              type: boolean
+              default: 'false'
+              description: If chosen then Stacklight Rally test will be executed
             JOB_TIMEOUT:
               type: string
               default: "3"
