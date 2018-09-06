@@ -11,3 +11,9 @@ parameters:
         protocol: ${_param:cluster_internal_protocol}
       database:
         host: ${_param:openstack_database_address}
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest

@@ -8,3 +8,9 @@ parameters:
       role: ${_param:openstack_node_role}
       identity:
         protocol: ${_param:internal_protocol}
+  linux:
+    system:
+      package:
+        python-pymysql:
+          fromrepo: ${_param:openstack_version}
+          version: latest
