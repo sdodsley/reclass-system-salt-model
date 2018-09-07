@@ -21,7 +21,7 @@ parameters:
           trigger:
             gerrit:
               project:
-                kubernetes/kubernetes:
+                kubernetes/dashboard:
                   branches:
                     - compare_type: "ANT"
                       name: "**mcp**"
