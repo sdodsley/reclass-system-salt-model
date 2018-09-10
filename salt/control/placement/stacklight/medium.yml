@@ -37,7 +37,7 @@ parameters:
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node10_hostname}.${_param:cluster_domain}
               size: stacklight.log
-            lop02:
+            log02:
               name: ${_param:stacklight_log_node02_hostname}
               image: ${_param:salt_control_xenial_image}
               provider: ${_param:infra_kvm_node11_hostname}.${_param:cluster_domain}
