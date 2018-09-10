@@ -338,6 +338,9 @@ parameters:
             - name: sentry
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
+            - name: shibboleth
+              branches: ${_param:salt_formulas_branches}
+              notification_recipients: ${_param:salt_formulas_notification_recipients}
             - name: sphinx
               branches: ${_param:salt_formulas_branches}
               notification_recipients: ${_param:salt_formulas_notification_recipients}
