@@ -387,7 +387,7 @@ parameters:
             build:
               keep_num: 300
             artifact:
-              keep_num: 30
+              keep_num: 300
           type: workflow-scm
           concurrent: true
           plugin_properties:
