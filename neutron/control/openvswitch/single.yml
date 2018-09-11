@@ -13,8 +13,10 @@ parameters:
     neutron_enable_bgp_vpn: False
     neutron_bgp_vpn_driver: bagpipe
     internal_protocol: 'http'
+    openstack_node_role: primary
   neutron:
     server:
+      role: ${_param:openstack_node_role}
       global_physnet_mtu: ${_param:neutron_global_physnet_mtu}
       l3_ha: ${_param:neutron_l3_ha}
       dvr: ${_param:neutron_control_dvr}
