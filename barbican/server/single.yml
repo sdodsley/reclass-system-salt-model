@@ -1,10 +1,21 @@
 classes:
 - service.barbican.server.single
+- system.salt.minion.cert.mysql.clients.openstack.barbican
 parameters:
   _param:
     internal_protocol: 'http'
+    openstack_mysql_x509_enabled: False
+    galera_ssl_enabled: False
   barbican:
     server:
+      database:
+        x509:
+          enabled: ${_param:openstack_mysql_x509_enabled}
+          ca_file: ${_param:mysql_barbican_ssl_ca_file}
+          key_file: ${_param:mysql_barbican_client_ssl_key_file}
+          cert_file: ${_param:mysql_barbican_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:galera_ssl_enabled}
       role: ${_param:openstack_node_role}
       identity:
         protocol: ${_param:internal_protocol}
