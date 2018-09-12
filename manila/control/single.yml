@@ -13,9 +13,6 @@ parameters:
       role: ${_param:openstack_node_role}
       enabled: true
       version: ${_param:openstack_version}
-    data:
-      version: ${_param:openstack_version}
-      enabled: true
     scheduler:
       enabled: true
       version: ${_param:openstack_version}
