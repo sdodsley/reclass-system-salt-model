@@ -1,5 +1,5 @@
 classes:
- - system.manila.common.cluster
+ - system.manila.common.single
  - system.apache.server.site.manila
 parameters:
   _param:
@@ -7,12 +7,15 @@ parameters:
   manila:
     common:
       dhss: false
+      default_share_type: default
       version: ${_param:openstack_version}
     api:
       role: ${_param:openstack_node_role}
       enabled: true
       version: ${_param:openstack_version}
-      role: ${_param:openstack_node_role}
+    data:
+      version: ${_param:openstack_version}
+      enabled: true
     scheduler:
       enabled: true
       version: ${_param:openstack_version}
