@@ -1,9 +1,12 @@
 classes:
 - service.barbican.server.cluster
 - system.haproxy.proxy.listen.openstack.barbican
+- system.salt.minion.cert.mysql.clients.openstack.barbican
 parameters:
   _param:
     cluster_internal_protocol: 'http'
+    openstack_mysql_x509_enabled: False
+    galera_ssl_enabled: False
   barbican:
     server:
       role: ${_param:openstack_node_role}
@@ -11,6 +14,13 @@ parameters:
         protocol: ${_param:cluster_internal_protocol}
       database:
         host: ${_param:openstack_database_address}
+        x509:
+          enabled: ${_param:openstack_mysql_x509_enabled}
+          ca_file: ${_param:mysql_barbican_ssl_ca_file}
+          key_file: ${_param:mysql_barbican_client_ssl_key_file}
+          cert_file: ${_param:mysql_barbican_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:galera_ssl_enabled}
   linux:
     system:
       package:
