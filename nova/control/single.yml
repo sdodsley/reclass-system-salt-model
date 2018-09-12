@@ -1,11 +1,14 @@
 classes:
 - system.salt.minion.cert.mysql.clients.openstack.nova
+- system.salt.minion.cert.rabbitmq.clients.openstack.nova
 - service.nova.control.single
 parameters:
   _param:
     cluster_internal_protocol: 'http'
     openstack_mysql_x509_enabled: False
     galera_ssl_enabled: False
+    openstack_rabbitmq_x509_enabled: False
+    rabbitmq_ssl_enabled: False
   linux:
     system:
       package:
@@ -32,3 +35,12 @@ parameters:
         region: ${_param:openstack_region}
       glance:
         protocol: ${_param:cluster_internal_protocol}
+      message_queue:
+        x509:
+          enabled: ${_param:openstack_rabbitmq_x509_enabled}
+          ca_file: ${_param:rabbitmq_nova_ssl_ca_file}
+          key_file: ${_param:rabbitmq_nova_client_ssl_key_file}
+          cert_file: ${_param:rabbitmq_nova_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:rabbitmq_ssl_enabled}
+
