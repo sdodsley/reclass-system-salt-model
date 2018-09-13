@@ -6,12 +6,15 @@ classes:
 - system.linux.system.users.keystone
 - system.keystone.server.fernet_rotation.cluster
 - system.salt.minion.cert.mysql.clients.openstack.keystone
+- system.salt.minion.cert.rabbitmq.clients.openstack.keystone
 parameters:
   _param:
     keystone_tokens_expiration: 3600
     openstack_node_role: primary
     openstack_mysql_x509_enabled: False
+    openstack_rabbitmq_x509_enabled: False
     galera_ssl_enabled: False
+    rabbitmq_ssl_enabled: False
   linux:
     system:
       package:
@@ -69,6 +72,13 @@ parameters:
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
         ha_queues: true
+        x509:
+          enabled: ${_param:openstack_rabbitmq_x509_enabled}
+          ca_file: ${_param:rabbitmq_keystone_ssl_ca_file}
+          key_file: ${_param:rabbitmq_keystone_client_ssl_key_file}
+          cert_file: ${_param:rabbitmq_keystone_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:rabbitmq_ssl_enabled}
       auth_methods:
       - password
       - token
