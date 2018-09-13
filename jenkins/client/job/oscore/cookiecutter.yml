@@ -42,6 +42,13 @@ parameters:
               type: boolean
               description: "Delete Heat stack when finished (bool)"
               default: 'false'
+            OPENSTACK_ENVIRONMENT:
+              type: choice
+              description: "Target openstack environment."
+              choices:
+                - devcloud
+                - presales
+                - oscore_devcloud
             OPENSTACK_API_PROJECT:
               type: string
               default: "mcp-oscore"
@@ -113,6 +120,13 @@ parameters:
               type: string
               default: "gerrit"
               description: "ID of jenkins credentials to be used when connecting to gerrit."
+            OPENSTACK_ENVIRONMENT:
+              type: choice
+              description: "Target openstack environment."
+              choices:
+                - devcloud
+                - presales
+                - oscore_devcloud
             OPENSTACK_API_PROJECT:
               type: string
               default: "mcp-oscore-ci"
