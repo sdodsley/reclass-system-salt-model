@@ -24,6 +24,10 @@ parameters:
               source: mcp/mcp-drivetrain-model
               target: Mirantis/mcp-drivetrain-model
               branches: "master"
+            - name: model-manager
+              source: python-apps/model-manager
+              target: salt-formulas/django-model-manager
+              branches: "master"
           template:
             description: ${_param:job_description_2way}
             discard:
