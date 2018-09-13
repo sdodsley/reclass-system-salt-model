@@ -49,6 +49,9 @@ parameters:
                 - devcloud
                 - presales
                 - oscore_devcloud
+            OPENSTACK_API_CREDENTIALS:
+              type: string
+              description: "Credentials to the OpenStack API"
             OPENSTACK_API_PROJECT:
               type: string
               default: "mcp-oscore"
@@ -127,6 +130,9 @@ parameters:
                 - devcloud
                 - presales
                 - oscore_devcloud
+            OPENSTACK_API_CREDENTIALS:
+              type: string
+              description: "Credentials to the OpenStack API"
             OPENSTACK_API_PROJECT:
               type: string
               default: "mcp-oscore-ci"
