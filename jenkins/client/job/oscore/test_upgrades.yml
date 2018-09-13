@@ -24,6 +24,16 @@ parameters:
                 type: string
                 description: "ID of jenkins credentials to be used when connecting to gerrit."
                 default: "gerrit"
+              OPENSTACK_ENVIRONMENT:
+                type: choice
+                description: "Target openstack environment."
+                choices:
+                  - devcloud
+                  - presales
+                  - oscore_devcloud
+              OPENSTACK_API_CREDENTIALS:
+                type: string
+                description: "Credentials to the OpenStack API"
               OPENSTACK_API_PROJECT:
                 type: string
                 default: "mcp-oscore"
