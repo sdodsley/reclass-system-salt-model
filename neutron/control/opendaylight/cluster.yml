@@ -1,7 +1,4 @@
 classes:
-- service.keepalived.cluster.single
-- service.haproxy.proxy.single
-- service.neutron.control.cluster
 - system.neutron.control.openvswitch.cluster
 parameters:
   _param:
