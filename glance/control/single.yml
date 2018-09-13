@@ -1,10 +1,13 @@
 classes:
 - service.glance.control.single
 - system.salt.minion.cert.mysql.clients.openstack.glance
+- system.salt.minion.cert.rabbitmq.clients.openstack.glance
 parameters:
   _param:
     openstack_mysql_x509_enabled: False
     galera_ssl_enabled: False
+    openstack_rabbitmq_x509_enabled: False
+    rabbitmq_ssl_enabled: False
   linux:
     system:
       cron:
@@ -30,3 +33,11 @@ parameters:
       identity:
         region: ${_param:openstack_region}
       show_multiple_locations: True
+      message_queue:
+        x509:
+          enabled: ${_param:openstack_rabbitmq_x509_enabled}
+          ca_file: ${_param:rabbitmq_glance_ssl_ca_file}
+          key_file: ${_param:rabbitmq_glance_client_ssl_key_file}
+          cert_file: ${_param:rabbitmq_glance_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:rabbitmq_ssl_enabled}
