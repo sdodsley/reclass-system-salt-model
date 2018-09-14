@@ -35,6 +35,7 @@ parameters:
                 - openstack-ovs-core-manila-pike
                 - openstack-ovs-core-telemetry-pike
                 - openstack-ovs-core-queens
+                - openstack-ovs-core-ssl-queens
             STACK_INSTALL:
               type: string
               default: 'core,openstack,ovs'
