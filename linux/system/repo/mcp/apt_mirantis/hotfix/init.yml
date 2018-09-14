@@ -1,0 +1,2 @@
+classes:
+- system.linux.system.repo.mcp.apt_mirantis.hotfix.ubuntu
