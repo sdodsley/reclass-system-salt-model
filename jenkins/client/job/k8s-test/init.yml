@@ -5,4 +5,6 @@ classes:
 - system.jenkins.client.job.k8s-test.mcp-k8s-dashboard-merge-pipeline
 - system.jenkins.client.job.k8s-test.mcp-k8s-metallb-test-pipeline
 - system.jenkins.client.job.k8s-test.mcp-k8s-metallb-merge-pipeline
+- system.jenkins.client.job.k8s-test.mcp-k8s-coredns-test-pipeline
+- system.jenkins.client.job.k8s-test.mcp-k8s-coredns-merge-pipeline
 - system.jenkins.client.job.k8s-test.mcp-k8s-formula-test-pipeline
