@@ -43,5 +43,5 @@ parameters:
               description: "Ask interactive questions during pipeline run (bool)"
             TARGET_SERVERS:
               type: string
-              default: 'ctl*'
+              default: 'gtw*'
               description: "Salt compound expression to get control servers to upgrade."
