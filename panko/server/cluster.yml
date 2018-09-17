@@ -26,6 +26,7 @@ parameters:
       event_time_to_live: ${_param:panko_event_time_to_live}
       identity:
         host: ${_param:openstack_control_address}
+        protocol: ${_param:cluster_internal_protocol}
       database:
         host: ${_param:openstack_database_address}
         x509:

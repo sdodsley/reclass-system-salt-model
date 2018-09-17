@@ -19,6 +19,7 @@ parameters:
       identity:
         host: ${_param:openstack_control_address}
         region: ${_param:openstack_region}
+        protocol: ${_param:cluster_internal_protocol}
       cache:
         engine: memcached
         members:

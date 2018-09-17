@@ -1,2 +1,7 @@
 classes:
 - service.ceilometer.agent.single
+parameters:
+  ceilometer:
+    agent:
+      identity:
+        protocol: ${_param:internal_protocol}
