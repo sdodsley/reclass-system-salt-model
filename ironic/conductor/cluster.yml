@@ -1,6 +1,10 @@
 classes:
+- system.salt.minion.cert.mysql.clients.openstack.ironic
 - service.ironic.conductor.cluster
 parameters:
+  _param:
+    openstack_mysql_x509_enabled: False
+    galera_ssl_enabled: False
   linux:
     system:
       package:
@@ -10,3 +14,11 @@ parameters:
   ironic:
     conductor:
       api_url: 'http://${_param:cluster_baremetal_vip_address}:6385'
+      database:
+        x509:
+          enabled: ${_param:openstack_mysql_x509_enabled}
+          ca_file: ${_param:mysql_ironic_ssl_ca_file}
+          key_file: ${_param:mysql_ironic_client_ssl_key_file}
+          cert_file: ${_param:mysql_ironic_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:galera_ssl_enabled}
