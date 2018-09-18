@@ -17,7 +17,6 @@ parameters:
     server:
       role: ${_param:openstack_node_role}
       database:
-        host: ${_param:single_address}
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
           ca_file: ${_param:mysql_neutron_ssl_ca_file}

@@ -1,8 +1,5 @@
 classes:
-- service.keepalived.cluster.single
-- service.haproxy.proxy.single
-- service.neutron.control.cluster
-- system.galera.server.database.neutron
+- system.neutron.control.cluster
 parameters:
   _param:
     neutron_control_dvr: True
@@ -40,30 +37,3 @@ parameters:
       identity:
         region: ${_param:openstack_region}
         protocol: ${_param:cluster_internal_protocol}
-      message_queue:
-        members:
-          - host: ${_param:openstack_message_queue_node01_address}
-          - host: ${_param:openstack_message_queue_node02_address}
-          - host: ${_param:openstack_message_queue_node03_address}
-  haproxy:
-    proxy:
-      listen:
-        neutron_api:
-          type: openstack-service
-          service_name: neutron
-          binds:
-          - address: ${_param:cluster_vip_address}
-            port: 9696
-          servers:
-          - name: ${_param:cluster_node01_hostname}
-            host: ${_param:cluster_node01_address}
-            port: 9696
-            params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
-          - name: ${_param:cluster_node02_hostname}
-            host: ${_param:cluster_node02_address}
-            port: 9696
-            params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3
-          - name: ${_param:cluster_node03_hostname}
-            host: ${_param:cluster_node03_address}
-            port: 9696
-            params: check inter 10s fastinter 2s downinter 3s rise 3 fall 3

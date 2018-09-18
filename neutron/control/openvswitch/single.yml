@@ -1,5 +1,5 @@
 classes:
-- service.neutron.control.single
+- system.neutron.control.single
 - system.galera.server.database.neutron
 parameters:
   _param:
@@ -41,4 +41,4 @@ parameters:
         protocol: ${_param:internal_protocol}
       message_queue:
         members:
-          - host: ${_param:openstack_message_queue_node01_address}
+          - host: ${_param:single_address}

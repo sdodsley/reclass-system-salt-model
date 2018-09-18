@@ -1,5 +1,4 @@
 classes:
-- service.neutron.control.single
 - system.neutron.control.openvswitch.single
 parameters:
   _param:
