@@ -20,6 +20,10 @@ parameters:
           public_ip_range: ${_param:opencontrail_public_ip_range}
           public_network: ${_param:opencontrail_public_ip_network}
           private_ip_range: ${_param:opencontrail_private_ip_range}
+          cluster_network:
+            project: 'default'
+            domain: 'default-domain'
+            name: 'cluster-network'
           config:
             api:
               host: ${_param:opencontrail_control_address}
