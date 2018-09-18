@@ -31,6 +31,16 @@ parameters:
               type: string
               description: "Context for cookiecutter template specified as filename"
               default: 'stacklight-openstack-ovs-core-pike'
+            OPENSTACK_ENVIRONMENT:
+              type: choice
+              description: "Target openstack environment"
+              choices:
+                - devcloud
+                - presales
+                - oscore_devcloud
+            OPENSTACK_API_CREDENTIALS:
+              type: string
+              description: "Credentials to the OpenStack API"
             OPENSTACK_API_PROJECT:
               type: string
               default: "mcp-stacklight"
