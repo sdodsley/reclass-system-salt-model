@@ -32,6 +32,9 @@ parameters:
           enabled: ${_param:galera_ssl_enabled}
       identity:
         region: ${_param:openstack_region}
+        protocol: ${_param:internal_protocol}
+      registry:
+        protocol: ${_param:internal_protocol}
       show_multiple_locations: True
       message_queue:
         x509:
