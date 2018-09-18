@@ -19,7 +19,7 @@ parameters:
     kubernetes_sriov_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/sriov-cni
     kubernetes_cniplugins_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/containernetworking-plugins
     kubernetes_dashboard_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
-    kubernetes_coredns_repo: coredns
+    kubernetes_coredns_repo: ${_param:mcp_docker_registry}/mirantis/coredns
 
     # component docker images
     kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
@@ -54,7 +54,7 @@ parameters:
     kubernetes_fluentd_aggregator_image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-elasticsearch
     kubernetes_fluentd_logger_image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-stackdriver
     kubernetes_telegraf_image: ${_param:mcp_docker_registry}/openstack-docker/telegraf:2018.8.0
-    kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:1.2.0
+    kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:v1.2.2-12
 
     kubelet_fail_on_swap: true
     kubernetes_dashboard_enabled: true
