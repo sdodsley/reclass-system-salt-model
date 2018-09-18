@@ -18,7 +18,7 @@ parameters:
                   email: ${_param:admin_email}
           service:
             octavia:
-              type: octavia
+              type: load-balancer
               description: OpenStack Loadbalancing Service
               endpoints:
               - region: ${_param:openstack_region}
