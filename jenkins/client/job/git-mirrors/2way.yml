@@ -11,7 +11,7 @@ parameters:
             - name: mcp-common-scripts
               source: mcp/mcp-common-scripts
               target: Mirantis/mcp-common-scripts
-              branches: "master"
+              branches: "master,release/2018.8.1"
             - name: mcp-local-repo-model
               source: mcp/mcp-local-repo-model
               target: Mirantis/mcp-local-repo-model
