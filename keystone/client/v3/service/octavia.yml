@@ -7,6 +7,13 @@ parameters:
     client:
       resources:
         v3:
+          roles:
+            global_load_balancer_member:
+              name: load-balancer_member
+              enabled: true
+            global_load_balancer_admin:
+              name: load-balancer_admin
+              enabled: true
           users:
             octavia:
               password: ${_param:keystone_octavia_password}
@@ -17,7 +24,7 @@ parameters:
                   project_id: service
           services:
             octavia:
-              type: octavia
+              type: load-balancer
               description: OpenStack Loadbalancing Service
               endpoints:
                 octavia_public:
