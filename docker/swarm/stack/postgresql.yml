@@ -1,7 +1,6 @@
 parameters:
   _param:
     docker_postgresql_replicas: 1
-    docker_image_postgresql: library/postgres:9.6
     postgresql_bind_host: postgresql-db
     postgresql_bind_port: ${_param:haproxy_postgresql_bind_port}
     postgresql_ssl:

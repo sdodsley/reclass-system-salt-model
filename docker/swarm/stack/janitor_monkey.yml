@@ -1,7 +1,6 @@
 parameters:
   _param:
     docker_janitor_monkey_replicas: 1
-    docker_image_mongodb: library/mongo:3.4
     docker_mongodb_admin_username: admin
     docker_mongodb_admin_password: password
     docker_image_janitor_monkey: ${_param:mcp_docker_registry}/mirantis/oss/janitor-monkey
@@ -71,7 +70,7 @@ parameters:
             simianarmy.janitor.notification.oss.application_id: ${_param:janitor_monkey_notification_oss_application_id}
           service:
             cleanup-service-mongodb:
-              image: ${_param:docker_image_mongodb}
+              image: library/mongo:3.4
               deploy:
                 replicas: ${_param:docker_janitor_monkey_replicas}
                 restart_policy:
