@@ -4,3 +4,5 @@ parameters:
   ceilometer:
     server:
       role: ${_param:openstack_node_role}
+      identity:
+        protocol: ${_param:internal_protocol}

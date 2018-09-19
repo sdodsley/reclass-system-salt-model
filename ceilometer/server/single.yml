@@ -15,3 +15,5 @@ parameters:
           enabled: true
           host: ${_param:stacklight_monitor_address}
           port: 9200
+      identity:
+        protocol: ${_param:cluster_internal_protocol}

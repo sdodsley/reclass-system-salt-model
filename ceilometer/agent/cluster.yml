@@ -15,6 +15,7 @@ parameters:
         user: ceilometer
         password: ${_param:keystone_ceilometer_password}
         region: ${_param:openstack_region}
+        protocol: ${_param:cluster_internal_protocol}
       message_queue:
         engine: rabbitmq
         members:

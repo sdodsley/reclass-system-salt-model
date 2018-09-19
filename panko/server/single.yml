@@ -16,6 +16,8 @@ parameters:
             enabled: true
   panko:
     server:
+      identity:
+        protocol: ${_param:internal_protocol}
       database:
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
