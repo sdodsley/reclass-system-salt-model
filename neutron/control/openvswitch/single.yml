@@ -1,6 +1,7 @@
 classes:
 - system.neutron.control.single
 - system.galera.server.database.neutron
+- system.salt.minion.cert.rabbitmq.clients.openstack.neutron
 parameters:
   _param:
     neutron_control_dvr: True
@@ -14,6 +15,8 @@ parameters:
     neutron_bgp_vpn_driver: bagpipe
     internal_protocol: 'http'
     openstack_node_role: primary
+    openstack_rabbitmq_x509_enabled: False
+    rabbitmq_ssl_enabled: False
   neutron:
     server:
       role: ${_param:openstack_node_role}
@@ -42,3 +45,10 @@ parameters:
       message_queue:
         members:
           - host: ${_param:single_address}
+        x509:
+          enabled: ${_param:openstack_rabbitmq_x509_enabled}
+          ca_file: ${_param:rabbitmq_neutron_ssl_ca_file}
+          key_file: ${_param:rabbitmq_neutron_client_ssl_key_file}
+          cert_file: ${_param:rabbitmq_neutron_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:rabbitmq_ssl_enabled}
