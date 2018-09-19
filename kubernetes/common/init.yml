@@ -51,8 +51,6 @@ parameters:
     kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/cni-plugins_v0.7.1-48-g696b1f9.tar.gz
     kubernetes_cniplugins_source_hash: md5=5ec1cf5e989097c6127ea5365e277b02
     kubernetes_dashboard_image: ${_param:kubernetes_dashboard_repo}/kubernetes-dashboard-amd64:v1.10.0-4
-    kubernetes_fluentd_aggregator_image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-elasticsearch
-    kubernetes_fluentd_logger_image: fluent/fluentd-kubernetes-daemonset:v1.2-debian-stackdriver
     kubernetes_telegraf_image: ${_param:mcp_docker_registry}/openstack-docker/telegraf:2018.8.0
     kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:v1.2.2-12
 
@@ -71,47 +69,7 @@ parameters:
     kubernetes_contrail_network_controller_enabled: false
     kubernetes_metallb_enabled: false
     kubernetes_sriov_enabled: false
-    kubernetes_fluentd_enabled: false
     kubernetes_telegraf_enabled: false
-
-    # the rest of fluentd related params, the non bools
-    kubernetes_fluentd_namespace: stacklight
-    kubernetes_fluentd_aggregator_resources_limits_memory: 500Mi
-    kubernetes_fluentd_aggregator_resources_requests_memory: 500Mi
-    kubernetes_fluentd_aggregator_config_forward_input_bind_port: 24224
-    kubernetes_fluentd_aggregator_config_general_time_format: '%Y-%m-%dT%H:%M:%S.%N%z'
-    kubernetes_fluentd_aggregator_config_systemd_filter_docker_parse_format: /^time="(?<time>[^)]*)" level=(?<severity>[^ ]*) msg="(?<message>[^"]*)"( err="(?<error>[^"]*)")?( statusCode=($<status_code>\d+))?/
-    kubernetes_fluentd_aggregator_config_output_log_level: 'info'
-    kubernetes_fluentd_aggregator_config_output_logstash_format: true
-    kubernetes_fluentd_aggregator_config_output_logstash_prefix: 'log'
-    kubernetes_fluentd_aggregator_config_output_logstash_dateformat: '%Y.%m.%d'
-    kubernetes_fluentd_aggregator_config_output_num_threads: 8
-    kubernetes_fluentd_aggregator_config_output_max_retry_wait: 30
-    kubernetes_fluentd_aggregator_config_output_flush_interval: '10s'
-    kubernetes_fluentd_aggregator_config_output_buffer_chunk_limit: '2m'
-    kubernetes_fluentd_aggregator_config_output_buffer_queue_limit: 32
-    kubernetes_fluentd_aggregator_config_output_request_timeout: '10s'
-    kubernetes_fluentd_aggregator_config_output_es_host: 127.0.0.1
-    kubernetes_fluentd_aggregator_config_output_es_port: 9200
-    kubernetes_fluentd_aggregator_config_output_es_scheme: http
-
-    kubernetes_fluentd_logger_resources_limits_memory: 500Mi
-    kubernetes_fluentd_logger_resources_requests_memory: 500Mi
-    kubernetes_fluentd_logger_config_kubernetes_input_time_format: '%Y-%m-%dT%H:%M:%S.%NZ'
-    kubernetes_fluentd_logger_config_forward_output_require_ack_response: true
-    kubernetes_fluentd_logger_config_forward_output_ack_response_timeout: 30
-    kubernetes_fluentd_logger_config_forward_output_recover_wait: '10s'
-    kubernetes_fluentd_logger_config_forward_output_heartbeat_interval: '1s'
-    kubernetes_fluentd_logger_config_forward_output_phi_threshold: 16
-    kubernetes_fluentd_logger_config_forward_output_send_timeout: '10s'
-    kubernetes_fluentd_logger_config_forward_output_hard_timeout: '10s'
-    kubernetes_fluentd_logger_config_forward_output_expire_dns_cache: 15
-    kubernetes_fluentd_logger_config_forward_output_heartbeat_type: 'tcp'
-    kubernetes_fluentd_logger_config_forward_output_buffer_chunk_limit: '2M'
-    kubernetes_fluentd_logger_config_forward_output_buffer_queue_limit: 32
-    kubernetes_fluentd_logger_config_forward_output_flush_interval: '5s'
-    kubernetes_fluentd_logger_config_forward_output_max_retry_wait: 15
-    kubernetes_fluentd_logger_config_forward_output_num_threads: 8
 
     # telegraf stuff
     kubernetes_telegraf_namespace: stacklight
@@ -172,64 +130,6 @@ parameters:
           image: ${_param:kubernetes_contrail_network_controller_image}
         flannel:
           image: ${_param:kubernetes_flannel_image}
-        fluentd:
-          enabled: ${_param:kubernetes_fluentd_enabled}
-          namespace: ${_param:kubernetes_fluentd_namespace}
-          aggregator:
-            image: ${_param:kubernetes_fluentd_aggregator_image}
-            resources:
-              limits:
-                memory: ${_param:kubernetes_fluentd_aggregator_resources_limits_memory}
-              requests:
-                memory: ${_param:kubernetes_fluentd_aggregator_resources_requests_memory}
-            config:
-              forward_input:
-                bind:
-                  port: ${_param:kubernetes_fluentd_aggregator_config_forward_input_bind_port}
-              general:
-                time_format: ${_param:kubernetes_fluentd_aggregator_config_general_time_format}
-              systemd_filter:
-                docker_parse_format: ${_param:kubernetes_fluentd_aggregator_config_systemd_filter_docker_parse_format}
-              output:
-                log_level: ${_param:kubernetes_fluentd_aggregator_config_output_log_level}
-                logstash_format: ${_param:kubernetes_fluentd_aggregator_config_output_logstash_format}
-                logstash_prefix: ${_param:kubernetes_fluentd_aggregator_config_output_logstash_prefix}
-                logstash_dateformat: ${_param:kubernetes_fluentd_aggregator_config_output_logstash_dateformat}
-                request_timeout: ${_param:kubernetes_fluentd_aggregator_config_output_request_timeout}
-                buffer_chunk_limit: ${_param:kubernetes_fluentd_aggregator_config_output_buffer_chunk_limit}
-                buffer_queue_limit: ${_param:kubernetes_fluentd_aggregator_config_output_buffer_queue_limit}
-                flush_interval: ${_param:kubernetes_fluentd_aggregator_config_output_flush_interval}
-                num_threads: ${_param:kubernetes_fluentd_aggregator_config_output_num_threads}
-                max_retry_wait: ${_param:kubernetes_fluentd_aggregator_config_output_max_retry_wait}
-                es:
-                  host: ${_param:kubernetes_fluentd_aggregator_config_output_es_host}
-                  port: ${_param:kubernetes_fluentd_aggregator_config_output_es_port}
-                  scheme: ${_param:kubernetes_fluentd_aggregator_config_output_es_scheme}
-          logger:
-            image: ${_param:kubernetes_fluentd_logger_image}
-            resources:
-              limits:
-                memory: ${_param:kubernetes_fluentd_logger_resources_limits_memory}
-              requests:
-                memory: ${_param:kubernetes_fluentd_logger_resources_requests_memory}
-            config:
-              kubernetes_input:
-                time_format: ${_param:kubernetes_fluentd_logger_config_kubernetes_input_time_format}
-              forward_output:
-                require_ack_response: ${_param:kubernetes_fluentd_logger_config_forward_output_require_ack_response}
-                ack_response_timeout: ${_param:kubernetes_fluentd_logger_config_forward_output_ack_response_timeout}
-                recover_wait: ${_param:kubernetes_fluentd_logger_config_forward_output_recover_wait}
-                heartbeat_interval: ${_param:kubernetes_fluentd_logger_config_forward_output_heartbeat_interval}
-                phi_threshold: ${_param:kubernetes_fluentd_logger_config_forward_output_phi_threshold}
-                send_timeout: ${_param:kubernetes_fluentd_logger_config_forward_output_send_timeout}
-                hard_timeout: ${_param:kubernetes_fluentd_logger_config_forward_output_hard_timeout}
-                expire_dns_cache: ${_param:kubernetes_fluentd_logger_config_forward_output_expire_dns_cache}
-                heartbeat_type: ${_param:kubernetes_fluentd_logger_config_forward_output_heartbeat_type}
-                buffer_chunk_limit: ${_param:kubernetes_fluentd_logger_config_forward_output_buffer_chunk_limit}
-                buffer_queue_limit: ${_param:kubernetes_fluentd_logger_config_forward_output_buffer_queue_limit}
-                flush_interval: ${_param:kubernetes_fluentd_logger_config_forward_output_flush_interval}
-                max_retry_wait: ${_param:kubernetes_fluentd_logger_config_forward_output_max_retry_wait}
-                num_threads: ${_param:kubernetes_fluentd_logger_config_forward_output_num_threads}
         telegraf:
           enabled: ${_param:kubernetes_telegraf_enabled}
           image: ${_param:kubernetes_telegraf_image}
