@@ -63,6 +63,7 @@ parameters:
     kubernetes_coredns_enabled: true
     kubernetes_externaldns_provider: coredns
     kubernetes_virtlet_enabled: false
+    kubernetes_virtlet_use_apparmor: false
     kubernetes_flannel_enabled: false
     kubernetes_genie_enabled: false
     kubernetes_calico_enabled: false
@@ -256,6 +257,7 @@ parameters:
           image: ${_param:kubernetes_virtlet_image}
           criproxy_version: ${_param:kubernetes_criproxy_version}
           criproxy_source: ${_param:kubernetes_criproxy_checksum}
+          use_apparmor: ${_param:kubernetes_virtlet_use_apparmor}
         metallb:
           enabled: ${_param:kubernetes_metallb_enabled}
           controller_image: ${_param:kubernetes_metallb_controller_image}
