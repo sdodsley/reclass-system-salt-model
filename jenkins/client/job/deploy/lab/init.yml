@@ -1,6 +1,5 @@
 classes:
   - system.jenkins.client.job.deploy.lab.cicd
-  - system.jenkins.client.job.deploy.lab.demo
   - system.jenkins.client.job.deploy.lab.cleanup
   - system.jenkins.client.job.deploy.lab.release.mcp05
   - system.jenkins.client.job.deploy.lab.release.mcp10
