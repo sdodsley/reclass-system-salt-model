@@ -26,6 +26,13 @@ parameters:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}
           - host: ${_param:openstack_message_queue_node03_address}
+        x509:
+          enabled: ${_param:openstack_rabbitmq_x509_enabled}
+          ca_file: ${_param:rabbitmq_neutron_ssl_ca_file}
+          key_file: ${_param:rabbitmq_neutron_client_ssl_key_file}
+          cert_file: ${_param:rabbitmq_neutron_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:rabbitmq_ssl_enabled}
       database:
         x509:
           enabled: ${_param:openstack_mysql_x509_enabled}
@@ -34,14 +41,6 @@ parameters:
           cert_file: ${_param:mysql_neutron_client_ssl_cert_file}
         ssl:
           enabled: ${_param:galera_ssl_enabled}
-      message_queue:
-        x509:
-          enabled: ${_param:openstack_rabbitmq_x509_enabled}
-          ca_file: ${_param:rabbitmq_neutron_ssl_ca_file}
-          key_file: ${_param:rabbitmq_neutron_client_ssl_key_file}
-          cert_file: ${_param:rabbitmq_neutron_client_ssl_cert_file}
-        ssl:
-          enabled: ${_param:rabbitmq_ssl_enabled}
       role: ${_param:openstack_node_role}
     identity:
       protocol: ${_param:cluster_internal_protocol}
