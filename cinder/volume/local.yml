@@ -8,6 +8,7 @@ parameters:
     galera_ssl_enabled: False
     openstack_rabbitmq_x509_enabled: False
     rabbitmq_ssl_enabled: False
+    openstack_rabbitmq_port: 5672
   cinder:
     volume:
       enabled: True
@@ -23,6 +24,7 @@ parameters:
       glance:
         host: ${_param:single_address}
       message_queue:
+        port: ${_param:openstack_rabbitmq_port}
         host: ${_param:single_address}
         x509:
           enabled: ${_param:openstack_rabbitmq_x509_enabled}

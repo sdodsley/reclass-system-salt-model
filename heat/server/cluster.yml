@@ -13,6 +13,7 @@ parameters:
     openstack_rabbitmq_x509_enabled: False
     galera_ssl_enabled: False
     rabbitmq_ssl_enabled: False
+    openstack_rabbitmq_port: 5672
   linux:
     system:
       package:
@@ -72,7 +73,7 @@ parameters:
         protocol: ${_param:cluster_internal_protocol}
       message_queue:
         engine: rabbitmq
-        port: 5672
+        port: ${_param:openstack_rabbitmq_port}
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'

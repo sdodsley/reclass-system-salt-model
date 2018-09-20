@@ -10,6 +10,7 @@ parameters:
     cluster_internal_protocol: 'http'
     openstack_mysql_x509_enabled: False
     galera_ssl_enabled: False
+    openstack_rabbitmq_port: 5672
   linux:
     system:
       package:
@@ -59,7 +60,7 @@ parameters:
           address: ${_param:single_address}
       message_queue:
         engine: rabbitmq
-        port: 5672
+        port: ${_param:openstack_rabbitmq_port}
         members:
         - host: ${_param:openstack_message_queue_node01_address}
         - host: ${_param:openstack_message_queue_node02_address}

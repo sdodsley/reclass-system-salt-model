@@ -1,7 +1,11 @@
 classes:
 - service.ceilometer.agent.single.common
 parameters:
+  _param:
+    openstack_rabbitmq_port: 5672
   ceilometer:
     agent:
+      message_queue:
+        port: ${_param:openstack_rabbitmq_port}
       identity:
         protocol: ${_param:internal_protocol}

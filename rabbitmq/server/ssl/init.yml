@@ -5,7 +5,7 @@ parameters:
   _param:
     rabbitmq_ssl_enabled: true
     openstack_rabbitmq_x509_enabled: false
-    rabbitmq_port: 5671 # for non-ssl use 5672 / for ssl 5671
+    openstack_rabbitmq_port: 5671 # for non-ssl use 5672 / for ssl 5671
   rabbitmq:
     server:
       ssl:

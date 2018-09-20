@@ -6,6 +6,7 @@ parameters:
     internal_protocol: 'http'
     openstack_mysql_x509_enabled: False
     galera_ssl_enabled: False
+    openstack_rabbitmq_port: 5672
   barbican:
     server:
       database:
@@ -19,6 +20,8 @@ parameters:
       role: ${_param:openstack_node_role}
       identity:
         protocol: ${_param:internal_protocol}
+      message_queue:
+        port: ${_param:openstack_rabbitmq_port}
   linux:
     system:
       package:

@@ -1,6 +1,8 @@
 classes:
 - service.ceilometer.agent.cluster
 parameters:
+  _param:
+    openstack_rabbitmq_port: 5672
   ceilometer:
     agent:
       region: ${_param:openstack_region}
@@ -17,6 +19,7 @@ parameters:
         region: ${_param:openstack_region}
         protocol: ${_param:cluster_internal_protocol}
       message_queue:
+        port: ${_param:openstack_rabbitmq_port}
         engine: rabbitmq
         members:
           - host: ${_param:openstack_message_queue_node01_address}

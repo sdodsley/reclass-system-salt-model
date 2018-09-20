@@ -7,6 +7,7 @@ parameters:
     cluster_internal_protocol: 'http'
     openstack_mysql_x509_enabled: False
     galera_ssl_enabled: False
+    openstack_rabbitmq_port: 5672
   barbican:
     server:
       role: ${_param:openstack_node_role}
@@ -21,6 +22,8 @@ parameters:
           cert_file: ${_param:mysql_barbican_client_ssl_cert_file}
         ssl:
           enabled: ${_param:galera_ssl_enabled}
+      message_queue:
+        port: ${_param:openstack_rabbitmq_port}
   linux:
     system:
       package:

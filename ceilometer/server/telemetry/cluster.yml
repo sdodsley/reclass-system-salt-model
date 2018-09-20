@@ -3,6 +3,8 @@ classes:
 - service.ceilometer.server.cluster.common
 - system.keepalived.cluster.instance.openstack_telemetry_vip
 parameters:
+  _param:
+    openstack_rabbitmq_port: 5672
   ceilometer:
     server:
       enabled: true
@@ -28,6 +30,7 @@ parameters:
         region: ${_param:openstack_region}
         protocol: ${_param:cluster_internal_protocol}
       message_queue:
+        port: ${_param:openstack_rabbitmq_port}
         engine: rabbitmq
         members:
           - host: ${_param:openstack_message_queue_node01_address}

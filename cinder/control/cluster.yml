@@ -12,6 +12,7 @@ parameters:
     galera_ssl_enabled: False
     openstack_rabbitmq_x509_enabled: False
     rabbitmq_ssl_enabled: False
+    openstack_rabbitmq_port: 5672
   linux:
     system:
       package:
@@ -62,6 +63,7 @@ parameters:
         port: 9292
         protocol: ${_param:cluster_internal_protocol}
       message_queue:
+        port: ${_param:openstack_rabbitmq_port}
         engine: rabbitmq
         members:
           - host: ${_param:openstack_message_queue_node01_address}

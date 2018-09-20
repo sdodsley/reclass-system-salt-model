@@ -13,6 +13,7 @@ parameters:
     openstack_rabbitmq_x509_enabled: False
     galera_ssl_enabled: False
     rabbitmq_ssl_enabled: False
+    openstack_rabbitmq_port: 5672
   linux:
     system:
       package:
@@ -22,6 +23,7 @@ parameters:
   neutron:
     server:
       message_queue:
+        port: ${_param:openstack_rabbitmq_port}
         members:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}

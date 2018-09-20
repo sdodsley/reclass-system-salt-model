@@ -8,6 +8,7 @@ parameters:
     openstack_rabbitmq_x509_enabled: False
     galera_ssl_enabled: False
     rabbitmq_ssl_enabled: False
+    openstack_rabbitmq_port: 5672
   linux:
     system:
       package:
@@ -37,6 +38,7 @@ parameters:
         ssl:
           enabled: ${_param:galera_ssl_enabled}
       message_queue:
+        port: ${_param:openstack_rabbitmq_port}
         x509:
           enabled: ${_param:openstack_rabbitmq_x509_enabled}
           ca_file: ${_param:rabbitmq_heat_ssl_ca_file}

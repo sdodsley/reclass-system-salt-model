@@ -7,6 +7,7 @@ parameters:
     neutron_enable_vlan_aware_vms: False
     openstack_rabbitmq_x509_enabled: False
     rabbitmq_ssl_enabled: False
+    openstack_rabbitmq_port: 5672
   linux:
     system:
       kernel:
@@ -21,6 +22,7 @@ parameters:
       backend:
         tenant_network_types: ${_param:neutron_tenant_network_types}"
       message_queue:
+        port: ${_param:openstack_rabbitmq_port}
         members:
           - host: ${_param:openstack_message_queue_node01_address}
           - host: ${_param:openstack_message_queue_node02_address}

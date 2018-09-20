@@ -8,12 +8,13 @@ parameters:
     openstack_mysql_x509_enabled: False
     galera_ssl_enabled: False
     manila_cluster_vip_address: ${_param:cluster_vip_address}
+    openstack_rabbitmq_port: 5672
   manila:
     common:
       version: ${_param:openstack_version}
       message_queue:
         engine: rabbitmq
-        port: 5672
+        port: ${_param:openstack_rabbitmq_port}
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'

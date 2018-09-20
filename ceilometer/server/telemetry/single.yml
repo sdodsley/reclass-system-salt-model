@@ -1,8 +1,12 @@
 classes:
 - service.ceilometer.server.single.common
 parameters:
+  _param:
+    openstack_rabbitmq_port: 5672
   ceilometer:
     server:
+      message_queue:
+        port: ${_param:openstack_rabbitmq_port}
       role: ${_param:openstack_node_role}
       identity:
         protocol: ${_param:internal_protocol}

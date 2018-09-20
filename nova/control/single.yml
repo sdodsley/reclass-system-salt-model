@@ -9,6 +9,7 @@ parameters:
     galera_ssl_enabled: False
     openstack_rabbitmq_x509_enabled: False
     rabbitmq_ssl_enabled: False
+    openstack_rabbitmq_port: 5672
   linux:
     system:
       package:
@@ -36,6 +37,7 @@ parameters:
       glance:
         protocol: ${_param:cluster_internal_protocol}
       message_queue:
+        port: ${_param:openstack_rabbitmq_port}
         x509:
           enabled: ${_param:openstack_rabbitmq_x509_enabled}
           ca_file: ${_param:rabbitmq_nova_ssl_ca_file}
