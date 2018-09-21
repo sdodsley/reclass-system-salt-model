@@ -2,9 +2,12 @@
 classes:
 - service.ceilometer.server.cluster.common
 - system.keepalived.cluster.instance.openstack_telemetry_vip
+- system.salt.minion.cert.rabbitmq.clients.openstack.ceilometer
 parameters:
   _param:
     openstack_rabbitmq_port: 5672
+    openstack_rabbitmq_x509_enabled: False
+    rabbitmq_ssl_enabled: False
   ceilometer:
     server:
       enabled: true
@@ -39,3 +42,10 @@ parameters:
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
+        x509:
+          enabled: ${_param:openstack_rabbitmq_x509_enabled}
+          ca_file: ${_param:rabbitmq_ceilometer_ssl_ca_file}
+          key_file: ${_param:rabbitmq_ceilometer_client_ssl_key_file}
+          cert_file: ${_param:rabbitmq_ceilometer_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:rabbitmq_ssl_enabled}
