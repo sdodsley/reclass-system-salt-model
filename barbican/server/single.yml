@@ -1,11 +1,14 @@
 classes:
 - service.barbican.server.single
 - system.salt.minion.cert.mysql.clients.openstack.barbican
+- system.salt.minion.cert.rabbitmq.clients.openstack.barbican
 parameters:
   _param:
     internal_protocol: 'http'
     openstack_mysql_x509_enabled: False
     galera_ssl_enabled: False
+    openstack_rabbitmq_x509_enabled: False
+    rabbitmq_ssl_enabled: False
     openstack_rabbitmq_port: 5672
   barbican:
     server:
@@ -22,6 +25,13 @@ parameters:
         protocol: ${_param:internal_protocol}
       message_queue:
         port: ${_param:openstack_rabbitmq_port}
+        x509:
+          enabled: ${_param:openstack_rabbitmq_x509_enabled}
+          ca_file: ${_param:rabbitmq_barbican_ssl_ca_file}
+          key_file: ${_param:rabbitmq_barbican_client_ssl_key_file}
+          cert_file: ${_param:rabbitmq_barbican_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:rabbitmq_ssl_enabled}
   linux:
     system:
       package:
