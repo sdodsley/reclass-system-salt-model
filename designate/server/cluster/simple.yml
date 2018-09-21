@@ -1,12 +1,15 @@
 classes:
 - service.designate.server.cluster
 - system.salt.minion.cert.mysql.clients.openstack.designate
+- system.salt.minion.cert.rabbitmq.clients.openstack.designate
 parameters:
   _param:
     designate_admin_api_enabled: false
     cluster_internal_protocol: 'http'
     openstack_mysql_x509_enabled: False
     galera_ssl_enabled: False
+    openstack_rabbitmq_x509_enabled: False
+    rabbitmq_ssl_enabled: False
     openstack_rabbitmq_port: 5672
   linux:
     system:
@@ -65,6 +68,13 @@ parameters:
         user: openstack
         password: ${_param:rabbitmq_openstack_password}
         virtual_host: '/openstack'
+        x509:
+          enabled: ${_param:openstack_rabbitmq_x509_enabled}
+          ca_file: ${_param:rabbitmq_designate_ssl_ca_file}
+          key_file: ${_param:rabbitmq_designate_client_ssl_key_file}
+          cert_file: ${_param:rabbitmq_designate_client_ssl_cert_file}
+        ssl:
+          enabled: ${_param:rabbitmq_ssl_enabled}
       pools:
         default:
           description: 'default pool'
