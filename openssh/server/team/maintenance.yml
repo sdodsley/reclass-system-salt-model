@@ -2,7 +2,6 @@ classes:
 - system.linux.system.sudo
 - system.openssh.server.team.members.dmeltsaykin
 - system.openssh.server.team.members.omolchanov
-- system.openssh.server.team.members.ibumarskov
 - system.openssh.server.team.members.vkhlyunev
 - system.openssh.server.team.members.dtsapikov
 - system.openssh.server.team.members.rlubianyi
