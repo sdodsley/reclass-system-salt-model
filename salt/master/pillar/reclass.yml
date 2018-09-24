@@ -1,2 +1,9 @@
 classes:
 - service.salt.master.pillar.reclass
+
+parameters:
+  salt:
+    master:
+      pillar:
+        engine: reclass
+        data_dir: /srv/salt/reclass
