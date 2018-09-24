@@ -4,7 +4,7 @@ classes:
 - system.haproxy.proxy.listen.openstack.designate
 - service.designate.server.cluster
 - system.salt.minion.cert.mysql.clients.openstack.designate
-- system.salt.minion.cert.rabbitmq.clients.openstack.designatev
+- system.salt.minion.cert.rabbitmq.clients.openstack.designate
 parameters:
   _param:
     designate_admin_api_enabled: false
