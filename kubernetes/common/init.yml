@@ -12,7 +12,7 @@ parameters:
     kubernetes_netchecker_server_repo: mirantis
     kubernetes_virtlet_repo: mirantis
     kubernetes_kubedns_repo: gcr.io/google_containers
-    kubernetes_externaldns_repo: mirantis
+    kubernetes_externaldns_repo: ${_param:mcp_docker_registry}/mirantis/external-dns
     kubernetes_genie_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/cni-genie
     kubernetes_flannel_repo: quay.io/coreos
     kubernetes_metallb_repo: ${_param:mcp_docker_registry}/mirantis/metallb
@@ -40,7 +40,7 @@ parameters:
     kubernetes_dnsmasq_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-dnsmasq-amd64:1.14.5
     kubernetes_sidecar_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-sidecar-amd64:1.14.5
     kubernetes_dns_autoscaler_image: ${_param:kubernetes_kubedns_repo}/cluster-proportional-autoscaler-amd64:1.0.0
-    kubernetes_externaldns_image: ${_param:kubernetes_externaldns_repo}/external-dns:v0.5.3
+    kubernetes_externaldns_image: ${_param:kubernetes_externaldns_repo}/external-dns:v0.5.6-1
     kubernetes_genie_source: ${_param:kubernetes_genie_repo}/genie_v1.0-138-gbf5dbaa
     kubernetes_genie_source_hash: md5=b024052ed4ecb1d5354e0cc8f51afaca
     kubernetes_flannel_image: ${_param:kubernetes_flannel_repo}/flannel:v0.10.0-amd64
