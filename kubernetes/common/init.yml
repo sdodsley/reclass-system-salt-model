@@ -20,6 +20,7 @@ parameters:
     kubernetes_cniplugins_repo: https://docker-prod-local.artifactory.mirantis.com/artifactory/binary-prod-local/mirantis/kubernetes/containernetworking-plugins
     kubernetes_dashboard_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
     kubernetes_coredns_repo: ${_param:mcp_docker_registry}/mirantis/coredns
+    kubernetes_ingressnginx_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes-ingress-nginx
 
     # component docker images
     kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
@@ -53,6 +54,7 @@ parameters:
     kubernetes_dashboard_image: ${_param:kubernetes_dashboard_repo}/kubernetes-dashboard-amd64:v1.10.0-4
     kubernetes_telegraf_image: ${_param:mcp_docker_registry}/openstack-docker/telegraf:2018.8.0
     kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:v1.2.2-12
+    kubernetes_ingressnginx_controller_image: ${_param:kubernetes_ingressnginx_repo}/nginx-ingress-controller-amd64:nginx-0.19.0-1
 
     kubelet_fail_on_swap: true
     kubernetes_dashboard_enabled: true
@@ -70,6 +72,9 @@ parameters:
     kubernetes_metallb_enabled: false
     kubernetes_sriov_enabled: false
     kubernetes_telegraf_enabled: false
+    kubernetes_ingressnginx_enabled: false
+
+    kubernetes_ingressnginx_controller_replicas: 1
 
     # telegraf stuff
     kubernetes_telegraf_namespace: stacklight
@@ -162,6 +167,10 @@ parameters:
           enabled: ${_param:kubernetes_metallb_enabled}
           controller_image: ${_param:kubernetes_metallb_controller_image}
           speaker_image: ${_param:kubernetes_metallb_speaker_image}
+        ingress-nginx:
+          enabled: ${_param:kubernetes_ingressnginx_enabled}
+          controller_image: ${_param:kubernetes_ingressnginx_controller_image}
+          controller_replicas: ${_param:kubernetes_ingressnginx_controller_replicas}
     pool:
       enabled: false
       kubelet:
