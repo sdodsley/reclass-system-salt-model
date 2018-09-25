@@ -48,6 +48,3 @@ parameters:
         mask: ${_param:opencontrail_compute_iface_mask}
         dns: ${_param:opencontrail_compute_dns}
         mtu: 9000
-  nova:
-    compute:
-      networking: contrail
