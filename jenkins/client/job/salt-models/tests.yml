@@ -227,6 +227,10 @@ parameters:
               DEFAULT_GIT_REF:
                 type: string
                 default: master
+              EXTRA_VARIABLES_YAML:
+                type: text
+                default: ""
+                description: "Extra vars passed as YAML"
               PARALLEL_NODE_GROUP_SIZE:
                 type: string
                 default: "5"
@@ -294,6 +298,10 @@ parameters:
               CREDENTIALS_ID:
                 type: string
                 default: gerrit
+              EXTRA_VARIABLES_YAML:
+                type: text
+                default: ""
+                description: "Extra vars passed as YAML"
       job:
         test-salt-model-node:
           name: test-salt-model-node
