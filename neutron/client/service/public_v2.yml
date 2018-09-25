@@ -8,7 +8,7 @@ parameters:
           admin_identity:
             network:
               public:
-                shared: True
+                shared: False
                 router_external: True
                 default: True
                 provider_network_type: flat
