@@ -1,0 +1,43 @@
+#
+# Jobs to process Stacklight update
+#
+parameters:
+  _param:
+    jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
+  jenkins:
+    client:
+      job:
+        stacklight-upgrade:
+          type: workflow-scm
+          concurrent: true
+          display_name: "Deploy - upgrade Stacklight"
+          discard:
+            build:
+              keep_num: 50
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: stacklight-upgrade.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              description: URL of Salt master
+              default: "${_param:jenkins_salt_api_url}"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              description: "Credentials for login to Salt API"
+              default: salt
+            STAGE_UPGRADE_SYSTEM_PART:
+              type: boolean
+              default: 'true'
+              description: "Set to True if upgrade of system part (telegraf, fluentd, prometheus-relay) is desired"
+            STAGE_UPGRADE_ES_KIBANA:
+              type: boolean
+              default: 'true'
+              description: "Set to True if Elasticsearch and Kibana upgrade is desired"
+            STAGE_UPGRADE_DOCKER_COMPONENTS:
+              type: boolean
+              default: 'true'
+              description: "Set to True if upgrade for components running in Docker Swarm is desired"
