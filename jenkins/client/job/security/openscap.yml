@@ -1,0 +1,57 @@
+#
+# Job to collect oscap results based on input benchmarks
+#
+parameters:
+  jenkins:
+    client:
+      job:
+        run-openscap-xccdf-evaluation:
+          type: workflow-scm
+          concurrent: true
+          discard:
+            build:
+              keep_num: 10
+            artifact:
+              keep_num: 10
+          display_name: "Run openscap xccdf evaluation on given nodes"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: test-openscap-pipeline.groovy
+          param:
+            DASHBOARD_API_URL:
+              type: string
+              default: ""
+              description: "The WORP api base url. Mandatory if UPLOAD_TO_DASHBOARD is true"
+            SALT_MASTER_URL:
+              type: string
+              default: ""
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            TARGET_SERVERS:
+              type: string
+              default: '*'
+              description: "The target Salt nodes"
+            UPLOAD_TO_DASHBOARD:
+              type: boolean
+              default: "false"
+              description: "Upload results to the WORP or not"
+            XCCDF_BENCHMARKS:
+              type: string
+              default: "cis_ubuntu_1604_server_l2/cis_ubuntu_1604_server_l2-xccdf.xml,default"
+              description: "List of pairs XCCDF benchmark filename and corresponding profile, format xccdf_benchmark 1, profile; xccdf_benchmark 2, profile"
+            XCCDF_BENCHMARKS_DIR:
+              type: string
+              default: "/usr/share/xccdf-benchmarks/mirantis/"
+              description: "The XCCDF benchmarks base directory"
+            XCCDF_VERSION:
+              type: string
+              default: "1.2"
+              description: "The XCCDF version"
+            XCCDF_TAILORING_ID:
+              type: string
+              default: "None"
+              description: "The tailoring id"
