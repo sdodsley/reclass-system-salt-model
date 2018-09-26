@@ -5,16 +5,16 @@ parameters:
   linux:
     system:
       repo:
-        ubuntu_hotfix:
-          refresh_db: ${_param:linux_repo_refresh_db}
-          source: "deb [arch=amd64] ${_param:linux_system_repo_hotfix_ubuntu_url} ${_param:linux_system_codename} main restricted universe"
-          architectures: amd64
-          default: true
-        ubuntu_updates_hotfix:
-          refresh_db: ${_param:linux_repo_refresh_db}
-          source: "deb [arch=amd64] ${_param:linux_system_repo_hotfix_ubuntu_url} ${_param:linux_system_codename}-updates main restricted universe"
-          architectures: amd64
-          default: true
+#        ubuntu_hotfix:
+#          refresh_db: ${_param:linux_repo_refresh_db}
+#          source: "deb [arch=amd64] ${_param:linux_system_repo_hotfix_ubuntu_url} ${_param:linux_system_codename} main restricted universe"
+#          architectures: amd64
+#          default: true
+#        ubuntu_updates_hotfix:
+#          refresh_db: ${_param:linux_repo_refresh_db}
+#          source: "deb [arch=amd64] ${_param:linux_system_repo_hotfix_ubuntu_url} ${_param:linux_system_codename}-updates main restricted universe"
+#          architectures: amd64
+#          default: true
         ubuntu_security_hotfix:
           refresh_db: ${_param:linux_repo_refresh_db}
           source: "deb [arch=amd64] ${_param:linux_system_repo_hotfix_ubuntu_url} ${_param:linux_system_codename}-security main restricted universe"
