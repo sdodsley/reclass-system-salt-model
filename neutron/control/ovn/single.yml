@@ -9,6 +9,7 @@ parameters:
     neutron_tenant_network_types: "geneve,flat"
     neutron_enable_qos: False
     neutron_enable_vlan_aware_vms: False
+    neutron_ovn_metadata_enabled: True
   neutron:
     server:
       global_physnet_mtu: ${_param:neutron_global_physnet_mtu}
@@ -23,6 +24,8 @@ parameters:
         mechanism:
           ovn:
             driver: ovn
+        ovn:
+          metadata_enabled: ${_param:neutron_ovn_metadata_enabled}
       compute:
         region: ${_param:openstack_region}
       database:
