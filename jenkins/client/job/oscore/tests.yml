@@ -682,7 +682,7 @@ parameters:
             trigger:
               gerrit:
                 project:
-                  "^salt-formulas/(nova|cinder|glance|keystone|horizon|neutron|designate|heat|ironic|barbican|aodh|ceilometer|gnocchi|panko|manila|salt|linux|reclass|galera|memcached|rabbitmq|bind|apache|runtest|oslo-templates|auditd|octavia)$":
+                  "^salt-formulas/(nova|cinder|glance|keystone|horizon|neutron|designate|heat|ironic|barbican|aodh|ceilometer|gnocchi|panko|manila|salt|linux|reclass|galera|memcached|rabbitmq|bind|apache|runtest|oslo-templates|auditd|octavia|openscap)$":
                     compare_type: 'REG_EXP'
                     branches:
                       - master
