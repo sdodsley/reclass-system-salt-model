@@ -153,6 +153,7 @@ parameters:
                   salt-formulas/{{name}}:
                     branches:
                       - master
+                      - '2018.8.1'
                 event:
                   comment:
                     - addedContains:
