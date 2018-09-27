@@ -9,6 +9,7 @@ parameters:
     openstack_rabbitmq_x509_enabled: False
     rabbitmq_ssl_enabled: False
     openstack_rabbitmq_port: 5672
+    cluster_internal_protocol: 'http'
   manila:
     common:
       version: ${_param:openstack_version}
@@ -51,4 +52,4 @@ parameters:
         auth_type: password
         user_domain_id: default
         project_domain_id: default
-        protocol: 'http'
+        protocol: ${_param:cluster_internal_protocol}

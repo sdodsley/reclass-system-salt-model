@@ -1,5 +1,5 @@
 classes:
- - service.manila.common.cluster
+  - system.manila.common.cluster
 parameters:
   manila:
     common:

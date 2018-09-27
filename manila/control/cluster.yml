@@ -1,7 +1,8 @@
 classes:
- - system.manila.common.cluster
- - system.apache.server.site.manila
- - system.haproxy.proxy.listen.openstack.manila
+  - service.haproxy.proxy.single
+  - system.manila.common.cluster
+  - system.apache.server.site.manila
+  - system.haproxy.proxy.listen.openstack.manila
 parameters:
   manila:
     common:
