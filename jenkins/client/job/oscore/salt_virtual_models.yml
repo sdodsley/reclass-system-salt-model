@@ -101,6 +101,10 @@ parameters:
               type: string
               description: How much test threads to run
               default: "2"
+            RUN_SECURITY_CHECK:
+              type: boolean
+              description: Whether to run Openscap XCCDF evaluation
+              default: "false"
             RUN_SMOKE:
               type: boolean
               default: "false"
