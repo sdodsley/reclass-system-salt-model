@@ -4,7 +4,7 @@ classes:
 - system.openssh.server.team.members.obasov
 - system.openssh.server.team.members.mikhailkraynov
 - system.openssh.server.team.members.prazumovsky
-- system.openssh.server.team.members.mcp-scale-jenkins
+- system.openssh.server.team.members_ci.mcp-scale-jenkins
 
 parameters:
   _param:

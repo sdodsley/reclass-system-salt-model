@@ -5,7 +5,7 @@ parameters:
         psvimbersky:
           enabled: true
           name: psvimbersky
-          sudo: true
+          sudo: ${_param:linux_system_user_sudo}
           full_name: Pavel Svimbersky
           home: /home/psvimbersky
           email: psvimbersky@mirantis.com

@@ -1,0 +1,16 @@
+parameters:
+  linux:
+    system:
+      user:
+        cade:
+          email: disabled
+          enabled: false
+          full_name: disabled
+          home: /home/cade
+          name: cade
+  openssh:
+    server:
+      user:
+        cade:
+          enabled: false
+          user: ${linux:system:user:cade}

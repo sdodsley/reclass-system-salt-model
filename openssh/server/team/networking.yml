@@ -1,6 +1,6 @@
 classes:
-- system.openssh.server.team.members.mceloud
-- system.openssh.server.team.members.pjediny
+- system.openssh.server.team.members.deprecated.mceloud
+- system.openssh.server.team.members.deprecated.pjediny
 - system.openssh.server.team.members.skreys
 - system.openssh.server.team.members.smatov
 - system.openssh.server.team.members.ivasilevskaya

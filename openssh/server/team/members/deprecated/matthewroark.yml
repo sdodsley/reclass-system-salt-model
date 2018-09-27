@@ -1,0 +1,16 @@
+parameters:
+  linux:
+    system:
+      user:
+        mroark:
+          email: disabled
+          enabled: false
+          full_name: disabled
+          home: /home/mroark
+          name: mroark
+  openssh:
+    server:
+      user:
+        mroark:
+          enabled: false
+          user: ${linux:system:user:mroark}

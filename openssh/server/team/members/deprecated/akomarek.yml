@@ -1,0 +1,16 @@
+parameters:
+  linux:
+    system:
+      user:
+        newt:
+          email: disabled
+          enabled: false
+          full_name: disabled
+          home: /home/newt
+          name: newt
+  openssh:
+    server:
+      user:
+        newt:
+          enabled: false
+          user: ${linux:system:user:newt}

@@ -1,0 +1,16 @@
+parameters:
+  linux:
+    system:
+      user:
+        ecantwell:
+          email: disabled
+          enabled: false
+          full_name: disabled
+          home: /home/ecantwell
+          name: ecantwell
+  openssh:
+    server:
+      user:
+        ecantwell:
+          enabled: false
+          user: ${linux:system:user:ecantwell}

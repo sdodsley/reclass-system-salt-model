@@ -1,5 +1,5 @@
 classes:
-- system.openssh.server.team.members.samstoelinga
+- system.openssh.server.team.members.deprecated.samstoelinga
 - system.openssh.server.team.members.sachintripathi
 - system.openssh.server.team.members.ryanday
 - system.openssh.server.team.members.pmichalec
