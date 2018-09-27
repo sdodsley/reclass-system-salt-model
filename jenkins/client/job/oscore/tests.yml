@@ -99,6 +99,11 @@ parameters:
               OPENSTACK_API_VERSION:
                 type: string
                 default: "3"
+              # security test
+              RUN_SECURITY_CHECK:
+                type: boolean
+                description: Whether to run Openscap XCCDF evaluation
+                default: 'false'
               # test
               TEST_CONF:
                 type: string
