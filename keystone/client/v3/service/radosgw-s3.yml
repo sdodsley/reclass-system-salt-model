@@ -15,7 +15,7 @@ parameters:
                 service_admin:
                   name: admin
                   project_id: service
-          service:
+          services:
             radosgw-s3:
               type: s3
               description: S3 Service (radosgw)
