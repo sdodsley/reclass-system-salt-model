@@ -1,3 +1,2 @@
 classes:
-- system.linux.system.repo.mcp.apt_mirantis.kibana.46
 - system.linux.system.repo.mcp.apt_mirantis.kibana.5x

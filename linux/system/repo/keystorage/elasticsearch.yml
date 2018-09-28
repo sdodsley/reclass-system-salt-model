@@ -39,3 +39,9 @@ parameters:
         mcp_elasticsearch_curator:
           # pub   2048R/D88E42B4 2013-09-16
           key: ${linux:system:repo:mcp_elasticsearch:key}
+        mcp_kibana_5x:
+          # pub   2048R/D88E42B4 2013-09-16
+          key: ${linux:system:repo:mcp_elasticsearch:key}
+        mcp_kibana_46:
+          # pub   2048R/D88E42B4 2013-09-16
+          key: ${linux:system:repo:mcp_elasticsearch:key}
