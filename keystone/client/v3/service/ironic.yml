@@ -15,20 +15,20 @@ parameters:
                 service_admin:
                   name: admin
                   project_id: service
-          service:
+          services:
             ironic:
               type: baremetal
               description: OpenStack Baremetal Service
               endpoints:
                 ironic_public:
-                  internface: 'public'
+                  interface: 'public'
                   url: ${_param:cluster_public_protocol}://${_param:cluster_public_host}:6385
                   region: ${_param:openstack_region}
                 ironic_internal:
-                  internface: 'internal'
+                  interface: 'internal'
                   url: ${_param:ironic_service_protocol}://${_param:ironic_service_host}:6385
                   region: ${_param:openstack_region}
                 ironic_admin:
-                  internface: 'admin'
+                  interface: 'admin'
                   url: ${_param:ironic_service_protocol}://${_param:ironic_service_host}:6385
                   region: ${_param:openstack_region}

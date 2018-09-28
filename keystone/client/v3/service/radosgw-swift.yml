@@ -15,7 +15,7 @@ parameters:
                 service_admin:
                   name: admin
                   project_id: service
-          service:
+          services:
             radosgw-swift:
               type: object-store
               description: Swift Service (radosgw)
