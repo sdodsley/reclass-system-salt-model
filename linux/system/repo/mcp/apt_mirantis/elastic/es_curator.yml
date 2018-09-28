@@ -1,0 +1,18 @@
+classes:
+- system.linux.system.repo.keystorage.elasticsearch
+parameters:
+  _param:
+    apt_mk_version: stable
+    linux_system_repo_url: http://mirror.mirantis.com/${_param:apt_mk_version}/
+    linux_system_repo_mcp_elasticsearch_curator_url: ${_param:linux_system_repo_url}/elasticsearch-curator-5/
+  linux:
+    system:
+      repo:
+        mcp_elasticsearch_curator:
+          source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_elasticsearch_curator_url}/${_param:linux_system_codename} stable main"
+          architectures: amd64
+          clean_file: true
+          pin:
+          - pin: 'release o=Elastic'
+            priority: 1100
+            package: '*'
