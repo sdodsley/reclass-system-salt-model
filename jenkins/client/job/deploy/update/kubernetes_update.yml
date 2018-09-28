@@ -38,6 +38,14 @@ parameters:
             SALT_MASTER_CREDENTIALS:
               type: string
               default: "salt-qa-credentials"
+            SIMPLE_UPGRADE:
+              type: boolean
+              default: 'false'
+              description: "Choose between simple upgrade or upgrade with draining nodes"
+            UPGRADE_DOCKER:
+              type: boolean
+              default: 'false'
+              description: "Upgrade docker or not"
             PER_NODE:
               type: boolean
               default: 'true'
