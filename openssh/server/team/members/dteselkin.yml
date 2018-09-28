@@ -1,0 +1,20 @@
+parameters:
+  linux:
+    system:
+      user:
+        dteselkin:
+          enabled: true
+          name: dteselkin
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Dmitry Teselkin
+          home: /home/dteselkin
+          email: dteselkin@mirantis.com
+  openssh:
+    server:
+      enabled: true
+      user:
+        dteselkin:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCxE+TvswmBZP8xIz4DRlyrQV6CEk1ZDCc8vXT8yYB2VgW7PpYt6ukuV+UjUp18/51JBKbxJIGplF4i1rgEvKX/kfi/FWM3uiqPq9ivLzuykIGiRccsU3kzIntIec7WDDcJeo/P4r5eXWhI+idMvcfLcxCLbN1OKZfBllhagv8oUrWLVCPaPvcWXxUQ8gvylP3Mk+G/OtaTJSk0udG2S4vh1Rg+TU7x8RHV0q8P8LPz19pvWQu5yWbeKd4FbKGUNx9eBqdGR6+nsfpjJZWeeSkUT9C77ihkMtIGJ7EacNYbgYhtIKZeBrfJcw+M1JTXdd8quwVPSA46D4xldQZ7aM7t
+          user: ${linux:system:user:dteselkin}

@@ -13,6 +13,7 @@ classes:
 - system.openssh.server.team.members.oshyshko
 - system.openssh.server.team.members.pshchelo
 - system.openssh.server.team.members.obryndzii
+- system.openssh.server.team.members.dteselkin
 parameters:
   _param:
     linux_system_user_sudo: true
