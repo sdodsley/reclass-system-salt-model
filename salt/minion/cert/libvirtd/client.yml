@@ -19,3 +19,6 @@ parameters:
           key_file: ${_param:libvirtd_client_ssl_key_file}
           cert_file: ${_param:libvirtd_client_ssl_cert_file}
           ca_file: ${_param:libvirtd_ssl_ca_file}
+          user: root
+          group: nova
+          mode: 640
