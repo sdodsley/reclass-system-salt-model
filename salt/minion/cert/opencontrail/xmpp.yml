@@ -1,0 +1,15 @@
+parameters:
+  _param:
+    salt_minion_ca_authority: salt_master_ca
+    salt_minion_ca_host: cfg01.${_param:cluster_domain}
+  salt:
+    minion:
+      cert:
+        opencontrail_xmpp:
+          host: ${_param:salt_minion_ca_host}
+          authority: ${_param:salt_minion_ca_authority}
+          common_name: opencontrail_xmpp
+          key_file: /etc/contrail/ssl/private/server-privkey.pem
+          cert_file: /etc/contrail/ssl/certs/server.pem
+          ca_file: /etc/contrail/ssl/certs/ca-cert.pem
+          signing_policy: cert_open
