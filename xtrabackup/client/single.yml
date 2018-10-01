@@ -1,3 +1,9 @@
 classes:
 - service.xtrabackup.client.single
 - system.openssh.client.root
+parameters:
+  _param:
+    xtrabackup_client_throttle: 0 # disabled
+  xtrabackup:
+    client:
+      throttle: ${_param:xtrabackup_client_throttle}
