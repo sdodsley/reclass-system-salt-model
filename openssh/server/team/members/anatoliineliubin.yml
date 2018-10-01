@@ -19,5 +19,4 @@ parameters:
           user: ${linux:system:user:aneliubin}
   public_keys:
     aneliubin:
-      - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCSj7OItCm3z4PerRp+KIh50YpYMzE2QV6xq+PnqrK4otDqjrXWRSEXiimsyWM7s3a9XsgGC9Tc1SUPX2r1ZLsKZUVpP0V8Amz1YTKAw9dJ43rhTMQEIPCsr5Bk3/b/criaWSWly7jsRDonqGor+EJAfQg/mEyYpa04wRZ2TYQKhM0o2mx7BKDV/Xc2QqskT4Vqimp91F/OXwDsLUP+NDSPtyG/AalNBez0p7PDPV1J/S8MipgPUGvQLddvvJ8VYxH66WpNt4IJVrc5YBp0ty8lj+WPFFxgaQ0yWHvjmlatGeAI70F8M/szdbIyn3ph9t7aXaGhOnWumqZkwqSWvY0F
-
+      - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCSj7OItCm3z4PerRp+KIh50YpYMzE2QV6xq+PnqrK4otDqjrXWRSEXiimsyWM7s3a9XsgGC9Tc1SUPX2r1ZLsKZUVpP0V8Amz1YTKAw9dJ43rhTMQEIPCsr5Bk3/b/criaWSWly7jsRDonqGor+EJAfQg/mEyYpa04wRZ2TYQKhM0o2mx7BKDV/Xc2QqskT4Vqimp91F/OXwDsLUP+NDSPtyG/AalNBez0p7PDPV1J/S8MipgPUGvQLddvvJ8VYxH66WpNt4IJVrc5YBp0ty8lj+WPFFxgaQ0yWHvjmlatGeAI70F8M/szdbIyn3ph9t7aXaGhOnWumqZkwqSWvY0F aneliuubin@mirantis.com

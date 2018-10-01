@@ -1,0 +1,16 @@
+parameters:
+  linux:
+    system:
+      user:
+        vmikes:
+          email: disabled
+          enabled: false
+          full_name: disabled
+          home: /home/vmikes
+          name: vmikes
+  openssh:
+    server:
+      user:
+        vmikes:
+          enabled: false
+          user: ${linux:system:user:vmikes}

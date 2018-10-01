@@ -1,0 +1,16 @@
+parameters:
+  linux:
+    system:
+      user:
+        kkushaev:
+          email: disabled
+          enabled: false
+          full_name: disabled
+          home: /home/kkushaev
+          name: kkushaev
+  openssh:
+    server:
+      user:
+        kkushaev:
+          enabled: false
+          user: ${linux:system:user:kkushaev}

@@ -1,0 +1,16 @@
+parameters:
+  linux:
+    system:
+      user:
+        cmay:
+          email: disabled
+          enabled: false
+          full_name: disabled
+          home: /home/cmay
+          name: cmay
+  openssh:
+    server:
+      user:
+        cmay:
+          enabled: false
+          user: ${linux:system:user:cmay}

@@ -1,0 +1,16 @@
+parameters:
+  linux:
+    system:
+      user:
+        osmola:
+          email: disabled
+          enabled: false
+          full_name: disabled
+          home: /home/osmola
+          name: osmola
+  openssh:
+    server:
+      user:
+        osmola:
+          enabled: false
+          user: ${linux:system:user:osmola}

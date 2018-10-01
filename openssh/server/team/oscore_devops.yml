@@ -8,7 +8,7 @@ classes:
 - system.openssh.server.team.members.ikolodyazhny
 - system.openssh.server.team.members.ohryhorov
 - system.openssh.server.team.members.ogrudev
-- system.openssh.server.team.members.kkushaev
+- system.openssh.server.team.members.deprecated.kkushaev
 - system.openssh.server.team.members.sgarbuz
 - system.openssh.server.team.members.oshyshko
 - system.openssh.server.team.members.pshchelo

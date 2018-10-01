@@ -15,8 +15,3 @@ classes:
 - system.openssh.server.team.oscore_devops
 - system.openssh.server.team.k8s_team
 - system.openssh.server.team.k8s_apps_team
-# to include support team, please integrate submodule opscare into cluster model
-# https://gerrit.mirantis.com/#/admin/projects/mmo-support/reclass-opscare
-parameters:
-  _param:
-    linux_system_user_sudo: true
