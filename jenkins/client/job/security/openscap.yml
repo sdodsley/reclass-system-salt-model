@@ -30,7 +30,7 @@ parameters:
               default: ""
             SALT_MASTER_CREDENTIALS:
               type: string
-              default: "salt"
+              default: "salt-qa-credentials"
             TARGET_SERVERS:
               type: string
               default: '*'
