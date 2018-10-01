@@ -1,6 +1,5 @@
 parameters:
   _param:
-    apt_mk_version: stable
     glusterfs_version: 3.8
     mirror_glusterfs_upstream_xenial_source: http://ppa.launchpad.net/gluster/glusterfs-${_param:glusterfs_version}/ubuntu
     mirror_glusterfs_upstream_xenial_distribution: xenial

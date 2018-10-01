@@ -1,6 +1,5 @@
 parameters:
   _param:
-    apt_mk_version: stable
 
     mirror_mirantis_openstack_newton_xenial_source: http://apt.mirantis.com/xenial/openstack/newton/
     mirror_mirantis_openstack_newton_xenial_distribution: ${_param:apt_mk_version}

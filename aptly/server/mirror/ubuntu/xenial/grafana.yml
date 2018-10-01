@@ -1,6 +1,5 @@
 parameters:
   _param:
-    apt_mk_version: stable
     mirror_grafana-xenial_source: https://packagecloud.io/grafana/stable/debian/
     mirror_grafana-xenial_distribution: jessie
     mirror_grafana-xenial_components: main

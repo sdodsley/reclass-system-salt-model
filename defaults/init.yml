@@ -1,0 +1,5 @@
+parameters:
+# Transition in progress.
+# Please ignore 'G' transition marker - it uses only for internal purposes
+  _param:
+    apt_mk_version: 'stable'

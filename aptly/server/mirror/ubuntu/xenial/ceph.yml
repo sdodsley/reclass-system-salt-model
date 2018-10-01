@@ -1,7 +1,6 @@
 parameters:
   _param:
     ceph_version: luminous
-    apt_mk_version: stable
     mirror_ceph-xenial_source: http://download.ceph.com/debian-${_param:ceph_version}
     mirror_ceph-xenial_distribution: xenial
     mirror_ceph-xenial_components: main

@@ -1,6 +1,5 @@
 parameters:
   _param:
-    apt_mk_version: stable
     mirror_mirantis_openstack_xenial_maas_source: http://mirror.mirantis.com/${_param:apt_mk_version}/maas/xenial/
     mirror_mirantis_openstack_xenial_maas_distribution: xenial
     mirror_mirantis_openstack_xenial_maas_components: main

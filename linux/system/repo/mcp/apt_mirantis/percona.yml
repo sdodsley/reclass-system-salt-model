@@ -2,7 +2,6 @@ classes:
 - system.linux.system.repo.keystorage.percona
 parameters:
   _param:
-    apt_mk_version: stable
     linux_system_repo_url: http://mirror.mirantis.com/${_param:apt_mk_version}/
     linux_system_repo_mcp_percona_url: ${_param:linux_system_repo_url}/percona/
   linux:

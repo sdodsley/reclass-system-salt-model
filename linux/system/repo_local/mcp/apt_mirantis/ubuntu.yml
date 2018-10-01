@@ -4,7 +4,6 @@ classes:
 - system.linux.system.repo.keystorage.ubuntu
 parameters:
   _param:
-    apt_mk_version: 'stable'
     linux_repo_refresh_db: true
   linux:
     system:

@@ -1,6 +1,5 @@
 parameters:
   _param:
-    apt_mk_version: stable
     mirror_mcp_opencontrail_xenial_oc323_source: http://apt.mirantis.com/xenial/
     mirror_mcp_opencontrail_xenial_oc323_distribution: ${_param:apt_mk_version}
     mirror_mcp_opencontrail_xenial_oc323_components: oc323

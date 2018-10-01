@@ -2,7 +2,6 @@ classes:
 - system.linux.system.repo.keystorage.elasticsearch
 parameters:
   _param:
-    apt_mk_version: stable
     linux_system_repo_url: http://mirror.mirantis.com/${_param:apt_mk_version}/
     linux_system_repo_mcp_elasticsearch_curator_url: ${_param:linux_system_repo_url}/elasticsearch-curator-5/
   linux:
