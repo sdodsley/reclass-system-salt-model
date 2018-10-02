@@ -40,3 +40,15 @@ parameters:
         python-pymysql:
           fromrepo: ${_param:openstack_version}
           version: latest
+      user:
+        barbican:
+          enabled: true
+          name: barbican
+          home: /var/lib/barbican
+          shell: /bin/bash
+          system: True
+      group:
+        barbican:
+          enabled: true
+          name: barbican
+          system: True
