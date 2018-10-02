@@ -30,3 +30,8 @@ parameters:
       identity:
         host: ${_param:single_address}
         region: ${_param:openstack_region}
+      cache:
+        security:
+          enabled: ${_param:cinder_memcache_security_enabled}
+          strategy: ${_param:openstack_memcache_security_strategy}
+          secret_key: ${_param:cinder_memcache_secret_key}
