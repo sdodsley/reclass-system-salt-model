@@ -45,8 +45,3 @@ parameters:
           home: /var/lib/barbican
           shell: /bin/bash
           system: True
-      group:
-        barbican:
-          enabled: true
-          name: barbican
-          system: True
