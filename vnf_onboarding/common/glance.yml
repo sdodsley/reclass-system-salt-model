@@ -1,17 +1,6 @@
 classes:
 - system.glance.client
 parameters:
-  _param:
-    cloudify_enterprise_manager_image_url: "${_param:vnf_artifactory_url}/${_param:vnf_cloudify_enterprise_manager_image_name}.qcow2"
-    cloudify_enterprise_manager_image_name:  "${_param:vnf_cloudify_enterprise_manager_image_name}"
-    cloudify_community_manager_image_url: "${_param:vnf_artifactory_url}/${_param:vnf_cloudify_community_manager_image_name}.qcow2"
-    cloudify_community_manager_image_name: "${_param:vnf_cloudify_community_manager_image_name}"
-    agent_vm_image_url: "${_param:vnf_artifactory_url}/${_param:vnf_agent_vm_image_name}.img"
-    agent_vm_image_name:  "${_param:vnf_agent_vm_image_name}"
-    base_agent_vm_image_url: "${_param:vnf_artifactory_url}/${_param:vnf_base_agent_vm_image_name}.qcow2"
-    base_agent_vm_image_name:  "${_param:vnf_base_agent_vm_image_name}"
-    base_backend_vm_image_url: "${_param:vnf_artifactory_url}/${_param:vnf_base_backend_vm_image_name}.qcow2"
-    base_backend_vm_image_name:  "${_param:vnf_base_backend_vm_image_name}"
   glance:
     client:
       identity:
