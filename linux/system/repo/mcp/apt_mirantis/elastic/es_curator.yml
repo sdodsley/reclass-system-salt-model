@@ -12,6 +12,7 @@ parameters:
           source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_elasticsearch_curator_url}/${_param:linux_system_codename} stable main"
           architectures: amd64
           clean_file: true
+          key: ${_param:linux_system_repo_mcp_elasticsearch_key}
           pin:
           - pin: 'release o=Elastic'
             priority: 1100

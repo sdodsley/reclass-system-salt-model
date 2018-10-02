@@ -10,5 +10,6 @@ parameters:
       repo:
         mcp_docker_legacy:
           source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_docker_legacy_url}/${_param:linux_system_codename}/ ubuntu-${_param:linux_system_codename} main"
+          key: ${_param:linux_system_repo_mcp_docker_legacy_key}
           architectures: amd64
           clean_file: true

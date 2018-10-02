@@ -10,5 +10,6 @@ parameters:
       repo:
         mcp_docker:
           source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_docker_url}/${_param:linux_system_codename}/ ${_param:linux_system_codename} stable"
+          key: ${_param:linux_system_repo_mcp_docker_key}
           architectures: amd64
           clean_file: true

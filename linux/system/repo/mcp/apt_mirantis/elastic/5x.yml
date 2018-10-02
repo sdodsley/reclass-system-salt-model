@@ -13,9 +13,8 @@ parameters:
           source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_elastic_5x_version}/elasticsearch-5.x/${_param:linux_system_codename}/ stable main"
           architectures: amd64
           clean_file: true
-          key: ${linux:system:repo:mcp_elasticsearch:key}
+          key: ${_param:linux_system_repo_mcp_elasticsearch_key}
         mcp_elastic_curator_5x:
           source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_elastic_5x_version}/elasticsearch-curator-5/${_param:linux_system_codename}/ stable main"
           architectures: amd64
           clean_file: true
-          key: ${linux:system:repo:mcp_elasticsearch:key}
