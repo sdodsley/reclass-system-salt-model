@@ -6,6 +6,9 @@ classes:
 - system.salt.minion.cert.mysql.clients.openstack.glance
 - system.salt.minion.cert.rabbitmq.clients.openstack.glance
 parameters:
+  _param:
+    glance_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    glance_memcache_secret_key: ''
   linux:
     system:
       cron:
@@ -69,6 +72,11 @@ parameters:
           cert_file: ${_param:rabbitmq_glance_client_ssl_cert_file}
         ssl:
           enabled: ${_param:rabbitmq_ssl_enabled}
+      cache:
+        security:
+          enabled: ${_param:glance_memcache_security_enabled}
+          strategy: ${_param:openstack_memcache_security_strategy}
+          secret_key: ${_param:glance_memcache_secret_key}
       storage:
         engine: file
       images: []
