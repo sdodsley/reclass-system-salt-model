@@ -37,6 +37,8 @@ parameters:
       SG9MrLHCd5l60aCUQg0UA5ed7Hd6SA314k+HwxJno9/wJ+voBeacMg==
       -----END RSA PRIVATE KEY-----
     cluster_internal_protocol: 'http'
+    nova_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    nova_memcache_secret_key: ''
   openssh:
     client:
       enabled: True
@@ -100,6 +102,10 @@ parameters:
         members:
         - host: 127.0.0.1
           port: 11211
+        security:
+          enabled: ${_param:nova_memcache_security_enabled}
+          strategy: ${_param:openstack_memcache_security_strategy}
+          secret_key: ${_param:nova_memcache_secret_key}
       user:
         public_key: ${_param:nova_compute_ssh_public}
         private_key: ${_param:nova_compute_ssh_private}
