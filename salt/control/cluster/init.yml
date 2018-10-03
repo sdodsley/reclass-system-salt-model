@@ -7,3 +7,9 @@ parameters:
         internal:
           rng:
             backend: ${_param:salt_control_cluster_rng_backend}
+          seed: cloud-init
+          cloud_init:
+            user_data:
+              salt_minion:
+                conf:
+                  master: ${_param:infra_config_deploy_address}
