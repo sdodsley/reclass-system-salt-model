@@ -22,6 +22,6 @@ parameters:
           key_file: ${_param:qemu_vnc_server_ssl_key_file}
           cert_file: ${_param:qemu_vnc_server_ssl_cert_file}
           ca_file: ${_param:qemu_vnc_ssl_ca_file}
-          user: libvirt-qemu
-          group: libvirt-qemu
+          user: root
+          group: nova
           mode: 640
