@@ -22,6 +22,6 @@ parameters:
           key_file: ${_param:rabbitmq_nova_client_ssl_key_file}
           cert_file: ${_param:rabbitmq_nova_client_ssl_cert_file}
           ca_file: ${_param:rabbitmq_nova_ssl_ca_file}
-          user: nova
+          user: root
           group: nova
           mode: 640
