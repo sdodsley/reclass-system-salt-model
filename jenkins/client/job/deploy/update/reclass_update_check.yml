@@ -1,0 +1,51 @@
+#
+# Jobs to to check new Reclass package version compatibility with model
+#
+parameters:
+  _param:
+    jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
+  jenkins:
+    client:
+      job:
+        check-reclass-version:
+          type: workflow-scm
+          concurrent: true
+          discard:
+            build:
+              keep_num: 10
+            artifact:
+              keep_num: 10
+          display_name: "Upgrade - check new Reclass package"
+          scm:
+            type: git
+            url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
+            branch: "${_param:jenkins_pipelines_branch}"
+            credentials: "gerrit"
+            script: test-reclass-package.groovy
+          param:
+            SALT_MASTER_URL:
+              type: string
+              default: "${_param:jenkins_salt_api_url}"
+            SALT_MASTER_CREDENTIALS:
+              type: string
+              default: "salt"
+            DISTRIB_REVISION:
+              type: string
+              default: 'proposed'
+              description: "Mirror version to use"
+            EXTRA_REPO_PREDEFINED:
+              type: boolean
+              default: false
+              description: "Use mcp extra repo defined on host"
+            EXTRA_REPO:
+              type: string
+              default: ''
+              description: "Extra repo to use in format (for example, deb [arch=amd64] http://apt.mirantis.com/xenial/ nightly extra)"
+            EXTRA_REPO_GPG_KEY_URL:
+              type: string
+              default: ''
+              description: "GPG key URL for extra repo"
+            TARGET_NODES:
+              type: string
+              default: '*'
+              description: "Target specification, e.g. 'I@openssh:server'"
