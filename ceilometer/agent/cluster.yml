@@ -6,12 +6,16 @@ parameters:
     openstack_rabbitmq_port: 5672
     openstack_rabbitmq_x509_enabled: False
     rabbitmq_ssl_enabled: False
+    ceilometer_agent_ssl_enabled: False
   ceilometer:
     agent:
       region: ${_param:openstack_region}
       enabled: true
       version: ${_param:ceilometer_version}
       secret: ${_param:ceilometer_secret_key}
+      libvirt:
+        ssl:
+          enabled: ${_param:ceilometer_agent_ssl_enabled}
       identity:
         engine: keystone
         host: ${_param:keystone_service_host}
