@@ -1,7 +1,8 @@
 parameters:
   _param:
     # pub   2048R/4C5289EF 2018-07-25
-    linux_system_repo_mirantis_openstack_key: |-
+    # https://mirror.mirantis.com
+    linux_system_repo_mirror_mirantis_key: |-
         -----BEGIN PGP PUBLIC KEY BLOCK-----
         Version: GnuPG v1
 
