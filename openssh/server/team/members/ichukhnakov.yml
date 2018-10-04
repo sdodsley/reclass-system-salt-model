@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ichukhnakov:
+          enabled: true
+          name: ichukhnakov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Ilya Chukhnakov
+          home: /home/ichukhnakov
+          email: ichukhnakov@mirantis.com
+  openssh:
+    server:
+      user:
+        ichukhnakov:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIc4N1/KTRWKoWoM83hqRaSvk+tIX7mt8fWG4HKngB08PxXGBJElGuMvzEa3mYyKptwSYO/5wgRI/+cD+Sgbr2BGs9HJy23eYPRPwcKdcskandBjVNWrDd4op2s3wGOrwGg/P88JaGqhL8mwM/5UUK4P4gP7uoZdEK9ptHzy/OvBB0Jd6/qkzWv29k8x5ExgNehvfL8PZzcFWwajdv2y53nj1lO4Bw1i3gKVOl9DEe0JkLB8ryiJ4hIKmq7zgBcduPF8xOWUt2F7TA6/o9rXR9+NU6EnSYmOszqTHQ6P5itGogp57SGqoG1PZzXapQnZPwzDX4jMkxmdu1Ji+TJhXd
+          user: ${linux:system:user:ichukhnakov}

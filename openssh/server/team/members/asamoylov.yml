@@ -11,7 +11,6 @@ parameters:
           email: asamoylov@mirantis.com
   openssh:
     server:
-      enabled: true
       user:
         asamoylov:
           enabled: true

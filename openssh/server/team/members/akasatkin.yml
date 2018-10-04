@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        akasatkin:
+          enabled: true
+          name: akasatkin
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Aleksey Kasatkin
+          home: /home/akasatkin
+          email: akasatkin@mirantis.com
+  openssh:
+    server:
+      user:
+        akasatkin:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJFOEwYid83klmXcQs9QBDJwb1EG6Ly7DpJ32aH8gB8uguUPVO3rS/08GNav7+6GFLwlbWHVDe1MIFeNvyqh778B2piCzoajIT8aZFiutjbGtVPfkGkt94mibVutjO36eSEjEDW8GYQ2boisibha6B2mlz126y7nJN1VDSUr05Ro719i696vdN0fglu5DlT6qnOSei16EqkgQcMdyoxCfUOy9zBe3p1jGd2XKCOy3aGkhixEj6oaWSFRcA48SgqNSUO9A5NHTmWT/3j76Jsk92yw4e5OenWJbVx0BkU8q6U5fIncxkIQRYFUqB0X1TT9PnktDD4iJwNMXY7W2hYN2/ aleksey@aleksey-ThinkPad
+          user: ${linux:system:user:akasatkin}

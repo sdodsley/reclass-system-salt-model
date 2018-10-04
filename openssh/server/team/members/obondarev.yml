@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        obondarev:
+          enabled: true
+          name: obondarev
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Oleg Bondarev
+          home: /home/obondarev
+          email: obondarev@mirantis.com
+  openssh:
+    server:
+      user:
+        obondarev:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDca1gqXe14l9uho3t4mZT52lXmSuUxKVOCcSO9Dy+BAmtaVK39+t7la081S5c0H+oTPIXFb32/kO37+qpEgwyOv1zimWIqcR56xrr42gW/QzVLyY64qVnQ9QFiXlvXXBW4YgBuT//SE8upOshLYnznKHOi4IkoKrAE37K34Cz/DGQzFV6sKQSmP6fjJzli0Nzu+YPdBSZW9VH1m7IKxliGoZcjdIkJ+L92+h/mPuN95Bitfe+aoexBQq3u4WjYVVsCE/9TrwLoGlr3zd7VAyVdADJf6phfIMHGDxn8W8125r9UWp4X/36yAIudVC7kHLyr0AHTfYqCVH10nEJvUwRz obondarev@Olegs-MacBook-Pro.local
+          user: ${linux:system:user:obondarev}

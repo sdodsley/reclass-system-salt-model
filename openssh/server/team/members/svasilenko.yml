@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        svasilenko:
+          enabled: true
+          name: svasilenko
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Sergey Vasilenko
+          home: /home/svasilenko
+          email: svasilenko@mirantis.com
+  openssh:
+    server:
+      user:
+        svasilenko:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbNUC2UJiVk0bHmbVBHd4L22M3Mc3HVPdZZja7gzzUJDI/MIGoTSX8/Q38olBHg6i/9ePzroMqQS70x/LvuEgfKMDUcEBhggq22zea/wohMmMPwiGTEJ3j0CfckXM2cfjRHweHu4U//4SiSgLHi3nnEhYJUvFkOq10qOtZd2iT76sbKpnIEcRVfDcIy01G/wZQLX0SiCk8hWh9ERBqnW2OjNhwG/a2SdoPN25T1HmHAhLJykcGXb7BmrMNe7XFcNsqleMsopTXcqtZBu+ysEbNywPQKUiJrwqOtzkncQwwuKlr53EaXwBY5UHQwoFSXXi28JjmvEZAzA+UBMrPDHrx svasilenko@mrnt
+          user: ${linux:system:user:svasilenko}

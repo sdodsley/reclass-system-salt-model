@@ -1,0 +1,18 @@
+parameters:
+  linux:
+    system:
+      user:
+        eezhova:
+          enabled: false
+          name: eezhova
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: disabled
+          home: /home/eezhova
+          email: disabled
+  openssh:
+    server:
+      user:
+        eezhova:
+          enabled: false
+          public_keys:
+          user: ${linux:system:user:eezhova}

@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        aignatov:
+          enabled: true
+          name: aignatov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Alexander Ignatov
+          home: /home/aignatov
+          email: aignatov@mirantis.com
+  openssh:
+    server:
+      user:
+        aignatov:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJFYznIFlCdxu5UXzThjYZlZfvXKCcDN0QxDEn7U7dNkK17SyzIJswQcxF7pTlvcuZ7XEskEqyXC8E6P5XyvBJO2xLGrFDJ4U3vf7MKsfwSFEj3NPUzV5bGTrKeKIHTL94L7lwMm1INE7lZzciiwvTxcKv//A+FgG8o1MDhefK56cBH4a9TSjEd+5ImcnCc5sf8B+csyWFPnksnv1zwu//T9aYXRITocdVzrfRHmEiZDpL3mNwpGT3O3XUTiMwdVpN2ImAqSF6XlQl0HlUkBT2idCIoXUR9lcGUx2Q+LSd62JgcVmQHCOmbUENj7NIDgWixgSJYLzsi//YNqJ9jccR aignatov@mirantis.com
+          user: ${linux:system:user:aignatov}
