@@ -21,6 +21,7 @@ parameters:
     kubernetes_dashboard_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes
     kubernetes_coredns_repo: ${_param:mcp_docker_registry}/mirantis/coredns
     kubernetes_ingressnginx_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes-ingress-nginx
+    kubernetes_corends_etcd_operator_repo: quay.io/coreos
 
     # component docker images
     kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
@@ -41,20 +42,21 @@ parameters:
     kubernetes_dnsmasq_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-dnsmasq-amd64:1.14.5
     kubernetes_sidecar_image: ${_param:kubernetes_kubedns_repo}/k8s-dns-sidecar-amd64:1.14.5
     kubernetes_dns_autoscaler_image: ${_param:kubernetes_kubedns_repo}/cluster-proportional-autoscaler-amd64:1.0.0
-    kubernetes_externaldns_image: ${_param:kubernetes_externaldns_repo}/external-dns:v0.5.6-1
-    kubernetes_genie_source: ${_param:kubernetes_genie_repo}/genie_v1.0-138-gbf5dbaa
-    kubernetes_genie_source_hash: md5=b024052ed4ecb1d5354e0cc8f51afaca
+    kubernetes_externaldns_image: ${_param:kubernetes_externaldns_repo}/external-dns:v0.5.6-2
+    kubernetes_genie_source: ${_param:kubernetes_genie_repo}/genie_v1.0-165-gbe0268b
+    kubernetes_genie_source_hash: md5=20da66e80eaa453461cf269bf793f2aa
     kubernetes_flannel_image: ${_param:kubernetes_flannel_repo}/flannel:v0.10.0-amd64
     kubernetes_metallb_controller_image: ${_param:kubernetes_metallb_repo}/controller:v0.7.3-2
     kubernetes_metallb_speaker_image: ${_param:kubernetes_metallb_repo}/speaker:v0.7.3-2
-    kubernetes_sriov_source: ${_param:kubernetes_sriov_repo}/sriov_v0.3-8-g8b7ed98
-    kubernetes_sriov_source_hash: md5=c0cc33202afd02e4cc44b977a8faf6e7
-    kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/cni-plugins_v0.7.1-48-g696b1f9.tar.gz
-    kubernetes_cniplugins_source_hash: md5=5ec1cf5e989097c6127ea5365e277b02
+    kubernetes_sriov_source: ${_param:kubernetes_sriov_repo}/sriov_v0.3-9-g3b31f1a
+    kubernetes_sriov_source_hash: md5=cd9ea01e80d260218260314447c23b30
+    kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/containernetworking-plugins_v0.7.2-95-g1eec540.tar.gz
+    kubernetes_cniplugins_source_hash: md5=bd1cff74194d64538e00c3206f049d1e
     kubernetes_dashboard_image: ${_param:kubernetes_dashboard_repo}/kubernetes-dashboard-amd64:v1.10.0-4
     kubernetes_telegraf_image: ${_param:mcp_docker_registry}/openstack-docker/telegraf:2018.8.0
     kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:v1.2.2-12
     kubernetes_ingressnginx_controller_image: ${_param:kubernetes_ingressnginx_repo}/nginx-ingress-controller-amd64:nginx-0.19.0-1
+    kubernetes_corends_etcd_operator_image: ${_param:kubernetes_corends_etcd_operator_repo}/etcd-operator:v0.9.2
 
     kubelet_fail_on_swap: true
     kubernetes_dashboard_enabled: true
@@ -130,6 +132,8 @@ parameters:
         coredns:
           enabled: ${_param:kubernetes_coredns_enabled}
           image: ${_param:kubernetes_coredns_image}
+          etcd:
+            operator_image: ${_param:kubernetes_corends_etcd_operator_image}
         contrail_network_controller:
           enabled: ${_param:kubernetes_contrail_network_controller_enabled}
           image: ${_param:kubernetes_contrail_network_controller_image}
