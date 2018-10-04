@@ -9,3 +9,7 @@ parameters:
     # Openstack memcache security
     openstack_memcache_security_enabled: False
     openstack_memcache_security_strategy: 'ENCRYPT'
+    # Neutron
+    neutron_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    neutron_memcache_secret_key: ''
+
