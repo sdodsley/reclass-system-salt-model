@@ -12,3 +12,4 @@ parameters:
           source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_aptly_url}/${_param:linux_system_codename}/ squeeze main"
           architectures: amd64
           clean_file: true
+          key: ${_param:linux_system_repo_mcp_aptly_key}

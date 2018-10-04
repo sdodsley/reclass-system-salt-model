@@ -11,6 +11,7 @@ parameters:
       repo:
         mcp_glusterfs:
           source: "deb ${_param:linux_system_repo_mcp_glusterfs_url}/${_param:linux_system_codename}/ ${_param:linux_system_codename} main"
+          key: ${_param:linux_system_repo_mcp_glusterfs_key}
           architectures: amd64
           clean_file: true
           pin:

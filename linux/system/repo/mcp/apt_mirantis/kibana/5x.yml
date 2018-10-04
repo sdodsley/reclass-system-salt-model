@@ -8,5 +8,6 @@ parameters:
       repo:
         mcp_kibana_5x:
           source: "deb [arch=amd64] http://mirror.mirantis.com/${_param:linux_system_repo_mcp_kibana_5x_version}/elasticsearch-5.x/${_param:linux_system_codename}/ stable main"
+          key: ${_param:linux_system_repo_mcp_elasticsearch_key}
           architectures: amd64
           clean_file: true

@@ -10,6 +10,7 @@ parameters:
       repo:
         mcp_maas:
           source: "deb [arch=amd64] ${_param:linux_system_repo_mcp_maas_url}/${_param:linux_system_codename} ${_param:linux_system_codename} main"
+          key: ${_param:linux_system_repo_mcp_maas_key}
           architectures: amd64
           clean_file: true
           pin:

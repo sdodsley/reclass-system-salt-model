@@ -11,6 +11,7 @@ parameters:
         mcp_jenkins:
           # FIXME PROD-20733
           source: "deb [arch=amd64 trusted=yes] ${_param:linux_system_repo_mcp_jenkins_url}/${_param:linux_system_codename}/ binary main"
+          key: ${_param:linux_system_repo_mcp_jenkins_key}
           architectures: amd64
           clean_file: true
           pin:

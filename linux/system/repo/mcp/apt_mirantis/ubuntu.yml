@@ -12,6 +12,7 @@ parameters:
         ubuntu:
           refresh_db: ${_param:linux_repo_refresh_db}
           source: "deb [arch=amd64] ${_param:linux_system_repo_ubuntu_url} ${_param:linux_system_codename} main restricted universe"
+          key: ${_param:linux_system_repo_ubuntu_key}
           architectures: amd64
           default: true
         ubuntu_updates:
