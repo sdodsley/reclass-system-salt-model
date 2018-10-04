@@ -108,4 +108,3 @@ parameters:
     - /usr/bin/barbican*
     - /usr/bin/ceilometer*
     - /usr/bin/trove*
-    
