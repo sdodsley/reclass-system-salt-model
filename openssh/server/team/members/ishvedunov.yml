@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ishvedunov:
+          enabled: true
+          name: ishvedunov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Ivan Shvedunov
+          home: /home/ishvedunov
+          email: ishvedunov@mirantis.com
+  openssh:
+    server:
+      user:
+        ishvedunov:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpw4sk2sO6RxkgAa3yTLWrLhke7mRccOHQ9LQFnhCuYxF8q8W0/FOw9imEMC/GQjLMUn0a3qDDflGq/Ze76/wygZQr04fupyD94XIMw1QC80FS/LbdSDq2RYIpS46Gw9tTiWzUegHZuD1YCb7nqqpmAELm1DKZybA85+oOaZidFrIgWNf07bvu2LdH6zVM5EQHyXvuUlBL4WA4aW2kB6dyklln1SH+J+UyMDeU9m4ygHzeZ1tf9c+8d9uBzWxEZ9//e0pDYnuvViDK/rgyNvDqpdrAtikmk2tlKAJLsZYhkQc60PR58yH0e4UAH0P6Ga/JrvUR72sY/H7HsUzUnWRD
+          user: ${linux:system:user:ishvedunov}

@@ -1,0 +1,16 @@
+parameters:
+  linux:
+    system:
+      user:
+        vefimova:
+          email: disabled
+          enabled: false
+          full_name: disabled
+          home: /home/vefimova
+          name: vefimova
+  openssh:
+    server:
+      user:
+        vefimova:
+          enabled: false
+          user: ${linux:system:user:vefimova}
