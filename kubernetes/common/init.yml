@@ -33,7 +33,7 @@ parameters:
     kubernetes_pause_image: ${_param:kubernetes_hyperkube_repo}/pause-amd64:v1.11.3-2
     kubernetes_contrail_cni_image: ${_param:kubernetes_contrail_cni_repo}/contrail-cni:v1.2.0
     kubernetes_contrail_network_controller_image: ${_param:kubernetes_contrail_network_controller_repo}/contrail-network-controller:v1.2.0
-    kubernetes_virtlet_image: ${_param:kubernetes_virtlet_repo}/virtlet:v1.4.0
+    kubernetes_virtlet_image: ${_param:kubernetes_virtlet_repo}/virtlet:v1.4.1
     kubernetes_criproxy_version: v0.12.0
     kubernetes_criproxy_checksum: md5=371cacd3d8568eb88425498b48a649dd
     kubernetes_netchecker_agent_image: ${_param:kubernetes_netchecker_agent_repo}/k8s-netchecker-agent:v1.2.2
