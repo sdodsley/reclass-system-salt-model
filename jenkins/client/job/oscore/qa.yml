@@ -132,6 +132,7 @@ parameters:
                 type: string
                 default: "{{stack_cleanup_job}}"
               # salt
+              # FIXME allign to DISTRIB_REVISION
               FORMULA_PKG_REVISION:
                 type: string
                 description: Version of formulas for salt-master bootstrap
