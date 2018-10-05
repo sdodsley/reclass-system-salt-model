@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ataraday:
+          enabled: true
+          name: ataraday
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Anna Taraday
+          home: /home/ataraday
+          email: ataraday@mirantis.com
+  openssh:
+    server:
+      user:
+        ataraday:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9Tl4w3FVLfzTrm+P0ziWlSn74sbwycPUXY2eKdBtzLvvd8Vs7Gh8sEL9q8aeg9hY613LWjPvqgnaoosGJ52ckDnArYfpe3AG1Zamr9/Ncq7qC6U+W8lKwiuiS1QQIILm72+me7jzTanOfbpNl64+tIIcJXgPLtQK4dcpHWMXZQw8Fjp5PP7+k0P35yYNRtoHazxlE/lt/6XsQ+NnldRYB2TCtK3uU1ATHg5Sc7Qr1o+obfxDwWglasxfSd7fGqAZjszrm9q4pmKXTpKNlSqGCs7Hp4Hstr//GKLaXucyTtsb/uU40at6X3INGUU/u9txZkLwAGx8kb4XB6F5MwRH/ akamyshnikova@akamyshnikova
+          user: ${linux:system:user:ataraday}

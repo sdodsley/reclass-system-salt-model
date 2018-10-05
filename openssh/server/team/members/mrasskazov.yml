@@ -11,7 +11,6 @@ parameters:
           email: mrasskazov@mirantis.com
   openssh:
     server:
-      enabled: true
       user:
         mrasskazov:
           enabled: true
