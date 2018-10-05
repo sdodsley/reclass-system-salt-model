@@ -50,8 +50,8 @@ parameters:
     kubernetes_metallb_speaker_image: ${_param:kubernetes_metallb_repo}/speaker:v0.7.3-2
     kubernetes_sriov_source: ${_param:kubernetes_sriov_repo}/sriov_v0.3-9-g3b31f1a
     kubernetes_sriov_source_hash: md5=cd9ea01e80d260218260314447c23b30
-    kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/containernetworking-plugins_v0.7.2-95-g1eec540.tar.gz
-    kubernetes_cniplugins_source_hash: md5=bd1cff74194d64538e00c3206f049d1e
+    kubernetes_cniplugins_source: ${_param:kubernetes_cniplugins_repo}/containernetworking-plugins_v0.7.2-96-g8bc4cc0.tar.gz
+    kubernetes_cniplugins_source_hash: md5=1beef018ea8988f53356314ed020fefa
     kubernetes_dashboard_image: ${_param:kubernetes_dashboard_repo}/kubernetes-dashboard-amd64:v1.10.0-4
     kubernetes_telegraf_image: ${_param:mcp_docker_registry}/openstack-docker/telegraf:2018.8.0
     kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:v1.2.2-12
