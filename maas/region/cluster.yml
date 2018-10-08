@@ -5,7 +5,6 @@ classes:
 parameters:
   _param:
     cluster_vip_address: 10.0.175.80
-    linux_system_repo_mcp_saltstack_url: http://mirror.mirantis.com/${_param:apt_mk_version}/saltstack-2017.7/
   maas:
     cluster:
       enabled: true

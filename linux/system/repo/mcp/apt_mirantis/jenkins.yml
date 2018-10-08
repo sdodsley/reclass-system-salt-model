@@ -1,9 +1,6 @@
 classes:
 - system.linux.system.repo.keystorage.jenkins
 parameters:
-  _param:
-    linux_system_repo_url: http://mirror.mirantis.com/${_param:apt_mk_version}/
-    linux_system_repo_mcp_jenkins_url: ${_param:linux_system_repo_url}/jenkins/
   linux:
     system:
       repo:
