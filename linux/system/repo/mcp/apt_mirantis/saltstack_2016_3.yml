@@ -6,4 +6,4 @@ classes:
 - system.linux.system.repo.mcp.apt_mirantis.saltstack
 parameters:
   _param:
-    salt_version: 2016.3
+    linux_system_repo_mcp_saltstack_version_number: 2016.3
