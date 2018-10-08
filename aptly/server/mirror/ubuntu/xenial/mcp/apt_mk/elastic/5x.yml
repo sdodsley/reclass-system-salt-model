@@ -1,6 +1,5 @@
 parameters:
   _param:
-    apt_mk_version: stable
     mirror_mirantis_openstack_xenial_elastic_5x_source: http://mirror.mirantis.com/${_param:apt_mk_version}/elasticsearch-5.x/xenial/
     mirror_mirantis_openstack_xenial_elastic_curator_5x_source: http://mirror.mirantis.com/${_param:apt_mk_version}/elasticsearch-curator-5/xenial/
     mirror_mirantis_openstack_xenial_elastic_5x_distribution: stable

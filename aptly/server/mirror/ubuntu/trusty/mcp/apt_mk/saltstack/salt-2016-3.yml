@@ -1,6 +1,5 @@
 parameters:
   _param:
-    apt_mk_version: stable
     mirror_mirantis_openstack_trusty_saltstack_2016_3_source: http://mirror.mirantis.com/${_param:apt_mk_version}/saltstack-2016.3/trusty/
     mirror_mirantis_openstack_trusty_saltstack_2016_3_distribution: trusty
     mirror_mirantis_openstack_trusty_saltstack_2016_3_components: main
