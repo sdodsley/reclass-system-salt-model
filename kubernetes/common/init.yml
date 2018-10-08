@@ -22,6 +22,7 @@ parameters:
     kubernetes_coredns_repo: ${_param:mcp_docker_registry}/mirantis/coredns
     kubernetes_ingressnginx_repo: ${_param:mcp_docker_registry}/mirantis/kubernetes-ingress-nginx
     kubernetes_corends_etcd_operator_repo: quay.io/coreos
+    kubernetes_containerd_repo: https://github.com/kubernetes-sigs/cri-tools/releases/download
 
     # component docker images
     kubernetes_docker_package: docker-engine=1.13.1-0~ubuntu-xenial
@@ -57,6 +58,8 @@ parameters:
     kubernetes_coredns_image: ${_param:kubernetes_coredns_repo}/coredns:v1.2.2-12
     kubernetes_ingressnginx_controller_image: ${_param:kubernetes_ingressnginx_repo}/nginx-ingress-controller-amd64:nginx-0.19.0-1
     kubernetes_corends_etcd_operator_image: ${_param:kubernetes_corends_etcd_operator_repo}/etcd-operator:v0.9.2
+    kubernetes_containerd_source: ${_param:kubernetes_containerd_repo}/v1.12.0/crictl-v1.12.0-linux-amd64.tar.gz
+    kubernetes_containerd_source_hash: md5=ff60b9ddfa5617f7ed14b3f3b6a60056
 
     kubelet_fail_on_swap: true
     kubernetes_dashboard_enabled: true
@@ -75,6 +78,7 @@ parameters:
     kubernetes_sriov_enabled: false
     kubernetes_telegraf_enabled: false
     kubernetes_ingressnginx_enabled: false
+    kubernetes_containerd_enabled: false
 
     kubernetes_ingressnginx_controller_replicas: 1
 
@@ -106,6 +110,11 @@ parameters:
 
   kubernetes:
     common:
+      containerd:
+        enabled: ${_param:kubernetes_containerd_enabled}
+        crictl:
+          source: ${_param:kubernetes_containerd_source}
+          hash: ${_param:kubernetes_containerd_source_hash}
       hyperkube:
         image: ${_param:kubernetes_hyperkube_image}
         pause_image: ${_param:kubernetes_pause_image}
