@@ -1,0 +1,13 @@
+classes:
+- service.etcd.server.cluster
+- service.etcd.support
+- service.etcd.linux
+parameters:
+  _param:
+    docker_image_etcd: quay.io/coreos/etcd:v3.3.8
+  etcd:
+    server:
+      enabled: true
+      image: ${_param:docker_image_etcd}
+      bind:
+        host: ${_param:cluster_local_address}
