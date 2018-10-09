@@ -1,5 +1,11 @@
+classes:
+- system.defaults.linux_system_repo
 parameters:
 # Transition in progress.
 # Please ignore 'G' transition marker - it uses only for internal purposes
   _param:
-    apt_mk_version: 'stable'
+    apt_mk_version: "stable"
+    linux_system_architecture: 'amd64'
+    linux_system_repo_url: "http://mirror.mirantis.com/${_param:apt_mk_version}/"
+    # Openstack
+    openstack_version: 'pike'

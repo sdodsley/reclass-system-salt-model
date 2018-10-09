@@ -1,0 +1,36 @@
+parameters:
+  _param:
+    # Global
+    linux_repo_refresh_db: true
+    linux_system_repo_url: "http://mirror.mirantis.com/${_param:apt_mk_version}/"
+    # Global-updates
+    linux_system_repo_update_ubuntu_url: ${_param:linux_system_repo_update_url}/ubuntu/
+    linux_system_repo_update_url: ${_param:linux_system_repo_url}/update/${_param:apt_mk_version}/
+    # Global-hotfix
+    linux_system_repo_hotfix_ubuntu_url: ${_param:linux_system_repo_hotfix_url}/ubuntu/
+    linux_system_repo_hotfix_url: ${_param:linux_system_repo_url}/hotfix/${_param:apt_mk_version}/
+
+    # Per repos
+    linux_system_repo_mcp_aptly_url: ${_param:linux_system_repo_url}/aptly/
+    linux_system_repo_mcp_cassandra_url: ${_param:linux_system_repo_url}/cassandra/
+    linux_system_repo_mcp_docker_legacy_url: ${_param:linux_system_repo_url}/docker-1.x/
+    linux_system_repo_mcp_docker_url: ${_param:linux_system_repo_url}/docker/
+    linux_system_repo_mcp_elasticsearch_curator_url: ${_param:linux_system_repo_url}/elasticsearch-curator-5/
+    linux_system_repo_mcp_elasticsearch_url: ${_param:linux_system_repo_url}/elasticsearch-5.x/
+    linux_system_repo_mcp_extra_url: ${_param:linux_system_repo_url}/extra/
+    linux_system_repo_mcp_glusterfs_url: ${_param:linux_system_repo_url}/glusterfs-${_param:linux_system_repo_mcp_glusterfs_version_number}/
+    linux_system_repo_mcp_influxdb_url: ${_param:linux_system_repo_url}/influxdb
+    linux_system_repo_mcp_jenkins_url: ${_param:linux_system_repo_url}/jenkins/
+    linux_system_repo_mcp_maas_url: ${_param:linux_system_repo_url}/maas/
+    linux_system_repo_mcp_percona_url: ${_param:linux_system_repo_url}/percona/
+    linux_system_repo_mcp_saltstack_url: ${_param:linux_system_repo_url}/saltstack-${_param:linux_system_repo_mcp_saltstack_version_number}/
+    linux_system_repo_mirantis_openstack_url: ${_param:linux_system_repo_url}/openstack-${_param:openstack_version}/
+    linux_system_repo_ubuntu_url: ${_param:linux_system_repo_url}/ubuntu/
+
+
+    # Repo-component versions (if applicable)
+    salt_version: 2017.7 # TODO should be deprecated after q4
+    linux_system_repo_mcp_cassandra_version: '21x'
+    linux_system_repo_mcp_glusterfs_version_number: "3.8"
+    linux_system_repo_mcp_saltstack_version_number: "${_param:salt_version}"
+    linux_system_repo_mcp_ceph_codename: 'luminous'
