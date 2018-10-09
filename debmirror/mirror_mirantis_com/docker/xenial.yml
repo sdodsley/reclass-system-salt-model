@@ -1,0 +1,26 @@
+parameters:
+  _param:
+    mirror_mirantis_com_docker_xenial_force: False
+    debmirror_mirrors_base_target_dir: "/srv/volumes/aptly/public/${_param:apt_mk_version}/"
+  debmirror:
+    client:
+      enabled: true
+      mirrors:
+        mirror_mirantis_com_docker_xenial:
+          force: ${_param:mirror_mirantis_com_docker_xenial_force}
+          lock_target: True
+          extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none' ]
+          method: "rsync"
+          arch: [ 'amd64' ]
+          mirror_host: "mirror.mirantis.com"
+          mirror_root: ":mirror/${_param:apt_mk_version}/docker/xenial/"
+          target_dir: "${_param:debmirror_mirrors_base_target_dir}/docker/xenial/"
+          log_file: "/var/log/debmirror/mirror_mirantis_com_docker_xenial.log"
+          dist: [ xenial ]
+          section: [ stable ]
+          filter:
+            # Include only latest Docker packages >= 18.06 && >= 17.12
+            001: "--exclude='docker-ce'"
+            002: "--include='docker-ce_18.((0[6-9])|([1-9][0-9]))'"
+            003: "--include='docker-ce_17.((1[2-9])|([2-9][0-9]))'"
+            003: "--include='docker-ce_((19)|([2-9][0-9]))'"
