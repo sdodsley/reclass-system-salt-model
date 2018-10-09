@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        mivanov:
+          enabled: true
+          name: mivanov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Michael Ivanov
+          home: /home/mivanov
+          email: mivanov@mirantis.com
+  openssh:
+    server:
+      user:
+        mivanov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLY+5Yc3MMOmxVGrBmvfMX9bwK98RdgW+9E/rj56rh1w5cuIy5qN0xsuU4634EcSLRUjGXBcutDXPEXV1s7BZfeZjXJri37RICLsKfvPZcyiEqtwTbGYkcDDOHH0nmZdfngi0r/qAc5o5k3KA7Eh4CJW+GgqPoShngCKo9YKqbWFUkrGpX7wIUMlqwyuVKsybxD6EU+CB3RAeASG4E0rRq7VYQaTj/+PQq8VrWGUs9QHW8wX+OakDDCI7Or4Ll5q/uPCopaU9r7yz+uEYA1L8P2wEJ4XG9V6dxUMvzrFLBE+wDrHHXcEZMWGbmrPHUy5Yt8UCFPgtYfOl2BvHHHUSp
+          user: ${linux:system:user:mivanov}

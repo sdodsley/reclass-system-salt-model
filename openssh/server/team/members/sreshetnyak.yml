@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        sreshetnyak:
+          enabled: true
+          name: sreshetnyak
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Sergey Reshetnyak
+          home: /home/sreshetnyak
+          email: sreshetnyak@mirantis.com
+  openssh:
+    server:
+      user:
+        sreshetnyak:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbc8cUMy2Stjq4qS8TaVGvTIUGetpgTcLCiW3NnG5Yqe+s+nlQnIL3ezvgSKHin4/PYHl8vV9FnmLdPLk+4eefoek1px8soW/B+Ri0KN6aQUy1ztcecMxcxRH9g4VLZWTbazqGsADwRCQVPXmyIQVQN5wMKd0IzXUp5c03dWv/I1PE7QPdKySrdhjjyo+1Npx/tQjtJaSnGCaUJrXfHXBxiiENzmHuY+se14nWV9RyYN3zRWsa8Yt1n2hWNNiKNfT89h6yFwZAxdsS+jGhzbGTLcWyAqq3sfvvgm0yeL5FEm0AKaOMv7AuM5LqjPkQE4zzCGA0j19EQlAjsVcvKHGH sreshetniak@workstation
+          user: ${linux:system:user:sreshetnyak}

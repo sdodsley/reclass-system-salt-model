@@ -1,0 +1,16 @@
+parameters:
+  linux:
+    system:
+      user:
+        vstoiko:
+          email: disabled
+          enabled: false
+          full_name: disabled
+          home: /home/vstoiko
+          name: vstoiko
+  openssh:
+    server:
+      user:
+        vstoiko:
+          enabled: false
+          user: ${linux:system:user:vstoiko}

@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        slukjanov:
+          enabled: true
+          name: slukjanov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Sergey Lukjanov
+          home: /home/slukjanov
+          email: slukjanov@mirantis.com
+  openssh:
+    server:
+      user:
+        slukjanov:
+          enabled: true
+          public_keys:
+          - key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOV5dNsXJ6aJMml7JSd4cJ54qYhOya18QNEdb7NJ88yo
+          user: ${linux:system:user:slukjanov}
