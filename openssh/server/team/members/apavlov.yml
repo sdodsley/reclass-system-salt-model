@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        apavlov:
+          enabled: true
+          name: apavlov
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Andrey Pavlov
+          home: /home/apavlov
+          email: apavlov@mirantis.com
+  openssh:
+    server:
+      user:
+        apavlov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC13FvtJl6OdwdiaLFYfJO5WaA7YUMi2/DJJECWtrjJPObGPeAQ1Z8zxQWanwZVhDO7E5oR7n/LmuKHaJkRIFyQEZY3mHS3k4yybg0Vqu2FcGWQO4P3R16v6qDLvuvu9S4sUkYF3k8oYDzwN/Vc+o7a4AkL5U5rjB3vbLWVdGg8G61jFjdekXbJdFCb0liPpcQrUe1yZmjE2E4ERPOZLCVADPiVzXJhtbKigbn/nwdk4D0g+eq3NW0AwJfkyCu6mt1xXfk6gmhUrBPh1ostWv6mSpD9bXvxIKv/QnIM4SUJ/RhJH0uhWtpH4GeXvnPXHs0bxfyq1GtQt5bD3gqCHruz apavlov@Andreys-MacBook-Pro.local
+          user: ${linux:system:user:apavlov}

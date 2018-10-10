@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ytaraday:
+          enabled: true
+          name: ytaraday
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Yuriy Taraday
+          home: /home/ytaraday
+          email: ytaraday@mirantis.com
+  openssh:
+    server:
+      user:
+        ytaraday:
+          enabled: true
+          public_keys:
+          - key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDtcRlAQg3baU14eBh8THRv+1T5sHCGAIeFaReEB/KRT
+          user: ${linux:system:user:ytaraday}

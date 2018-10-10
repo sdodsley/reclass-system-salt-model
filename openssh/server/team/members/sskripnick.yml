@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        sskripnick:
+          enabled: true
+          name: sskripnick
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Serhii Skrypnik
+          home: /home/sskripnick
+          email: sskripnick@mirantis.com
+  openssh:
+    server:
+      user:
+        sskripnick:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDbDedH7Aw1g2LDHrCLpxfq5GsdTpqRglDXy9dDSEr08tVVl7gSzPJ5oMlIr9VsNVHsR9vf/THhxghFrV1rQZDny8c6yLqus3Upc7pJfOUztWD4+E29H7qJOafrnuNRHGFaEiaG6aZm3WyyvAdlR1lh/i5zQtdrPBmjYkq5LMJvNQBpj4XqmHYp7gLRNDI30Ne49xxAIGC1Qbx0Xvhmq9/h4gZhI5mB/QeOj4tPcd7g+kSTdc5/fXbBLeQDBZt/HlDr7/LFjYZ4OBumVDOTfClFO5UoIAvHyfysaiWI/qZ7UZI7uU4yAPeI8/s/INOQOIoiqaHyiVnL5BvFklHldMot
+          user: ${linux:system:user:sskripnick}
