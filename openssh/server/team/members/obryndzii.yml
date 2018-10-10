@@ -3,15 +3,14 @@ parameters:
     system:
       user:
         obryndzii:
+          email: obryndzii@mirantis.com
           enabled: true
-          name: obryndzii
-          sudo: ${_param:linux_system_user_sudo}
           full_name: Oleksandr Bryndzii
           home: /home/obryndzii
-          email: obryndzii@mirantis.com
+          name: obryndzii
+          sudo: ${_param:linux_system_user_sudo}
   openssh:
     server:
-      enabled: true
       user:
         obryndzii:
           enabled: true
