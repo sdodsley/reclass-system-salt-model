@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        akurenyshev:
+          enabled: true
+          name: akurenyshev
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Alexander Kurenyshev
+          home: /home/akurenyshev
+          email: akurenyshev@mirantis.com
+  openssh:
+    server:
+      user:
+        akurenyshev:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDss1dA5rxJdgySDys0lJybCeIBT9mMUAV/KN0egSYRMIzAQKuy0Dg/e/HHwjLCeZn6Fjcb/W3+y+FMSmPnbbCLCJ59F4chivyU82iKnSs36BMdlUJH2tw2Bca88PibbE5oG620Qd8WZWZ/q8oN5G7onIx2pGv0SEwLHcGjex6bVPsNAXucn0VZE2SPlmEjWvTVpEWFpTQL1DjF4ARsD+hWm7z49JluG2cr+sfGa3b9M/ci9nMiRXJqMey5pD5xI/npVbwYEwUE7DcxedqmjEuxqZhjvcIAnHHeWz0+vtR/Ng4l1wDEqwJA8OfoXeuGnXEEgjJ9uJe0n8sNVb3dIDED akurenyshev@alex-pc
+          user: ${linux:system:user:akurenyshev}

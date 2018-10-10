@@ -15,6 +15,7 @@ classes:
 - system.openssh.server.team.members.ataraday
 - system.openssh.server.team.members.svasilenko
 - system.openssh.server.team.members.akasatkin
+- system.openssh.server.team.members.akurenyshev
 # Deprecated users
 - system.openssh.server.team.members.deprecated.pjediny
 - system.openssh.server.team.members.deprecated.akuznetsova
