@@ -21,6 +21,12 @@ parameters:
             credentials: "gerrit"
             script: test-openscap-pipeline.groovy
           param:
+            OPENSCAP_TEST_TYPE:
+              type: choice
+              description: "Type of tests to run"
+              choices:
+                - xccdf
+                - oval
             DASHBOARD_API_URL:
               type: string
               default: ""
