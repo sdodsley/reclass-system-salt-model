@@ -30,7 +30,6 @@ parameters:
         mtu: 9000
   nova:
     compute:
-      networking: contrail
       network:
         engine: keystone
         host: ${_param:control_address}
