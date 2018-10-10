@@ -456,7 +456,7 @@ parameters:
               default: "gerrit"
             BRANCHES:
               type: string
-              default: "master,release/2018.8.1"
+              default: "master,release/2018.8.1,release/2018.11.0"
         git-mirror-2way-salt-formulas-cookiecutter:
           description: ${_param:job_description_2way}
           discard:
