@@ -51,9 +51,6 @@ parameters:
               FORMULAS_SOURCE:
                 type: string
                 default: "{{formulas_src}}"
-              FORMULAS_REVISION:
-                type: string
-                default: "{{formulas_revision}}"
               SYSTEM_GIT_URL:
                 type: string
                 default: ""
@@ -63,9 +60,9 @@ parameters:
               CONFIG_NODE_NAME_PATTERN:
                 type: string
                 default: "{{config_node_name}}"
-              RECLASS_VERSION:
+              DISTRIB_REVISION:
                 type: string
-                default: "master"
+                default: "{{distrib_revision}}"
               MAX_CPU_PER_JOB:
                 type: string
                 default: "2"
@@ -157,9 +154,11 @@ parameters:
               FORMULAS_SOURCE:
                 type: string
                 default: "{{formulas_src}}"
-              FORMULAS_REVISION:
+              DISTRIB_REVISION:
                 type: string
-                default: "{{formulas_revision}}"
+                default: "{{distrib_revision}}"
+                description: |-
+                    "Those variable will be ignored, in case gerritTrigger=>GERRIT_BRANCH. Version of bin-artifacts,passed to test-env.Includes formula/reclass/ubuntu"
               SYSTEM_GIT_URL:
                 type: string
                 default: ""
@@ -175,10 +174,6 @@ parameters:
               RECLASS_IGNORE_CLASS_NOTFOUND:
                 type: boolean
                 default: "{{reclass_ignore_class_notfound}}"
-              RECLASS_VERSION:
-                type: string
-                default: "master"
-                description: "Version (branch) of Reclass we will use"
               LEGACY_TEST_MODE:
                 type: boolean
                 default: "{{legacy_test_mode}}"
@@ -290,11 +285,8 @@ parameters:
               DISTRIB_REVISION:
                 type: string
                 default: 'nightly'
-                description: "Those variable will be ignored, in case gerritTrigger=>GERRIT_BRANCH. Version of bin-artifacts,passed to test-env"
-              RECLASS_VERSION:
-                type: string
-                default: 'v1.5.4'
-                description: "Version (branch) of reclass PACKAGE we will use"
+                description: |-
+                    "Those variable will be ignored, in case gerritTrigger=>GERRIT_BRANCH. Version of bin-artifacts,passed to test-env.Includes formula/reclass/ubuntu"
               CREDENTIALS_ID:
                 type: string
                 default: gerrit
@@ -343,23 +335,17 @@ parameters:
             FORMULAS_SOURCE:
               type: string
               default: "pkg"
-            FORMULAS_REVISION:
-              type: string
-              default: "stable"
             SYSTEM_GIT_URL:
               type: string
               default: ""
             SYSTEM_GIT_REF:
               type: string
               default: ""
-            RECLASS_VERSION:
+            DISTRIB_REVISION:
               type: string
-              # In our repos the latest reclass we using is 1.4.1. The new version 1.5.2 is not compatible
-              # by syntax with 1.4.1 more details may be found here PROD-20425.
-              # Run rendering tests against version we using on customer side, until new version of reclass is
-              # packaged and placed to our repos, so we can do smooth transition to new syntax.
-              default: "reclass-1.4.1"
-              description: "Version (branch) of Reclass we will use"
+              default: 'stable'
+              description: |-
+                  "Those variable will be ignored, in case gerritTrigger=>GERRIT_BRANCH. Version of bin-artifacts,passed to test-env.Includes formula/reclass/ubuntu"
             MAX_CPU_PER_JOB:
               type: string
               default: "2"

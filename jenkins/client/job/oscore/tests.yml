@@ -70,6 +70,7 @@ parameters:
                 type: text
                 default: ""
                 description: YAML with overrides for Salt deployment
+              # FIXME allign to DISTRIB_REVISION
               FORMULA_PKG_REVISION:
                 type: string
                 description: Version of formulas for salt-master bootstrap

@@ -26,14 +26,15 @@ parameters:
               # Cookiecutter
               COOKIECUTTER_TEMPLATE_CONTEXT:
                 type: text
-
               # Other
               EMAIL_ADDRESS:
                 type: string
               TEST_MODEL:
                 type: boolean
                 default: true
-              RECLASS_VERSION:
+              DISTRIB_REVISION:
                 type: string
-                default: 'v1.5.4'
-                description: "Version (branch) of Reclass we will use.pip+git package"
+                default: 'proposed'
+                description: |-
+                    "Those variable will be ignored, in case gerritTrigger=>GERRIT_BRANCH. Version of bin-artifacts,passed to test-env.Includes formula/reclass/ubuntu"
+
