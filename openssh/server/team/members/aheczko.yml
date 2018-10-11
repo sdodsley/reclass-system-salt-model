@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        aheczko:
+          email: aheczko@mirantis.com
+          enabled: true
+          full_name: Adam Heczko
+          home: /home/aheczko
+          name: aheczko
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        aheczko:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGGRD/zStceB/CAJu8bnsWs9VPWY8W1F6fz2AvX2BiyEXCE2W4uMY11In+qHQtIaWeyWVR/XmoCw0mZxk7emTz91Y1FioinEgumkhpNPLY0fPdDHzwu3atCjAc7B3ZCCXusiUC6k99aCa9YXIZ0/0/75kqilRmIcxGeneL9S2+iuFn/HSpNR7IZN03AEzWgIfXEhB4lyNs9n3RHf+XXy2wxAKkcKpMyocEO9gc3uLY5OdUhGFHRKhEZwgz3K6ysDOCIOTkiiJ8KXMM07FIDLjs5pjUjnVkZ1kWq+virLMbhhyCbMR8zrPvWMjP5oYGm9U9aEeUMA5iMCa7K+qs2AM3 adamheczko@Adams-MacBook-Pro.local
+          user: ${linux:system:user:aheczko}

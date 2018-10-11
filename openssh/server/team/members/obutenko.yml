@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        obutenko:
+          email: obutenko@mirantis.com
+          enabled: true
+          full_name: Oleksii Butenko
+          home: /home/obutenko
+          name: obutenko
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        obutenko:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1AfAmTtaBkg+8osdkG37KSHGc1r7k0ZWIgTR+COgPBnGGySRFrL3paG8PJ+JaEtZwj0git/Kufr+Mlcdln3x21kI3V4Jol0bgfx3d+AVZ2niyjwEHEl1vN6ffevzJUPVvLlUWlykKrEnGp1+RXKT3MEaoDcexzRLRgZB/FLaX79i1tE/AqB35rH5MZLBGCRYJdisUrpj70UHwIsqgikwr3P/JNr5gJzYTewPM8ls9Y9BtFNbFHmU8L9b8jFjmhOnCJmXXJPoLxQYRX+MQbcov7r2omZ95xulRnJsvY6xY2BSe8FAVmT8UzXnkWi3CrXwqPBdutu9GUCsQmH934vdJ obutenko@obutenko-pc
+          user: ${linux:system:user:obutenko}

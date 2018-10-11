@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ababich:
+          email: deprecated@mirantis.dep
+          enabled: true
+          full_name: Anna Babich
+          home: /home/ababich
+          name: ababich
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        ababich:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDo2CJRAQeUeZbjDLdcE7GxQM82kL41YIyuOpNbpzFXphK4gljSMoKH9TJRdlx5S/AGDJltosDym9lY7gi3DqW4z/+k9pHBLQSdr4yDp0iCJcZc8LG3KUbZkZwwCYjf8FTz5tAWgS9z8IKNRMcfReJCkeaFI29p0PVgPqchNaQHUG40iiIl51uLsF4pCF2GbF/10drBCubENlWLoGv/+OwiNzeOvGANeX8jBivevfus2hZbTh1Zf8HsXqd5HLTMRn/BJOJRbLFd74BauAY/J/wOM9SJOaFZU201A2eYgMsamXT159O8e1Q5GMtL4uhseXZzQgKwF9tW/EFBDPwXvC+n ababich@ababich-pc
+          user: ${linux:system:user:ababich}

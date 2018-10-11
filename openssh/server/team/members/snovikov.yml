@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        snovikov:
+          email: snovikov@mirantis.com
+          enabled: true
+          full_name: Sergey Novikov
+          home: /home/snovikov
+          name: snovikov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        snovikov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDYj97WGfiL550eVPyQmFyrgpTw61tfins1CpgrZewWqAWJMgYklRdMYl4OReE5UO2po7ag0f/QsOtGU8aQbnxnWUYPZyS3Qk+Bg8OOSBmewPxmT7WH97KdGKBdC9b3xUNFOUXEUOMmOe3jq9YET+xebUnfsA5qwYU5dL9Cb5UAPzVxYI8z5RiaNTo8dtwZr7lbJJRy8YfSWCtiD59vewc6BE2NTUyDjsfmKd9K/IkyKboGU9AC5mLYDsjvWwiGcNdfigRyaYWKmoo7Xhe1W2Og4dpI5pozOwVg7hISW9NRgLXrZP/9me1rFBH7EQjpjO3+Pto1//R3Nx9QLsB59yuj snovikov@snovikov
+          user: ${linux:system:user:snovikov}

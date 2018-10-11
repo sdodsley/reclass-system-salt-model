@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ddmitriev:
+          email: ddmitriev@mirantis.com
+          enabled: true
+          full_name: Denys Dmytriiev
+          home: /home/ddmitriev
+          name: ddmitriev
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        ddmitriev:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuD4wJ8hzkchQ0pfgdwWukQyps1xYRfHOsjosmDu/mmgaXVud5mnpwb2q35E2YYTox2mx+ulJqyS+099gz6MPg4P8D5qdMuRbAsJqbceLaaIGQhdT8qgSo7ESrl5pwvYnfWzKLKF0z5s7nrW0nvArC40zhV9o9XpvzzzSFByepWfkwA8ReldGUYVvTKp8YXaCrqEdMZrU42adPM2nl+fYBbGF+h4/Ka247aVjPeER0blV3znFXbv2Kf38G+i/TEGaktgpBdtGGDi1tX2loMypmTJeqZRJnM0Eoly0BnynB7CSxn11eoIXBUe1mVYNqmQd1hw6uh59iymhK5j939v9J ddmitriev@dis_xcom
+          user: ${linux:system:user:ddmitriev}

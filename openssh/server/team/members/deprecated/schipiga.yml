@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        schipiga:
+          email: deprecated@mirantis.dep
+          enabled: true
+          full_name: Sergey Chipiga
+          home: /home/schipiga
+          name: schipiga
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        schipiga:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDamKTbqCQCGW1JLo+4PgntC1TkRrwbDOELyRVHxAlc56CcJE9QjrNnCOTqvgRoAmIC+P86nzUQxwSREMd0qgVCefAxKQVFVQ38oym9G90TF0nx4fFT3hUhEQwjMBjHhR2Vo+uUwbT2Hg51U1gBPx/WFa0U5Cf7V6+XNJ3r22W4XG8OrbuAoapwl4WN1346HEj3d0U6Z8Unsqjx9pRpZ1eYCeng4emLZ1UOhvLBfw22vSTkujjjRdfY6g52Gv4hRsgsS+JWulO+z/qd1GFcUp9j+yIvur+eeTWHelAbXq4kRNQfQjAs6nMM8Hp8gPa5jLYqMz2GgD96p8wOQCdK2nyL schipiga@mirantis.com
+          user: ${linux:system:user:schipiga}

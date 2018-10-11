@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ekhomyakova:
+          email: ekhomyakova@mirantis.com
+          enabled: true
+          full_name: Ekaterina Khomyakova
+          home: /home/ekhomyakova
+          name: ekhomyakova
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        ekhomyakova:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEaWwPVtsj39s0A2efRQ1ejL5B7ZetFPmXJDi/8W/gTWIIII3xP750H8QWZfvbjiJ+KBCxOndDL8aL3SHC/iRCvmzrVkgXBgf5J9vTu8uas7BNGf7oiDBuB75fryDtkg57Pam/A47IlgxJTCwYz+ofUGHb6WrWwQ+MUTEWAk9PB+RPyxjwNC4XxEwtULkKQMgFmg52kauESpx0R0ni8/LLKUJucdse7NCcUTvEcafppnXsxdZ640G0K82ADS1neg1CDwdtCPKLG57GZYs4iL3sPcOhQxnVUoONXsRpBD8kQTKOMl5R6hTDJHBd3oimUPEXlPqeb/XeGKatVraRA6nJ ekhomyakova@ekhomyakova
+          user: ${linux:system:user:ekhomyakova}

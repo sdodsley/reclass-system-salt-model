@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        rkhozinov:
+          email: rkhozinov@mirantis.com
+          enabled: true
+          full_name: Ruslan Khozinov
+          home: /home/rkhozinov
+          name: rkhozinov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        rkhozinov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCti9e5kyNEtX3MEns+eehUCzaxZmI8FWkWrLeRQY3jLUGzI3+N12tA7gKffczGIDP/ttnDg1hl98Yw28mkrIfYYMwRMqsBkGmYZyu6EXccyde6/5U/dgKVFGYLjWmbAAcaIaO2YoxqUJKvIanfLNHTRI29KwgxpaMCtjB7+jHiw/V0MF2xKi8yJgajZgh8iXPiv50BGjICx1BuqgqZb5jjxouV0FpU28mBOobqtaphOHeFPHk1Uool9MBt+2ocAjLbFhozmx0xryBVG4FGreovK60Zz4PuGCUL98rSTt8fbebfVokqkCG+sjykTcEQ8h5/0BUR4sPXw5mxATHD/AOv rkhozinov@rkhw
+          user: ${linux:system:user:rkhozinov}

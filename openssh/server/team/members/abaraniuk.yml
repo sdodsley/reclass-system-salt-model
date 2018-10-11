@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        abaraniuk:
+          email: abaraniuk@mirantis.com
+          enabled: true
+          full_name: Andrew Baraniuk
+          home: /home/abaraniuk
+          name: abaraniuk
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        abaraniuk:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDp/aRUpGHYWbnI57FhMzsLaEM32PkTe20fUbCvo5jOauFTX5pUndZd1v0lSEFOkTEpQ6T/CZWhYU+D5gGzmQPJXt2eOpk5h6KQ7R/koTyjH4Cvc4Q4fLNjltGHcWco3JHhz1ZZ1jGvUGLtoV8+LmYMflN+zwTnugowOE7N7Y+tG73/3gvv/yhNUWlxI4ntUUNGhoppn67AuE0ZUOCbaHHAEmXoRoml3KeAHAVPXq4zXwlN7VVTgcrn1+rRLQZ/Q4KQRid5z0ce3lzGISELQL0qiIV9SrvpYhjSKHqbCWCDejacGzkmjlWG9gqPFXLN6y6xNe24oiZ/OuNcvAONck+x abaraniuk@ab-ub-64-xenial
+          user: ${linux:system:user:abaraniuk}

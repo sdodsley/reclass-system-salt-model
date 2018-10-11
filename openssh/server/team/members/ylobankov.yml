@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ylobankov:
+          email: ylobankov@mirantis.com
+          enabled: true
+          full_name: Yaroslav Lobankov
+          home: /home/ylobankov
+          name: ylobankov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        ylobankov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDiBwStgCHjvPFYOAJgFXAFSFZaf57fJoSJV2Ijeg3uC3owsfQCgp6xd0aqSAUPYwnyV88IiDhNESeltJc3HmrA7kHWzziKCe4H7HEIg3IPGUKcnG7HF9izkmVTxqI/sXoyPvFoel5mJhtSes3A8Nk8IfWOexTy8NBfh2Te4PWqsYqEmHn2AdJ4oVBBrRDoxH8jac8vimOCZ742qMvF9lRWtItWatuEA8+moOyzAxLc0k1e7E8Myp37jE7LeXdoCE97rNp3OX7JHnfCYsthbRytA3Xjh8WLTdAaI1RCj0GqnVS3jdPS/Qzreit1gh7c74HWH/h/aj/U2wjHK1X63fJx/ZhzyqCwHjJ3spDPcIZ0tujZhw0ZjD/MiVxRze1EpmVJ3Zt0S6sgrOFXPSeC+3BEW6LD+jVIb33kS5y3bN1CXikv18WdCaLYjOGHolYF18Z5VgrxQh6hq94cSuJCYTDnbhkbww8XXCPiB2JKVF6KlD3MwfqlGKD+pyUWXKF0ZC8J4IO+keMnGGuausOFoRxg0vmpJ0fb0HODGofNIcwqnXSGmTYucBxWVs1Y4vs7NQPNJyzTcXcM8NyPpsG2uy1pwvDo+rTZ/nWFdu1mvW11hfInkNXTXjWljlNwhJCfRyNFvoUbahfRaNaBRIhy4GlGYjAHaMfkdYTYm0Dqt00YjQ== ylobankov@ylobankov
+          user: ${linux:system:user:ylobankov}

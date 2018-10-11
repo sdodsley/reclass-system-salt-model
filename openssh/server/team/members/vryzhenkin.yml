@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        vryzhenkin:
+          email: vryzhenkin@mirantis.com
+          enabled: true
+          full_name: Victor Ryzhenkin
+          home: /home/vryzhenkin
+          name: vryzhenkin
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        vryzhenkin:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDwqFlEKeZDHKPSwIRXN7Bprc9G8HRvuq2ht+XPFixkX3H/GLrsy781PkE9CM3ZVhz7h68Rmyt3n6B1d0ewvcCHj2m/rixJj8rayNOuQN7v8yflTB/iKFZW7BZ9yxu3OSkQScrjQ6YRcifDYBMDFTkMrKsrIkfMBasvOGcK6BoPx1s3diupG8gN0fpGZ/BPIia+mGz+3jRk6aFBI9n5G1bbFikUPonhjlEoHoQv2ngKGvmDr8FWoItuvzQ7HH9mEwRTqVMzCNdeVxvNNNTLJ72ikig1FaCyAxGViVCa2Xidug9iRHE6dUWsqvaxNtXIrGX4E5lvNXHiJYi/mVcQR+Dx freerunner@pegasus
+          user: ${linux:system:user:vryzhenkin}

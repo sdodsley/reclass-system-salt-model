@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        dtyzhnenko:
+          email: dtyzhnenko@mirantis.com
+          enabled: true
+          full_name: Dmitry Tyzhnenko
+          home: /home/dtyzhnenko
+          name: dtyzhnenko
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        dtyzhnenko:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDhf5ysfuTmOO1975vUCag59tL+lQwfmWSQglZvKnMLnhO1P39VXDHCMla0Uh2IXI5abSrsq4xVXNfD3R5cnzPW8rG1h3528tSpszwZp28LSMkMfEZReEWVq2XoseRfzd7b3AaWN283NbQGPL6NRwyg9hLRG5dipdRxnDSutvDg/J4gbzeuS+QjXP6ymIs9vBhrpvHlQ6POI7Zedp2FOmqbGf3OK9wuBkD1Dhf+hTXvFSq1PFxmKB7w5CWvAOGGuapb+IYspPlDwd8lVWbvp+D3DchkhyL36gQyl2In/NKG2NR4z6dETX8JON5OMe0UipeKAsXInoVbyZfs3uZgdKDB dtyzhnenko
+          user: ${linux:system:user:dtyzhnenko}

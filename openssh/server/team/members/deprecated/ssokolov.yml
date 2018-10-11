@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        ssokolov:
+          email: deprecated@mirantis.dep
+          enabled: true
+          full_name: Sergey Sokolov
+          home: /home/ssokolov
+          name: ssokolov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        ssokolov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDHuIo/dLh5qt+8jV4UUPqDo6ktJc12HVFg10S3hinjJUlAOxq8554l0LMvxmiZSrIjxGE/qUr8PlRgjLi4x4zQDggBdNGC/S4zcYNEiTQ7HaOFOjEJ0si6ODZfssQsr/A/bXdNOZE/nIZTUhTddJG+3nKUvuPnTeOQLqEOp4IFJwwvwnD2Wo4I1nc6+yDSJLuG8ANLtLlStzpMKr8wHvPWCUcB9B1oeeOVtw9+vEKxuUBkheXnXMh7shiyt4vmaFVbcgcHGPg8DjP8alKeAbIk0AYhiuNHV/rFzL+/kfImS94gU93A8vt0U2vCj8golqt2huxJblKDr4Abq1lDXLwn ssm@n104309
+          user: ${linux:system:user:ssokolov}

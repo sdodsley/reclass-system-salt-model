@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        akalach:
+          email: deprecated@mirantis.dep
+          enabled: true
+          full_name: Andrew Kalach
+          home: /home/akalach
+          name: akalach
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        akalach:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOGQ6j4Fy1Lm00UihYbmJ88ctLGaVXlSPys8lk1gUsT8lR2oOZvERl8FIsSlN47Z2wbvcTCq3aOlxvuV/UyT8+r8LEGM5Wk1XSsDMRsvc92qfeRQhAJDp8f+2pUkNfc8rXaPKUDkz0iI6iwANOIR+P7Xx11w//0itDBBKX7sEBsxJbSjm6DLyfs1yn6tT5S4kqAcq5jpX3YMH0MqhcWPS0tK1W6QW13KDt317CIWmoVQMvdmzF/QenXIbV6PZjBy2DvkFVOThdH+OZDMgo4mggGqnsokjy6ZjT0LzKAptKrFKd/xRQUUelWY5XvXtH8RxVtg92Xqh2CjdA4OfYPn6x
+          user: ${linux:system:user:akalach}

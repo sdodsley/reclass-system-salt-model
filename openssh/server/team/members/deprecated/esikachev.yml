@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        esikachev:
+          email: deprecated@mirantis.dep
+          enabled: true
+          full_name: Evgeny Sikachev
+          home: /home/esikachev
+          name: esikachev
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        esikachev:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9zHSDorWIKSB5QH4y8bcdzsx0yE7cA/Eg3M98+qPkZPAJl1FgFXYo8XcMod52tVDsfap/mLg1k0pwmmocUGSoESAUs7Wdo5wKhRdsEo+SYxjfL3QVIlKpocho7DmBgudkRLk9mjzcjNBdWyuw9dH6/hy+FK77i5xUqIwJR0koc1WcvzyzZcacMZLYG26rxO0CMC9aTWIZcEFrv4hk7CSb+KFNfbvRN0vHjdp31GuEWDVZ6oSv8V5ipGCJS/HCuTzb/Wqjxgwh5OAqZoepdBaiqNhEmLbFBqQ0vtBwTjWixDRLry06s4J5WWFSGu6GrRbgHnd08752o2TiB28Af4F/ esikachev@Evgenys-MacBook-Pro.local
+          user: ${linux:system:user:esikachev}

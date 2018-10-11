@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        tleontovich:
+          email: tleontovich@mirantis.com
+          enabled: true
+          full_name: Tatyanka Leontovich
+          home: /home/tleontovich
+          name: tleontovich
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        tleontovich:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLtOIkzqNA3wdLQyQxLRaRwi4oXnRCPCsrn8oaAyxDXHhU3+ATGvXBdbkA6xU3d4hAohru5DwxGzyikzAAtrv79GWA9/ryXPcplmxBiJcN36GyfW6eX89hI1VIJMKMG3cUs0ONf2D+hENhbaO0pu4hNAb5HFcHAuqecQNOFFrJ3RqnWM8RWgJPY3iF1A9JnXwVrUgME962VPlydYvlL5mLk+h+4DgHuPipw/Qana5a2JfdErsPYeAdDwG8frCdA9wvMzVVZv78s0lA6BritQdd0SyZejbOlT9KVHhSOhqnWdCtd8+nZXzXgjV7GAiv7H9yE4Ee6QYSHUQHwJxZs3ZT tleontovich@tleontovich-pc
+          user: ${linux:system:user:tleontovich}

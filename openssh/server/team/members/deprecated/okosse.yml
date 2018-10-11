@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        okosse:
+          email: deprecated@mirantis.dep
+          enabled: true
+          full_name: Oleksandr Kosse
+          home: /home/okosse
+          name: okosse
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        okosse:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmb5FWl6dgK09TmxVYuvmfLyy6G9x2ed6dvXf0kfpMaaP37CST7t0UZ2m23qGF4T0ZGYbCkIdr+6zWG+a5ozuJiqoJwE3dLun8pnCwAjkmUxRyVIi9M6f3us4z+ooBZTBGWTGe7/ryqePpzyAjlw4om23pDTt09YQq5WDirdrFBNJ9ZlTwubbEWMTtHW5XMEui7s1IiggYmHI4cVh0lg7k/neoAk/5ZD9LI9+p2sISCOpD/f7C/BkgVd/4iCFNxXsPmMwRadBVYo8diB0OOekM6qsW5rfPCczCi9oavxjy62Z2XZ6wHPZ3HgeK8MhVJaRGge6zMTnB98aYh9LWfXFv okosse@okosse-pc
+          user: ${linux:system:user:okosse}

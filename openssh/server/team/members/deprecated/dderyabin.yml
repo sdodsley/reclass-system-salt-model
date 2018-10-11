@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        dderyabin:
+          email: deprecated@mirantis.dep
+          enabled: true
+          full_name: Denis Deryabin
+          home: /home/dderyabin
+          name: dderyabin
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        dderyabin:
+          enabled: true
+          public_keys:
+          - key: AAAAB3NzaC1yc2EAAAADAQABAAABAQCljOKDvsoOsQFOsabL68kVTlzZOObP9d13Oqc7Lafew1MJx0uaCjabpfcaSOrLrqYu42akkpnHQ0ypQbzRWDREYWKciKmE1TKzRUTXZIF1FNNoFrDT7FfjrKVP42alk4isB0Yj9mvA6AhJGFM7pAy55dVEII30Rc0wKW6XCBAX8fIq3rHDnDYq7KuaSAtxkqj6u/C9eUcGBB+JIQ0NRhTVyIZlqjNeojXoM7py8pGDnGj54bIbpFtYiLU1hbowKfVVcJgHIE+17KsNvR7HwwZZ5lbUxzrOiOnoBq1JKF15JHQ3el358aKw3Ee7rqmVrHszohEBLfxRbWbACoTUem75 denis@usvbox
+          user: ${linux:system:user:dderyabin}

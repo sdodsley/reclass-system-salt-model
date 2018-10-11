@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        vgusev:
+          email: vgusev@mirantis.com
+          enabled: true
+          full_name: Vitaly Gusev
+          home: /home/vgusev
+          name: vgusev
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        vgusev:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrCyaZjs8hiwx38LfpeQ2z9n9ptwQ7gFrhq2z5sK9q/LQMCubbnp5xhyF0SMY1jmQUewBOKXhnq3QSX+DmtNsnhitnZBw2BE5PBXllCBWMMiWULfAYvB0of728Q3EEjrtyfHkt7o2E+CvreVJcVI4kBwjKh5WpVBZ8mmkW/sexLGMuYu0bUWjCddu6ZlhUa+y14VZKOKp44auemza1VL/UzqOVZkBAfR2gPV2pBG3Im+SlnOlDRxKPEXQbsn3u/sNeZq0wSY++khY86AU7jAKfL2NiNsoA7CyB0jTEKwYO3vOWOhECifZuHwY/TNWyRFWM2ImW3mT9aO7nE4w4jXXJ vgusev@vgusev
+          user: ${linux:system:user:vgusev}
