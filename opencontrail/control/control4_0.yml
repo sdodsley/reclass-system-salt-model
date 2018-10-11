@@ -2,7 +2,7 @@ classes:
 - service.docker.host
 - service.keepalived.cluster.single
 - service.opencontrail.control.control
-- system.haproxy.proxy.listen.opencontrail.control
+- system.haproxy.proxy.listen.opencontrail.control4_0
 parameters:
   _param:
     mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'

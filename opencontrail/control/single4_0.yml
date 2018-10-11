@@ -46,17 +46,6 @@ parameters:
             host: ${_param:single_address}
             port: 9100
             params: check inter 2000 rise 2 fall 3
-        contrail_discovery:
-          type: contrail-api
-          service_name: contrail
-          binds:
-          - address: ${_param:single_address}
-            port: 5998
-          servers:
-          - name: ctl01
-            host: ${_param:single_address}
-            port: 9110
-            params: check inter 2000 rise 2 fall 3
         contrail_config_stats:
           type: contrail-config
           service_name: contrail
