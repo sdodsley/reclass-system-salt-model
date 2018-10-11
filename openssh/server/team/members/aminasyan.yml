@@ -3,19 +3,17 @@ parameters:
     system:
       user:
         aminasyan:
+          email: aminasyan@mirantis.com
           enabled: true
-          name: aminasyan
-          sudo: ${_param:linux_system_user_sudo}
           full_name: Artem Minasyan
           home: /home/aminasyan
-          email: aminasyan@mirantis.com
+          name: aminasyan
+          sudo: ${_param:linux_system_user_sudo}
   openssh:
     server:
-      enabled: true
       user:
         aminasyan:
           enabled: true
           public_keys:
-            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBH7+vVgUiiflgclsGBVoGeeSYocSHDkHsRKUOfprH/EPwoYM4mwPotKaO3u342U7Gakxhe9X95jpa1xk4O70w3rsTKERiBcvwM1GUeMoCjyNfUtseZku817wUj+NmU2/bo6YB/Jtuqx+QxxrzXrctowl7rkZud13gypKqVA4kaeT8cclSD0ZNAL99p7y8aXa3CuJ2nBzkzfM0/tuXGsiBZxDm7MzbIjySCTPJz8Y+n8rvmETfMG4smfl1E5R4o0AXpKwWUTZxQxx/BXh1jC9CxnDO/CccLdSY+jY7qvzhCvUsQf3v3Ppdi5wgqaVBf7SaLIeEsyqBwu6CMg1K6jHJt46sdiDSG79/SQHUsrrbVY9lA3tV5CAO0kz4Caae01k8BsO2lT9xLhed7V4ReAbAL3QBTvWMEob8ARQCB6EuaI7VxMcQvmoGK5Rf8/qh+B8JmbgAUyUy/j8qIjeZv4C7LbQO9z86AeGBrd6H5zDzlBL6RcyhvtVvOybovXLTujeMTyydqXfnZ7XTOEwp3lVzavsQO5ej1Ao5CJ/7yXFN3bpTO0fLFDSg/zzS2cME6J6KaT3dJLFfUpS/0hoQlOCV5L10LhZeh0Ot4GfVJ2tGOBQRnYGZHR2MpxQTZV/yhQDfYFBxZtvKcmAFdLTMaJ6GxLleuymJI4n4Vy3pg14O/w== aminasyan@artem
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBH7+vVgUiiflgclsGBVoGeeSYocSHDkHsRKUOfprH/EPwoYM4mwPotKaO3u342U7Gakxhe9X95jpa1xk4O70w3rsTKERiBcvwM1GUeMoCjyNfUtseZku817wUj+NmU2/bo6YB/Jtuqx+QxxrzXrctowl7rkZud13gypKqVA4kaeT8cclSD0ZNAL99p7y8aXa3CuJ2nBzkzfM0/tuXGsiBZxDm7MzbIjySCTPJz8Y+n8rvmETfMG4smfl1E5R4o0AXpKwWUTZxQxx/BXh1jC9CxnDO/CccLdSY+jY7qvzhCvUsQf3v3Ppdi5wgqaVBf7SaLIeEsyqBwu6CMg1K6jHJt46sdiDSG79/SQHUsrrbVY9lA3tV5CAO0kz4Caae01k8BsO2lT9xLhed7V4ReAbAL3QBTvWMEob8ARQCB6EuaI7VxMcQvmoGK5Rf8/qh+B8JmbgAUyUy/j8qIjeZv4C7LbQO9z86AeGBrd6H5zDzlBL6RcyhvtVvOybovXLTujeMTyydqXfnZ7XTOEwp3lVzavsQO5ej1Ao5CJ/7yXFN3bpTO0fLFDSg/zzS2cME6J6KaT3dJLFfUpS/0hoQlOCV5L10LhZeh0Ot4GfVJ2tGOBQRnYGZHR2MpxQTZV/yhQDfYFBxZtvKcmAFdLTMaJ6GxLleuymJI4n4Vy3pg14O/w== aminasyan@artem
           user: ${linux:system:user:aminasyan}
-

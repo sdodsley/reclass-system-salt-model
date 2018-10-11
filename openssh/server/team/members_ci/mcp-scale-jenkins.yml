@@ -11,7 +11,6 @@ parameters:
           email: mos-scale-jenkins@mirantis.com
   openssh:
     server:
-      enabled: true
       user:
         mcp-scale-jenkins:
           enabled: true
