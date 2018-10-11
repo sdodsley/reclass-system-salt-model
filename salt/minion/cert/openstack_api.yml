@@ -2,7 +2,7 @@ parameters:
   _param:
     salt_minion_ca_host: ${linux:network:fqdn}
     salt_minion_ca_authority: salt_master_ca
-    openstack_api_cert_alternative_names: IP:127.0.0.1,IP:${_param:cluster_local_address},IP:${_param:cluster_vip_address},DNS:${linux:system:name},DNS:${linux:network:fqdn}
+    openstack_api_cert_alternative_names: IP:127.0.0.1,IP:${_param:cluster_local_address},IP:${_param:cluster_vip_address},DNS:${linux:system:name},DNS:${linux:network:fqdn},DNS:${_param:cluster_vip_address}
     openstack_api_cert_key_file: "/etc/ssl/private/openstack_api.key"
     openstack_api_cert_cert_file: "/etc/ssl/certs/openstack_api.crt"
     openstack_api_cert_all_file: "/etc/ssl/certs/openstack_api_with_chain.crt"
