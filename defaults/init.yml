@@ -1,5 +1,6 @@
 classes:
 - system.defaults.linux_system_repo
+- system.defaults.debmirror
 parameters:
 # Transition in progress.
 # Please ignore 'G' transition marker - it uses only for internal purposes
