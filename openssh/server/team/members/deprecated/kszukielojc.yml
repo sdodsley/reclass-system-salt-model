@@ -1,0 +1,17 @@
+parameters:
+  linux:
+    system:
+      user:
+        kszukielojc:
+          enabled: false
+          name: kszukielojc
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: disabled
+          home: /home/kszukielojc
+          email: disabled
+  openssh:
+    server:
+      user:
+        kszukielojc:
+          enabled: false
+          user: ${linux:system:user:kszukielojc}

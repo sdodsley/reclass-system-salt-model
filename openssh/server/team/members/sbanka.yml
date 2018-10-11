@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        sbanka:
+          email: sbanka@mirantis.com
+          enabled: true
+          full_name: "Szymon Ba\u0144ka"
+          home: /home/sbanka
+          name: sbanka
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        sbanka:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMdgjQ/jeWwQTaPyy7G5JJAkM+QPNPFkzMldPHJzOxEBzt/M5zAooj0XgbRIDIztolhXhmj8N5QSG5n3Wn9T9e2KpoxrLaVhMV5WGTgMrXMmyT8oXLV3gLxGNHMWFvplSbHLK78EsZQQ1/kBQMyPXB1+FpIuSHVOxaospOQObJ08lvQfvlO7AUUV4ecpFj3PpV5vkKPRS+KfiRm84BeGIu51BL1BClZcOyHZPBQT+DUBjm8y4Nd7pVZRjsiBzZBvUotCbn5+RqWJnu4kyoGoRNmk8pvCx7jGL1G9rE8NNsKlCUWedvyNkDeoWKvleJuzkj3ggfuCj/iTtDoXFR95e3
+          user: ${linux:system:user:sbanka}

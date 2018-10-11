@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        mmatuszkowiak:
+          email: mmatuszkowiak@mirantis.com
+          enabled: true
+          full_name: Mateusz Matuszkowiak
+          home: /home/mmatuszkowiak
+          name: mmatuszkowiak
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        mmatuszkowiak:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDC6TGCQAH3FGNSOhSbovhwODabOAsgVqG71rEDdXvDSShwyNB3RIICefas3mdSLsG7+1K9mZ1jicWzNbotvePwzrM/MESzntzp4QZ5J/9L3BMiqWWKL2u6BQ65LGe0YMzMmdSkqMAj0uxt3+OiFDPDrwqH6qN0hwxAJM+byeUlQW8uWQYm/pmWMD60GUrnjYUfKfEa/S3symaZBHQvjtp26De8D6u/jr4TWi5VJpKqVREqU7Z4IKwn8JvHMmUbRO4endW3cRiv35Qb7s66rO6TD0KlDFnnTxOtFvLhL51j58X4MrV9FHUI6czoqjAgEDe9CW7DzZ1xMj03d6IAipgL
+          user: ${linux:system:user:mmatuszkowiak}

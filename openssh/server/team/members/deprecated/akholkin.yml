@@ -1,0 +1,17 @@
+parameters:
+  linux:
+    system:
+      user:
+        akholkin:
+          enabled: false
+          name: akholkin
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: disabled
+          home: /home/akholkin
+          email: disabled
+  openssh:
+    server:
+      user:
+        akholkin:
+          enabled: false
+          user: ${linux:system:user:akholkin}

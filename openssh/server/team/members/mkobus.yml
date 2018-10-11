@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        mkobus:
+          email: mkobus@mirantis.com
+          enabled: true
+          full_name: "Micha\u0142 Kobus"
+          home: /home/mkobus
+          name: mkobus
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        mkobus:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDCBqe3X+LrneiuieWGjlw5wRtgixBu2Q8LZjH6W+8nsOkB7iN6qRdKom3jac1Cdd5wSJ0NFAhDNcTLK4Etz/3YACglsTxk09TzXlqs1V0Y7U5a2eqn3KTOgMNsJ1aOhFq/LnmUwTdN8NXac6TIkwZZBj5KhHSvIoO+mfsascct5FIVU/+p32d3o/4NqMDDdTg/qxIMKQsh5sw5Y9Tz9h28LGbDh+QF2lW+b5YJhnCG21Uw17xcyxf3/53EpJwTXfElonSR7HMVLxrq7oDzmqKFZ2z8i9do6EgODKlZpSkxiAFOBw5oA2hPtEeqtXqvddu2FcNGuSNhx/6O8ZHIKq3Xh/tTOYnoc+qYDMRCzDwzeyivfr5Ci3n64giUaZl+KUr6D1CKeL2s8j9+kod/1JJDEeoYR+V93MTiTD/39N8eQAGv+6r9HBapXIkvr3iNuTH1+5eN36Vc90jXXRmGMZkF5P9ivNGDZGcy2pBwwPg/bRn2xb0zx1fsxd4qOi+Cd7mBCF4+SfnVCqUd2H9R0O3S7WgfLr+wOXpFq6/WwgjzI9RVhLJ5cZmePJKvYZYYhkAxsVwWSE639zFFuU1zhFXr49wa0njK9DdYWiQEhOki0ki3huABmVbWKg/zP1Rlllmtk0S4mwggJ57JYbuhEV3a1x1KOtWMzODW5cb3HlPTQw==
+          user: ${linux:system:user:mkobus}

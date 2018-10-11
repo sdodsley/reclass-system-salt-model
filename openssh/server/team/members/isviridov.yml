@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        isviridov:
+          email: isviridov@mirantis.com
+          enabled: true
+          full_name: Illia Svyrydov
+          home: /home/isviridov
+          name: isviridov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        isviridov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGNZxzOm7OsZi/q6Qk71fnvjCfWk4BfxpZ5hDig6N1f9D0iAMaINyNmlF2PxstSLW0Mjdq2tXTUvVWlYpGrw+YLHQmVk8dckmLdUAxe2Z0oEvtWhiQC64927ibBTgQ2Tjfkao+PFYPbdjiO4FgRymS1/FpGKhvpdyPDCcOLrxsMSK9YpPi4kbkd4GmlGMercuaEzP3JOOzJioOOLtEw3LOLWG5mAIzXjGFxuCNdTI4gqxQm/iw/tOpb9PcsY10EapZsS4Pd8j58vuhJlwdoTxI3gzySJcTlWm0tcphex0g8X0tEUI+zVjemJcrYkZgUpb6x5/mUjNxC4nv+4A4yMTP
+          user: ${linux:system:user:isviridov}

@@ -22,6 +22,7 @@ classes:
 - system.openssh.server.team.members.hkraemer
 - system.openssh.server.team.members.pbasov
 - system.openssh.server.team.members.alis
+- system.openssh.server.team.members.isviridov
 parameters:
   _param:
     linux_system_user_sudo: true

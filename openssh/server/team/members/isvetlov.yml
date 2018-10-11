@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        isvetlov:
+          email: isvetlov@mirantis.com
+          enabled: true
+          full_name: Ildar Svetlov
+          home: /home/isvetlov
+          name: isvetlov
+          sudo: ${_param:linux_system_user_sudo}
+  openssh:
+    server:
+      user:
+        isvetlov:
+          enabled: true
+          public_keys:
+          - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9lvegjKq6OP7cgF9YU9mPOk1/mfJbov3YnYnhiW1Ks0hrWZyAo+0TV3O7LgWZ8jqD9abbYaOiWCt4d9ABkLUJfCLNAqOJRapJ+tybPAxJKx4eV8pptJ7UF0EdItasTdd+gqJJ4Krk869rwmqVQ4hethdykjhKyWu3bG+uVtFUF5xUj9zaT9NThA6/Xhz0idAiTO8ArmLng4W8ne45gANaHIWXpIsklo6GLUSZwl4z6j2z4joxNJsB1hrw0msT56F26ctkDo6thNMAzPMyZsLjYJBJIRYhdC1d4Up9114nVcY4pzYw76+zXU9zED2XNRLdyAaxFlwXvumAs3iMLI8Z isvetlov@isvetlov-mac.local
+          user: ${linux:system:user:isvetlov}
