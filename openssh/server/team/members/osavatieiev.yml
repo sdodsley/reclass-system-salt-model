@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      user:
+        osavatieiev:
+          enabled: true
+          name: osavatieiev
+          sudo: ${_param:linux_system_user_sudo}
+          full_name: Alex Savatieiev
+          home: /home/osavatieiev
+          email: osavatieiev@mirantis.com
+  openssh:
+    server:
+      user:
+        osavatieiev:
+          enabled: true
+          public_keys:
+            - key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1LOY6PdhYlueDeIx2ASl+56z+eUGqYXA2Aqep5W5j68W7ZRB0lmuam2Bqh5WVRP14l2pTQrV9CsCd8G1Y4nQamAwIb86ipf+8KKEawVaeWjihcUQf5VVwKIZEeZEwdHJFk5wK9YfmICn2x6rhKlQJ5ibcHpHlhdOgoscxvHMixzVxLGeRVyGn3OOeiGCEF+Ltt/ug1vj8A/9ytOCL0OMJJ9Oj8bCxrp9VQlVMAJt6Jp7iL6K8Q0J97/MZ1MehVr5RrpVf2wKNKrydfSwdqw+ZgIiQWRVl6yzv4S8AWCVhyFRMe7b1hMRpSQOqsW3oKgDyxfhc34/FFBNLOdAsQCSf osavatieiev@mirantis.com
+          user: ${linux:system:user:osavatieiev}
