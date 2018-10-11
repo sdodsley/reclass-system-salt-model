@@ -22,3 +22,19 @@ parameters:
           enabled: true
           url: "notifier://?topic=${_param:openstack_event_alarm_topic}"
           publish_event: true
+  # default permissions in panko configuration files and ssl certificates are restricted
+  # to panko group, therefore ceilometer must have those permission to have ability to
+  # connect to panko's backend db
+  linux:
+    system:
+      group:
+        panko:
+          enabled: true
+      user:
+        ceilometer:
+          enabled: true
+          name: 'ceilometer'
+          home: '/var/lib/ceilometer'
+          shell: '/bin/false'
+          groups:
+            - 'panko'
