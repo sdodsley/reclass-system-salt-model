@@ -1,0 +1,18 @@
+parameters:
+  linux:
+    system:
+      user:
+        cinder:
+          enabled: true
+          name: cinder
+          home: /var/lib/cinder
+          uid: 304
+          gid: 304
+          shell: /bin/false
+          system: True
+      group:
+        cinder:
+          enabled: true
+          name: cinder
+          gid: 304
+          system: True
