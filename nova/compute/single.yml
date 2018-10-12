@@ -37,9 +37,6 @@ parameters:
       SG9MrLHCd5l60aCUQg0UA5ed7Hd6SA314k+HwxJno9/wJ+voBeacMg==
       -----END RSA PRIVATE KEY-----
     cluster_internal_protocol: 'http'
-    openstack_rabbitmq_x509_enabled: False
-    rabbitmq_ssl_enabled: False
-    openstack_rabbitmq_port: 5672
   openssh:
     client:
       enabled: True

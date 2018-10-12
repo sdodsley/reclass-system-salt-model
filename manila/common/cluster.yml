@@ -4,12 +4,7 @@ classes:
 - system.salt.minion.cert.rabbitmq.clients.openstack.manila
 parameters:
   _param:
-    openstack_mysql_x509_enabled: False
-    galera_ssl_enabled: False
     manila_cluster_vip_address: ${_param:cluster_vip_address}
-    openstack_rabbitmq_x509_enabled: False
-    rabbitmq_ssl_enabled: False
-    openstack_rabbitmq_port: 5672
     cluster_internal_protocol: 'http'
   manila:
     common:

@@ -13,11 +13,6 @@ parameters:
     mysql_keystone_password: password
     keystone_tokens_expiration: 3600
     openstack_node_role: primary
-    openstack_mysql_x509_enabled: False
-    openstack_rabbitmq_x509_enabled: False
-    galera_ssl_enabled: False
-    rabbitmq_ssl_enabled: False
-    openstack_rabbitmq_port: 5672
   linux:
     system:
       package:

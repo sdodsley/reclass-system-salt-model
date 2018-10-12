@@ -1,12 +1,20 @@
+# This is list of all default soft params, across reclass-system lvl.
+# Please always include those 'init.yml', and don't use direct sub-lvls.
+# Some rules approach:
+# - Always use uniq names, which exactly identify key
+# - Avoid any component intersection's
+# - No if\else\whatever logic allowed.
+
 classes:
 - system.defaults.linux_system_repo
+- system.defaults.openstack
+- system.defaults.galera
+- system.defaults.rabbitmq
 - system.defaults.debmirror
 parameters:
-# Transition in progress.
-# Please ignore 'G' transition marker - it uses only for internal purposes
   _param:
     apt_mk_version: "stable"
     linux_system_architecture: 'amd64'
     linux_system_repo_url: "http://mirror.mirantis.com/${_param:apt_mk_version}/"
-    # Openstack
-    openstack_version: 'pike'
+    # Openstack globals
+    openstack_version: 'queens'

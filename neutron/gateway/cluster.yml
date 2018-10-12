@@ -5,9 +5,6 @@ parameters:
   _param:
     neutron_enable_qos: False
     neutron_enable_vlan_aware_vms: False
-    openstack_rabbitmq_x509_enabled: False
-    rabbitmq_ssl_enabled: False
-    openstack_rabbitmq_port: 5672
   linux:
     system:
       kernel:

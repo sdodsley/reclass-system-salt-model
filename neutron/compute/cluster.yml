@@ -7,9 +7,6 @@ parameters:
     neutron_enable_vlan_aware_vms: False
     neutron_enable_bgp_vpn: False
     neutron_bgp_vpn_driver: bagpipe
-    openstack_rabbitmq_x509_enabled: False
-    rabbitmq_ssl_enabled: False
-    openstack_rabbitmq_port: 5672
   linux:
     system:
       package:

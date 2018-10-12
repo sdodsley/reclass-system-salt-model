@@ -1,0 +1,8 @@
+parameters:
+  _param:
+    # SSL
+    ceilometer_agent_ssl_enabled: False
+    openstack_mysql_x509_enabled: False
+    # for non-ssl use 5672 / for ssl 5671
+    openstack_rabbitmq_port: 5672
+    openstack_rabbitmq_x509_enabled: False

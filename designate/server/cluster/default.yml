@@ -9,11 +9,6 @@ parameters:
   _param:
     designate_admin_api_enabled: false
     cluster_internal_protocol: 'http'
-    openstack_mysql_x509_enabled: False
-    galera_ssl_enabled: False
-    openstack_rabbitmq_x509_enabled: False
-    rabbitmq_ssl_enabled: False
-    openstack_rabbitmq_port: 5672
   linux:
     system:
       package:

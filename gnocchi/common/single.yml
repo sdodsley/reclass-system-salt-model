@@ -2,9 +2,6 @@ classes:
 - service.gnocchi.common.single
 - system.salt.minion.cert.mysql.clients.openstack.gnocchi
 parameters:
-  _param:
-    openstack_mysql_x509_enabled: False
-    galera_ssl_enabled: False
   gnocchi:
     common:
       database:

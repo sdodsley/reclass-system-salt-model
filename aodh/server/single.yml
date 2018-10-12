@@ -7,11 +7,6 @@ parameters:
     openstack_event_alarm_topic: alarm.all
     # Keep alarm history in database for 30 days
     aodh_alarm_history_ttl: 2592000
-    openstack_mysql_x509_enabled: False
-    galera_ssl_enabled: False
-    openstack_rabbitmq_x509_enabled: False
-    rabbitmq_ssl_enabled: False
-    openstack_rabbitmq_port: 5672
   linux:
     system:
       cron:

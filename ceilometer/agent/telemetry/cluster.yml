@@ -2,11 +2,6 @@ classes:
 - service.ceilometer.agent.cluster.common
 - system.salt.minion.cert.rabbitmq.clients.openstack.ceilometer
 parameters:
-  _param:
-    openstack_rabbitmq_port: 5672
-    openstack_rabbitmq_x509_enabled: False
-    rabbitmq_ssl_enabled: False
-    ceilometer_agent_ssl_enabled: False
   ceilometer:
     agent:
       region: ${_param:openstack_region}

@@ -3,12 +3,6 @@ classes:
 - system.salt.minion.cert.rabbitmq.clients.openstack.ironic
 - service.ironic.api.cluster
 parameters:
-  _param:
-    openstack_mysql_x509_enabled: False
-    galera_ssl_enabled: False
-    openstack_rabbitmq_x509_enabled: False
-    rabbitmq_ssl_enabled: False
-    openstack_rabbitmq_port: 5672
   linux:
     system:
       package:

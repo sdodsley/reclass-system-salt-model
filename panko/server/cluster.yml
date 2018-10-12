@@ -12,8 +12,6 @@ parameters:
     panko_memcached_node03_address: ${_param:cluster_node03_address}
     # Keep events in database for 30 days
     panko_event_time_to_live: 2592000
-    openstack_mysql_x509_enabled: False
-    galera_ssl_enabled: False
   linux:
     system:
       cron:
