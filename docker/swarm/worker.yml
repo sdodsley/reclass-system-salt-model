@@ -11,3 +11,8 @@ parameters:
       master:
         host: ${_param:cluster_node01_address}
         port: ${_param:docker_swarm_master_port}
+  telegraf:
+    agent:
+      input:
+        docker:
+          gather_services: true
