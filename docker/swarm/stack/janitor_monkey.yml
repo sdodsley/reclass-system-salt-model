@@ -1,6 +1,5 @@
 parameters:
   _param:
-    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     docker_janitor_monkey_replicas: 1
     docker_image_mongodb: library/mongo:3.4
     docker_mongodb_admin_username: admin

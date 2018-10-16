@@ -1,6 +1,5 @@
 parameters:
   _param:
-    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     docker_decapod_fe_replicas: 3
     decapod_version: latest
     docker_image_admin: ${_param:mcp_docker_registry}/mirantis/ceph/decapod/admin:${_param:decapod_version}

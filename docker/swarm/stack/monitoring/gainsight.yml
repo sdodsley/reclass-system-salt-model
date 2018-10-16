@@ -2,7 +2,6 @@ classes:
 - system.prometheus.gainsight.container
 parameters:
   _param:
-    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     gainsight_enabled: 'true'
     gainsight_csv_upload_url: 'http://localhost:9999'
     gainsight_account_id: 'default'

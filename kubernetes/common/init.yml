@@ -1,6 +1,5 @@
 parameters:
   _param:
-    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     kubernetes_calico_calicoctl_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
     kubernetes_calico_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico
     kubernetes_calico_cni_repo: ${_param:mcp_docker_registry}/mirantis/projectcalico/calico

@@ -1,6 +1,5 @@
 parameters:
   _param:
-    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     docker_security_monkey_api_replicas: 1
     docker_security_monkey_scheduler_replicas: 1
     secmonkey_login_id: 11

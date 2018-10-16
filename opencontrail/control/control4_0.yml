@@ -5,7 +5,6 @@ classes:
 - system.haproxy.proxy.listen.opencontrail.control
 parameters:
   _param:
-    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     opencontrail_version: 4.0
     linux_repo_contrail_component: oc40
     opencontrail_image_tag: latest

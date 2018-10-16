@@ -6,7 +6,6 @@ classes:
 - system.haproxy.proxy.listen.opencontrail.analytics
 parameters:
   _param:
-    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     opencontrail_kafka_log_cleanup_mtime: '+7'
     opencontrail_kafka_log_cleanup_dir: '/usr/share/kafka/logs/'
     opencontrail_version: 4.0

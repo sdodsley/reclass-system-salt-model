@@ -1,6 +1,5 @@
 parameters:
   _param:
-    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     docker_image_elasticsearch: ${_param:mcp_docker_registry}/mirantis/external/elasticsearch:nightly
     elasticsearch_client_node_publish_host: ${_param:cluster_public_host}
     elasticsearch_cluster_name: elasticsearch

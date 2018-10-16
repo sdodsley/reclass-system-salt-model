@@ -18,3 +18,5 @@ parameters:
     linux_system_repo_url: "http://mirror.mirantis.com/${_param:apt_mk_version}/"
     # Openstack globals
     openstack_version: 'queens'
+    # Docker artifact globals
+    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'

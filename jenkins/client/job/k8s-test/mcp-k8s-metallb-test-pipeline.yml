@@ -1,5 +1,6 @@
 parameters:
   _param:
+    # Thise is exactly in-house mirror. Please don't change it to .com
     mcp_docker_registry: 'docker-dev-local.docker.mirantis.net'
   jenkins:
     client:

@@ -1,6 +1,5 @@
 parameters:
   _param:
-    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
     docker_rundeck_replicas: 1
     docker_image_rundeck: ${_param:mcp_docker_registry}/mirantis/oss/rundeck:latest
     rundeck_bind_host: rundeck-api

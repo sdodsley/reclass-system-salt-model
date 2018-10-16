@@ -2,7 +2,6 @@ parameters:
   _param:
     jenkins_salt_api_url: "http://${_param:salt_master_host}:6969"
     cvp_sanity_default_repo: "https://github.com/Mirantis/cvp-sanity-checks"
-    mcp_docker_registry: 'docker-prod-local.artifactory.mirantis.com'
   jenkins:
     client:
       view:
