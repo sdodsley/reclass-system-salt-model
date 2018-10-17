@@ -197,6 +197,14 @@ parameters:
             credentials: "gerrit"
             script: cvp-runner.groovy
           param:
+            DEBUG_MODE:
+              type: boolean
+              default: 'false'
+              description: Enable if you need to keep container after the test and debug
+            IMAGE:
+              type: string
+              default: 'cvp-sanity-checks'
+              description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
@@ -254,7 +262,7 @@ parameters:
               description: Credentials to the Salt API
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.9.2"
+              default: "xrally/xrally-openstack:0.10.1"
               description: Docker image to use for running Rally/Tempest
             TARGET_NODE:
               type: string
@@ -313,7 +321,7 @@ parameters:
               description: Node where container with tempest will be run
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.9.2"
+              default: "xrally/xrally-openstack:0.10.1"
               description: Docker image to use for running Rally/Tempest
             TARGET_NODES:
               type: string
@@ -377,7 +385,7 @@ parameters:
               description: Path to scenario file in container
             TEST_IMAGE:
               type: string
-              default: "xrally/xrally-openstack:0.9.2"
+              default: "xrally/xrally-openstack:0.10.1"
               description: Docker image to use for running Rally/Tempest
             SALT_MASTER_URL:
               type: string
@@ -414,7 +422,7 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
-            script: cvp-runner.groovy
+            script: cvp-stacklight.groovy
           param:
             SALT_MASTER_URL:
               type: string
@@ -454,8 +462,16 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
             branch: "${_param:jenkins_pipelines_branch}"
             credentials: "gerrit"
-            script: cvp-spt.groovy
+            script: cvp-runner.groovy
           param:
+            DEBUG_MODE:
+              type: boolean
+              default: 'false'
+              description: Enable if you need to keep container after the test and debug
+            IMAGE:
+              type: string
+              default: 'cvp-spt'
+              description: Docker image with tests and all pip dependecies to use for testing
             SALT_MASTER_URL:
               type: string
               default: "${_param:jenkins_salt_api_url}"
