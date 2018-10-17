@@ -1,6 +1,4 @@
 parameters:
-  _param:
-    mcp_docker_registry: 'docker-dev-local.docker.mirantis.net'
   jenkins:
     client:
       job_template:
@@ -65,5 +63,5 @@ parameters:
             param:
               KUBE_DOCKER_REGISTRY:
                 type: string
-                default: ${_param:mcp_docker_registry}
+                default: 'docker-dev-local.docker.mirantis.net'
                 description: 'Docker registry for binaries and images'

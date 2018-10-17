@@ -1,7 +1,4 @@
 parameters:
-  _param:
-    mcp_docker_registry: 'docker-dev-local.docker.mirantis.net'
-    mcp_prod_docker_registry: 'docker-prod-local.docker.mirantis.net'
   jenkins:
     client:
       job_template:
@@ -57,9 +54,9 @@ parameters:
             param:
               KUBE_DOCKER_REGISTRY:
                 type: string
-                default: ${_param:mcp_docker_registry}
+                default: docker-dev-local.docker.mirantis.net
                 description: 'Docker registry for binaries and images'
               KUBE_PROD_DOCKER_REGISTRY:
                 type: string
-                default: ${_param:mcp_prod_docker_registry}
+                default: ${_param:mcp_docker_registry}
                 description: 'Prod docker registry for binaries and images'
