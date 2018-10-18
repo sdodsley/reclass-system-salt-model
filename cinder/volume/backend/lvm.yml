@@ -1,6 +1,8 @@
 parameters:
   _param:
-    cinder_lvm_devices: [ "/dev/loop0" ]
+    cinder_lvm_default_device:  "/dev/loop0"
+    cinder_lvm_devices:
+    - ${_param:cinder_lvm_default_device}
   linux:
     storage:
       lvm:
