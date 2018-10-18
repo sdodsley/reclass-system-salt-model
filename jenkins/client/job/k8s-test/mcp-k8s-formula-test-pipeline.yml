@@ -18,6 +18,27 @@ parameters:
             url: "${_param:jenkins_gerrit_url}/kubernetes-ci/kubernetes-pipelines"
             credentials: "gerrit"
             script: pipelines/mcp-formula-change-test-pipeline.groovy
+          trigger:
+            gerrit:
+              project:
+                kubernetes/kubernetes:
+                  branches:
+                    - compare_type: "ANT"
+                      name: "**"
+              skip_vote:
+                - successful
+                - failed
+                - unstable
+                - not_built
+              event:
+                patchset:
+                  - created:
+                      excludeDrafts: false
+                      excludeTrivialRebase: false
+                      excludeNoCodeChange: false
+                comment:
+                  - addedContains:
+                      commentAddedCommentContains: '^(?s:Patch Set \d+:.*(test|recheck|reverify)\s*)$'
           param:
             SOURCE_CREDENTIALS:
               type: string
