@@ -2,14 +2,11 @@ parameters:
   _param:
     # Global
     linux_repo_refresh_db: true
-    linux_system_repo_url: "http://mirror.mirantis.com/${_param:apt_mk_version}/"
+    linux_system_repo_url: http://mirror.mirantis.com/${_param:apt_mk_version}/
     # Global-updates
     linux_system_repo_update_url: http://mirror.mirantis.com/update/${_param:apt_mk_version}/
-    linux_system_repo_update_ubuntu_url: ${_param:linux_system_repo_update_url}/ubuntu/
     # Global-hotfix
     linux_system_repo_hotfix_url: http://mirror.mirantis.com/hotfix/${_param:apt_mk_version}/
-    linux_system_repo_hotfix_ubuntu_url: ${_param:linux_system_repo_hotfix_url}/ubuntu/
-
     # Per repos
     linux_system_repo_mcp_aptly_url: ${_param:linux_system_repo_url}/aptly/
     linux_system_repo_mcp_cassandra_url: ${_param:linux_system_repo_url}/cassandra/
@@ -24,9 +21,14 @@ parameters:
     linux_system_repo_mcp_maas_url: ${_param:linux_system_repo_url}/maas/
     linux_system_repo_mcp_percona_url: ${_param:linux_system_repo_url}/percona/
     linux_system_repo_mcp_saltstack_url: ${_param:linux_system_repo_url}/saltstack-${_param:linux_system_repo_mcp_saltstack_version_number}/
+    #
     linux_system_repo_mirantis_openstack_url: ${_param:linux_system_repo_url}/openstack-${_param:openstack_version}/
+    linux_system_repo_update_mirantis_openstack_url: ${_param:linux_system_repo_update_url}/openstack-${_param:openstack_version}/
+    linux_system_repo_hotfix_mirantis_openstack_url: ${_param:linux_system_repo_hotfix_url}/openstack-${_param:openstack_version}/
+    #
     linux_system_repo_ubuntu_url: ${_param:linux_system_repo_url}/ubuntu/
-
+    linux_system_repo_update_ubuntu_url: ${_param:linux_system_repo_update_url}/ubuntu/
+    linux_system_repo_hotfix_ubuntu_url: ${_param:linux_system_repo_hotfix_url}/ubuntu/
 
     # Repo-component versions (if applicable)
     salt_version: 2017.7 # TODO should be deprecated after q4
