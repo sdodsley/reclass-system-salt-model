@@ -18,7 +18,7 @@ parameters:
           trigger:
             gerrit:
               project:
-                kubernetes/kubernetes:
+                salt-formulas/kubernetes:
                   branches:
                     - compare_type: "ANT"
                       name: "**"
