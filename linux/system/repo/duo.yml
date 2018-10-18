@@ -1,0 +1,12 @@
+classes:
+- system.linux.system.repo.keystorage.duo
+parameters:
+  _param:
+    linux_system_repo_duo_url: http://pkg.duosecurity.com/Ubuntu
+  linux:
+    system:
+      repo:
+        duo:
+          key: ${_param:linux_system_repo_duo_key}
+          source: "deb [arch=amd64] ${_param:linux_system_repo_duo_url} ${_param:linux_system_codename} main"
+          architectures: amd64
