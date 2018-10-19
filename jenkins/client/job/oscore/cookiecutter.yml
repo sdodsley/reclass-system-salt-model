@@ -87,6 +87,10 @@ parameters:
               type: boolean
               description: "Delete Heat stack when finished (bool)"
               default: 'false'
+            EXTRA_REPOS:
+              type: text
+              description: "Yaml based extra repos metadata to be added during bootstrap phase"
+              default: ''
         oscore-test-cookiecutter-models:
           display_name: oscore-test-cookiecutter-models
           name: oscore-test-cookiecutter-models
