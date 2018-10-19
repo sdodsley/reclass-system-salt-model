@@ -1,0 +1,24 @@
+parameters:
+  _param:
+    cluster_public_protocol: https
+    contrail_service_protocol: http
+  keystone:
+    client:
+      resources:
+        v3:
+          opencontrail:
+            type: contrail
+            description: OpenContrail API
+            endpoints:
+              contrail_public:
+                interface: 'public'
+                url: ${_param:cluster_public_protocol}://${_param:cluster_public_host}:8082
+                region: ${_param:openstack_region}
+              contrail_internal:
+                interface: 'internal'
+                url: ${_param:contrail_service_protocol}://${_param:opencontrail_control_address}:8082
+                region: ${_param:openstack_region}
+              contrail_admin:
+                interface: 'admin'
+                url: ${_param:contrail_service_protocol}://${_param:opencontrail_control_address}:8082
+                region: ${_param:openstack_region}
