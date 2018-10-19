@@ -20,7 +20,7 @@ parameters:
               type: git
               url: "${_param:jenkins_gerrit_url}/mk/mk-pipelines"
               branch: "${_param:jenkins_pipelines_branch}"
-              credentials: "jenkins-mk"
+              credentials: "gerrit"
               script: generate-cookiecutter-products.groovy
             param:
               # Cookiecutter
