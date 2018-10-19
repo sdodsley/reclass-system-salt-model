@@ -116,22 +116,24 @@ parameters:
             95: "--exclude='/gcc-.*-cross.*'"
             96: "--exclude='/(nvidia).*'"
             97: "--exclude='/universe/.*(metastudent).*'"
+            # Drop all dbg pkgs
+            98: --exclude='(-|_)dbg(_|-)'
             # List of unused linux kernels and unsupported arch
             300: "--exclude='/.*(arm64|powerpc|s390x|armel|armhf|sparc64|mips64|ppc64el|mipsn32)(?!.*amd64)'"
             301: "--exclude='(main|universe)/l/linux-*-(.*azure|.*aws|gke|gcp|.*azure-edge|.*oem/|.*euclid/)'"
             302: "--exclude='/*universe.*(-armel-|-arm-)(?!.*amd64)'"
             303: "--exclude='/main/l/linux(.*)/linux-source-*'"
             # Old minor version of kernel|tools|extra|cloud and related.
-            # Generic: Old - if minor less then < 127, but not 4numeric
-            304: '--exclude="main/l/linux.*/linux-.*4\.4\.0-(([0-9][0-9])|([0-9][0-2][0-6]))(\.|_|-)"'
+            # Generic: Old - if minor less then < 136, but not 4numeric
+            304: --exclude='main/l/linux.*/linux-.*4\.4\.0-(([0-9][0-9])|([0-9][0-3][0-6]))(\.|_|-)'
             # Hwe 4.8: Old - if minor in 30-49 and < 57.
             305: '--exclude="main/l/linux.*/linux-.*4\.8\.0-(([0-4][0-9])|([0-9][0-6]))"'
             # Hwe 4.10: Old - if minor in 0-39, < 42 .
             306: '--exclude="main/l/linux.*/linux-.*4\.10\.0-(([0-3][0-9])|(4[0-1]))"'
             # Hwe 4.13: Old - if minor in 0-39, < 44
             307: '--exclude="main/l/linux.*/linux-.*4\.13\.0-(([0-3][0-9])|(4[0-4]))"'
-            # Hwe 4.15: Old - if minor in 0-19, < 24
-            308: '--exclude="main/l/linux.*/linux-.*4\.15\.0-(([0-1][0-9])|([0-2][0-3]))"'
+            # Hwe 4.15: Old - if minor in 0-19, < 34
+            308: '--exclude="main/l/linux.*/linux-.*4\.15\.0-(([0-1][0-9])|([0-3][0-3]))"'
             # List of packages, that should be fetched from fresh ppa or other mirror
             # So,removing them from upstream mirror.
             500: "--exclude='/main/m/maas/'"
@@ -165,6 +167,7 @@ parameters:
             528: "--exclude='/(universe|main)/i/(ironic)'"
             529: "--exclude='/(universe|main)/a/(aodh)'"
             530: "--exclude='/(universe|main)/p/python-(ironic|aodh)client'"
+            531: --exclude='/universe/p/percona-'
             # List of extra includes, founded after tests.
             800: "--include='/main(.*)manpages'"
             801: "--include='/main(.*)python-(.*)doc'"
@@ -175,4 +178,3 @@ parameters:
             805: '--include="/main(.*)llvm-toolchain-(?![1-5])"' # pki-ca: < 389-ds-base < dogtag
             806: "--include='/main(.*)man-db'" # include man tool
             807: "--include='/main(.*)zfs-doc'" # Some extra fs dep's for MAAS provision stage.PROD-21531
-

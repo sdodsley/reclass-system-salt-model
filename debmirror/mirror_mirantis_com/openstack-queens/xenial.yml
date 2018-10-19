@@ -15,3 +15,5 @@ parameters:
           log_file: "/var/log/debmirror/mirror_mirantis_com_openstack_queens_xenial.log"
           dist: [ xenial ]
           section: [ main ]
+          filter:
+            001: --exclude='(-|_)dbg(_|-)'

@@ -17,4 +17,5 @@ parameters:
           dist: [ stable ]
           section: [ main ]
           filter:
-            001: "--exclude='-dbg_'"
+            # drop all versions below 5.6.11
+            001: --exclude='(_|-)5\.([0-5]\.|6\.([0-9]|10)(-|\.))'
