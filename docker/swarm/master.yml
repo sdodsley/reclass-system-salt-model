@@ -11,3 +11,8 @@ parameters:
       options:
         log-opts:
           labels: "com.docker.stack.namespace,com.docker.swarm.service.name,com.docker.swarm.task.name"
+  telegraf:
+    agent:
+      input:
+        docker:
+          gather_services: true
