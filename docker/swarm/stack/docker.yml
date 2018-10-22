@@ -1,7 +1,5 @@
 parameters:
   _param:
-    docker_image_registry: registry:2
-    docker_image_visualizer: dockersamples/visualizer
     docker_stack_registry_replicas: 3
   docker:
     client:

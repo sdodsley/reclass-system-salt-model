@@ -1,0 +1,19 @@
+parameters:
+  _param:
+    # CI\CD
+    docker_image_compose:    "${_param:mcp_docker_registry}/mirantis/external/compose:${_param:apt_mk_version}"
+    docker_image_registry:   "${_param:mcp_docker_registry}/mirantis/external/registry:${_param:apt_mk_version}"
+    docker_image_visualizer: "${_param:mcp_docker_registry}/mirantis/external/visualizer:${_param:apt_mk_version}"
+    # openldap:1.1.8
+    docker_image_openldap: "${_param:mcp_docker_registry}/mirantis/external/openldap:${_param:apt_mk_version}"
+    # library/postgres:9.6  #G
+    docker_image_postgresql: "${_param:mcp_docker_registry}/mirantis/external/library/postgres:${_param:apt_mk_version}"
+    # library/mongo:3.4 #G
+    docker_image_mongodb: "${_param:mcp_docker_registry}/mirantis/external/library/mongo:${_param:apt_mk_version}"
+    ###
+    # phpldapadmin:0.6.12
+    docker_image_phpldapadmin: "${_param:mcp_docker_registry}/mirantis/cicd/phpldapadmin:${_param:apt_mk_version}"
+    # gerrit:2.13.6
+    docker_image_gerrit: "${_param:mcp_docker_registry}/mirantis/cicd/gerrit:${_param:apt_mk_version}"
+    # mysql:5.6
+    docker_image_mysql: "${_param:mcp_docker_registry}/mirantis/cicd/mysql:${_param:apt_mk_version}"
