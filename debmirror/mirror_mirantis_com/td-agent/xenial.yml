@@ -9,7 +9,7 @@ parameters:
         mirror_mirantis_com_td_agent_xenial:
           force: ${_param:mirror_mirantis_com_td_agent_xenial_force}
           lock_target: True
-          td_agent_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-td_agent=none' ]
+          extra_flags: [ '--verbose', '--progress', '--nosource', '--no-check-gpg', '--rsync-extra=none' ]
           method: "rsync"
           arch: [ 'amd64' ]
           mirror_host: "mirror.mirantis.com"
