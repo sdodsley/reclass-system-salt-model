@@ -5,7 +5,7 @@ parameters:
     minion:
       cert:
         octavia_amp_client:
-          ca_file: ${octavia:manager:certificates:ca_certificate}
+          ca_file: ${octavia:manager:haproxy_amphora:server_ca}
           ca_key_file: ${octavia:manager:certificates:ca_private_key}
           key_file: ${octavia:manager:haproxy_amphora:client_cert_key}
           cert_file: ${octavia:manager:haproxy_amphora:client_cert}
