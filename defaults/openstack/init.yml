@@ -6,3 +6,6 @@ parameters:
     # for non-ssl use 5672 / for ssl 5671
     openstack_rabbitmq_port: 5672
     openstack_rabbitmq_x509_enabled: False
+    # Openstack memcache security
+    openstack_memcache_security_enabled: False
+    openstack_memcache_security_strategy: 'ENCRYPT'
