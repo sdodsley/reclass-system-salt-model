@@ -30,6 +30,8 @@ parameters:
       identity:
         region: ${_param:openstack_region}
         host: ${_param:openstack_control_address}
+    control:
+      role: ${_param:opencontrail_node_role}
     web:
       analytics:
         host: ${_param:opencontrail_analytics_address}

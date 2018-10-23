@@ -33,6 +33,7 @@ parameters:
       network:
         host: ${_param:opencontrail_control_address}
     collector:
+      role: ${_param:opencontrail_node_role}
       discovery:
         host: ${_param:opencontrail_control_address}
     database:

@@ -19,6 +19,7 @@ parameters:
             single_address: ${_param:opencontrail_tor01_node01_address}
             tenant_address: ${_param:opencontrail_tor01_node01_tenant_address}
             keepalived_vip_priority: 103
+            opencontrail_node_role: primary
         opencontrail_tor01_node02:
           name: ${_param:opencontrail_tor01_node02_hostname}
           domain: ${_param:cluster_domain}
@@ -30,3 +31,4 @@ parameters:
             single_address: ${_param:opencontrail_tor01_node02_address}
             tenant_address: ${_param:opencontrail_tor01_node02_tenant_address}
             keepalived_vip_priority: 102
+            opencontrail_node_role: secondary

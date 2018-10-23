@@ -18,6 +18,7 @@ parameters:
             single_address: ${_param:opencontrail_analytics_node01_address}
             keepalived_vip_priority: 103
             opencontrail_database_id: 1
+            opencontrail_node_role: primary
         opencontrail_analytics_node02:
           name: ${_param:opencontrail_analytics_node02_hostname}
           domain: ${_param:cluster_domain}
@@ -29,6 +30,7 @@ parameters:
             single_address: ${_param:opencontrail_analytics_node02_address}
             keepalived_vip_priority: 102
             opencontrail_database_id: 2
+            opencontrail_node_role: secondary
         opencontrail_analytics_node03:
           name: ${_param:opencontrail_analytics_node03_hostname}
           domain: ${_param:cluster_domain}
@@ -40,3 +42,4 @@ parameters:
             single_address: ${_param:opencontrail_analytics_node03_address}
             keepalived_vip_priority: 101
             opencontrail_database_id: 3
+            opencontrail_node_role: secondary
