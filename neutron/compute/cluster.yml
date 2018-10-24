@@ -38,3 +38,8 @@ parameters:
           cert_file: ${_param:rabbitmq_neutron_client_ssl_cert_file}
         ssl:
           enabled: ${_param:rabbitmq_ssl_enabled}
+      cache:
+        security:
+          enabled: ${_param:neutron_memcache_security_enabled}
+          strategy: ${_param:openstack_memcache_security_strategy}
+          secret_key: ${_param:neutron_memcache_secret_key}

@@ -34,3 +34,8 @@ parameters:
           enabled: ${_param:rabbitmq_ssl_enabled}
       identity:
         protocol: ${_param:internal_protocol}
+      cache:
+        security:
+          enabled: ${_param:neutron_memcache_security_enabled}
+          strategy: ${_param:openstack_memcache_security_strategy}
+          secret_key: ${_param:neutron_memcache_secret_key}

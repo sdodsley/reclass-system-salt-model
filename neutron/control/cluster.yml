@@ -39,5 +39,10 @@ parameters:
         ssl:
           enabled: ${_param:galera_ssl_enabled}
       role: ${_param:openstack_node_role}
+      cache:
+        security:
+          enabled: ${_param:neutron_memcache_security_enabled}
+          strategy: ${_param:openstack_memcache_security_strategy}
+          secret_key: ${_param:neutron_memcache_secret_key}
     identity:
       protocol: ${_param:cluster_internal_protocol}
