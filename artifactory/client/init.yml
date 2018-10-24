@@ -329,7 +329,8 @@ parameters:
           pypi-remote:
             rclass: remote
             packageType: pypi
-            url: https://pypi.python.org
+            url: https://files.pythonhosted.org
+            pyPIRegistryUrl: https://pypi.org
             unusedArtifactsCleanupEnabled: true
             unusedArtifactsCleanupPeriodHours: 720
 
