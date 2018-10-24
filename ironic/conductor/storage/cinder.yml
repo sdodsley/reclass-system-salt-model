@@ -1,0 +1,12 @@
+parameters:
+  ironic:
+    conductor:
+      cinder:
+        auth_strategy: keystone
+        auth_type: password
+        password: ${_param:keystone_cinder_password}
+        project_domain_id: default
+        project_name: service
+        url: ${_param:cinder_service_protocol}://${_param:cinder_service_host}:8776
+        user_domain_name: Default
+        username: cinder
