@@ -12,4 +12,6 @@ parameters:
     # Neutron
     neutron_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
     neutron_memcache_secret_key: ''
-
+    # Cinder
+    cinder_memcache_security_enabled: ${_param:openstack_memcache_security_enabled}
+    cinder_memcache_secret_key: ''
