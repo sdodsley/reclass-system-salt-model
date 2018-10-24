@@ -10,3 +10,6 @@ parameters:
             rundeck:
               source: pkg
               name: salt-formula-rundeck
+            keycloak:
+              source: pkg
+              name: salt-formula-keycloak
