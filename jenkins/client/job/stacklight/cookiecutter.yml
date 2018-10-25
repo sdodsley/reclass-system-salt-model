@@ -61,9 +61,9 @@ parameters:
                 #Extra context that will be merged with content of COOKIECUTTER_TEMPLATE_CONTEXT_FILE
                 default_context:
                   openssh_groups: "qa_scale,oscore_devops,networking,tcpcloud,stacklight,k8s_team,drivetrain"
-                  cookiecutter_template_url: https://gerrit.mcp.mirantis.net/mk/cookiecutter-templates.git
+                  cookiecutter_template_url: ssh://mcp-ci-gerrit@gerrit.mcp.mirantis.com:29418/mk/cookiecutter-templates.git
                   cookiecutter_template_branch: 'master'
-                  shared_reclass_url: https://gerrit.mcp.mirantis.net/salt-models/reclass-system.git
+                  shared_reclass_url: ssh://mcp-ci-gerrit@gerrit.mcp.mirantis.com:29418/salt-models/reclass-system.git
                   shared_reclass_branch: 'master'
             STACK_INSTALL:
               type: string
