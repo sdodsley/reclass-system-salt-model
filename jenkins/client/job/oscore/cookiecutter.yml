@@ -34,6 +34,7 @@ parameters:
                 - openstack-ovs-core-barbican-pike
                 - openstack-ovs-core-manila-pike
                 - openstack-ovs-core-telemetry-pike
+                - openstack-ovs-core-extra-ssl-pike
                 - openstack-ovs-core-queens
                 - openstack-ovs-core-extra-queens
                 - openstack-ovs-core-ssl-queens
