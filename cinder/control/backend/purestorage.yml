@@ -1,0 +1,13 @@
+parameters:
+  cinder:
+    controller:
+      default_volume_type: flash-storage
+      backend:
+        cinder:
+          engine: purestorage
+          type_name: flash-storage
+          engine: purestorage
+          san_ip: ${_param:san_ip_address}
+          pure_api_token: ${_param:pure_api_token}
+          pure_eradicate_on_delete: true
+          use_multipath_for_image_xfer: true
